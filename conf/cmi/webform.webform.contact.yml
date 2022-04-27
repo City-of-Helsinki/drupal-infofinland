@@ -32,7 +32,7 @@ elements: |-
     '#title': 'Feedback Email'
     '#type': email
     '#required': true
-    '#default_value': sakari.laaksonen@siili.com
+    '#default_value': infofinland.palaute@hel.fi
   page:
     '#title': Page
     '#type': textfield
