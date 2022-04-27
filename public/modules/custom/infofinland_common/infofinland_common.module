@@ -18,6 +18,7 @@ use Drupal\editor\Entity\Editor;
 use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
 use Drupal\media\Entity\Media;
+use \Drupal\Core\Entity\RevisionLogInterface;
 
 
 /**
@@ -414,10 +415,19 @@ function add_paragraphs_to_node_translations(Node $entity) {
       continue;
     }
 
-    $node_translation->setNewRevision(TRUE);
-    $node_translation->revision_log = 'New content added for finnish page and copied to translations';
-    $node_translation->field_content = $field_content_merged;
+    /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
+    $storage = \Drupal::entityTypeManager()->getStorage($node_translation->getEntityTypeId());
+    $node_translation = $storage->createRevision($node_translation, $node_translation->isDefaultRevision());
+
     $node_translation->set('moderation_state', 'draft');
+    $node_translation->field_content = $field_content_merged;
+
+    if ($node_translation instanceof RevisionLogInterface) {
+      $node_translation->setRevisionLogMessage('New content added for finnish page and copied to translations');
+      $current_user = \Drupal::currentUser();
+      $node_translation->setRevisionUserId($current_user->id());
+    }
+    $node_translation->save();
   }
 }
 
@@ -556,11 +566,3 @@ function infofinland_common_elasticsearch_connector_load_library_options_alter(&
     $options['curl'][CURLOPT_SSL_VERIFYHOST] = FALSE;
 }
 
-/**
- * Implements hook_preprocess_HOOK() for block.html.twig.
- */
-function infofinland_common_preprocess_block(&$vars) {
-  if ($vars['plugin_id'] == 'language_block:language_content') {
-    $vars['#cache']['max-age'] = 0;
-  }
-}
