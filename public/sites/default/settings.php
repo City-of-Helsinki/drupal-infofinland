@@ -27,21 +27,7 @@ $databases['default']['default'] = [
   'collation' => 'utf8mb4_swedish_ci',
 ];
 
-$settings['hash_salt'] = getenv('DRUPAL_HASH_SALT') ?: 'CHANGE-ME-IN-ENVIRONMENT-SETTINGS';
-
-if ($ssl_ca_path = getenv('AZURE_SQL_SSL_CA_PATH')) {
-  $databases['default']['default']['pdo'] = [
-    \PDO::MYSQL_ATTR_SSL_CA => $ssl_ca_path,
-    \PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => FALSE,
-  ];
-  // Azure specific filesystem fixes.
-  $settings['php_storage']['twig']['directory'] = '/tmp';
-  $settings['php_storage']['twig']['secret'] = $settings['hash_salt'];
-  $settings['file_chmod_directory'] = 16895;
-  $settings['file_chmod_file'] = 16895;
-
-  $config['system.performance']['cache']['page']['max_age'] = 86400;
-}
+$settings['hash_salt'] = getenv('DRUPAL_HASH_SALT') ?: '000';
 
 // Only in Wodby environment.
 // @see https://wodby.com/docs/stacks/drupal/#overriding-settings-from-wodbysettingsphp
@@ -66,9 +52,10 @@ $settings['siteimprove_id'] = getenv('SITEIMPROVE_ID');
 
 // Drupal route(s).
 $routes = (getenv('DRUPAL_ROUTES')) ? explode(',', getenv('DRUPAL_ROUTES')) : [];
+$routes[] = 'http://127.0.0.1';
 
 foreach ($routes as $route) {
-  $hosts[] = $host = parse_url($route)['host'];
+  $host = parse_url($route)['host'];
   $trusted_host = str_replace('.', '\.', $host);
   $settings['trusted_host_patterns'][] = '^' . $trusted_host . '$';
 }
@@ -97,29 +84,6 @@ if ($reverse_proxy_address = getenv('DRUPAL_REVERSE_PROXY_ADDRESS')) {
   $settings['reverse_proxy_host_header'] = 'X_FORWARDED_HOST';
 }
 
-if (file_exists(__DIR__ . '/all.settings.php')) {
-  include __DIR__ . '/all.settings.php';
-}
-
-if ($env = getenv('APP_ENV')) {
-  if (file_exists(__DIR__ . '/' . $env . '.settings.php')) {
-    include __DIR__ . '/' . $env . '.settings.php';
-  }
-
-  if (file_exists(__DIR__ . '/' . $env . '.services.yml')) {
-    $settings['container_yamls'][] = __DIR__ . '/' . $env . '.services.yml';
-  }
-
-  if (file_exists(__DIR__ . '/local.services.yml')) {
-    $settings['container_yamls'][] = __DIR__ . '/local.services.yml';
-  }
-
-  if (file_exists(__DIR__ . '/local.settings.php')) {
-    include __DIR__ . '/local.settings.php';
-  }
-}
-
-
 if ($blob_storage_name = getenv('AZURE_BLOB_STORAGE_NAME')) {
   $schemes = [
     'azure' => [
@@ -138,16 +102,6 @@ if ($blob_storage_name = getenv('AZURE_BLOB_STORAGE_NAME')) {
   $settings['flysystem'] = $schemes;
 }
 
-if (getenv('ELASTIC_URL')) {
-  $config['elasticsearch_connector.cluster.infofinland']['url'] = getenv('ELASTIC_URL');
-
-  if (getenv('ELASTIC_USER') && getenv('ELASTIC_PASSWORD')) {
-    $config['elasticsearch_connector.cluster.infofinland']['options']['use_authentication'] = '1';
-    $config['elasticsearch_connector.cluster.infofinland']['options']['authentication_type'] = 'Basic';
-    $config['elasticsearch_connector.cluster.infofinland']['options']['username'] = getenv('ELASTIC_USER');
-    $config['elasticsearch_connector.cluster.infofinland']['options']['password'] = getenv('ELASTIC_PASSWORD');
-  }
-}
 
 if ($varnish_host = getenv('DRUPAL_VARNISH_HOST')) {
   $config['varnish_purger.settings.default']['hostname'] = $varnish_host;
@@ -163,6 +117,11 @@ if ($varnish_port = getenv('DRUPAL_VARNISH_PORT')) {
   $config['varnish_purger.settings.varnish_purge_all']['port'] = $varnish_port;
 }
 
+// settings.php doesn't know about existing configuration yet so we can't
+// just append new headers to an already existing headers array here.
+// If you have configured any extra headers in your purge settings
+// you must add them in your all.settings.php as well.
+// @todo Replace this with config override service?
 $config['varnish_purger.settings.default']['headers'] = [
   [
     'field' => 'Cache-Tags',
@@ -178,11 +137,6 @@ $config['varnish_purger.settings.varnish_purge_all']['headers'] = [
 ];
 
 if ($varnish_purge_key = getenv('VARNISH_PURGE_KEY')) {
-  // Configuration doesn't know about existing config yet so we can't
-  // just append new headers to an already existing headers array here.
-  // If you have configured any extra headers in your purge settings
-  // you must add them here as well.
-  // @todo Replace this with config override service?
   $config['varnish_purger.settings.default']['headers'][] = [
     'field' => 'X-VC-Purge-Key',
     'value' => $varnish_purge_key,
@@ -200,9 +154,20 @@ if ($stage_file_proxy_origin = getenv('STAGE_FILE_PROXY_ORIGIN')) {
   $config['stage_file_proxy.settings']['use_imagecache_root'] = FALSE;
 }
 
+// Override session suffix when present.
+if ($session_suffix = getenv('DRUPAL_SESSION_SUFFIX')) {
+  $config['helfi_proxy.settings']['session_suffix'] = $session_suffix;
+}
+
+if ($robots_header_enabled = getenv('DRUPAL_X_ROBOTS_TAG_HEADER')) {
+  $config['helfi_proxy.settings']['robots_header_enabled'] = (bool) $robots_header_enabled;
+}
+
+$config['filelog.settings']['rotation']['schedule'] = 'never';
+
 if (
   ($redis_host = getenv('REDIS_HOST')) &&
-  file_exists('modules/contrib/redis/example.services.yml') &&
+  file_exists('modules/contrib/redis/redis.services.yml') &&
   extension_loaded('redis')
 ) {
   // Redis namespace is not available until redis module is enabled, so
@@ -219,11 +184,40 @@ if (
     $settings['redis.connection']['password'] = $redis_password;
   }
   $settings['redis.connection']['interface'] = 'PhpRedis';
-  $settings['redis.connection']['host'] = $redis_host;
   $settings['redis.connection']['port'] = $redis_port;
+
+  // REDIS_INSTANCE environment variable is used to support Redis sentinel.
+  // REDIS_HOST value should contain host and port, like 'sentinel:5000'
+  // when using Sentinel.
+  if ($redis_instance = getenv('REDIS_INSTANCE')) {
+    $settings['redis.connection']['instance'] = $redis_instance;
+    // Sentinel expects redis host to be an array.
+    $redis_host = explode(',', $redis_host);
+  }
+  $settings['redis.connection']['host'] = $redis_host;
+
   $settings['cache']['default'] = 'cache.backend.redis';
   $settings['container_yamls'][] = 'modules/contrib/redis/example.services.yml';
   // Register redis services to make sure we don't get a non-existent service
   // error while trying to enable the module.
   $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
+}
+
+// Environment specific overrides.
+if (file_exists(__DIR__ . '/all.settings.php')) {
+  include __DIR__ . '/all.settings.php';
+}
+
+if ($env = getenv('APP_ENV')) {
+  if (file_exists(__DIR__ . '/' . $env . '.settings.php')) {
+    include __DIR__ . '/' . $env . '.settings.php';
+  }
+
+  if (file_exists(__DIR__ . '/' . $env . '.services.yml')) {
+    $settings['container_yamls'][] = __DIR__ . '/' . $env . '.services.yml';
+  }
+
+  if (getenv('OPENSHIFT_BUILD_NAMESPACE') && file_exists(__DIR__ . '/azure.settings.php')) {
+    include __DIR__ . '/azure.settings.php';
+  }
 }
