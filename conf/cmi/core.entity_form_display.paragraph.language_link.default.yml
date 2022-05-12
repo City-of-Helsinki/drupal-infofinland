@@ -3,6 +3,7 @@ langcode: fi
 status: true
 dependencies:
   config:
+    - field.field.paragraph.language_link.field_broken_link
     - field.field.paragraph.language_link.field_language
     - field.field.paragraph.language_link.field_language_link
     - paragraphs.paragraphs_type.language_link
@@ -13,9 +14,16 @@ targetEntityType: paragraph
 bundle: language_link
 mode: default
 content:
+  field_broken_link:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_language:
     type: select2_entity_reference
-    weight: 1
+    weight: 0
     region: content
     settings:
       width: 100%
@@ -25,14 +33,14 @@ content:
     third_party_settings: {  }
   field_language_link:
     type: string_textarea
-    weight: 2
+    weight: 1
     region: content
     settings:
       rows: 1
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }

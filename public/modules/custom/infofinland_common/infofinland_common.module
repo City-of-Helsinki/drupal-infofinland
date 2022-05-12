@@ -336,11 +336,13 @@ function infofinland_common_node_presave(Node $entity) {
 
     if (!in_array('infofinland_user', $roles) && !in_array('admin', $roles)) {
       $user = User::load($current_user->id());
-      $user_municipalities = explode(', ', $user->get('field_municipality')->getString());
+      if (!empty($user->get('field_municipality')->getString())) {
+        $user_municipalities = explode(', ', $user->get('field_municipality')->getString());
 
-      foreach ($user_municipalities as $user_municipality) {
-        $multi_value[] = ['target_id' => $user_municipality];
-        $entity->set('field_municipality', $multi_value);
+        foreach ($user_municipalities as $user_municipality) {
+          $multi_value[] = ['target_id' => $user_municipality];
+          $entity->set('field_municipality', $multi_value);
+        }
       }
     }
   }
