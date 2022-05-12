@@ -659,7 +659,7 @@ display:
           click_sort_column: value
           type: boolean
           settings:
-            format: yes-no
+            format: true-false
             format_custom_false: ''
             format_custom_true: ''
           group_column: value
@@ -1086,6 +1086,50 @@ display:
           hierarchy: true
           limit: true
           error_message: true
+        field_broken_link_value:
+          id: field_broken_link_value
+          table: node__field_broken_link
+          field: field_broken_link_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Broken link'
+            description: ''
+            use_operator: false
+            operator: field_broken_link_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_broken_link_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              admin: '0'
+              infofinland_user: '0'
+              content_producer: '0'
+              municipal_editor: '0'
+              nextjs: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         langcode:
           id: langcode
           table: node_field_data
@@ -1230,7 +1274,7 @@ display:
               responsive: ''
             field_broken_link:
               sortable: true
-              default_sort_order: asc
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false

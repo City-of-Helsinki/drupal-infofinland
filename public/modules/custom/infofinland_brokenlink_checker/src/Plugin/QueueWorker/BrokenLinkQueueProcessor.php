@@ -110,19 +110,11 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    * @param string $url
    *   The url.
    *
-   * @return string
-   *   Gets the web page content.
+   * @return bool
    */
-  private function checkUrlStatus(string $url): string {
-    // Impersonate Googlebot to get Twitter to render metatags server side.
-    $options = [
-      'headers' => [
-        'User-Agent' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
-      ],
-    ];
-
+  private function checkUrlStatus(string $url): bool {
     try {
-      $response = $this->httpClient->get($url, $options);
+      $response = $this->httpClient->get($url);
 
       if ($response->getStatusCode() === 200) {
         return true;
