@@ -53,6 +53,7 @@ module:
   helfi_azure_fs: 0
   image: 0
   image_style_quality: 0
+  infofinland_brokenlink_checker: 0
   infofinland_common: 0
   infofinland_permissions: 0
   jsonapi: 0
@@ -92,6 +93,7 @@ module:
   purge_queuer_coretags: 0
   purge_tokens: 0
   purge_ui: 0
+  queue_ui: 0
   readonly_field_widget: 0
   redirect: 0
   redirect_404: 0

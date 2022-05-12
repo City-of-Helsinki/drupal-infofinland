@@ -1,0 +1,24 @@
+uuid: abe5dd64-237b-422e-bd7d-d56f7d6c97be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_broken_link
+    - node.type.link
+id: node.link.field_broken_link
+field_name: field_broken_link
+entity_type: node
+bundle: link
+label: 'Broken link'
+description: ''
+required: false
+translatable: false
+skip_translation_check: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

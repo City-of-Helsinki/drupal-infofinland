@@ -3,6 +3,7 @@ langcode: fi
 status: true
 dependencies:
   config:
+    - field.field.node.link.field_broken_link
     - field.field.node.link.field_link_description
     - field.field.node.link.field_link_target_site
     - field.field.node.link.field_links
@@ -26,6 +27,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_broken_link:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_link_description:
     type: string_textfield
     weight: 12
@@ -44,7 +52,7 @@ content:
     third_party_settings: {  }
   field_links:
     type: inline_entity_form_complex
-    weight: 15
+    weight: 16
     region: content
     settings:
       form_mode: default
@@ -63,7 +71,7 @@ content:
         entity_browser_id: _none
   field_municipality:
     type: select2_entity_reference
-    weight: 14
+    weight: 15
     region: content
     settings:
       width: 100%

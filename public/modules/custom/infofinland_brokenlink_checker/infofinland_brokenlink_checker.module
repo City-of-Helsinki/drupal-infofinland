@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Custom module for checking broken links.
+ */
+
+
+ /**
+ * Implements hook_cron().
+ */
+function infofinland_brokenlink_checker_cron(): void {
+  $last_run = \Drupal::state()->get('infofinland_brokenlink_checker_queue_worker.last_run', 0);
+  $time_now = \Drupal::time()->getRequestTime();
+  $frequency = 86400;
+
+  // Run once in 24hrs in the small hours..
+  // if (($time_now - $last_run) < $frequency && date('H', $time_now) !== "03") {
+  //   return;
+  // }
+
+  \Drupal::state()->set('infofinland_brokenlink_checker_queue_worker.last_run', $time_now);
+
+  $db = \Drupal::database();
+  $query = $db->select('paragraphs_item_field_data', 'p')->distinct();
+  $query->join('paragraph__field_language_link', 'pfll', 'pfll.entity_id = p.id');
+  $results = $query
+    ->fields('p', ['id', 'parent_id'])
+    ->fields('pfll', ['field_language_link_value'])
+    //->range(2, 5)
+    ->execute()->fetchAll();
+
+  // Add items to queue.
+  /** @var QueueFactory $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  /** @var QueueInterface $queue */
+  $queue = $queue_factory->get('broken_link_queue_processor');
+  // Process the queue till it is empty.
+  if ($queue->numberOfItems() === 0) {
+    foreach ($results as $result) {
+      $queue->createItem($result);
+    }
+  }
+}
