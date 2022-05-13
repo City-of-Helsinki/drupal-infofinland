@@ -88,18 +88,19 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    * {@inheritdoc}
    */
   public function processItem($response) {
-    if (!empty($response->field_language_link_value)) {
+    if (empty($response->field_language_link_value) || empty($response->parent_id)) {
+      return;
+    }
 
-      if (!$this->checkUrlStatus($response->field_language_link_value)) {
-        if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
-          $linkNode->set('field_broken_link', true);
-          $linkNode->save();
-        }
+    if (!$this->checkUrlStatus($response->field_language_link_value)) {
+      if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
+        $linkNode->set('field_broken_link', true);
+        $linkNode->save();
+      }
 
-        if ($languageLinkParagraph = $this->entityTypeManager->getStorage('paragraph')->load($response->id)) {
-          $languageLinkParagraph->set('field_broken_link', true);
-          $languageLinkParagraph->save();
-        }
+      if ($languageLinkParagraph = $this->entityTypeManager->getStorage('paragraph')->load($response->id)) {
+        $languageLinkParagraph->set('field_broken_link', true);
+        $languageLinkParagraph->save();
       }
     }
   }
@@ -114,7 +115,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    */
   private function checkUrlStatus(string $url): bool {
     try {
-      $response = $this->httpClient->get($url);
+      $response = $this->httpClient->get($url, ['http_errors' => false]);
 
       if ($response->getStatusCode() === 200) {
         return true;
