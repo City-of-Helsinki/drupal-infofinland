@@ -3,6 +3,7 @@ langcode: fi
 status: true
 dependencies:
   config:
+    - field.field.node.link.field_broken_link
     - field.field.node.link.field_link_description
     - field.field.node.link.field_link_target_site
     - field.field.node.link.field_links
@@ -47,5 +48,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_broken_link: true
   field_municipality: true
   langcode: true
+  search_api_excerpt: true

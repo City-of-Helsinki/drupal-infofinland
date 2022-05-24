@@ -34,11 +34,12 @@
         "drupal/migrate_plus": "^5.1",
         "drupal/migrate_source_csv": "^3.4",
         "drupal/migrate_tools": "^5.0",
-        "drupal/next": "^1.1",
+        "drupal/next": "^1.2",
         "drupal/paragraphs": "^1.13",
         "drupal/password_policy": "^3.1",
         "drupal/pathauto": "^1.9",
         "drupal/purge": "^3.2",
+        "drupal/queue_ui": "^3.0",
         "drupal/readonly_field_widget": "^1.4",
         "drupal/redis": "^1.5",
         "drupal/role_delegation": "^1.2",
@@ -89,7 +90,8 @@
                 "3015480 - Allow skipping translation check at field level for non-translatable fields": "https://www.drupal.org/files/issues/2018-11-22/3015480-add_config_to_allow_skipping_translation_check-4.patch",
                 "3101344 - Cannot save translated nodes after upgrading to 8.8 due to invalid path": "https://www.drupal.org/files/issues/2021-11-15/drupal-path-error-when-not-visible-3101344-81-D9.patch",
                 "3004334 - Messages about hidden untranslatable fields and pending revisions": "https://www.drupal.org/files/issues/2021-03-22/3004334-11-hide-message-about-untranslatable-fields.patch",
-                "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch"
+                "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch",
+                "3007031 - hasTranslationChanges on multiple languages outside of saving process is costly": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff"
             },
             "drupal/subrequests": {
                 "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
