@@ -9,7 +9,7 @@ use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-
+use GuzzleHttp\Exception\InvalidArgumentException;
 
 /**
  * Save queue item in a node.
@@ -114,13 +114,21 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    * @return bool
    */
   private function checkUrlStatus(string $url): bool {
-    $response = $this->httpClient->get($url, ['http_errors' => false, 'allow_redirects' => false]);
+    try {
+      $response = $this->httpClient->get($url, ['http_errors' => false, 'allow_redirects' => false]);
 
-    if ($response->getStatusCode() === 200) {
-      return true;
-    } else {
-      $this->logger->info('Status code: '. $response->getStatusCode() . ' URL: ' . $url);
-      return false;
+      if ($response->getStatusCode() === 200) {
+        return true;
+      } else {
+        $this->logger->info('Status code: '. $response->getStatusCode() . ' URL: ' . $url);
+        return false;
+      }
+    } catch (RequestException $e) {
+      $this->logger->warning('RequestException: ' . $e->getMessage());
+    } catch (InvalidArgumentException $e) {
+      $this->logger->warning('InvalidArgumentException: ' . $e->getMessage());
     }
+
+    return false;
   }
 }
