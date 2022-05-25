@@ -17,6 +17,19 @@
   margin-right: 0.5rem;
 }
 
+.hdbt-admin.path-node .region-sticky,
+.hdbt-admin.path-node .region-header,
+.hdbt-admin.path-node .region-content {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hdbt-admin .region-sticky .region-sticky__items__inner {
+  justify-content: end;
+}
+
 /* User form */
 .user-form #password-policy-status {
   display: none;

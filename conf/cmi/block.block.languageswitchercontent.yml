@@ -9,7 +9,7 @@ dependencies:
 id: languageswitchercontent
 theme: hdbt_admin
 region: header
-weight: 0
+weight: -2
 provider: null
 plugin: 'language_block:language_content'
 settings:
