@@ -1,0 +1,6 @@
+<?php
+
+/**
+ * @file
+ * Custom module for logging when sensitive user information is being viewed or edited.
+ */
