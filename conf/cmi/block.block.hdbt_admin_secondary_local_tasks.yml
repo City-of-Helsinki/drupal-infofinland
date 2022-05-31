@@ -1,6 +1,6 @@
 uuid: null
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - hdbt_admin
