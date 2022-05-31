@@ -1,0 +1,5 @@
+name: Infofinland GDPR
+type: module
+description: 'Create additional log lines when sensitive user information is being viewed or edited'
+package: 'Custom'
+core_version_requirement: ^8 || ^9

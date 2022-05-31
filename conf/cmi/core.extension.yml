@@ -57,6 +57,7 @@ module:
   image_style_quality: 0
   infofinland_brokenlink_checker: 0
   infofinland_common: 0
+  infofinland_gdpr: 0
   infofinland_permissions: 0
   jsonapi: 0
   jsonapi_extras: 0

@@ -1,0 +1,5 @@
+services:
+  infofinland_gdpr.event_subscriber:
+    class: Drupal\infofinland_gdpr\EventSubscriber\InfofinlandGdprSubscriber
+    tags:
+      - { name: event_subscriber }
