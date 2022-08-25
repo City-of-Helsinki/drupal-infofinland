@@ -107,6 +107,9 @@
             },
             "drupal/redis": {
                 "TTL handling broken, always permanent": "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
+            },
+            "drupal/hdbt_admin": {
+                "Fix always open in new tab": "./patches/hdbt_admin/fix_new_tab.patch"
             }
         },
         "installer-paths": {
