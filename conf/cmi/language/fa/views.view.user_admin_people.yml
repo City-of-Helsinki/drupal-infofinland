@@ -4,19 +4,7 @@ display:
   default:
     display_title: پیش‌فرض
     display_options:
-      exposed_form:
-        options:
-          submit_button: فیلتر
-          reset_button_label: بازنشانی
-          exposed_sorts_label: 'مرتب کن بر اساس'
-          sort_asc_label: صعودی
-          sort_desc_label: نزولی
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'آیتم‌ها در هر صفحه'
-            items_per_page_options_all_label: '- همه -'
-            offset_label: جابجایی
+      title: People
       fields:
         user_bulk_form:
           label: 'Bulk update'
@@ -25,8 +13,8 @@ display:
         status:
           label: وضعیت
           settings:
-            format_custom_true: Active
             format_custom_false: Blocked
+            format_custom_true: Active
         roles_target_id:
           label: Roles
         created:
@@ -35,6 +23,26 @@ display:
           label: 'Last access'
         operations:
           label: کارکردها
+      pager:
+        options:
+          tags:
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+            first: '« Ensimmäinen'
+          expose:
+            items_per_page_label: 'آیتم‌ها در هر صفحه'
+            items_per_page_options_all_label: '- همه -'
+            offset_label: جابجایی
+      exposed_form:
+        options:
+          submit_button: فیلتر
+          reset_button_label: بازنشانی
+          exposed_sorts_label: 'مرتب کن بر اساس'
+          sort_asc_label: صعودی
+          sort_desc_label: نزولی
+      empty:
+        area_text_custom:
+          content: 'No people available.'
       filters:
         combine:
           expose:
@@ -53,10 +61,6 @@ display:
         permission:
           expose:
             label: Permission
-      title: People
-      empty:
-        area_text_custom:
-          content: 'No people available.'
       use_more_text: more
   page_1:
     display_title: صفحه

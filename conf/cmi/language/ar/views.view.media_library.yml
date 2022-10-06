@@ -2,6 +2,16 @@ display:
   default:
     display_title: الافتراضي
     display_options:
+      title: ميديا
+      fields:
+        media_bulk_form:
+          action_title: إجراء
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
       exposed_form:
         options:
           submit_button: 'عمل تصفية'
@@ -9,16 +19,17 @@ display:
           exposed_sorts_label: 'الترتيب حسب'
           sort_asc_label: تصاعدي
           sort_desc_label: تنازلي
-      pager:
-        options:
+      empty:
+        area_text_custom:
+          content: 'Ei mediaa saatavilla.'
+      sorts:
+        created:
           expose:
-            items_per_page_options_all_label: '- الكل -'
-            offset_label: الإزاحة
-      fields:
-        media_bulk_form:
-          action_title: إجراء
+            label: 'Uusin ensin'
       filters:
         status:
+          expose:
+            label: 'Julkaisun tila'
           group_info:
             label: منشور
             group_items:
@@ -29,10 +40,14 @@ display:
         name:
           expose:
             label: الاسم
+        bundle:
+          expose:
+            label: 'Median tyyppi'
+          group_info:
+            label: 'Median tyyppi'
         langcode:
           expose:
             label: اللغة
-      title: ميديا
   page:
     display_title: الصفحة
     display_options:
@@ -46,14 +61,14 @@ display:
   widget:
     display_title: ودجة
     display_options:
-      filters:
-        name:
-          expose:
-            label: الاسم
       arguments:
         bundle:
           exception:
             title: الكل
+      filters:
+        name:
+          expose:
+            label: الاسم
       header:
         display_link_grid:
           label: شبكة
@@ -70,14 +85,14 @@ display:
           label: المؤلف
         changed:
           label: التحديث
-      filters:
-        name:
-          expose:
-            label: الاسم
       arguments:
         bundle:
           exception:
             title: الكل
+      filters:
+        name:
+          expose:
+            label: الاسم
       header:
         display_link_grid:
           label: شبكة

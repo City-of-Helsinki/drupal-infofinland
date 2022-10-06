@@ -3,22 +3,7 @@ display:
   default:
     display_title: Varsayılan
     display_options:
-      exposed_form:
-        options:
-          submit_button: Süzgeç
-          reset_button_label: Sıfırla
-          exposed_sorts_label: 'Sıralama anahtarı'
-          sort_asc_label: Artan
-          sort_desc_label: Azalan
-      pager:
-        options:
-          tags:
-            previous: '‹ Önceki'
-            next: 'Sonraki ›'
-          expose:
-            items_per_page_label: 'Sayfa başına öğe sayısı'
-            items_per_page_options_all_label: '- Tümü -'
-            offset_label: 'Başlangıç değeri'
+      title: Files
       fields:
         filename:
           label: Name
@@ -37,6 +22,25 @@ display:
           label: 'Changed date'
         count:
           label: 'Used in'
+      pager:
+        options:
+          tags:
+            next: 'Sonraki ›'
+            previous: '‹ Önceki'
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
+      exposed_form:
+        options:
+          submit_button: Süzgeç
+          reset_button_label: Sıfırla
+          exposed_sorts_label: 'Sıralama anahtarı'
+          sort_asc_label: Artan
+          sort_desc_label: Azalan
+      empty:
+        area_text_custom:
+          content: 'No files available.'
       filters:
         filename:
           expose:
@@ -47,10 +51,6 @@ display:
         status:
           expose:
             label: Durum
-      title: Files
-      empty:
-        area_text_custom:
-          content: 'No files available.'
   page_1:
     display_title: 'Files overview'
     display_options:
@@ -59,15 +59,7 @@ display:
   page_2:
     display_title: 'File usage'
     display_options:
-      pager:
-        options:
-          tags:
-            previous: '‹ Önceki'
-            next: 'Sonraki ›'
-          expose:
-            items_per_page_label: 'Sayfa başına öğe sayısı'
-            items_per_page_options_all_label: '- Tümü -'
-            offset_label: 'Başlangıç değeri'
+      title: 'File usage'
       fields:
         entity_label:
           label: Entity
@@ -77,7 +69,15 @@ display:
           label: 'Registering module'
         count:
           label: 'Use count'
-      title: 'File usage'
+      pager:
+        options:
+          tags:
+            next: 'Sonraki ›'
+            previous: '‹ Önceki'
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
       arguments:
         fid:
           exception:

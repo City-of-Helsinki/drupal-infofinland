@@ -4,24 +4,7 @@ display:
   default:
     display_title: Varsayılan
     display_options:
-      exposed_form:
-        options:
-          submit_button: Süzgeç
-          reset_button_label: Sıfırla
-          exposed_sorts_label: 'Sıralama anahtarı'
-          sort_asc_label: Artan
-          sort_desc_label: Azalan
-      pager:
-        options:
-          tags:
-            previous: '‹ Önceki'
-            next: 'Sonraki ›'
-            first: '« İlk'
-            last: 'Son »'
-          expose:
-            items_per_page_label: 'Sayfa başına öğe sayısı'
-            items_per_page_options_all_label: '- Tümü -'
-            offset_label: 'Başlangıç değeri'
+      title: People
       fields:
         user_bulk_form:
           label: 'Bulk update'
@@ -30,8 +13,8 @@ display:
         status:
           label: Durum
           settings:
-            format_custom_true: Active
             format_custom_false: Blocked
+            format_custom_true: Active
         roles_target_id:
           label: Roles
         created:
@@ -40,6 +23,27 @@ display:
           label: 'Last access'
         operations:
           label: İşlemler
+      pager:
+        options:
+          tags:
+            next: 'Sonraki ›'
+            previous: '‹ Önceki'
+            first: '« İlk'
+            last: 'Son »'
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
+      exposed_form:
+        options:
+          submit_button: Süzgeç
+          reset_button_label: Sıfırla
+          exposed_sorts_label: 'Sıralama anahtarı'
+          sort_asc_label: Artan
+          sort_desc_label: Azalan
+      empty:
+        area_text_custom:
+          content: 'No people available.'
       filters:
         combine:
           expose:
@@ -58,10 +62,6 @@ display:
         permission:
           expose:
             label: Permission
-      title: People
-      empty:
-        area_text_custom:
-          content: 'No people available.'
       use_more_text: more
   page_1:
     display_title: Sayfa

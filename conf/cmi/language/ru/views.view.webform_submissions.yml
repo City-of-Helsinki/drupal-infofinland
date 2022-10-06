@@ -12,8 +12,6 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Первая'
             last: 'Последняя »'
           expose:
@@ -21,15 +19,8 @@ display:
             items_per_page_options_all_label: '- Все -'
             offset_label: Пропустить
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
         created:
           label: Создано
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Операции
       header:
@@ -44,21 +35,8 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Действие
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Создано
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         operations:
           label: Операции
   embed_manage:
@@ -66,21 +44,8 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Действие
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Создано
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Операции
         edit_webform_submission:
@@ -88,20 +53,7 @@ display:
   embed_review:
     display_options:
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Создано
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Операции

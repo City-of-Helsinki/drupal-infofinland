@@ -12,8 +12,6 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« İlk'
             last: 'Son »'
           expose:
@@ -21,15 +19,8 @@ display:
             items_per_page_options_all_label: '- Tümü -'
             offset_label: 'Başlangıç değeri'
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
         created:
           label: Oluşturulma
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: İşlemler
       header:
@@ -44,21 +35,8 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Eylem
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Oluşturulma
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         operations:
           label: İşlemler
   embed_manage:
@@ -66,21 +44,8 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Eylem
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Oluşturulma
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: İşlemler
         edit_webform_submission:
@@ -88,20 +53,7 @@ display:
   embed_review:
     display_options:
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Oluşturulma
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: İşlemler

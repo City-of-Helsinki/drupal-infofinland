@@ -4,29 +4,17 @@ display:
   default:
     display_title: الافتراضي
     display_options:
-      exposed_form:
-        options:
-          submit_button: انتقاء
-          reset_button_label: 'إعادة الضبط'
-          exposed_sorts_label: 'الترتيب حسب'
-          sort_asc_label: تصاعدي
-          sort_desc_label: تنازلي
-      pager:
-        options:
-          tags:
-            previous: '‹ السابق'
-            next: 'التالي ›'
-          expose:
-            items_per_page_options_all_label: '- الكل -'
-            offset_label: الإزاحة
+      title: الأشخاص
       fields:
+        user_bulk_form:
+          label: Massapäivitys
         name:
           label: 'اسم المستخدم'
         status:
           label: الحالة
           settings:
-            format_custom_true: نشط
             format_custom_false: ممنوع
+            format_custom_true: نشط
         roles_target_id:
           label: الأدوار
         created:
@@ -35,7 +23,30 @@ display:
           label: 'آخر وصول'
         operations:
           label: عمليات
+      pager:
+        options:
+          tags:
+            next: 'التالي ›'
+            previous: '‹ السابق'
+            first: '« Ensimmäinen'
+          expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      empty:
+        area_text_custom:
+          content: 'لا يوجد أشخاص.'
       filters:
+        combine:
+          expose:
+            label: 'Nimi tai sähköposti sisältää'
         status:
           group_info:
             label: الحالة
@@ -50,10 +61,6 @@ display:
         permission:
           expose:
             label: الصلاحية
-      title: الأشخاص
-      empty:
-        area_text_custom:
-          content: 'لا يوجد أشخاص.'
       use_more_text: المزيد
   page_1:
     display_title: الصفحة

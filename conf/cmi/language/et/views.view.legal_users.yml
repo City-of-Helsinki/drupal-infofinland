@@ -23,7 +23,6 @@ display:
       fields:
         name:
           label: Nimi
-          separator: ', '
         version:
           label: Versioon
         language:

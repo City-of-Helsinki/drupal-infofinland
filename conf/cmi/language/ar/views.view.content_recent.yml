@@ -3,6 +3,7 @@ display:
   default:
     display_title: الافتراضي
     display_options:
+      title: 'أحدث المحتويات'
       exposed_form:
         options:
           submit_button: تطبيق
@@ -10,7 +11,6 @@ display:
           exposed_sorts_label: 'الترتيب حسب'
           sort_asc_label: تصاعدي
           sort_desc_label: تنازلي
-      title: 'أحدث المحتويات'
       empty:
         area_text_custom:
           content: 'لا يوجد محتوى.'

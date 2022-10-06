@@ -12,11 +12,13 @@ display:
       pager:
         options:
           expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- الكل -'
             offset_label: الإزاحة
           tags:
             previous: '‹ السابق'
             next: 'التالي ›'
+            first: '« Ensimmäinen'
       fields:
         version:
           label: النسخة
