@@ -1466,12 +1466,12 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "fethi.krout",
-                    "homepage": "https://www.drupal.org/user/3206765"
-                },
-                {
                     "name": "matio89",
                     "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "Musa.thomas",
+                    "homepage": "https://www.drupal.org/user/1213824"
                 },
                 {
                     "name": "romainj",
@@ -4002,16 +4002,16 @@
         },
         {
             "name": "drupal/hdbt_admin",
-            "version": "1.6.3",
+            "version": "1.6.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-hdbt-admin.git",
-                "reference": "8a7c65f6d4d34b15eb413eda845ef388ddbd01ec"
+                "reference": "4543162c81428201c980c245c70e74139902b56e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt-admin/zipball/8a7c65f6d4d34b15eb413eda845ef388ddbd01ec",
-                "reference": "8a7c65f6d4d34b15eb413eda845ef388ddbd01ec",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt-admin/zipball/4543162c81428201c980c245c70e74139902b56e",
+                "reference": "4543162c81428201c980c245c70e74139902b56e",
                 "shasum": ""
             },
             "require": {
@@ -4027,10 +4027,10 @@
                 "Drupal"
             ],
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/tree/1.6.3",
+                "source": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/tree/1.6.12",
                 "issues": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/issues"
             },
-            "time": "2022-05-18T14:53:58+00:00"
+            "time": "2022-10-04T06:49:36+00:00"
         },
         {
             "name": "drupal/helfi_api_base",
