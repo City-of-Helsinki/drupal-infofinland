@@ -48,7 +48,6 @@
         "drupal/subrequests": "^3.0",
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
-        "drupal/webprofiler": "^9.0",
         "drush/drush": "^10.4"
     },
     "require-dev": {

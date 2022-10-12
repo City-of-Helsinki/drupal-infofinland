@@ -7,9 +7,10 @@ namespace Drupal\helfi_ptv_integration;
 use DateTime;
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\Core\State\StateInterface;
+use Drupal\Core\State\State;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use GuzzleHttp\Client;
@@ -30,9 +31,9 @@ class HelfiPTV {
   protected Client $httpClient;
 
   /**
-   * @var StateInterface
+   * @var State
    */
-  protected StateInterface $state;
+  protected State $state;
 
   /**
    * @var Connection
@@ -57,15 +58,15 @@ class HelfiPTV {
    * The http_client.
    * @param Client $httpClient
    * @param Connection $connection
-   * @param StateInterface $state
-   * @param EntityTypeManagerInterface $entityManager
+   * @param State $state
+   * @param EntityTypeManager $entityManager
    * @param LoggerChannelFactoryInterface $logger_factory
    */
   public function __construct (
     Client $httpClient,
     Connection $connection,
-    StateInterface $state,
-    EntityTypeManagerInterface $entityManager,
+    State $state,
+    EntityTypeManager $entityManager,
     LoggerChannelFactoryInterface $logger_factory) {
     $this->httpClient = $httpClient;
     $this->state = $state;
