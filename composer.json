@@ -94,6 +94,9 @@
                 "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch",
                 "3007031 - hasTranslationChanges on multiple languages outside of saving process is costly": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff"
             },
+            "drupal/ctools": {
+                "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
+            },
             "drupal/subrequests": {
                 "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
             },
