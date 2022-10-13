@@ -48,6 +48,7 @@
         "drupal/subrequests": "^3.0",
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
+        "drupal/webprofiler": "^9.0",
         "drush/drush": "^10.4"
     },
     "require-dev": {
@@ -91,6 +92,9 @@
                 "3101344 - Cannot save translated nodes after upgrading to 8.8 due to invalid path": "https://www.drupal.org/files/issues/2021-11-15/drupal-path-error-when-not-visible-3101344-81-D9.patch",
                 "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch",
                 "3007031 - hasTranslationChanges on multiple languages outside of saving process is costly": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff"
+            },
+            "drupal/ctools": {
+                "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
             },
             "drupal/subrequests": {
                 "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
