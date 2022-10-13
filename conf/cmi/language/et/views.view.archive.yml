@@ -5,6 +5,12 @@ display:
     display_title: Vaikimisi
     display_options:
       title: 'Igakuine arhiiv'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Kirjeid lehel'
+            items_per_page_options_all_label: '- Kõik -'
+            offset_label: Nihe
       exposed_form:
         options:
           submit_button: Rakenda
@@ -12,12 +18,6 @@ display:
           exposed_sorts_label: 'Sorteerimise alus'
           sort_asc_label: Kasvav
           sort_desc_label: Kahanev
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Kirjeid lehel'
-            items_per_page_options_all_label: '- Kõik -'
-            offset_label: Nihe
   block_1:
     display_title: Plokk
   page_1:

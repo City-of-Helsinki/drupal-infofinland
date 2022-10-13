@@ -4,33 +4,17 @@ display:
   default:
     display_title: Förvald
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filtrera
-          reset_button_label: Återställ
-          exposed_sorts_label: 'Sortera efter'
-          sort_asc_label: Stigande
-          sort_desc_label: Fallande
-      pager:
-        options:
-          tags:
-            previous: '‹ Föregående'
-            next: 'Nästa ›'
-            first: '« Första'
-            last: 'Sista »'
-          expose:
-            items_per_page_label: 'Inlägg per sida'
-            items_per_page_options_all_label: '- Alla -'
-            offset_label: Kompensera
+      title: People
       fields:
         user_bulk_form:
           label: 'Bulk update'
         name:
           label: Username
         status:
+          label: Tila
           settings:
-            format_custom_true: Active
             format_custom_false: Blocked
+            format_custom_true: Active
         roles_target_id:
           label: Roles
         created:
@@ -39,12 +23,34 @@ display:
           label: 'Last access'
         operations:
           label: Funktioner
+      pager:
+        options:
+          tags:
+            next: 'Nästa ›'
+            previous: '‹ Föregående'
+            first: '« Första'
+            last: 'Sista »'
+          expose:
+            items_per_page_label: 'Inlägg per sida'
+            items_per_page_options_all_label: '- Alla -'
+            offset_label: Kompensera
+      exposed_form:
+        options:
+          submit_button: Filtrera
+          reset_button_label: Återställ
+          exposed_sorts_label: 'Sortera efter'
+          sort_asc_label: Stigande
+          sort_desc_label: Fallande
+      empty:
+        area_text_custom:
+          content: 'No people available.'
       filters:
         combine:
           expose:
             label: 'Name or email contains'
         status:
           group_info:
+            label: Tila
             group_items:
               1:
                 title: Active
@@ -56,10 +62,6 @@ display:
         permission:
           expose:
             label: Permission
-      title: People
-      empty:
-        area_text_custom:
-          content: 'No people available.'
       use_more_text: more
   page_1:
     display_title: Sida

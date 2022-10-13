@@ -3,19 +3,7 @@ display:
   default:
     display_title: پیش‌فرض
     display_options:
-      exposed_form:
-        options:
-          submit_button: فیلتر
-          reset_button_label: بازنشانی
-          exposed_sorts_label: 'مرتب کن بر اساس'
-          sort_asc_label: صعودی
-          sort_desc_label: نزولی
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'آیتم‌ها در هر صفحه'
-            items_per_page_options_all_label: '- همه -'
-            offset_label: جابجایی
+      title: Files
       fields:
         filename:
           label: Name
@@ -34,6 +22,25 @@ display:
           label: 'Changed date'
         count:
           label: 'Used in'
+      pager:
+        options:
+          tags:
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+          expose:
+            items_per_page_label: 'آیتم‌ها در هر صفحه'
+            items_per_page_options_all_label: '- همه -'
+            offset_label: جابجایی
+      exposed_form:
+        options:
+          submit_button: فیلتر
+          reset_button_label: بازنشانی
+          exposed_sorts_label: 'مرتب کن بر اساس'
+          sort_asc_label: صعودی
+          sort_desc_label: نزولی
+      empty:
+        area_text_custom:
+          content: 'No files available.'
       filters:
         filename:
           expose:
@@ -44,22 +51,12 @@ display:
         status:
           expose:
             label: وضعیت
-      title: Files
-      empty:
-        area_text_custom:
-          content: 'No files available.'
   page_1:
     display_options:
       menu:
         title: Files
   page_2:
     display_options:
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'آیتم‌ها در هر صفحه'
-            items_per_page_options_all_label: '- همه -'
-            offset_label: جابجایی
       fields:
         entity_label:
           label: Entity
@@ -67,6 +64,15 @@ display:
           label: 'Entity type'
         count:
           label: 'Use count'
+      pager:
+        options:
+          tags:
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+          expose:
+            items_per_page_label: 'آیتم‌ها در هر صفحه'
+            items_per_page_options_all_label: '- همه -'
+            offset_label: جابجایی
       arguments:
         fid:
           exception:

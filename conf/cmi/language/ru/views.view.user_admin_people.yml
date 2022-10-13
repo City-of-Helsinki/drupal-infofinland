@@ -4,24 +4,7 @@ display:
   default:
     display_title: 'По умолчанию'
     display_options:
-      exposed_form:
-        options:
-          submit_button: Фильтр
-          reset_button_label: Сбросить
-          exposed_sorts_label: 'Сортировать по'
-          sort_asc_label: 'По возрастанию'
-          sort_desc_label: 'По убыванию'
-      pager:
-        options:
-          tags:
-            previous: '‹ Предыдущий'
-            next: 'Следующий ›'
-            first: '« Первая'
-            last: 'Последняя »'
-          expose:
-            items_per_page_label: 'Элементов на страницу'
-            items_per_page_options_all_label: '- Все -'
-            offset_label: Пропустить
+      title: People
       fields:
         user_bulk_form:
           label: 'Bulk update'
@@ -30,8 +13,8 @@ display:
         status:
           label: Статус
           settings:
-            format_custom_true: Active
             format_custom_false: Blocked
+            format_custom_true: Active
         roles_target_id:
           label: Roles
         created:
@@ -40,6 +23,27 @@ display:
           label: 'Last access'
         operations:
           label: Операции
+      pager:
+        options:
+          tags:
+            next: 'Следующий ›'
+            previous: '‹ Предыдущий'
+            first: '« Первая'
+            last: 'Последняя »'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      exposed_form:
+        options:
+          submit_button: Фильтр
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      empty:
+        area_text_custom:
+          content: 'No people available.'
       filters:
         combine:
           expose:
@@ -58,10 +62,6 @@ display:
         permission:
           expose:
             label: Permission
-      title: People
-      empty:
-        area_text_custom:
-          content: 'No people available.'
       use_more_text: more
   page_1:
     display_title: Страница

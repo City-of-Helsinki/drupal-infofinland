@@ -25,6 +25,7 @@ display:
         name:
           label: Författare
         status:
+          label: Tila
           settings:
             format_custom_true: Publicerad
             format_custom_false: 'Ej publicerad'
@@ -42,6 +43,8 @@ display:
           expose:
             label: Innehållstyp
         status:
+          expose:
+            label: Tila
           group_info:
             label: 'Status för publicering'
             group_items:
