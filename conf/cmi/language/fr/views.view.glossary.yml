@@ -3,17 +3,6 @@ display:
   default:
     display_title: 'Par défaut'
     display_options:
-      exposed_form:
-        options:
-          submit_button: Apply
-          reset_button_label: Réinitialiser
-          exposed_sorts_label: 'Trier par'
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Éléments par page'
-            items_per_page_options_all_label: '- Tout -'
-            offset_label: Décalage
       fields:
         title:
           label: Titre
@@ -21,5 +10,18 @@ display:
           label: Auteur
         changed:
           label: 'Last update'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
   attachment_1:
     display_title: Attachment
+  page_1:
+    display_title: Sivu

@@ -4,6 +4,7 @@ display:
   default:
     display_title: Oletus
     display_options:
+      title: 'Uusin sisältö'
       exposed_form:
         options:
           submit_button: Käytä
@@ -11,7 +12,6 @@ display:
           exposed_sorts_label: Lajittele
           sort_asc_label: Asc
           sort_desc_label: Desc
-      title: 'Uusin sisältö'
       empty:
         area_text_custom:
           content: 'Ei sisältöä.'

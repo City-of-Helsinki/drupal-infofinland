@@ -42,6 +42,7 @@ display:
           expose:
             label: الحالة
           group_info:
+            label: 'Published status'
             group_items:
               1:
                 title: منشور

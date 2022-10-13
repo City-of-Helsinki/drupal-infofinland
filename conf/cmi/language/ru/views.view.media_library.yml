@@ -4,6 +4,16 @@ display:
   default:
     display_title: 'По умолчанию'
     display_options:
+      title: Мультимедиа
+      fields:
+        media_bulk_form:
+          action_title: Действие
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
       exposed_form:
         options:
           submit_button: 'Применить фильтры'
@@ -11,15 +21,19 @@ display:
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'
           sort_desc_label: 'По убыванию'
-      pager:
-        options:
+      empty:
+        area_text_custom:
+          content: 'Мультимедийных файлов не найдено.'
+      sorts:
+        created:
           expose:
-            items_per_page_label: 'Элементов на страницу'
-            items_per_page_options_all_label: '- Все -'
-            offset_label: Пропустить
-      fields:
-        media_bulk_form:
-          action_title: Действие
+            label: 'Новые сначала'
+        name:
+          expose:
+            label: 'Имя (А-Я)'
+        name_1:
+          expose:
+            label: 'Имя (Я-А)'
       filters:
         status:
           expose:
@@ -42,20 +56,6 @@ display:
         langcode:
           expose:
             label: Язык
-      sorts:
-        created:
-          expose:
-            label: 'Новые сначала'
-        name:
-          expose:
-            label: 'Имя (А-Я)'
-        name_1:
-          expose:
-            label: 'Имя (Я-А)'
-      title: Мультимедиа
-      empty:
-        area_text_custom:
-          content: 'Мультимедийных файлов не найдено.'
   page:
     display_title: Страница
     display_options:
@@ -75,14 +75,14 @@ display:
   widget:
     display_title: Виджет
     display_options:
-      filters:
-        name:
-          expose:
-            label: Название
       arguments:
         bundle:
           exception:
             title: Все
+      filters:
+        name:
+          expose:
+            label: Название
       header:
         display_link_grid:
           label: Сетка
@@ -100,14 +100,14 @@ display:
           label: Автор
         changed:
           label: Обновлено
-      filters:
-        name:
-          expose:
-            label: Название
       arguments:
         bundle:
           exception:
             title: Все
+      filters:
+        name:
+          expose:
+            label: Название
       header:
         display_link_grid:
           label: Сетка

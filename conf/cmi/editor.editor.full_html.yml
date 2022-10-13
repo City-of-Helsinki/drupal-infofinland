@@ -59,12 +59,6 @@ settings:
     drupallink:
       linkit_enabled: true
       linkit_profile: helfi
-    language:
-      language_list: all
-    stylescombo:
-      styles: ''
-    tokenbrowser:
-      token_types: {  }
 image_upload:
   status: false
   scheme: public

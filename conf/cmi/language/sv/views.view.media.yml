@@ -3,24 +3,6 @@ display:
   default:
     display_title: Förvald
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filtrera
-          reset_button_label: Återställ
-          exposed_sorts_label: 'Sortera efter'
-          sort_asc_label: Stigande
-          sort_desc_label: Fallande
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Inlägg per sida'
-            items_per_page_options_all_label: '- Alla -'
-            offset_label: Kompensera
-          tags:
-            previous: '‹ Föregående'
-            next: 'Nästa ›'
-            first: '« Första'
-            last: 'Sista »'
       fields:
         media_bulk_form:
           action_title: Åtgärd
@@ -33,13 +15,35 @@ display:
         uid:
           label: Författare
         status:
+          label: Tila
           settings:
-            format_custom_true: Publicerad
             format_custom_false: 'Ej publicerad'
+            format_custom_true: Publicerad
         changed:
           label: Uppdaterad
         operations:
           label: Funktioner
+      pager:
+        options:
+          tags:
+            next: 'Nästa ›'
+            previous: '‹ Föregående'
+            first: '« Första'
+            last: 'Sista »'
+          expose:
+            items_per_page_label: 'Inlägg per sida'
+            items_per_page_options_all_label: '- Alla -'
+            offset_label: Kompensera
+      exposed_form:
+        options:
+          submit_button: Filtrera
+          reset_button_label: Återställ
+          exposed_sorts_label: 'Sortera efter'
+          sort_asc_label: Stigande
+          sort_desc_label: Fallande
+      empty:
+        area_text_custom:
+          content: 'Ingen media tillgänglig.'
       filters:
         name:
           expose:
@@ -60,6 +64,3 @@ display:
         langcode:
           expose:
             label: Språk
-      empty:
-        area_text_custom:
-          content: 'Ingen media tillgänglig.'

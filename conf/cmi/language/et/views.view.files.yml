@@ -4,22 +4,7 @@ display:
   default:
     display_title: Vaikimisi
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filtreeri
-          reset_button_label: Tühista
-          exposed_sorts_label: 'Sorteerimise alus'
-          sort_asc_label: Kasvav
-          sort_desc_label: Kahanev
-      pager:
-        options:
-          tags:
-            previous: '‹ Eelmine'
-            next: 'Järgmine ›'
-          expose:
-            items_per_page_label: 'Kirjeid lehel'
-            items_per_page_options_all_label: '- Kõik -'
-            offset_label: Nihe
+      title: Failid
       fields:
         filename:
           label: Nimi
@@ -38,6 +23,25 @@ display:
           label: 'Muutmise kuupäev'
         count:
           label: Kasutuskoht
+      pager:
+        options:
+          tags:
+            next: 'Järgmine ›'
+            previous: '‹ Eelmine'
+          expose:
+            items_per_page_label: 'Kirjeid lehel'
+            items_per_page_options_all_label: '- Kõik -'
+            offset_label: Nihe
+      exposed_form:
+        options:
+          submit_button: Filtreeri
+          reset_button_label: Tühista
+          exposed_sorts_label: 'Sorteerimise alus'
+          sort_asc_label: Kasvav
+          sort_desc_label: Kahanev
+      empty:
+        area_text_custom:
+          content: 'Ühtegi faili pole saadaval.'
       filters:
         filename:
           expose:
@@ -48,10 +52,6 @@ display:
         status:
           expose:
             label: Olek
-      title: Failid
-      empty:
-        area_text_custom:
-          content: 'Ühtegi faili pole saadaval.'
   page_1:
     display_title: 'Failide ülevaade'
     display_options:
@@ -60,15 +60,7 @@ display:
   page_2:
     display_title: 'Faili kasutus'
     display_options:
-      pager:
-        options:
-          tags:
-            previous: '‹ Eelmine'
-            next: 'Järgmine ›'
-          expose:
-            items_per_page_label: 'Kirjeid lehel'
-            items_per_page_options_all_label: '- Kõik -'
-            offset_label: Nihe
+      title: 'Faili kasutus'
       fields:
         entity_label:
           label: Olem
@@ -78,7 +70,15 @@ display:
           label: 'Registreerin moodulit'
         count:
           label: 'Kasutuse loendur'
-      title: 'Faili kasutus'
+      pager:
+        options:
+          tags:
+            next: 'Järgmine ›'
+            previous: '‹ Eelmine'
+          expose:
+            items_per_page_label: 'Kirjeid lehel'
+            items_per_page_options_all_label: '- Kõik -'
+            offset_label: Nihe
       arguments:
         fid:
           exception:

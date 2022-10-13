@@ -4,22 +4,7 @@ display:
   default:
     display_title: 'Par défaut'
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filtrer
-          reset_button_label: Réinitialiser
-          exposed_sorts_label: 'Trier par'
-      pager:
-        options:
-          tags:
-            previous: '‹ Précédent'
-            next: 'Suivant ›'
-            first: '« Premier'
-            last: 'Dernier »'
-          expose:
-            items_per_page_label: 'Éléments par page'
-            items_per_page_options_all_label: '- Tout -'
-            offset_label: Décalage
+      title: People
       fields:
         user_bulk_form:
           label: 'Bulk update'
@@ -28,8 +13,8 @@ display:
         status:
           label: État
           settings:
-            format_custom_true: Active
             format_custom_false: Blocked
+            format_custom_true: Active
         roles_target_id:
           label: Roles
         created:
@@ -38,6 +23,25 @@ display:
           label: 'Last access'
         operations:
           label: Actions
+      pager:
+        options:
+          tags:
+            next: 'Suivant ›'
+            previous: '‹ Précédent'
+            first: '« Premier'
+            last: 'Dernier »'
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+      exposed_form:
+        options:
+          submit_button: Filtrer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+      empty:
+        area_text_custom:
+          content: 'No people available.'
       filters:
         combine:
           expose:
@@ -56,12 +60,9 @@ display:
         permission:
           expose:
             label: Permission
-      title: People
-      empty:
-        area_text_custom:
-          content: 'No people available.'
       use_more_text: more
   page_1:
+    display_title: Sivu
     display_options:
       menu:
         title: List

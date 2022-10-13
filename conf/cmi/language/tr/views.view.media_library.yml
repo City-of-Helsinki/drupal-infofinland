@@ -2,21 +2,29 @@ display:
   default:
     display_title: Varsayılan
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Sıfırla
-          exposed_sorts_label: 'Sıralama anahtarı'
-          sort_asc_label: Artan
-          sort_desc_label: Azalan
+      title: Media
+      fields:
+        media_bulk_form:
+          action_title: Eylem
       pager:
         options:
           expose:
             items_per_page_label: 'Sayfa başına öğe sayısı'
             items_per_page_options_all_label: '- Tümü -'
             offset_label: 'Başlangıç değeri'
-      fields:
-        media_bulk_form:
-          action_title: Eylem
+      exposed_form:
+        options:
+          reset_button_label: Sıfırla
+          exposed_sorts_label: 'Sıralama anahtarı'
+          sort_asc_label: Artan
+          sort_desc_label: Azalan
+      empty:
+        area_text_custom:
+          content: 'Ei mediaa saatavilla.'
+      sorts:
+        created:
+          expose:
+            label: 'Newest first'
       filters:
         status:
           expose:
@@ -39,11 +47,6 @@ display:
         langcode:
           expose:
             label: Dil
-      sorts:
-        created:
-          expose:
-            label: 'Newest first'
-      title: Media
   page:
     display_title: Sayfa
     display_options:
@@ -57,14 +60,14 @@ display:
   widget:
     display_title: Widget
     display_options:
-      filters:
-        name:
-          expose:
-            label: Name
       arguments:
         bundle:
           exception:
             title: Tümü
+      filters:
+        name:
+          expose:
+            label: Name
       header:
         display_link_grid:
           label: Grid
@@ -81,14 +84,14 @@ display:
           label: Yazar
         changed:
           label: Güncellendi
-      filters:
-        name:
-          expose:
-            label: Name
       arguments:
         bundle:
           exception:
             title: Tümü
+      filters:
+        name:
+          expose:
+            label: Name
       header:
         display_link_grid:
           label: Grid

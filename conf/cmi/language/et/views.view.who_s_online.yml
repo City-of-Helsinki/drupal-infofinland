@@ -4,6 +4,7 @@ display:
   default:
     display_title: Vaikimisi
     display_options:
+      title: 'Lehel olevad kasutajad'
       exposed_form:
         options:
           submit_button: Rakenda
@@ -11,19 +12,19 @@ display:
           exposed_sorts_label: 'Sorteerimise alus'
           sort_asc_label: Kasvav
           sort_desc_label: Kahanev
+      empty:
+        area_text_custom:
+          content: 'Hetkel on lehel 0 kasutajat.'
       filters:
         access:
           expose:
             label: 'Viimane külastus'
             description: 'Pärast viimase lehe vaatamist on kasutaja online'
-      title: 'Lehel olevad kasutajad'
       header:
         result:
           content: 'Hetkel on lehel @total kasutajat.'
-      empty:
-        area_text_custom:
-          content: 'Hetkel on lehel 0 kasutajat.'
   who_s_online_block:
     display_title: 'Lehel olevad kasutajad'
     display_options:
+      display_description: 'Lista käyttäjistä jotka ovat online.'
       block_description: 'Lehel olevad kasutajad'
