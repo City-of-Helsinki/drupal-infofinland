@@ -20,45 +20,26 @@ use Drupal\user\Entity\User;
 use Drupal\media\Entity\Media;
 use \Drupal\Core\Entity\RevisionLogInterface;
 
-///**
-// * Implements hook_entity_delete().
-// */
-//function infofinland_common_entity_delete(EntityInterface $entity) {
-//
-//  $field_map = \Drupal::service('entity_field.manager')->getFieldMapByFieldType('entity_reference');
-//
-//  foreach ($field_map as $entity_type => $item) {
-//
-//    foreach ($item as $field_name => $item2) {
-//
-//      foreach ($item2['bundles'] as $bundle) {
-//
-//        $bundle_fields = \Drupal::getContainer()->get('entity_field.manager')->getFieldDefinitions($entity_type, $bundle);
-//        $field_definition = $bundle_fields[$field_name];
-//
-//        if ($field_definition->getItemDefinition()->getSetting('target_type') == $entity->getEntityType()->id()) {
-//
-//          $parent_entities = \Drupal::entityTypeManager()->getStorage($entity_type)->loadByProperties([$field_name => $entity->id()]);
-//
-//          foreach ($parent_entities as $parent_entity) {
-//            foreach ($parent_entity->get($field_name) as $delta => $field_item) {
-//              if ($field_item->target_id == $entity->id()) {
-//                $parent_entity->get($field_name)->removeItem($delta);
-//                $parent_entity->save();
-//                break;
-//              }
-//            }
-//          }
-//
-//        }
-//
-//      }
-//
-//    }
-//
-//  }
-//
-//}
+/**
+ * Implements hook_cron().
+ */
+function infofinland_common_cron(){
+  $last_run = \Drupal::state()->get('infofinland_common_orphan_paragraph_delete.last_run', 0);
+  $time_now = \Drupal::time()->getRequestTime();
+  $frequency = 86400;
+
+  // Run once in 24hrs.
+  if (($time_now - $last_run) < $frequency) {
+    return;
+  }
+
+  $purger = \Drupal::service('entity_reference_revisions.orphan_purger');
+  $purger->setBatch(['paragraph']);
+
+  \Drupal::state()->set('infofinland_common_orphan_paragraph_delete.last_run', $time_now);
+
+}
+
 /**
  * Implements hook_form_alter().
  */
