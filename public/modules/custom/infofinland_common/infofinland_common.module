@@ -20,6 +20,25 @@ use Drupal\user\Entity\User;
 use Drupal\media\Entity\Media;
 use \Drupal\Core\Entity\RevisionLogInterface;
 
+/**
+ * Implements hook_cron().
+ */
+function infofinland_common_cron(){
+  $last_run = \Drupal::state()->get('infofinland_common_orphan_paragraph_delete.last_run', 0);
+  $time_now = \Drupal::time()->getRequestTime();
+  $frequency = 86400;
+
+  // Run once in 24hrs.
+  if (($time_now - $last_run) < $frequency) {
+    return;
+  }
+
+  $purger = \Drupal::service('entity_reference_revisions.orphan_purger');
+  $purger->setBatch(['paragraph']);
+
+  \Drupal::state()->set('infofinland_common_orphan_paragraph_delete.last_run', $time_now);
+
+}
 
 /**
  * Implements hook_form_alter().
