@@ -19,6 +19,7 @@
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-recommended": "^9.4",
         "drupal/crop": "^2.2",
+        "drupal/entity_reference_purger": "^1.0@beta",
         "drupal/hdbt": "^1.0",
         "drupal/hdbt_admin": "^1.0",
         "drupal/helfi_api_base": "^2.0",
@@ -47,6 +48,7 @@
         "drupal/smtp": "^1.0",
         "drupal/structure_sync": "^2.0",
         "drupal/subrequests": "^3.0",
+        "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
         "drush/drush": "^10.4"
