@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "54dd62241da683d046e95bbadd03466d",
+    "content-hash": "211b450063e47c08c1c63e17bc2a8267",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3171,57 +3171,6 @@
             "homepage": "https://www.drupal.org/project/entity_browser",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser"
-            }
-        },
-        {
-            "name": "drupal/entity_reference_purger",
-            "version": "1.0.0-beta2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/entity_reference_purger.git",
-                "reference": "1.0.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_reference_purger-1.0.0-beta2.zip",
-                "reference": "1.0.0-beta2",
-                "shasum": "69fdf646ae0ba24eeb6c296d6e4b3e8bbd8bdadb"
-            },
-            "require": {
-                "drupal/core": "^8.8.0 || ^9.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-beta2",
-                    "datestamp": "1650021687",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Bojan Milanković",
-                    "homepage": "https://www.drupal.org/u/bojanm",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Goran Nikolovski",
-                    "homepage": "https://www.drupal.org/u/gnikolovski",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Removes orphaned entity references when an entity is deleted.",
-            "homepage": "https://www.drupal.org/project/entity_reference_purger",
-            "support": {
-                "source": "https://git.drupalcode.org/project/entity_reference_purger",
-                "issues": "https://www.drupal.org/project/issues/entity_reference_purger"
             }
         },
         {
@@ -17913,7 +17862,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/entity_reference_purger": 10,
         "drupal/helfi_drupal_tools": 20,
         "drupal/inline_entity_form": 5,
         "drupal/node_revision_delete": 5,
