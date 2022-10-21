@@ -1,0 +1,29 @@
+uuid: a7bb4167-7d64-4172-bb84-dbbd439d2b8d
+langcode: fi
+status: true
+dependencies:
+  module:
+    - helfi_ptv_integration
+title: 'Default cron handler'
+id: helfi_ptv_integration_cron
+weight: 0
+module: helfi_ptv_integration
+callback: helfi_ptv_integration_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000
