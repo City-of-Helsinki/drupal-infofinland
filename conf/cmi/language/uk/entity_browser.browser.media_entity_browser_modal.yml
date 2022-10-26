@@ -1,0 +1,8 @@
+display_configuration:
+  link_text: 'Вибрати медіа'
+widgets:
+  fc729026-c85f-4561-acd5-38d4082b69fb:
+    settings:
+      submit_text: 'Вибрати медіа'
+  9769d4e4-1f9c-4313-8b01-fe8cff8aa5a1:
+    label: 'Відвантажити нове зображення'
