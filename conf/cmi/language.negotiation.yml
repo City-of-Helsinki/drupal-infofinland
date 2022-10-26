@@ -18,6 +18,7 @@ url:
     so: so
     zh: zh
     '': null
+    uk: uk
   domains:
     en: ''
     fi: ''
@@ -31,4 +32,5 @@ url:
     fa: ''
     so: ''
     zh: ''
+    uk: ''
 selected_langcode: fi
