@@ -2,9 +2,6 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Язык
-          separator: ', '
         title:
           label: Заголовок
         type:

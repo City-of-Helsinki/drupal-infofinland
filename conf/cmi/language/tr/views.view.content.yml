@@ -2,9 +2,6 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Dil
-          separator: ', '
         title:
           label: Başlık
         type:

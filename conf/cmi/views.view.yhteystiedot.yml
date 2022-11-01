@@ -580,14 +580,15 @@ display:
             sv: sv
             en: en
             ru: ru
-            ar: ar
             et: et
+            uk: uk
             fr: fr
-            tr: tr
             es: es
-            fa: fa
-            so: so
+            tr: tr
             zh: zh
+            fa: fa
+            ar: ar
+            so: so
           group: 1
           exposed: true
           expose:

@@ -59,8 +59,5 @@ display:
           expose:
             label: 'Язык оригинала'
       title: Redirect
-      empty:
-        area_text_custom:
-          content: 'There is no redirect yet.'
   page_1:
     display_title: Страница

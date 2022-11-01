@@ -27,7 +27,5 @@ display:
           label: Språk
         revision:
           label: Version
-        accepted:
-          label: 'Tidpunkt för godkännande'
   page_1:
     display_title: Sida

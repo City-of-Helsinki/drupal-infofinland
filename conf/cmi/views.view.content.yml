@@ -794,13 +794,14 @@ display:
             en: en
             ru: ru
             et: et
+            uk: uk
             fr: fr
-            so: so
             es: es
             tr: tr
             zh: zh
             fa: fa
             ar: ar
+            so: so
           group: 1
           exposed: true
           expose:
