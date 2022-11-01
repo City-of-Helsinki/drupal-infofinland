@@ -2,8 +2,6 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Keel
         title:
           label: Pealkiri
         type:

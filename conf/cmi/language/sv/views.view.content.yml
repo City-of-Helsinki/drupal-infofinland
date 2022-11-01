@@ -2,9 +2,6 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Språk
-          separator: ', '
         title:
           label: Titel
         type:

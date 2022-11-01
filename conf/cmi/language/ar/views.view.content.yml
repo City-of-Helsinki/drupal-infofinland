@@ -2,8 +2,6 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: اللغة
         title:
           label: العنوان
         type:
