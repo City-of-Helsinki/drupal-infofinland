@@ -15,7 +15,6 @@ url:
     tr: tr
     es: es
     fa: fa
-    so: so
     zh: zh
     '': null
     uk: uk
@@ -30,7 +29,6 @@ url:
     tr: ''
     es: ''
     fa: ''
-    so: ''
     zh: ''
     uk: ''
 selected_langcode: fi
