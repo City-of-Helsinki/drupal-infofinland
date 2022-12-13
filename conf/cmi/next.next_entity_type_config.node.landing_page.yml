@@ -1,4 +1,4 @@
-uuid: f321fab2-486e-469b-8ccf-c49bb0fd2e16
+uuid: a8bfdab1-84e4-478a-859f-88d46013b513
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
 third_party_settings:
   next_extras:
     revalidate: true
-    revalidate_paths: "/\r\n/fi\r\n/sv\r\n/ru\r\n/et\r\n/uk\r\n/fr\r\n/es\r\n/tr\r\n/zh\r\n/fa\r\n/ar\r\n"
+    revalidate_paths: "/\r\n/fi\r\n/sv\r\n/ru\r\n/et\r\n/uk\r\n/fr\r\n/es\r\n/tr\r\n/zh\r\n/fa\r\n/ar"
 id: node.landing_page
 site_resolver: site_selector
 configuration:

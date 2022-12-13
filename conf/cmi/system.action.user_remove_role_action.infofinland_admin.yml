@@ -1,0 +1,14 @@
+uuid: e1929259-afdc-4278-be9c-70aa11a0a07f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.infofinland_admin
+  module:
+    - user
+id: user_remove_role_action.infofinland_admin
+label: 'Remove the Infofinland-admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: infofinland_admin

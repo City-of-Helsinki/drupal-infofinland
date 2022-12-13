@@ -1,9 +1,8 @@
-uuid: d849ce62-97f0-4834-96c0-acadd0b6487f
+uuid: 2af70964-7712-458f-a427-c70e0b3492bb
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.simple_html
     - media.type.file
     - media.type.image
     - media.type.remote_video
@@ -41,20 +40,16 @@ dependencies:
     - responsive_image
     - role_delegation
     - scheduler
-    - simple_sitemap
     - system
     - taxonomy
     - toolbar
     - webform
-_core:
-  default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
-id: admin
-label: Ylläpitäjä
-weight: 2
-is_admin: true
+id: infofinland_admin
+label: Infofinland-ylläpitäjä
+weight: 5
+is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access content'
   - 'access content overview'
   - 'access files overview'
   - 'access media overview'
@@ -73,12 +68,9 @@ permissions:
   - 'administer languages'
   - 'administer menu'
   - 'administer nodes'
-  - 'administer pathauto'
   - 'administer redirect settings'
   - 'administer redirects'
   - 'administer responsive images'
-  - 'administer sitemap settings'
-  - 'administer url aliases'
   - 'administer users'
   - 'administer webform submission'
   - 'assign admin role'
@@ -223,6 +215,7 @@ permissions:
   - 'update paragraph content image'
   - 'update paragraph content language_link'
   - 'update paragraph content language_link_collection'
+  - 'update paragraph content liftup_with_image'
   - 'update paragraph content municipality_info'
   - 'update paragraph content municipality_liftup'
   - 'update paragraph content municipality_liftup_item'
@@ -232,7 +225,6 @@ permissions:
   - 'use editorial transition create_new_draft'
   - 'use editorial transition publish'
   - 'use editorial transition unpublish'
-  - 'use text format simple_html'
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'
@@ -240,7 +232,6 @@ permissions:
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view link revisions'
-  - 'view media'
   - 'view message revisions'
   - 'view office_contact_info revisions'
   - 'view own unpublished content'
