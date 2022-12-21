@@ -1,11 +1,11 @@
 ARG DRUPAL_DOCKER_TAG=8.0
 FROM ghcr.io/city-of-helsinki/drupal-docker-base:${DRUPAL_DOCKER_TAG}
 
-RUN apk add --no-cache bash
+#RUN apk add --no-cache bash
 #RUN BLACKFIRE_SERVER_ID="" \
 #    BLACKFIRE_SERVER_TOKEN="" \
-RUN bash -c "$(curl -L https://installer.blackfire.io/installer.sh)"
-RUN blackfire php:install
+#    bash -c "$(curl -L https://installer.blackfire.io/installer.sh)"
+#RUN blackfire php:install
 
 RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && architecture=$(uname -m) \
