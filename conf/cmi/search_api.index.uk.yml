@@ -1,4 +1,4 @@
-uuid: acb01d1c-8d23-4c4f-b774-4fa643b1c3dc
+uuid: e2174721-b6f7-4e1e-b5dd-f8f534f1cb07
 langcode: en
 status: true
 dependencies:
@@ -24,8 +24,8 @@ dependencies:
     - paragraphs
     - node
     - search_api
-id: so
-name: so
+id: uk
+name: uk
 description: ''
 read_only: false
 field_settings:
@@ -241,7 +241,7 @@ datasource_settings:
     languages:
       default: false
       selected:
-        - so
+        - uk
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
