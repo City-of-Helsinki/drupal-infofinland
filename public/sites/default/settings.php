@@ -203,6 +203,12 @@ if (
   $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
 }
 
+if (getenv('INFOFINLAND_UI_URL')) {
+  $settings['next.next_site']['infofinland_ui']['base_url'] = getenv('INFOFINLAND_UI_URL');
+  $settings['next.next_site']['infofinland_ui']['preview_url'] = getenv('INFOFINLAND_UI_PREVIEW_URL');
+  $settings['next.next_site']['infofinland_ui']['preview_secret'] = getenv('DRUPAL_PREVIEW_SECRET');
+}
+
 // Environment specific overrides.
 if (file_exists(__DIR__ . '/all.settings.php')) {
   include __DIR__ . '/all.settings.php';
@@ -221,3 +227,7 @@ if ($env = getenv('APP_ENV')) {
     include __DIR__ . '/azure.settings.php';
   }
 }
+
+//if (file_exists(__DIR__ . '/' . 'local' . '.settings.php')) {
+//  include __DIR__ . '/' . 'local' . '.settings.php';
+//}

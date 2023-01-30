@@ -1,4 +1,4 @@
-uuid: d7fbac78-3803-43ac-a787-6072473ad8e4
+uuid: 9f6804d4-b20d-494e-b7c0-70cc969d1201
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - next_extras
 third_party_settings:
   next_extras:
-    revalidate: true
+    revalidate: false
     revalidate_paths: ''
 id: node.message
 site_resolver: site_selector

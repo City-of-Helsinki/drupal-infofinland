@@ -6,7 +6,7 @@ dependencies:
     - next_extras
 third_party_settings:
   next_extras:
-    revalidate: true
+    revalidate: false
     revalidate_paths: ''
 id: node.page
 site_resolver: site_selector
