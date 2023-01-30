@@ -87,7 +87,6 @@ module:
   node: 0
   node_revision_delete: 0
   options: 0
-  page_cache: 0
   paragraphs_type_permissions: 0
   password_policy_character_types: 0
   password_policy_length: 0

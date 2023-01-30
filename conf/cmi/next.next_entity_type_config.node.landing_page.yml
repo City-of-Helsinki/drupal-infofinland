@@ -6,7 +6,7 @@ dependencies:
     - next_extras
 third_party_settings:
   next_extras:
-    revalidate: true
+    revalidate: false
     revalidate_paths: "/\r\n/fi\r\n/sv\r\n/ru\r\n/et\r\n/uk\r\n/fr\r\n/es\r\n/tr\r\n/zh\r\n/fa\r\n/ar"
 id: node.landing_page
 site_resolver: site_selector
