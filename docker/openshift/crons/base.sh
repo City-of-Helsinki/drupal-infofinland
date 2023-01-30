@@ -23,6 +23,9 @@ exec "/crons/purge-queue.sh" &
 # Uncomment this to enable automatic translation updates.
 # exec "/crons/update-translations.sh" &
 
+# This populates the revision delete queue. The queue itself is processed during drupal cron
+exec "/crons/revision-delete.sh" &
+
 while true
 do
   echo "Running cron: $(date)\n"
