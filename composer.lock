@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0334828eb8931be360ad2fb999308510",
+    "content-hash": "e7d45ae0aba68eda6efb72198e09a364",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5595,34 +5595,29 @@
         },
         {
             "name": "drupal/node_revision_delete",
-            "version": "1.0.0-rc5",
+            "version": "2.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/node_revision_delete.git",
-                "reference": "8.x-1.0-rc5"
+                "reference": "2.0.0-alpha1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/node_revision_delete-8.x-1.0-rc5.zip",
-                "reference": "8.x-1.0-rc5",
-                "shasum": "71c77c1c8ee48c9797995bf519ec495958413acf"
+                "url": "https://ftp.drupal.org/files/projects/node_revision_delete-2.0.0-alpha1.zip",
+                "reference": "2.0.0-alpha1",
+                "shasum": "77604367e76df6a0bf06d1aefe2e43fdcb7a0a59"
             },
             "require": {
-                "drupal/core": "^8.7.7 || ^9.0 || ^10"
+                "drupal/core": "^9.0 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-rc5",
-                    "datestamp": "1659589844",
+                    "version": "2.0.0-alpha1",
+                    "datestamp": "1674578591",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5632,22 +5627,16 @@
             ],
             "authors": [
                 {
-                    "name": "Adrian Cid Almaguer (adriancid)",
-                    "homepage": "https://www.drupal.org/u/adriancid",
-                    "email": "adriancid@gmail.com",
-                    "role": "Maintainer"
+                    "name": "adriancid",
+                    "homepage": "https://www.drupal.org/user/1962106"
                 },
                 {
-                    "name": "Diosbel Mezquía (diosbelmezquia)",
-                    "homepage": "https://www.drupal.org/u/diosbelmezquia",
-                    "email": "dmezquiam@gmail.com",
-                    "role": "Maintainer"
+                    "name": "dmezquia",
+                    "homepage": "https://www.drupal.org/user/3334752"
                 },
                 {
-                    "name": "Robert Ngo (Robert Ngo)",
-                    "homepage": "https://www.drupal.org/u/robert-ngo",
-                    "email": "robertngo.18@gmail.com",
-                    "role": "Maintainer"
+                    "name": "kaushalkishorejaiswal",
+                    "homepage": "https://www.drupal.org/user/2228850"
                 },
                 {
                     "name": "Robert Ngo",
@@ -5660,14 +5649,8 @@
             ],
             "description": "Track and prune node revisions.",
             "homepage": "https://www.drupal.org/project/node_revision_delete",
-            "keywords": [
-                "Drupal",
-                "Nodes",
-                "Revisions"
-            ],
             "support": {
-                "source": "http://cgit.drupalcode.org/node_revision_delete",
-                "issues": "https://www.drupal.org/project/issues/node_revision_delete"
+                "source": "https://git.drupalcode.org/project/node_revision_delete"
             }
         },
         {
@@ -7290,6 +7273,10 @@
                 {
                     "name": "jsobiecki",
                     "homepage": "https://www.drupal.org/user/112744"
+                },
+                {
+                    "name": "wiktorb",
+                    "homepage": "https://www.drupal.org/user/762836"
                 }
             ],
             "description": "This module enables support for translation of link field in menu_link_content entity.",
@@ -17986,7 +17973,7 @@
     "stability-flags": {
         "drupal/helfi_drupal_tools": 20,
         "drupal/inline_entity_form": 5,
-        "drupal/node_revision_delete": 5,
+        "drupal/node_revision_delete": 15,
         "drupal/ultimate_cron": 15
     },
     "prefer-stable": true,
