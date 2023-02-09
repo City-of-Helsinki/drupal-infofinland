@@ -115,20 +115,28 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    */
   private function checkUrlStatus(string $url): bool {
     try {
-      $response = $this->httpClient->get($url, ['http_errors' => false, 'allow_redirects' => false]);
+      $response = $this->httpClient->head($url, [
+        'http_errors' => FALSE,
+        'allow_redirects' => [
+          'max'             => 3,
+          'strict'          => FALSE,
+          'referer'         => FALSE,
+          'protocols'       => ['http', 'https'],
+          'track_redirects' => FALSE,
+        ],
+        'verify' => FALSE,
+      ]);
 
       if ($response->getStatusCode() === 200) {
-        return true;
+        return TRUE;
       } else {
         $this->logger->info('Status code: '. $response->getStatusCode() . ' URL: ' . $url);
-        return false;
+        return FALSE;
       }
-    } catch (RequestException $e) {
-      $this->logger->warning('RequestException: ' . $e->getMessage());
-    } catch (InvalidArgumentException $e) {
-      $this->logger->warning('InvalidArgumentException: ' . $e->getMessage());
+    } catch (\Exception $e) {
+      $this->logger->warning('Check URL Exception: ' . $e->getMessage() . ' URL: ' . $url);
     }
 
-    return false;
+    return FALSE;
   }
 }
