@@ -92,7 +92,21 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
       return;
     }
 
-    if (!$this->checkUrlStatus($response->field_language_link_value)) {
+    $logger_params = [
+      '@id' => $response->id,
+      '@parent_id' => $response->parent_id,
+      '@url' => $response->field_language_link_value,
+    ];
+
+    try {
+      $code = $this->checkUrlStatus($response->field_language_link_value);
+    } catch (\Exception $e) {
+      $logger_params['@message'] = $e->getMessage();
+      $this->logger->warning('Checking URL failed: id: @id , parent_id: @parent_id, url: @url - @message ', $logger_params);
+      return;
+    }
+
+    if ($code == 200) {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
         $linkNode->set('field_broken_link', true);
         $linkNode->save();
@@ -102,6 +116,10 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
         $languageLinkParagraph->set('field_broken_link', true);
         $languageLinkParagraph->save();
       }
+    }
+    else {
+      $logger_params['@code'] = $code;
+      $this->logger->warning('Checking URL status failed: id: @id , parent_id: @parent_id, url: @url - code: @code ', $logger_params);
     }
   }
 
@@ -114,29 +132,18 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    * @return bool
    */
   private function checkUrlStatus(string $url): bool {
-    try {
-      $response = $this->httpClient->head($url, [
-        'http_errors' => FALSE,
-        'allow_redirects' => [
-          'max'             => 3,
-          'strict'          => FALSE,
-          'referer'         => FALSE,
-          'protocols'       => ['http', 'https'],
-          'track_redirects' => FALSE,
-        ],
-        'verify' => FALSE,
-      ]);
+    $response = $this->httpClient->head($url, [
+      'http_errors' => FALSE,
+      'allow_redirects' => [
+        'max'             => 3,
+        'strict'          => FALSE,
+        'referer'         => FALSE,
+        'protocols'       => ['http', 'https'],
+        'track_redirects' => FALSE,
+      ],
+      'verify' => FALSE,
+    ]);
 
-      if ($response->getStatusCode() === 200) {
-        return TRUE;
-      } else {
-        $this->logger->info('Status code: '. $response->getStatusCode() . ' URL: ' . $url);
-        return FALSE;
-      }
-    } catch (\Exception $e) {
-      $this->logger->warning('Check URL Exception: ' . $e->getMessage() . ' URL: ' . $url);
-    }
-
-    return FALSE;
+    return $response->getStatusCode();
   }
 }
