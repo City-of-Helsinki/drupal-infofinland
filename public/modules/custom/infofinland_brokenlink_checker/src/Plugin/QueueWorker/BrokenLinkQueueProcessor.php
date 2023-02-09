@@ -106,7 +106,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
       return;
     }
 
-    if ($code == 200) {
+    if ($code === 200) {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
         $linkNode->set('field_broken_link', true);
         $linkNode->save();
@@ -129,9 +129,9 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    * @param string $url
    *   The url.
    *
-   * @return bool
+   * @return int
    */
-  private function checkUrlStatus(string $url): bool {
+  private function checkUrlStatus(string $url): int {
     $response = $this->httpClient->head($url, [
       'http_errors' => FALSE,
       'allow_redirects' => [
