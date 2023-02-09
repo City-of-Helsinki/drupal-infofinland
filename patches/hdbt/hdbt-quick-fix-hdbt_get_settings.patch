@@ -1,0 +1,58 @@
+diff --git a/hdbt.theme b/hdbt.theme
+index c338b74..b82b97a 100644
+--- a/hdbt.theme
++++ b/hdbt.theme
+@@ -138,27 +138,38 @@ function hdbt_get_settings($setting, $group = 'site_settings') {
+     return FALSE;
+   }
+ 
+-  $cached = \Drupal::cache()->get("hdbt_settings:$setting");
++  $hdbt_settings = &drupal_static(__FUNCTION__);
+ 
+-  if ($cached) {
+-    return $cached->data;
+-  }
++  if (!isset($hdbt_settings) || !isset($hdbt_settings[$setting])) {
++    $cached = \Drupal::cache()->get("hdbt_settings:$setting");
++
++    if ($cached) {
++      $hdbt_settings[$setting] = $cached->data;
++    }
++    else {
++      $settings = \Drupal::config('hdbt_admin_tools.site_settings');
+ 
+-  $settings = \Drupal::config('hdbt_admin_tools.site_settings');
++      try {
++        $data = $settings->get("$group.$setting");
++
++        if (!empty($data)) {
++          \Drupal::cache()->set("hdbt_settings:$setting", $data, Cache::PERMANENT);
++        }
++        else {
++          $data = FALSE;
++        }
++        $hdbt_settings[$setting] = $data;
+ 
+-  try {
+-    $data = $settings->get("$group.$setting");
+ 
+-    if (!empty($data)) {
+-      \Drupal::cache()->set("hdbt_settings:$setting", $data, Cache::PERMANENT);
+-      return $data;
++      }
++      catch (Exception $error) {
++        watchdog_exception('hdbt', $error);
++        return FALSE;
++      }
+     }
+-    return FALSE;
+-  }
+-  catch (RequestException $error) {
+-    watchdog_exception('hdbt', $error);
+-    return FALSE;
+   }
++
++  return $hdbt_settings[$setting];
+ }
+ 
+ /**
