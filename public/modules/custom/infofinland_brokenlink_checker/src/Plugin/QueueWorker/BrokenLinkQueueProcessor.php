@@ -132,7 +132,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    * @return int
    */
   private function checkUrlStatus(string $url): int {
-    $response = $this->httpClient->head($url, [
+    $response = $this->httpClient->get($url, [
       'http_errors' => FALSE,
       'allow_redirects' => [
         'max'             => 3,
