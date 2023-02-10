@@ -204,9 +204,9 @@ if (
 }
 
 if (getenv('INFOFINLAND_UI_URL')) {
-  $settings['next.next_site']['infofinland_ui']['base_url'] = getenv('INFOFINLAND_UI_URL');
-  $settings['next.next_site']['infofinland_ui']['preview_url'] = getenv('INFOFINLAND_UI_PREVIEW_URL');
-  $settings['next.next_site']['infofinland_ui']['preview_secret'] = getenv('DRUPAL_PREVIEW_SECRET');
+  $config['next.next_site.infofinland_ui']['base_url'] = getenv('INFOFINLAND_UI_URL');
+  $config['next.next_site.infofinland_ui']['preview_url'] = getenv('INFOFINLAND_UI_PREVIEW_URL');
+  $config['next.next_site.infofinland_ui']['preview_secret'] = getenv('DRUPAL_PREVIEW_SECRET');
 }
 
 // Environment specific overrides.
