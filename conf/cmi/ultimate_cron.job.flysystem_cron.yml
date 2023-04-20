@@ -1,0 +1,29 @@
+uuid: 1f791e05-060f-499f-a079-1d3b2369e78a
+langcode: fi
+status: true
+dependencies:
+  module:
+    - flysystem
+title: 'Default cron handler'
+id: flysystem_cron
+weight: 0
+module: flysystem
+callback: flysystem_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

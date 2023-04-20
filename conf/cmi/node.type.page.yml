@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - node_revision_delete
     - scheduler
 third_party_settings:
   menu_ui:
@@ -23,6 +24,10 @@ third_party_settings:
     unpublish_enable: true
     unpublish_required: false
     unpublish_revision: false
+  node_revision_delete:
+    minimum_revisions_to_keep: 5
+    minimum_age_to_delete: 0
+    when_to_delete: 0
 _core:
   default_config_hash: 2wtLJzGRPIAAdAGbl6hOGq0wG3zumh1dayzTQvnwU94
 name: 'Basic page'

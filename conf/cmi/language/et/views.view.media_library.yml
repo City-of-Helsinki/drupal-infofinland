@@ -3,6 +3,16 @@ display:
   default:
     display_title: Vaikimisi
     display_options:
+      title: Meedia
+      fields:
+        media_bulk_form:
+          action_title: Tegevus
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Kirjeid lehel'
+            items_per_page_options_all_label: '- Kõik -'
+            offset_label: Nihe
       exposed_form:
         options:
           submit_button: 'Rakenda filtrid'
@@ -10,15 +20,19 @@ display:
           exposed_sorts_label: 'Sorteerimise alus'
           sort_asc_label: Kasvav
           sort_desc_label: Kahanev
-      pager:
-        options:
+      empty:
+        area_text_custom:
+          content: 'Meedia elemente pole saadaval.'
+      sorts:
+        created:
           expose:
-            items_per_page_label: 'Kirjeid lehel'
-            items_per_page_options_all_label: '- Kõik -'
-            offset_label: Nihe
-      fields:
-        media_bulk_form:
-          action_title: Tegevus
+            label: 'Uuemad enne'
+        name:
+          expose:
+            label: 'Nimetus (A-Z)'
+        name_1:
+          expose:
+            label: 'Nimetus (Z-A)'
       filters:
         status:
           expose:
@@ -41,20 +55,6 @@ display:
         langcode:
           expose:
             label: Keel
-      sorts:
-        created:
-          expose:
-            label: 'Uuemad enne'
-        name:
-          expose:
-            label: 'Nimetus (A-Z)'
-        name_1:
-          expose:
-            label: 'Nimetus (Z-A)'
-      title: Meedia
-      empty:
-        area_text_custom:
-          content: 'Meedia elemente pole saadaval.'
   page:
     display_title: Lehekülg
     display_options:
@@ -68,14 +68,14 @@ display:
   widget:
     display_title: Vidin
     display_options:
-      filters:
-        name:
-          expose:
-            label: Nimi
       arguments:
         bundle:
           exception:
             title: Kõik
+      filters:
+        name:
+          expose:
+            label: Nimi
       header:
         display_link_grid:
           label: Ruudustik
@@ -92,14 +92,14 @@ display:
           label: Autor
         changed:
           label: Uuendatud
-      filters:
-        name:
-          expose:
-            label: Nimi
       arguments:
         bundle:
           exception:
             title: Kõik
+      filters:
+        name:
+          expose:
+            label: Nimi
       header:
         display_link_grid:
           label: Ruudustik

@@ -5,6 +5,12 @@ display:
     display_title: Varsayılan
     display_options:
       title: 'Monthly archive'
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
       exposed_form:
         options:
           submit_button: Apply
@@ -12,12 +18,6 @@ display:
           exposed_sorts_label: 'Sıralama anahtarı'
           sort_asc_label: Artan
           sort_desc_label: Azalan
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Sayfa başına öğe sayısı'
-            items_per_page_options_all_label: '- Tümü -'
-            offset_label: 'Başlangıç değeri'
   block_1:
     display_title: Block
   page_1:

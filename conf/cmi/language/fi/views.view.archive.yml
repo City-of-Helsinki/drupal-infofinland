@@ -5,6 +5,14 @@ display:
     display_title: Oletus
     display_options:
       title: Arkisto
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_options_all_label: '- Kaikki -'
       exposed_form:
         options:
           submit_button: Käytä
@@ -12,14 +20,6 @@ display:
           exposed_sorts_label: Lajittele
           sort_asc_label: Asc
           sort_desc_label: Desc
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Merkintöjä sivua kohti'
-            items_per_page_options_all_label: '- Kaikki -'
-          tags:
-            previous: ‹‹
-            next: ››
   block_1:
     display_title: Lohko
   page_1:

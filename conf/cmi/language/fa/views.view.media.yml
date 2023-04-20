@@ -3,19 +3,7 @@ display:
   default:
     display_title: پیش‌فرض
     display_options:
-      exposed_form:
-        options:
-          submit_button: فیلتر
-          reset_button_label: بازنشانی
-          exposed_sorts_label: 'مرتب کن بر اساس'
-          sort_asc_label: صعودی
-          sort_desc_label: نزولی
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'آیتم‌ها در هر صفحه'
-            items_per_page_options_all_label: '- همه -'
-            offset_label: جابجایی
+      title: Media
       fields:
         media_bulk_form:
           action_title: عملکرد
@@ -28,12 +16,32 @@ display:
         status:
           label: وضعیت
           settings:
-            format_custom_true: 'منتشر شده'
             format_custom_false: 'منتشر نشده'
+            format_custom_true: 'منتشر شده'
         changed:
           label: به‌روز
         operations:
           label: کارکردها
+      pager:
+        options:
+          tags:
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+            first: '« Ensimmäinen'
+          expose:
+            items_per_page_label: 'آیتم‌ها در هر صفحه'
+            items_per_page_options_all_label: '- همه -'
+            offset_label: جابجایی
+      exposed_form:
+        options:
+          submit_button: فیلتر
+          reset_button_label: بازنشانی
+          exposed_sorts_label: 'مرتب کن بر اساس'
+          sort_asc_label: صعودی
+          sort_desc_label: نزولی
+      empty:
+        area_text_custom:
+          content: 'Ei mediaa saatavilla.'
       filters:
         bundle:
           expose:
@@ -51,7 +59,6 @@ display:
         langcode:
           expose:
             label: زبان
-      title: Media
   media_page_list:
     display_title: Media
     display_options:

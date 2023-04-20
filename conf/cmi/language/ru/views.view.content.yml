@@ -2,14 +2,10 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Язык
-          separator: ', '
         title:
           label: Заголовок
         type:
           label: 'Тип материала'
-          separator: ', '
         name:
           label: Автор
         status:

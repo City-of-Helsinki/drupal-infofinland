@@ -14,6 +14,8 @@ display:
             first: "«\_premier"
             last: "dernier\_»"
       fields:
+        node_bulk_form:
+          action_title: Action
         title:
           label: Titre
         type:

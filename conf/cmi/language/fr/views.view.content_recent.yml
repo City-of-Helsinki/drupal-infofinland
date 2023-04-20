@@ -4,12 +4,12 @@ display:
   default:
     display_title: 'Par défaut'
     display_options:
+      title: 'Recent content'
       exposed_form:
         options:
           submit_button: Apply
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-      title: 'Recent content'
       empty:
         area_text_custom:
           content: 'No content available.'

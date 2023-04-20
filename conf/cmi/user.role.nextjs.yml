@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - node
     - subrequests
 id: nextjs
 label: Nextjs
@@ -10,4 +11,5 @@ weight: 4
 is_admin: null
 permissions:
   - 'access user profiles'
+  - 'bypass node access'
   - 'issue subrequests'

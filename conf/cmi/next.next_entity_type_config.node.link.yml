@@ -1,0 +1,15 @@
+uuid: 52461abe-383f-45d6-974d-3371e49730ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - next_extras
+third_party_settings:
+  next_extras:
+    revalidate: false
+    revalidate_paths: ''
+id: node.link
+site_resolver: site_selector
+configuration:
+  sites:
+    infofinland_ui: infofinland_ui

@@ -2,14 +2,10 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Språk
-          separator: ', '
         title:
           label: Titel
         type:
           label: Innehållstyp
-          separator: ', '
         name:
           label: Författare
         status:

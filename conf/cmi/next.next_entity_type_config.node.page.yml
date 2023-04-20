@@ -1,7 +1,13 @@
 uuid: a62f52c0-f616-497f-98fb-cd78c5c64941
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - next_extras
+third_party_settings:
+  next_extras:
+    revalidate: false
+    revalidate_paths: ''
 id: node.page
 site_resolver: site_selector
 configuration:

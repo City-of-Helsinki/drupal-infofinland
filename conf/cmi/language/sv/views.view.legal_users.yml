@@ -23,14 +23,9 @@ display:
       fields:
         name:
           label: Namn
-          separator: ', '
-        version:
-          label: Version
         language:
           label: Språk
         revision:
           label: Version
-        accepted:
-          label: 'Tidpunkt för godkännande'
   page_1:
     display_title: Sida

@@ -4,20 +4,34 @@ display:
   default:
     display_title: 'Por defecto'
     display_options:
-      exposed_form:
-        options:
-          submit_button: 'Aplicar filtros'
-          reset_button_label: Restablecer
-          exposed_sorts_label: 'Ordenar por'
+      title: Multimedia
+      fields:
+        media_bulk_form:
+          action_title: Acción
       pager:
         options:
           expose:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
-      fields:
-        media_bulk_form:
-          action_title: Acción
+      exposed_form:
+        options:
+          submit_button: 'Aplicar filtros'
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+      empty:
+        area_text_custom:
+          content: 'No hay medios disponibles.'
+      sorts:
+        created:
+          expose:
+            label: 'Más recientes primero'
+        name:
+          expose:
+            label: 'Nombre (A-Z)'
+        name_1:
+          expose:
+            label: 'Nombre (Z-A)'
       filters:
         status:
           expose:
@@ -40,20 +54,6 @@ display:
         langcode:
           expose:
             label: Idioma
-      sorts:
-        created:
-          expose:
-            label: 'Más recientes primero'
-        name:
-          expose:
-            label: 'Nombre (A-Z)'
-        name_1:
-          expose:
-            label: 'Nombre (Z-A)'
-      title: Multimedia
-      empty:
-        area_text_custom:
-          content: 'No hay medios disponibles.'
   page:
     display_title: Página
     display_options:
@@ -73,14 +73,14 @@ display:
   widget:
     display_title: Control
     display_options:
-      filters:
-        name:
-          expose:
-            label: Nombre
       arguments:
         bundle:
           exception:
             title: Todo(s)
+      filters:
+        name:
+          expose:
+            label: Nombre
       header:
         display_link_grid:
           label: Cuadrícula
@@ -97,14 +97,14 @@ display:
           label: Autor
         changed:
           label: Actualizado
-      filters:
-        name:
-          expose:
-            label: Nombre
       arguments:
         bundle:
           exception:
             title: Todo(s)
+      filters:
+        name:
+          expose:
+            label: Nombre
       header:
         display_link_grid:
           label: Cuadrícula

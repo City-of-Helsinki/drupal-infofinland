@@ -57,3 +57,5 @@ display:
           expose:
             label: 'Langue initiale'
       title: Redirect
+  page_1:
+    display_title: Sivu

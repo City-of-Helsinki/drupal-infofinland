@@ -3,17 +3,34 @@ display:
   default:
     display_title: 'Par défaut'
     display_options:
-      exposed_form:
-        options:
-          submit_button: 'Appliquer les filtres'
-          reset_button_label: Réinitialiser
-          exposed_sorts_label: 'Trier par'
+      title: Média
+      fields:
+        media_bulk_form:
+          action_title: Action
       pager:
         options:
           expose:
             items_per_page_label: 'Éléments par page'
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
+      exposed_form:
+        options:
+          submit_button: 'Appliquer les filtres'
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+      empty:
+        area_text_custom:
+          content: 'Aucun média disponible.'
+      sorts:
+        created:
+          expose:
+            label: 'Les plus récents d''abord'
+        name:
+          expose:
+            label: 'Nom (A-Z)'
+        name_1:
+          expose:
+            label: 'Nom (Z-A)'
       filters:
         status:
           expose:
@@ -36,23 +53,12 @@ display:
         langcode:
           expose:
             label: Langue
-      sorts:
-        created:
-          expose:
-            label: 'Les plus récents d''abord'
-        name:
-          expose:
-            label: 'Nom (A-Z)'
-        name_1:
-          expose:
-            label: 'Nom (Z-A)'
-      title: Média
-      empty:
-        area_text_custom:
-          content: 'Aucun média disponible.'
   page:
+    display_title: Sivu
     display_options:
       fields:
+        media_bulk_form:
+          action_title: Action
         edit_media:
           alter:
             text: 'Modifier {{ name }}'
@@ -64,15 +70,16 @@ display:
             alt: 'Supprimer {{ name }}'
           text: Supprimer
   widget:
+    display_title: Widgetti
     display_options:
-      filters:
-        name:
-          expose:
-            label: Nom
       arguments:
         bundle:
           exception:
             title: Tout
+      filters:
+        name:
+          expose:
+            label: Nom
       header:
         display_link_grid:
           label: Grille
@@ -90,14 +97,14 @@ display:
           label: Auteur
         changed:
           label: 'Mis à jour'
-      filters:
-        name:
-          expose:
-            label: Nom
       arguments:
         bundle:
           exception:
             title: Tout
+      filters:
+        name:
+          expose:
+            label: Nom
       header:
         display_link_grid:
           label: Grille

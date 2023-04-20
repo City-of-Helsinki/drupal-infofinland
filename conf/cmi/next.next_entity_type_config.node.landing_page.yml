@@ -1,0 +1,15 @@
+uuid: a8bfdab1-84e4-478a-859f-88d46013b513
+langcode: en
+status: true
+dependencies:
+  module:
+    - next_extras
+third_party_settings:
+  next_extras:
+    revalidate: false
+    revalidate_paths: "/\r\n/fi\r\n/sv\r\n/ru\r\n/et\r\n/uk\r\n/fr\r\n/es\r\n/tr\r\n/zh\r\n/fa\r\n/ar"
+id: node.landing_page
+site_resolver: site_selector
+configuration:
+  sites:
+    infofinland_ui: infofinland_ui

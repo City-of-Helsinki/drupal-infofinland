@@ -1,1 +1,3 @@
 label: İçerik
+tags:
+  description: '[node:field_description]'

@@ -4,6 +4,7 @@ display:
   default:
     display_title: 'По умолчанию'
     display_options:
+      title: 'Recent content'
       exposed_form:
         options:
           submit_button: Apply
@@ -11,7 +12,6 @@ display:
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'
           sort_desc_label: 'По убыванию'
-      title: 'Recent content'
       empty:
         area_text_custom:
           content: 'Нет доступных материалов.'

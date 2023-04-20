@@ -15,6 +15,10 @@ display:
             items_per_page_label: 'آیتم‌ها در هر صفحه'
             items_per_page_options_all_label: '- همه -'
             offset_label: جابجایی
+          tags:
+            previous: '‹ Edellinen'
+            next: 'Seuraava ›'
+            first: '« Ensimmäinen'
       fields:
         version:
           label: نسخه

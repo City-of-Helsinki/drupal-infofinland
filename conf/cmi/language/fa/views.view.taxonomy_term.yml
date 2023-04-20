@@ -3,6 +3,12 @@ display:
   default:
     display_title: پیش‌فرض
     display_options:
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'آیتم‌ها در هر صفحه'
+            items_per_page_options_all_label: '- همه -'
+            offset_label: جابجایی
       exposed_form:
         options:
           submit_button: Apply
@@ -10,12 +16,6 @@ display:
           exposed_sorts_label: 'مرتب کن بر اساس'
           sort_asc_label: صعودی
           sort_desc_label: نزولی
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'آیتم‌ها در هر صفحه'
-            items_per_page_options_all_label: '- همه -'
-            offset_label: جابجایی
       arguments:
         tid:
           exception:

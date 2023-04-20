@@ -1,0 +1,29 @@
+uuid: 5d0cd930-0fd3-4575-8fa8-b05d0918fafe
+langcode: fi
+status: true
+dependencies:
+  module:
+    - infofinland_common
+title: 'Default cron handler'
+id: infofinland_common_cron
+weight: 0
+module: infofinland_common
+callback: infofinland_common_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

@@ -14,7 +14,6 @@ display:
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
-            offset_label: Offset
           tags:
             previous: '‹ Edellinen'
             next: 'Seuraava ›'
@@ -23,14 +22,11 @@ display:
       fields:
         name:
           label: Nimi
-          separator: ', '
         version:
           label: Versio
         language:
           label: Kieli
         revision:
           label: Versio
-        accepted:
-          label: Hyväksymisaika
   page_1:
     display_title: Sivu

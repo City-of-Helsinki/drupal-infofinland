@@ -1,0 +1,15 @@
+uuid: 9f6804d4-b20d-494e-b7c0-70cc969d1201
+langcode: en
+status: true
+dependencies:
+  module:
+    - next_extras
+third_party_settings:
+  next_extras:
+    revalidate: false
+    revalidate_paths: ''
+id: node.message
+site_resolver: site_selector
+configuration:
+  sites:
+    infofinland_ui: infofinland_ui

@@ -2,14 +2,10 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Kieli
-          separator: ', '
         title:
           label: Otsikko
         type:
           label: Sisältötyyppi
-          separator: ', '
         name:
           label: Tekijä
         status:

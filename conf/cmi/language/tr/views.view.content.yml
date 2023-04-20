@@ -2,14 +2,10 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Dil
-          separator: ', '
         title:
           label: Başlık
         type:
           label: 'İçerik türü'
-          separator: ', '
         name:
           label: Yazar
         status:

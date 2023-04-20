@@ -12,8 +12,6 @@ display:
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Esimene'
             last: 'Viimane »'
           expose:
@@ -21,15 +19,8 @@ display:
             items_per_page_options_all_label: '- Kõik -'
             offset_label: Nihe
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
         created:
           label: Loodud
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Toimingud
       header:
@@ -44,21 +35,8 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Tegevus
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Loodud
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         operations:
           label: Toimingud
   embed_manage:
@@ -66,21 +44,8 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Tegevus
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Loodud
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Toimingud
         edit_webform_submission:
@@ -88,20 +53,7 @@ display:
   embed_review:
     display_options:
       fields:
-        sid:
-          separator: ', '
-        in_draft:
-          separator: ', '
-        sticky:
-          separator: ', '
-        locked:
-          separator: ', '
         created:
           label: Loodud
-          separator: ', '
-        completed:
-          separator: ', '
-        remote_addr:
-          separator: ', '
         view_webform_submission:
           label: Toimingud

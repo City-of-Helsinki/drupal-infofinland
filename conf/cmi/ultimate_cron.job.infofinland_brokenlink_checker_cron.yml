@@ -1,0 +1,29 @@
+uuid: 4300c767-607c-40a5-8fa5-1f0195556770
+langcode: fi
+status: true
+dependencies:
+  module:
+    - infofinland_brokenlink_checker
+title: 'Default cron handler'
+id: infofinland_brokenlink_checker_cron
+weight: 0
+module: infofinland_brokenlink_checker
+callback: infofinland_brokenlink_checker_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0+@ 0 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000
