@@ -38,7 +38,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityManager;
+  protected $entityTypeManager;
 
   /**
    * The logger.
