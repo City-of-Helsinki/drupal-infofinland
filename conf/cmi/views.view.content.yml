@@ -853,13 +853,13 @@ display:
             operator_id: langcode_op
             label: Language
             description: ''
-            use_operator: false
+            use_operator: true
             operator: langcode_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: langcode
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
               authenticated: authenticated
@@ -1070,7 +1070,11 @@ display:
           plugin_id: standard
           required: false
       show_admin_links: false
-      display_extenders: {  }
+      rendering_language: '***LANGUAGE_entity_translation***'
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: 0
       contexts:
@@ -1089,7 +1093,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      rendering_language: '***LANGUAGE_entity_default***'
+      rendering_language: '***LANGUAGE_entity_translation***'
       display_extenders:
         metatag_display_extender:
           metatags: {  }
@@ -1111,6 +1115,7 @@ display:
     cache_metadata:
       max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
