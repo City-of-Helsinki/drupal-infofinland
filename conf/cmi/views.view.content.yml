@@ -244,7 +244,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: 'Last updated by'
+          label: Päivittänyt
           exclude: false
           alter:
             alter_text: false
