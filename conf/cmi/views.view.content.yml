@@ -851,15 +851,15 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: 'Translation language'
             description: ''
-            use_operator: true
+            use_operator: false
             operator: langcode_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: langcode
             required: false
-            remember: true
+            remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
@@ -870,7 +870,7 @@ display:
               municipal_editor: '0'
               nextjs: '0'
               infofinland_admin: '0'
-            reduce: true
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
