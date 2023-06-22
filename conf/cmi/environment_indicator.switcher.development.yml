@@ -1,0 +1,11 @@
+uuid: 78d3f855-56ed-4d24-9ded-fec27c6278ab
+langcode: en
+status: true
+dependencies: {  }
+machine: development
+description: null
+name: Development
+weight: '4'
+url: 'https://edit-infofinland.dev.hel.ninja/'
+fg_color: '#d0d0d0'
+bg_color: '#33d17a'
