@@ -1,0 +1,66 @@
+<?php
+
+use Drupal\Core\Database\Connection;
+
+/**
+ * Implements hook_install()
+ */
+function infofinland_brokenlink_checker_install() {
+  // TODO: Perform other module installation tasks if needed.
+}
+
+/**
+ * Implements hook_uninstall()
+ */
+function infofinland_brokenlink_checker_uninstall() {
+  // Truncate broken link checker tables.
+  truncateRevisionNodesOfTheBrokenLinkChecker();
+  truncateNodesOfTheBrokenLinkChecker();
+  truncateParagraphRevisionsOfTheBrokenLinkChecker();
+  truncateParagraphsOfTheBrokenLinkChecker();
+  // TODO: Perform other module uninstallation tasks if needed.
+}
+
+/**
+ * Truncates the revision nodes of the broken link checker.
+ */
+function truncateRevisionNodesOfTheBrokenLinkChecker() {
+  $connection = \Drupal::service('database');
+  $table_name = 'node_revision__field_broken_link';
+
+  $query = $connection->truncate($table_name);
+  $query->execute();
+}
+
+/**
+ * Truncates the nodes of the broken link checker.
+ */
+function truncateNodesOfTheBrokenLinkChecker() {
+  $connection = \Drupal::service('database');
+  $table_name = 'node__field_broken_link';
+
+  $query = $connection->truncate($table_name);
+  $query->execute();
+}
+
+/**
+ * Truncates the paragraph revisions of the broken link checker.
+ */
+function truncateParagraphRevisionsOfTheBrokenLinkChecker() {
+  $connection = \Drupal::service('database');
+  $table_name = 'paragraph_revision__field_broken_link';
+
+  $query = $connection->truncate($table_name);
+  $query->execute();
+}
+
+/**
+ * Truncates the paragraphs of the broken link checker.
+ */
+function truncateParagraphsOfTheBrokenLinkChecker() {
+  $connection = \Drupal::service('database');
+  $table_name = 'paragraph__field_broken_link';
+
+  $query = $connection->truncate($table_name);
+  $query->execute();
+}
