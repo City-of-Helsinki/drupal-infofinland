@@ -33,6 +33,8 @@ module:
   entity_browser_entity_form: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  environment_indicator: 0
+  environment_indicator_ui: 0
   features: 0
   field: 0
   field_group: 0
