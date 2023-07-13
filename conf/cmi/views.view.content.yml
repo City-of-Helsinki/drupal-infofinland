@@ -114,7 +114,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Nimi
+          label: Name
           exclude: false
           alter:
             alter_text: false
