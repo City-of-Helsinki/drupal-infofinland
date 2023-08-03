@@ -108,6 +108,20 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
 
     if ($code === 200) {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
+        $linkNode->set('field_broken_link', false);
+        $linkNode->save();
+      }
+
+      if ($languageLinkParagraph = $this->entityTypeManager->getStorage('paragraph')->load($response->id)) {
+        $languageLinkParagraph->set('field_broken_link', false);
+        $languageLinkParagraph->save();
+      }
+
+      $logger_params['@code'] = $code;
+      $this->logger->warning('Checking URL status passed: id: @id , parent_id: @parent_id, url: @url - code: @code ', $logger_params);
+    }
+    else {
+      if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
         $linkNode->set('field_broken_link', true);
         $linkNode->save();
       }
@@ -115,9 +129,8 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
       if ($languageLinkParagraph = $this->entityTypeManager->getStorage('paragraph')->load($response->id)) {
         $languageLinkParagraph->set('field_broken_link', true);
         $languageLinkParagraph->save();
-      }
-    }
-    else {
+      }  
+
       $logger_params['@code'] = $code;
       $this->logger->warning('Checking URL status failed: id: @id , parent_id: @parent_id, url: @url - code: @code ', $logger_params);
     }
