@@ -7,5 +7,5 @@ description: null
 name: Test
 weight: '3'
 url: 'https://edit-infofinland.test.hel.ninja/'
-fg_color: '#d0d0d0'
+fg_color: '#000000'
 bg_color: '#ed333b'
