@@ -4,21 +4,21 @@
  * See more info, https://www.drupal.org/project/environment_indicator/issues/2224983
  */
 switch ($_SERVER['HTTP_HOST']) {
-	case 'edit.infofinland.fi/':
+	case 'edit.infofinland.fi':
 		$config['environment_indicator.indicator']['bg_color'] = '#ffffff';
 		$config['environment_indicator.indicator']['fg_color'] = '#000000';
 		$config['environment_indicator.indicator']['name'] = 'Production';
-		$break;
+		break;
 	case 'infofinland-edit.stage.hel.ninja':
 		$config['environment_indicator.indicator']['bg_color'] = '#3584e4';
 		$config['environment_indicator.indicator']['fg_color'] = '#000000';
 		$config['environment_indicator.indicator']['name'] = 'Stage';
-		$break;
+		break;
 	case 'edit-infofinland.test.hel.ninja':
 		$config['environment_indicator.indicator']['bg_color'] = '#ed333b';
 		$config['environment_indicator.indicator']['fg_color'] = '#000000';
 		$config['environment_indicator.indicator']['name'] = 'Test';
-		$break;
+		break;
 	case 'edit-infofinland.dev.hel.ninja':
 		$config['environment_indicator.indicator']['bg_color'] = '#33d17a';
 		$config['environment_indicator.indicator']['fg_color'] = '#000000';
