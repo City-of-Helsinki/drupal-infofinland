@@ -102,11 +102,14 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
       $code = $this->checkUrlStatus($response->field_language_link_value);
     } catch (\Exception $e) {
       $logger_params['@message'] = $e->getMessage();
-      $this->logger->warning('Checking URL failed: id: @id , parent_id: @parent_id, url: @url - @message ', $logger_params);
+      // This happens for example following reasons, 
+      // cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) 
+      // If this happens, the broken link status gets an empty value.
+      $this->logger->warning('Checking URL failed: parent_id: @parent_id , id: @id ,  url: @url - @message ', $logger_params);
       return;
     }
 
-    if ($code === 200) {
+    if ($code === 200 || $code === 301 || $code === 302 || $code === 303) {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
         $linkNode->set('field_broken_link', false);
         $linkNode->save();
@@ -118,7 +121,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
       }
 
       $logger_params['@code'] = $code;
-      $this->logger->warning('Checking URL status passed: id: @id , parent_id: @parent_id, url: @url - code: @code ', $logger_params);
+      $this->logger->warning('Checking URL status passed: parent_id: @parent_id , id: @id , url: @url - code: @code ', $logger_params);
     }
     else {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
@@ -132,7 +135,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
       }  
 
       $logger_params['@code'] = $code;
-      $this->logger->warning('Checking URL status failed: id: @id , parent_id: @parent_id, url: @url - code: @code ', $logger_params);
+      $this->logger->warning('Checking URL status failed: parent_id: @parent_id , id: @id , url: @url - code: @code ', $logger_params);
     }
   }
 
