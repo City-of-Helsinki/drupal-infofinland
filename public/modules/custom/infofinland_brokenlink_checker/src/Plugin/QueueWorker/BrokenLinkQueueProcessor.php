@@ -105,7 +105,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
       // This happens for example following reasons, 
       // cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) 
       // If this happens, the broken link status gets an empty value.
-      $this->logger->warning('Checking URL failed: parent_id: @parent_id , id: @id ,  url: @url - @message ', $logger_params);
+      $this->logger->warning('Checking cURL status failed: parent_id: @parent_id , id: @id ,  url: @url - @message ', $logger_params);
       return;
     }
 
@@ -120,8 +120,8 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
         $languageLinkParagraph->save();
       }
 
-      $logger_params['@code'] = $code;
-      $this->logger->warning('Checking URL status passed: parent_id: @parent_id , id: @id , url: @url - code: @code ', $logger_params);
+      // $logger_params['@code'] = $code;
+      // $this->logger->warning('Checking URL status passed: parent_id: @parent_id , id: @id , url: @url - code: @code ', $logger_params);
     }
     else {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
