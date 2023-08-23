@@ -3,9 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - environment_indicator.switcher.development
+    - environment_indicator.switcher.production
+    - environment_indicator.switcher.stage
+    - environment_indicator.switcher.test
     - filter.format.full_html
     - filter.format.simple_html
   module:
+    - environment_indicator
     - filter
     - legal
     - media
@@ -19,6 +24,11 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'access environment indicator'
+  - 'access environment indicator development'
+  - 'access environment indicator production'
+  - 'access environment indicator stage'
+  - 'access environment indicator test'
   - 'use text format full_html'
   - 'use text format simple_html'
   - 'view Terms and Conditions'
