@@ -1,0 +1,11 @@
+uuid: f8586964-5d99-4c91-bf9a-970d94279169
+langcode: en
+status: true
+dependencies: {  }
+machine: production
+description: null
+name: Production
+weight: '1'
+url: 'https://edit.infofinland.fi/'
+fg_color: '#000000'
+bg_color: '#ffffff'

@@ -1,0 +1,11 @@
+uuid: 9103bd51-4148-42ca-a636-a485deef46dc
+langcode: en
+status: true
+dependencies: {  }
+machine: test
+description: null
+name: Test
+weight: '3'
+url: 'https://edit-infofinland.test.hel.ninja/'
+fg_color: '#000000'
+bg_color: '#ed333b'

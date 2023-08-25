@@ -237,3 +237,9 @@ $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require_once $ddev_settings; // TODO Check this if something stops working, `require`.
 }
+
+// Environment indicator hack, see the file for more info
+$env_indicator_settings = dirname(__FILE__) . '/env.indicator.settings.php';
+if (file_exists($env_indicator_settings)) {
+  require_once $env_indicator_settings;
+}

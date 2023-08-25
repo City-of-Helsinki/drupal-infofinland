@@ -19,6 +19,8 @@
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-recommended": "^9.4",
         "drupal/crop": "^2.2",
+        "drupal/environment_indicator": "^4.0",
+        "drupal/filelog": "^2.1",
         "drupal/hdbt": "^1.0",
         "drupal/hdbt_admin": "^1.0",
         "drupal/helfi_api_base": "^2.0",
@@ -93,7 +95,8 @@
                 "3101344 - Cannot save translated nodes after upgrading to 8.8 due to invalid path": "https://www.drupal.org/files/issues/2021-11-15/drupal-path-error-when-not-visible-3101344-81-D9.patch",
                 "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch",
                 "3007031 - hasTranslationChanges on multiple languages outside of saving process is costly": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff",
-                "2815779 - Deleting a translation leaves behind orphaned revisions": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch"
+                "2815779 - Deleting a translation leaves behind orphaned revisions": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch",
+                "3301239 - PoStreamReader::readLine() throws an error on module install": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch"
             },
             "drupal/ctools": {
                 "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
