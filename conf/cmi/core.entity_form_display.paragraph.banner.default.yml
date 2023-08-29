@@ -59,7 +59,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_icon:
-    type: hdbt_admin_tools_widget
+    type: select_icon_widget
     weight: 2
     region: content
     settings: {  }

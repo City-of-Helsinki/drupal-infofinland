@@ -64,7 +64,7 @@ content:
     weight: 0
     region: content
   field_icon:
-    type: hdbt_admin_tools_formatter
+    type: select_icon_formatter
     label: hidden
     settings: {  }
     third_party_settings: {  }
