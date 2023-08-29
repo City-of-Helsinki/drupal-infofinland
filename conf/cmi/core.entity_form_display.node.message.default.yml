@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.message.field_page
     - node.type.message
   module:
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
     - scheduler
     - text
 id: node.message.default

@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.link.field_municipality
     - node.type.link
   module:
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
     - paragraphs
     - path
     - scheduler

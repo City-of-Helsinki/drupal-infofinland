@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.office_contact_info.field_visiting_address_additiona
     - node.type.office_contact_info
   module:
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
 id: node.office_contact_info.default
 targetEntityType: node
 bundle: office_contact_info

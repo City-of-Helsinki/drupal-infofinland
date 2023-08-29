@@ -14,7 +14,7 @@ dependencies:
     - node.type.landing_page
   module:
     - content_moderation
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
     - media_library
     - metatag
     - paragraphs
