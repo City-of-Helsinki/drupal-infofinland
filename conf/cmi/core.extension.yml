@@ -111,7 +111,6 @@ module:
   scheduler: 0
   search_api: 0
   select2: 0
-  select2_icon: 0
   serialization: 0
   simple_oauth: 0
   simple_sitemap: 0

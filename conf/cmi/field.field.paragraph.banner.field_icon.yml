@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_icon
     - paragraphs.paragraphs_type.banner
   module:
-    - select2_icon
+    - hdbt_admin_tools
 _core:
   default_config_hash: YjDB77W8py1v-akIwDnWiJ7y0cijdsqaLT3hQNqOQHc
 id: paragraph.banner.field_icon
@@ -20,4 +20,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: select2_icon
+field_type: hdbt_admin_tools
