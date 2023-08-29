@@ -19,9 +19,6 @@ display:
           label: Ролі
         created:
           label: 'Зареєстрований вже'
-          settings:
-            future_format: '@interval'
-            past_format: '@interval'
         access:
           label: 'Останній доступ'
           settings:
@@ -29,8 +26,6 @@ display:
             past_format: '@interval тому'
         operations:
           label: Операції
-        mail:
-          separator: ', '
       pager:
         options:
           tags:

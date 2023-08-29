@@ -8,7 +8,7 @@ display:
         type:
           label: Sisältötyyppi
         name:
-          label: Tekijä
+          label: Päivittänyt
         changed:
           label: Päivitetty
         operations:

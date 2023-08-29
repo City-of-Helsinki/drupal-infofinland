@@ -26,7 +26,6 @@ display:
           action_title: 'З вибраним'
         redirect_source__path:
           label: Від
-          separator: ', '
         created:
           label: Створено
       filters:

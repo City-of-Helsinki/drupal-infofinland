@@ -1,6 +1,10 @@
+label: المحتوى
+description: 'إيجاد وإدارة المحتوى'
 display:
   default:
+    display_title: الافتراضي
     display_options:
+      title: المحتوى
       fields:
         title:
           label: العنوان
@@ -17,7 +21,6 @@ display:
           label: التحديث
         operations:
           label: عمليات
-      title: المحتوى
       pager:
         options:
           tags:
@@ -54,7 +57,6 @@ display:
         langcode:
           expose:
             label: اللغة
-    display_title: الافتراضي
   page_1:
     display_title: الصفحة
     display_options:
@@ -62,5 +64,3 @@ display:
         title: المحتوى
       tab_options:
         title: المحتوى
-label: المحتوى
-description: 'إيجاد وإدارة المحتوى'

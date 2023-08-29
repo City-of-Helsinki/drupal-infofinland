@@ -1,6 +1,10 @@
+label: Innehåll
+description: 'Find and manage content.'
 display:
   default:
+    display_title: Förvald
     display_options:
+      title: Innehåll
       fields:
         title:
           label: Titel
@@ -17,7 +21,6 @@ display:
           label: Uppdaterad
         operations:
           label: Funktioner
-      title: Innehåll
       pager:
         options:
           tags:
@@ -55,7 +58,6 @@ display:
         langcode:
           expose:
             label: Språk
-    display_title: Förvald
   page_1:
     display_title: Sida
     display_options:
@@ -64,5 +66,3 @@ display:
       tab_options:
         title: Innehåll
         description: 'Find and manage content'
-label: Innehåll
-description: 'Find and manage content.'

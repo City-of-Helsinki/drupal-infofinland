@@ -4,6 +4,6 @@ status: true
 dependencies: {  }
 id: infofinland_ui
 label: 'InfoFinland UI'
-base_url: 'https://infofinland-ui-hki-kanslia-infofinland-dev.agw.arodevtest.hel.fi'
-preview_url: 'https://infofinland-ui-hki-kanslia-infofinland-dev.agw.arodevtest.hel.fi/api/preview'
-preview_secret: '1%%eS!z%b*0O5rX!maKqp%5m8xZ52yOU'
+base_url: 'https://infofinland.fi'
+preview_url: 'https://infofinland.fi/api/preview'
+preview_secret: 'p!*BvWqNYUmnEx3TfxYnun7AyZWEeL28'

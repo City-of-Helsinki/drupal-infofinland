@@ -1,6 +1,10 @@
+label: Contenido
+description: 'Encontrar y administrar contenido.'
 display:
   default:
+    display_title: 'Por defecto'
     display_options:
+      title: Contenido
       fields:
         title:
           label: Título
@@ -17,7 +21,6 @@ display:
           label: Actualizado
         operations:
           label: Operaciones
-      title: Contenido
       pager:
         options:
           tags:
@@ -53,7 +56,6 @@ display:
         langcode:
           expose:
             label: Idioma
-    display_title: 'Por defecto'
   page_1:
     display_title: Página
     display_options:
@@ -62,5 +64,3 @@ display:
       tab_options:
         title: Contenido
         description: 'Encuentre y gestione el contenido'
-label: Contenido
-description: 'Encontrar y administrar contenido.'
