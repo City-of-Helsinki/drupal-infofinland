@@ -59,6 +59,7 @@
         "drupal/subrequests": "^3.0",
         "drupal/token_filter": "^2.0",
         "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/upgrade_status": "^4.0",
         "drupal/varnish_purge": "^2.2",
         "drupal/webform_rest": "^4.0",
         "drush/drush": "^11"
