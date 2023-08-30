@@ -10,7 +10,7 @@ _core:
 id: paragraph.field_icon
 field_name: field_icon
 entity_type: paragraph
-type: hdbt_admin_tools
+type: select2_icon
 settings: {  }
 module: hdbt_admin_tools
 locked: false
