@@ -98,6 +98,7 @@ class HelfiPTV {
 
     // Query the terms sorted by weight.
     $query_result = $entity_storage->getQuery()
+      ->accessCheck(FALSE)
       ->condition('vid', 'municipalitys')
       ->sort('weight', 'ASC')
       ->execute();
@@ -408,7 +409,9 @@ class HelfiPTV {
       }
     }
     foreach ($bodyData as $data) {
-      $termExists = taxonomy_term_load_multiple_by_name($data['name'], 'organisaatiot');
+      // $termExists = taxonomy_term_load_multiple_by_name($data['name'], 'organisaatiot');
+      // $termExists = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties($data['name'], 'organisaatiot');
+      $termExists = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties($data['name'], 'organisaatiot');
       if (empty($termExists)) {
         $newTerm = Term::create([
           'vid' => 'organisaatiot',

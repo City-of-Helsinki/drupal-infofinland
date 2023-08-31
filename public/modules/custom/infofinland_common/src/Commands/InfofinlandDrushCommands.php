@@ -4,6 +4,7 @@ namespace Drupal\infofinland_common\Commands;
 
 use Drush\Commands\DrushCommands;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 
 /**
@@ -12,6 +13,23 @@ use Drupal\node\Entity\Node;
  * @package Drupal\infofinland_common\Commands
  */
 class InfofinlandDrushCommands extends DrushCommands {
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * Constructor.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   */
+  public function __construct(EntityTypeManagerInterface $entity_type_manager) {
+    $this->entityTypeManager = $entity_type_manager;
+  }
 
   /**
    * Drush command that saves nodes.
@@ -25,7 +43,9 @@ class InfofinlandDrushCommands extends DrushCommands {
    */
   public function savenodes($amount = 10, $startNid = 32610) {
     // Get an array of all 'page' node IDs.
-    $nids = \Drupal::entityQuery('node')
+    // $nids = \Drupal::entityQuery('node')
+    $nids = $this->entityTypeManager->getStorage('node')->getQuery()
+    ->accessCheck(FALSE)
     ->condition('type', 'page')
     ->condition('langcode', 'fi')
     ->condition('nid', $startNid, '>')
