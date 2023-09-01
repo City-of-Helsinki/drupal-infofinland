@@ -544,8 +544,6 @@ function infofinland_common_ckeditor_css_alter(array &$css, Editor $editor) {
   ];
 
   if (in_array($editor->getFilterFormat()->id(), $known_formats)) {
-    // $css[] = drupal_get_path('module', 'infofinland_common') . '/css/infofinland_admin_ckeditor.css';
-    // $css[] = \Drupal\Core\Extension\ExtensionPathResolver::getPath('module', 'infofinland_common') . '/css/infofinland_admin_ckeditor.css';
     $css[] = \Drupal::service('extension.list.module')->getPath('infofinland_common') . '/css/infofinland_admin_ckeditor.css';
   }
 }

@@ -409,8 +409,6 @@ class HelfiPTV {
       }
     }
     foreach ($bodyData as $data) {
-      // $termExists = taxonomy_term_load_multiple_by_name($data['name'], 'organisaatiot');
-      // $termExists = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties($data['name'], 'organisaatiot');
       $termExists = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties($data['name'], 'organisaatiot');
       if (empty($termExists)) {
         $newTerm = Term::create([

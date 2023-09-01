@@ -6,8 +6,8 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Drupal\user\Entity\User;
-use Drupal\Core\Logger\LoggerChannelFactory;
-use Drupal\matomo_tagmanager\Entity\ContainerInterface;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class for logging when sensitive user information is being viewed or edited.
@@ -17,12 +17,12 @@ class InfofinlandGdprSubscriber implements EventSubscriberInterface {
   /**
    * Logger Factory.
    *
-   * @var \Drupal\Core\Logger\LoggerChannelFactory
+   * @var \Drupal\Core\Logger\LoggerChannelFactoryInterface
    */
   protected $loggerFactory;
 
-  public function __construct(LoggerChannelFactory $logger_factory) {
-    $this->loggerFactory = $logger_factory;
+  public function __construct(LoggerChannelFactoryInterface $logger_factory) {
+    $this->loggerFactory = $logger_factory->get('infofinland_gdpr');
   }
 
   public static function create(ContainerInterface $container) {
@@ -44,8 +44,7 @@ class InfofinlandGdprSubscriber implements EventSubscriberInterface {
       file_put_contents($logFilePath, $formattedMessage, FILE_APPEND);
 
       // Logs a notice when users page is visited.
-      // \Drupal::logger('infofinland_gdpr')->notice('user %name view page visited.', ['%name' => $name]);
-      $this->loggerFactory->get('infofinland_gdpr')->notice('user %name view page visited.', ['%name' => $name]);
+      $this->loggerFactory->notice('user %name view page visited.', ['%name' => $name]);
     }
 
     if ($event->getRequest()->get('_route') == 'entity.user.edit_form') {
@@ -59,8 +58,7 @@ class InfofinlandGdprSubscriber implements EventSubscriberInterface {
       file_put_contents($logFilePath, $formattedMessage, FILE_APPEND);
 
       // Logs a notice when users edit page is visited.
-      // \Drupal::logger('infofinland_gdpr')->notice('user %name edit page visited.', ['%name' => $name]);
-      $this->loggerFactory->get('infofinland_gdpr')->notice('user %name edit page visited.', ['%name' => $name]);
+      $this->loggerFactory->notice('user %name edit page visited.', ['%name' => $name]);
     }
 
     if ($event->getRequest()->get('_route') == 'entity.user.collection') {
@@ -71,8 +69,7 @@ class InfofinlandGdprSubscriber implements EventSubscriberInterface {
       file_put_contents($logFilePath, $formattedMessage, FILE_APPEND);
 
       // Logs a notice when user list admin page is visited.
-      // \Drupal::logger('infofinland_gdpr')->notice('admin list page of users visited.');
-      $this->loggerFactory->get('infofinland_gdpr')->notice('user %name edit page visited.', ['%name' => $name]);
+      $this->loggerFactory->notice('admin list page of users visited.');
     }
   }
 

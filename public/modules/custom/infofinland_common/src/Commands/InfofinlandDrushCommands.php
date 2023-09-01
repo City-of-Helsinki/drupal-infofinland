@@ -43,7 +43,6 @@ class InfofinlandDrushCommands extends DrushCommands {
    */
   public function savenodes($amount = 10, $startNid = 32610) {
     // Get an array of all 'page' node IDs.
-    // $nids = \Drupal::entityQuery('node')
     $nids = $this->entityTypeManager->getStorage('node')->getQuery()
     ->accessCheck(FALSE)
     ->condition('type', 'page')

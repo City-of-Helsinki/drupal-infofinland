@@ -55,7 +55,6 @@ function infofinland_common_tokens($type, $tokens, array $data, array $options, 
             if ($field_url) {
               $value = \Drupal::service('pathauto.alias_cleaner')->cleanString($field_url, $options);
             } else {
-              // $value = is_array($array[$key]) ? render($array[$key]) : (string) $array[$key];
               $value = is_array($array[$key]) ? \Drupal::service('renderer')->render($array[$key]) : (string) $array[$key];
             }
             $values[] = $value;
