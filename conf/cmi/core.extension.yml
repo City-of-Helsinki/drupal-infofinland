@@ -23,7 +23,6 @@ module:
   crop: 0
   ctools: 0
   datetime: 0
-  dblog: 0
   decoupled_router: 0
   default_content: 0
   diff: 0
