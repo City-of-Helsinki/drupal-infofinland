@@ -38,6 +38,13 @@ class TextFieldEnhancer extends ResourceFieldEnhancerBase implements ContainerFa
   protected $aliasManager;
 
   /**
+   * The request
+   * 
+   * @var Symfony\Component\HttpFoundation\Request 
+   */
+  protected $request;
+
+  /**
    * {@inheritdoc}
    */
   public function __construct(array $configuration, $plugin_id, array $plugin_definition, EntityTypeManagerInterface $entity_type_manager, AliasManagerInterface $aliasManager, Request $request) {

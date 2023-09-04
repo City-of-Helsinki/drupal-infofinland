@@ -1,5 +1,6 @@
 services:
   infofinland_gdpr.event_subscriber:
     class: Drupal\infofinland_gdpr\EventSubscriber\InfofinlandGdprSubscriber
+    arguments: ['@logger.factory']
     tags:
       - { name: event_subscriber }
