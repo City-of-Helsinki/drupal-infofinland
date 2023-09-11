@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.office_contact_info.field_automated_updates
     - field.field.node.office_contact_info.field_email_address
+    - field.field.node.office_contact_info.field_meta_tags
     - field.field.node.office_contact_info.field_new_data
     - field.field.node.office_contact_info.field_office_id
     - field.field.node.office_contact_info.field_phonenumber
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.office_contact_info.field_service_hours
     - field.field.node.office_contact_info.field_visiting_address
     - field.field.node.office_contact_info.field_visiting_address_additiona
+    - field.field.node.office_contact_info.field_yoast_seo
     - node.type.office_contact_info
   module:
     - user
@@ -30,6 +32,7 @@ content:
 hidden:
   field_automated_updates: true
   field_email_address: true
+  field_meta_tags: true
   field_new_data: true
   field_office_id: true
   field_phonenumber: true
@@ -38,4 +41,6 @@ hidden:
   field_service_hours: true
   field_visiting_address: true
   field_visiting_address_additiona: true
+  field_yoast_seo: true
   langcode: true
+  search_api_excerpt: true

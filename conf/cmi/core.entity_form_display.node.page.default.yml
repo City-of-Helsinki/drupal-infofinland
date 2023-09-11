@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.page.field_hero
     - field.field.node.page.field_layout
     - field.field.node.page.field_liftup_image
+    - field.field.node.page.field_meta_tags
     - field.field.node.page.field_metatags
     - field.field.node.page.field_municipality_info
     - field.field.node.page.field_municipality_selection
@@ -18,6 +19,7 @@ dependencies:
     - field.field.node.page.field_theme_menu_machine_name
     - field.field.node.page.field_url
     - field.field.node.page.field_use_anchor_links
+    - field.field.node.page.field_yoast_seo
     - node.type.page
     - workflows.workflow.editorial
   module:
@@ -30,6 +32,7 @@ dependencies:
     - path
     - scheduler
     - select2
+    - yoast_seo
 third_party_settings:
   field_group:
     group_kuntainfo_sivupalkissa:
@@ -199,6 +202,16 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_yoast_seo:
+    type: yoast_seo_widget
+    weight: 23
+    region: content
+    settings:
+      edit_title: '1'
+      edit_description: '1'
+      render_theme: stark
+      render_view_mode: default
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 0
@@ -287,4 +300,6 @@ content:
 hidden:
   field_finnish_title: true
   field_liftup_image: true
+  field_meta_tags: true
   field_theme_menu_machine_name: true
+  hide_sidebar_navigation: true
