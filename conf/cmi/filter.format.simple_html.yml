@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   module:
+    - editor
     - helfi_api_base
     - linkit
+    - media
+    - obfuscate
     - token_filter
 name: 'Simple HTML'
 format: simple_html
@@ -14,13 +17,13 @@ filters:
     id: filter_autop
     provider: filter
     status: true
-    weight: 0
+    weight: -45
     settings: {  }
   filter_html:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: -50
     settings:
       allowed_html: '<em> <strong> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a href hreflang data-entity-substitution data-entity-type data-entity-uuid title>'
       filter_html_help: true
@@ -29,32 +32,77 @@ filters:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: 10
+    weight: -44
     settings: {  }
   filter_url:
     id: filter_url
     provider: filter
     status: true
-    weight: 0
+    weight: -49
     settings:
       filter_url_length: 120
   linkit:
     id: linkit
     provider: linkit
     status: true
-    weight: 0
+    weight: -47
     settings:
       title: true
   token_filter:
     id: token_filter
     provider: token_filter
     status: false
-    weight: 0
+    weight: -39
     settings:
       replace_empty: '0'
   helfi_link_converter:
     id: helfi_link_converter
     provider: helfi_api_base
     status: true
-    weight: -10
+    weight: -46
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -42
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -43
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -40
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -38
+    settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: -37
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }
+  obfuscate_mail:
+    id: obfuscate_mail
+    provider: obfuscate
+    status: true
+    weight: -48
     settings: {  }
