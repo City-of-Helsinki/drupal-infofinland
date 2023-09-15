@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35d6cba12d9def57b6443c6ab6cb3ccf",
+    "content-hash": "c22406e9c5a54dbc2d011561e5096f35",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2959,7 +2959,7 @@
                     "homepage": "https://www.drupal.org/user/3094661"
                 },
                 {
-                    "name": "RenatoG",
+                    "name": "renatog",
                     "homepage": "https://www.drupal.org/user/3326031"
                 },
                 {
@@ -2969,10 +2969,6 @@
                 {
                     "name": "tatarbj",
                     "homepage": "https://www.drupal.org/user/649590"
-                },
-                {
-                    "name": "volkswagenchick",
-                    "homepage": "https://www.drupal.org/user/3332522"
                 }
             ],
             "description": "Adds configuration to the system breadcrumbs.",
@@ -3449,6 +3445,10 @@
                     "homepage": "https://www.drupal.org/user/550110"
                 },
                 {
+                    "name": "isholgueras",
+                    "homepage": "https://www.drupal.org/user/733162"
+                },
+                {
                     "name": "mrfelton",
                     "homepage": "https://www.drupal.org/user/305669"
                 }
@@ -3838,7 +3838,7 @@
                 },
                 "drupal": {
                     "version": "1.0.x-dev",
-                    "datestamp": "1620053329",
+                    "datestamp": "1692017626",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -5730,6 +5730,67 @@
             }
         },
         {
+            "name": "drupal/obfuscate",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/obfuscate.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/obfuscate-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "cd6cf84617edce0f08e20561ab3459ce78aa52e2"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "ext-mbstring": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1671362481",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "colorfield",
+                    "homepage": "https://www.drupal.org/user/2295486"
+                },
+                {
+                    "name": "Nigel Cunningham",
+                    "homepage": "https://www.drupal.org/user/250105"
+                },
+                {
+                    "name": "Raphael Larrinaga",
+                    "homepage": "https://www.drupal.org/user/2873013"
+                },
+                {
+                    "name": "Rockabelly",
+                    "homepage": "https://www.drupal.org/user/2649181"
+                }
+            ],
+            "description": "Obfuscates email addresses with a Field Formatter of Email field, a text Filter and a Twig extension.",
+            "homepage": "https://www.drupal.org/project/obfuscate",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/obfuscate",
+                "issues": "https://www.drupal.org/project/issues/obfuscate"
+            }
+        },
+        {
             "name": "drupal/oembed_providers",
             "version": "2.0.4",
             "source": {
@@ -6348,6 +6409,10 @@
                 {
                     "name": "Dave Reid",
                     "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "Kristen Pol",
+                    "homepage": "https://www.drupal.org/user/8389"
                 },
                 {
                     "name": "pifagor",
