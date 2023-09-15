@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.link.field_link_description
     - field.field.node.link.field_link_target_site
     - field.field.node.link.field_links
+    - field.field.node.link.field_meta_tags
     - field.field.node.link.field_municipality
+    - field.field.node.link.field_yoast_seo
     - node.type.link
   module:
     - hdbt_admin_editorial
@@ -153,5 +155,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_meta_tags: true
+  field_yoast_seo: true
   hide_sidebar_navigation: true
   moderation_state: true

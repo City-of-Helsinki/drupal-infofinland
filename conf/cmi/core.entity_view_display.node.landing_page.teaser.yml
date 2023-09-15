@@ -9,9 +9,11 @@ dependencies:
     - field.field.node.landing_page.field_feedback_email
     - field.field.node.landing_page.field_hero
     - field.field.node.landing_page.field_liftup_image
+    - field.field.node.landing_page.field_meta_tags
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_page_name
     - field.field.node.landing_page.field_url
+    - field.field.node.landing_page.field_yoast_seo
     - node.type.landing_page
   module:
     - user
@@ -36,9 +38,11 @@ hidden:
   field_description: true
   field_feedback_email: true
   field_hero: true
+  field_meta_tags: true
   field_metatags: true
   field_page_name: true
   field_url: true
+  field_yoast_seo: true
   langcode: true
   links: true
   search_api_excerpt: true
