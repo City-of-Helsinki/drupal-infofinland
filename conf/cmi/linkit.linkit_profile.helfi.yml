@@ -15,7 +15,9 @@ matchers:
     uuid: 49b7eb26-ed0f-47be-8b6b-3c2ab7a70069
     settings:
       metadata: 'by [node:author] | [node:created:medium]'
-      bundles: {  }
+      bundles:
+        landing_page: landing_page
+        page: page
       group_by_bundle: false
       substitution_type: canonical
       limit: 100
