@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.link.field_link_description
     - field.field.node.link.field_link_target_site
     - field.field.node.link.field_links
+    - field.field.node.link.field_meta_tags
     - field.field.node.link.field_municipality
+    - field.field.node.link.field_yoast_seo
     - node.type.link
   module:
     - entity_reference_revisions
@@ -49,6 +51,8 @@ content:
     region: content
 hidden:
   field_broken_link: true
+  field_meta_tags: true
   field_municipality: true
+  field_yoast_seo: true
   langcode: true
   search_api_excerpt: true

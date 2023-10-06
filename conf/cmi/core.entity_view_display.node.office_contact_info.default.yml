@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.office_contact_info.field_automated_updates
     - field.field.node.office_contact_info.field_email_address
+    - field.field.node.office_contact_info.field_meta_tags
     - field.field.node.office_contact_info.field_new_data
     - field.field.node.office_contact_info.field_office_id
     - field.field.node.office_contact_info.field_phonenumber
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.office_contact_info.field_service_hours
     - field.field.node.office_contact_info.field_visiting_address
     - field.field.node.office_contact_info.field_visiting_address_additiona
+    - field.field.node.office_contact_info.field_yoast_seo
     - node.type.office_contact_info
   module:
     - user
@@ -112,4 +114,7 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
-hidden: {  }
+hidden:
+  field_meta_tags: true
+  field_yoast_seo: true
+  search_api_excerpt: true

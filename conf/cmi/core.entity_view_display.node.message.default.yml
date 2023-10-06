@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.field.node.message.body
     - field.field.node.message.field_message_type
+    - field.field.node.message.field_meta_tags
     - field.field.node.message.field_page
+    - field.field.node.message.field_yoast_seo
     - node.type.message
   module:
     - user
@@ -22,5 +24,8 @@ content:
 hidden:
   body: true
   field_message_type: true
+  field_meta_tags: true
   field_page: true
+  field_yoast_seo: true
   langcode: true
+  search_api_excerpt: true

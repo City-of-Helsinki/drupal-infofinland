@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.article.field_keywords
     - field.field.node.article.field_lead
     - field.field.node.article.field_liftup_image
+    - field.field.node.article.field_meta_tags
     - field.field.node.article.field_metatags
+    - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
     - hdbt_admin_editorial
@@ -18,6 +20,7 @@ dependencies:
     - path
     - scheduler
     - select2
+    - yoast_seo
 _core:
   default_config_hash: pCNOhgqtZB0RYWLFELZhHp654GnKfoQ_Dbd2v2MIrWU
 id: node.article.default
@@ -90,6 +93,16 @@ content:
     settings:
       sidebar: false
       use_details: true
+    third_party_settings: {  }
+  field_yoast_seo:
+    type: yoast_seo_widget
+    weight: 19
+    region: content
+    settings:
+      edit_title: '1'
+      edit_description: '1'
+      render_theme: claro
+      render_view_mode: default
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -171,4 +184,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_meta_tags: true
+  hide_sidebar_navigation: true
   moderation_state: true

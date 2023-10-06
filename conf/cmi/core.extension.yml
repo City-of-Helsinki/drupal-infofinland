@@ -89,6 +89,7 @@ module:
   next_jsonapi: 0
   node: 0
   node_revision_delete: 0
+  obfuscate: 0
   options: 0
   paragraphs_type_permissions: 0
   password_policy_character_types: 0
@@ -137,6 +138,7 @@ module:
   webform: 0
   webform_rest: 0
   workflows: 0
+  yoast_seo: 0
   helfi_ptv_integration: 1
   inline_entity_form: 1
   paragraphs_asymmetric_translation_widgets: 1

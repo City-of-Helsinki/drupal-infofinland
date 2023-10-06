@@ -1,0 +1,22 @@
+uuid: 776d523c-7a16-4d04-85a9-239530ac9e7b
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.office_contact_info
+  module:
+    - metatag
+id: node.office_contact_info.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: office_contact_info
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+skip_translation_check: null
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

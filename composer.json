@@ -38,6 +38,7 @@
         "drupal/migrate_tools": "^5.0",
         "drupal/next": "^1.4",
         "drupal/node_revision_delete": "^2.0@alpha",
+        "drupal/obfuscate": "^2.0",
         "drupal/paragraphs": "^1.13",
         "drupal/password_policy": "^3.1",
         "drupal/pathauto": "^1.9",
@@ -52,6 +53,7 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
+        "drupal/yoast_seo": "^2.0@alpha",
         "drush/drush": "^10.4"
     },
     "require-dev": {

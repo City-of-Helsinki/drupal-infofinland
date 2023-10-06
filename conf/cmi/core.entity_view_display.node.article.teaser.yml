@@ -9,7 +9,9 @@ dependencies:
     - field.field.node.article.field_keywords
     - field.field.node.article.field_lead
     - field.field.node.article.field_liftup_image
+    - field.field.node.article.field_meta_tags
     - field.field.node.article.field_metatags
+    - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
     - user
@@ -34,6 +36,9 @@ hidden:
   field_content: true
   field_keywords: true
   field_lead: true
+  field_meta_tags: true
   field_metatags: true
+  field_yoast_seo: true
   langcode: true
   links: true
+  search_api_excerpt: true

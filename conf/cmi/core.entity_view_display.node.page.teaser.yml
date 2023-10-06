@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.page.field_hero
     - field.field.node.page.field_layout
     - field.field.node.page.field_liftup_image
+    - field.field.node.page.field_meta_tags
     - field.field.node.page.field_metatags
     - field.field.node.page.field_municipality_info
     - field.field.node.page.field_municipality_selection
@@ -19,6 +20,7 @@ dependencies:
     - field.field.node.page.field_theme_menu_machine_name
     - field.field.node.page.field_url
     - field.field.node.page.field_use_anchor_links
+    - field.field.node.page.field_yoast_seo
     - node.type.page
   module:
     - user
@@ -50,6 +52,7 @@ hidden:
   field_finnish_title: true
   field_hero: true
   field_layout: true
+  field_meta_tags: true
   field_metatags: true
   field_municipality_info: true
   field_municipality_selection: true
@@ -58,6 +61,7 @@ hidden:
   field_theme_menu_machine_name: true
   field_url: true
   field_use_anchor_links: true
+  field_yoast_seo: true
   langcode: true
   links: true
   search_api_excerpt: true
