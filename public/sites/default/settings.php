@@ -243,3 +243,14 @@ $env_indicator_settings = dirname(__FILE__) . '/env.indicator.settings.php';
 if (file_exists($env_indicator_settings)) {
   require_once $env_indicator_settings;
 }
+
+
+/**
+ * Deployment identifier.
+ *
+ * Default 'deployment_identifier' cache key to modified time of 'composer.lock'
+ * file in case it's not already defined.
+ */
+if (empty($settings['deployment_identifier'])) {
+  $settings['deployment_identifier'] = filemtime(__DIR__ . '/../../../composer.lock');
+}
