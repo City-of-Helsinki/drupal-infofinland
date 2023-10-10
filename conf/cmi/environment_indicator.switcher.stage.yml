@@ -6,6 +6,6 @@ machine: stage
 description: null
 name: Stage
 weight: '2'
-url: 'https://infofinland-edit.stage.hel.ninja/'
+url: 'https://edit-infofinland.stage.hel.ninja'
 fg_color: '#000000'
 bg_color: '#3584e4'

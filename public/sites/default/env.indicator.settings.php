@@ -9,7 +9,7 @@ switch ($_SERVER['HTTP_HOST']) {
 		$config['environment_indicator.indicator']['fg_color'] = '#000000';
 		$config['environment_indicator.indicator']['name'] = 'Production';
 		break;
-	case 'infofinland-edit.stage.hel.ninja':
+	case 'edit-infofinland.stage.hel.ninja':
 		$config['environment_indicator.indicator']['bg_color'] = '#3584e4';
 		$config['environment_indicator.indicator']['fg_color'] = '#000000';
 		$config['environment_indicator.indicator']['name'] = 'Stage';
