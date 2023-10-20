@@ -20,8 +20,10 @@ services:
       # DOCKERHOST: host.docker.internal
       # Use drush server to run functional tests so we don't have to care about
       # permission issues.
-      SIMPLETEST_BASE_URL: "http://127.0.0.1:8888"
-      SIMPLETEST_DB: "mysql://drupal:drupal@db:3306/drupal"
+      # SIMPLETEST_BASE_URL: "http://127.0.0.1:8888"
+      # SIMPLETEST_DB: "mysql://drupal:drupal@db:3306/drupal"
+      SIMPLETEST_BASE_URL: "https://drupal-infofinland.lndo.site"
+      SIMPLETEST_DB: "mysql://drupal9:drupal9@database/drupal9" 
       DRUPAL_VARNISH_HOST: "${COMPOSE_PROJECT_NAME}-varnish"
       DRUPAL_VARNISH_PORT: 6081
       REDIS_HOST: redis
