@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Infofinland_gdpr\EventSubscriber;
+namespace Drupal\infofinland_gdpr\EventSubscriber;
 
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
