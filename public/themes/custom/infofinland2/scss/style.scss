@@ -1,0 +1,22 @@
+// Default variables
+@import 'variables';
+
+// Styling that came from the base theme, Claro
+@import 'base/elements.scss';
+@import 'components/block.scss';
+@import 'components/breadcrumb.scss';
+@import 'components/buttons.scss';
+@import 'components/field.scss';
+@import 'components/form.scss';
+@import 'components/header.scss';
+@import 'components/menu.scss';
+@import 'components/messages.scss';
+@import 'components/node.scss';
+@import 'components/sidebar.scss';
+@import 'components/table.scss';
+@import 'components/tabs.scss';
+@import 'layouts/layout.scss';
+@import 'theme/print.scss';
+
+// Added shame file
+@import 'shame';

@@ -1,0 +1,7 @@
+# Main theme library.
+global:
+  js:
+    js/infofinland2.js: {}
+  css:
+    theme:
+      css/style.css: {}
