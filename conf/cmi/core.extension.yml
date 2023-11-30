@@ -23,6 +23,7 @@ module:
   crop: 0
   ctools: 0
   datetime: 0
+  dblog: 0
   decoupled_router: 0
   default_content: 0
   diff: 0
@@ -41,6 +42,7 @@ module:
   field_group: 0
   field_ui: 0
   file: 0
+  filelog: 0
   filter: 0
   flysystem: 0
   flysystem_azure: 0
