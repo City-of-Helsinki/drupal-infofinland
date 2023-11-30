@@ -11,8 +11,7 @@ dependencies:
     - field.field.paragraph.banner.field_icon
     - paragraphs.paragraphs_type.banner
   module:
-    - hdbt_admin_editorial
-    - select2_icon
+    - hdbt_admin_tools
     - text
 _core:
   default_config_hash: 8wgVOUD1i4Nrbf2GrsDH0Qr3YSFafxtiGarqH6RLLUc
@@ -60,7 +59,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_icon:
-    type: select2_icon_widget
+    type: select_icon_widget
     weight: 2
     region: content
     settings: {  }
