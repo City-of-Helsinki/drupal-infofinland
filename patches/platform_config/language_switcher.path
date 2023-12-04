@@ -1,0 +1,31 @@
+diff --git a/modules/hdbt_admin_tools/hdbt_admin_tools.module b/modules/hdbt_admin_tools/hdbt_admin_tools.module
+index 527a85f5..fa65f819 100644
+--- a/modules/hdbt_admin_tools/hdbt_admin_tools.module
++++ b/modules/hdbt_admin_tools/hdbt_admin_tools.module
+@@ -195,8 +195,24 @@ function hdbt_admin_tools_language_switch_links_alter(array &$links): void {
+     }
+   }
+ 
+-  $language_resolver = \Drupal::service('helfi_api_base.default_language_resolver');
+-  $primary_languages = $language_resolver->getDefaultLanguages();
++  // primary languages comes from patch
++  $primary_languages = [
++    'fi',
++    'sv',
++    'en',
++    'ru',
++    'et',
++    'uk',
++    'fr',
++    'es',
++    'tr',
++    'zh',
++    'fa',
++    'ar'
++  ];
++
++  // $language_resolver = \Drupal::service('helfi_api_base.default_language_resolver');
++  // $primary_languages = $language_resolver->getDefaultLanguages();
+ 
+   // Compare the links with current entity and check for possible translations.
+   foreach ($links as $lang_code => &$link) {
