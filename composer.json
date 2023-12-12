@@ -26,7 +26,7 @@
         "drupal/environment_indicator": "^4.0",
         "drupal/features": "^3.13",
         "drupal/filelog": "^2.1",
-        "drupal/hdbt": "^5.0",
+        "drupal/hdbt": "^5.5",
         "drupal/hdbt_admin": "^2.0",
         "drupal/helfi_api_base": "^2.5",
         "drupal/helfi_azure_fs": "^2",
