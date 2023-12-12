@@ -21,7 +21,7 @@
     "@sideway/address": "^4.1.2",
     "@sideway/formula": "^3.0.0",
     "@sideway/pinpoint": "^2.0.0",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.4.16",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "breakpoint-sass": "^2.7.1",
