@@ -2,7 +2,7 @@ name: InfoFinland Migrate
 description: 'Content imports from old site using core Migration module.'
 package: 'Custom'
 type: module
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 dependencies:
   - drupal:migrate
   - drupal:migrate_plus
