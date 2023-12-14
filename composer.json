@@ -21,7 +21,7 @@
         "drupal/crop": "^2.2",
         "drupal/environment_indicator": "^4.0",
         "drupal/filelog": "^2.1",
-        "drupal/hdbt": "^1.0",
+        "drupal/hdbt": "^4.0",
         "drupal/hdbt_admin": "^1.0",
         "drupal/helfi_api_base": "^2.0",
         "drupal/helfi_azure_fs": "^1.0",
@@ -112,12 +112,6 @@
             "drupal/redirect": {
                 "3057250 - Validation issue on adding url redirect": "https://www.drupal.org/files/issues/2022-09-01/3057250-53.patch",
                 "2991423 - Redirection issue when interface language is different from content language": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
-            },
-            "drupal/hdbt": {
-                "Quick-Fix too many req to cache in hdbt_get_settings - the hdbt should be upgraded to latest release, but it is a larger task": "./patches/hdbt/hdbt-quick-fix-hdbt_get_settings.patch"
-            },
-            "drupal/hdbt_admin": {
-                "Fix always open in new tab": "./patches/hdbt_admin/fix_new_tab.patch"
             },
             "drupal/redis": {
                 "TTL handling broken, always permanent": "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
