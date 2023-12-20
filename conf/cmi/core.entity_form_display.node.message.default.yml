@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.message.field_yoast_seo
     - node.type.message
   module:
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
     - scheduler
     - text
 id: node.message.default

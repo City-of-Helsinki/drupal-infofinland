@@ -9,30 +9,36 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6.7",
+        "drupal/admin_toolbar": "^3.0",
         "drupal/adv_varnish": "^4.0",
-        "drupal/allowed_formats": "^1.5",
+        "drupal/allowed_formats": "^2.0",
         "drupal/ckeditor_bidi": "^3.1",
         "drupal/color_field": "^2.5",
-        "drupal/config_ignore": "^2.3",
+        "drupal/config_ignore": "^3.0",
+        "drupal/config_replace": "^2.0",
+        "drupal/config_update": "^2.0@alpha",
         "drupal/consumer_image_styles": "^4.0",
         "drupal/consumers": "^1.12",
-        "drupal/core-composer-scaffold": "^9.4",
-        "drupal/core-recommended": "^9.4",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-project-message": "^9",
+        "drupal/core-recommended": "^9",
         "drupal/crop": "^2.2",
         "drupal/environment_indicator": "^4.0",
+        "drupal/features": "^3.13",
         "drupal/filelog": "^2.1",
-        "drupal/hdbt": "^4.0",
-        "drupal/hdbt_admin": "^1.0",
-        "drupal/helfi_api_base": "^2.0",
-        "drupal/helfi_azure_fs": "^1.0",
+        "drupal/hdbt": "^5.5",
+        "drupal/hdbt_admin": "^2.0",
+        "drupal/helfi_api_base": "^2.5",
+        "drupal/helfi_azure_fs": "^2",
         "drupal/helfi_drupal_tools": "dev-main",
-        "drupal/helfi_platform_config": "2.4.0",
+        "drupal/helfi_platform_config": "^3.4.40",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/legal": "^2.0",
         "drupal/mailsystem": "^4.3",
         "drupal/media_entity_browser": "^2.0",
+        "drupal/media_entity_soundcloud": "^3.1",
         "drupal/migrate_plus": "^5.1",
         "drupal/migrate_source_csv": "^3.4",
         "drupal/migrate_tools": "^5.0",
@@ -47,14 +53,15 @@
         "drupal/readonly_field_widget": "^1.4",
         "drupal/redis": "^1.5",
         "drupal/role_delegation": "^1.2",
-        "drupal/smtp": "^1.0",
+        "drupal/smtp": "^1.2",
         "drupal/structure_sync": "^2.0",
         "drupal/subrequests": "^3.0",
+        "drupal/token_filter": "^2.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
         "drupal/yoast_seo": "^2.0@alpha",
-        "drush/drush": "^10.4"
+        "drush/drush": "^11"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
@@ -73,7 +80,8 @@
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-project-message": true
         }
     },
     "extra": {
@@ -92,29 +100,33 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "3099026 - Claro's preprocessing of field multiple value form's table header cell removes potential changes by others": "https://www.drupal.org/files/issues/2021-11-25/3099026-32_0.patch",
+                "3099026 - Claro's preprocessing of field multiple value form's table header cell removes potential changes by others": "https://www.drupal.org/files/issues/2023-03-08/3099026-60-9.5.x.patch",
                 "3015480 - Allow skipping translation check at field level for non-translatable fields": "https://www.drupal.org/files/issues/2018-11-22/3015480-add_config_to_allow_skipping_translation_check-4.patch",
-                "3101344 - Cannot save translated nodes after upgrading to 8.8 due to invalid path": "https://www.drupal.org/files/issues/2021-11-15/drupal-path-error-when-not-visible-3101344-81-D9.patch",
-                "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch",
+                "3101344 - Cannot save translated nodes after upgrading to 8.8 due to invalid path": "https://www.drupal.org/files/issues/2022-09-27/3101344-test-only.patch",
+                "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2022-09-19/2838602-64.patch",
                 "3007031 - hasTranslationChanges on multiple languages outside of saving process is costly": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff",
                 "2815779 - Deleting a translation leaves behind orphaned revisions": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch",
-                "3301239 - PoStreamReader::readLine() throws an error on module install": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch"
-            },
-            "drupal/ctools": {
-                "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
+                "3301239 - PoStreamReader::readLine() throws an error on module install": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
+                "https://www.drupal.org/project/drupal/issues/3268634": "https://git.drupalcode.org/project/drupal/-/merge_requests/2474.diff"
             },
             "drupal/subrequests": {
                 "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
             },
             "drupal/decoupled_router": {
-                "Fixing redirect multilanguage 404": "https://www.drupal.org/files/issues/2022-12-01/decouple_router-3111456-resolve-language-issue-58--get-translation.patch"
+                "Fixing redirect multilanguage 404": "https://www.drupal.org/files/issues/2023-03-22/decouple_router-3111456-resolve-language-issue-63--get-translation.patch"
             },
             "drupal/redirect": {
-                "3057250 - Validation issue on adding url redirect": "https://www.drupal.org/files/issues/2022-09-01/3057250-53.patch",
+                "3057250 - Validation issue on adding url redirect": "https://www.drupal.org/files/issues/2023-08-09/3057250-65.patch",
                 "2991423 - Redirection issue when interface language is different from content language": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
             },
             "drupal/redis": {
                 "TTL handling broken, always permanent": "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
+            },
+            "drupal/config_replace": {
+                "3286681 - Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-08-22/config_replace.2.0.2.rector.patch"
+            },
+            "drupal/helfi_platform_config": {
+                "Add language switcher path": "patches/platform_config/language_switcher.path"
             }
         },
         "installer-paths": {
