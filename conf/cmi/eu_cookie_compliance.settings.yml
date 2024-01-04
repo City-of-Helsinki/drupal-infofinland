@@ -1,7 +1,7 @@
 _core:
   default_config_hash: zmkyvoZ03LGqfVeB0mtslC-pkWMOrGIU9lJl9_jqUkc
 langcode: en
-uuid: 912ab97f-3481-40ef-ae25-4d9c6802f58e
+uuid: 1d24206c-c1cb-44bc-bf7a-bc8a0fc8d69e
 popup_enabled: false
 popup_clicking_confirmation: false
 popup_scrolling_confirmation: false
@@ -11,7 +11,7 @@ eu_only_js: false
 popup_position: false
 fixed_top_position: true
 popup_info:
-  value: "<h2>Infofinland.fi uses cookies</h2>\r\n\r\n<p>This site uses necessary cookies to ensure performance and to monitor general usage. In addition, we use targeting cookies to improve the user experience.</p>\r\n"
+  value: "<h2>Infofinland.fi uses cookies</h2>\r\n\r\n<p></p>\r\n\r\n<p>This site uses necessary cookies to ensure performance and to monitor general usage. In addition, we use targeting cookies to improve the user experience.</p>\r\n\r\n<p></p>\r\n"
   format: full_html
 mobile_popup_info:
   value: ''
