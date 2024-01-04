@@ -1,0 +1,6 @@
+name: Select2 Icon
+type: module
+description: Dummy module
+package: custom
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
