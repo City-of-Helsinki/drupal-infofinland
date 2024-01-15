@@ -126,7 +126,7 @@
                 "3286681 - Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-08-22/config_replace.2.0.2.rector.patch"
             },
             "drupal/helfi_platform_config": {
-                "Add language switcher path": "patches/platform_config/language_switcher.path"
+                "Add language switcher path": "patches/platform_config/language_switcher.patch"
             }
         },
         "installer-paths": {
