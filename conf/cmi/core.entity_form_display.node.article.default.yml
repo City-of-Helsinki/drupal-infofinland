@@ -13,7 +13,7 @@ dependencies:
     - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
-    - hdbt_admin_editorial
+    - hdbt_admin_tools
     - media_library
     - metatag
     - paragraphs
