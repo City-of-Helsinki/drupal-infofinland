@@ -12,8 +12,8 @@
         "drupal/admin_toolbar": "^3.0",
         "drupal/adv_varnish": "^4.0",
         "drupal/allowed_formats": "^2.0",
-        "drupal/ckeditor_bidi": "^3.1",
-        "drupal/color_field": "^2.5",
+        "drupal/ckeditor_bidi": "^4.0",
+        "drupal/color_field": "^3.0",
         "drupal/config_ignore": "^3.0",
         "drupal/config_replace": "^2.0",
         "drupal/config_update": "^2.0@alpha",
@@ -22,7 +22,7 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
-        "drupal/crop": "^2.2",
+        "drupal/crop": "^2.3",
         "drupal/environment_indicator": "^4.0",
         "drupal/features": "^3.13",
         "drupal/filelog": "^2.1",
@@ -35,30 +35,30 @@
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
         "drupal/jsonapi_menu_items": "^1.2",
-        "drupal/legal": "^2.0",
-        "drupal/mailsystem": "^4.3",
-        "drupal/media_entity_browser": "^2.0",
+        "drupal/legal": "^3.0",
+        "drupal/mailsystem": "^4.4",
+        "drupal/media_entity_browser": "^2.0@alpha",
         "drupal/media_entity_soundcloud": "^3.1",
-        "drupal/migrate_plus": "^5.1",
-        "drupal/migrate_source_csv": "^3.4",
-        "drupal/migrate_tools": "^5.0",
-        "drupal/next": "^1.4",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_source_csv": "^3.6",
+        "drupal/migrate_tools": "^6.0",
+        "drupal/next": "^1.6",
         "drupal/node_revision_delete": "^2.0@alpha",
         "drupal/obfuscate": "^2.0",
-        "drupal/paragraphs": "^1.13",
-        "drupal/password_policy": "^3.1",
-        "drupal/pathauto": "^1.9",
-        "drupal/purge": "^3.2",
-        "drupal/queue_ui": "^3.0",
-        "drupal/readonly_field_widget": "^1.4",
-        "drupal/redis": "^1.5",
+        "drupal/paragraphs": "^1.17",
+        "drupal/password_policy": "^4.0",
+        "drupal/pathauto": "^1.12",
+        "drupal/purge": "^3.5",
+        "drupal/queue_ui": "^3.1",
+        "drupal/readonly_field_widget": "^1.5",
+        "drupal/redis": "^1.7",
         "drupal/role_delegation": "^1.2",
         "drupal/smtp": "^1.2",
         "drupal/structure_sync": "^2.0",
         "drupal/subrequests": "^3.0",
         "drupal/token_filter": "^2.1",
         "drupal/ultimate_cron": "^2.0@alpha",
-        "drupal/varnish_purge": "^2.1",
+        "drupal/varnish_purge": "^2.2",
         "drupal/webform_rest": "^4.0",
         "drupal/yoast_seo": "^2.0@alpha",
         "drush/drush": "^11"
@@ -107,26 +107,26 @@
                 "3007031 - hasTranslationChanges on multiple languages outside of saving process is costly": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff",
                 "2815779 - Deleting a translation leaves behind orphaned revisions": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch",
                 "3301239 - PoStreamReader::readLine() throws an error on module install": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
-                "https://www.drupal.org/project/drupal/issues/3268634": "https://git.drupalcode.org/project/drupal/-/merge_requests/2474.diff"
+                "3268634 - Deprecated function: dirname(): Passing null to parameter #1 ($path) of type string is deprecated": "https://git.drupalcode.org/project/drupal/-/merge_requests/2474.diff"
             },
-            "drupal/subrequests": {
-                "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
+            "drupal/config_replace": {
+                "3286681 - Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-08-22/config_replace.2.0.2.rector.patch"
             },
             "drupal/decoupled_router": {
                 "Fixing redirect multilanguage 404": "https://www.drupal.org/files/issues/2023-03-22/decouple_router-3111456-resolve-language-issue-63--get-translation.patch"
+            },
+            "drupal/helfi_platform_config": {
+                "Add language switcher patch": "patches/platform_config/language_switcher.patch"
             },
             "drupal/redirect": {
                 "3057250 - Validation issue on adding url redirect": "https://www.drupal.org/files/issues/2023-08-09/3057250-65.patch",
                 "2991423 - Redirection issue when interface language is different from content language": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
             },
-            "drupal/redis": {
-                "TTL handling broken, always permanent": "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
+            "drupal/simple_oauth": {
+                "3252185 - PHP 8.1: Compatibility": "https://www.drupal.org/files/issues/2021-12-01/3252185-add-traversable-return-type-4.patch.diff"
             },
-            "drupal/config_replace": {
-                "3286681 - Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-08-22/config_replace.2.0.2.rector.patch"
-            },
-            "drupal/helfi_platform_config": {
-                "Add language switcher path": "patches/platform_config/language_switcher.patch"
+            "drupal/subrequests": {
+                "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
             }
         },
         "installer-paths": {
