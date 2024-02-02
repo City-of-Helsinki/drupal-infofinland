@@ -140,7 +140,6 @@ module:
   webform_rest: 0
   workflows: 0
   yoast_seo: 0
-  helfi_ptv_integration: 1
   inline_entity_form: 1
   paragraphs_asymmetric_translation_widgets: 1
   pathauto: 1
