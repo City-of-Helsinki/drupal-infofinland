@@ -1,0 +1,20 @@
+diff --git a/hdbt.theme b/hdbt.theme
+index b5b34cd5..f3442b1a 100644
+--- a/hdbt.theme
++++ b/hdbt.theme
+@@ -178,8 +178,13 @@ function hdbt_preprocess_region(&$variables): void {
+  *   Returns the desired setting as a string or FALSE.
+  */
+ function hdbt_get_settings(string $setting, string $group = 'site_settings'): string|NULL {
+-  return Drupal::config('hdbt_admin_tools.site_settings')
+-    ?->getOriginal("$group.$setting", FALSE);
++  $default_values = [
++    'koro' => 'basic',
++    'theme_color' => 'coat-at-arms',
++    'default_icon' => 'home-smoke',
++    'footer_color' => 'dark'
++  ];
++  return $default_values[$setting];
+ }
+ 
+ /**
