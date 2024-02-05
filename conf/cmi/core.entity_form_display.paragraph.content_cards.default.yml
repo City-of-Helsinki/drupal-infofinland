@@ -7,8 +7,6 @@ dependencies:
     - field.field.paragraph.content_cards.field_content_cards_design
     - field.field.paragraph.content_cards.field_content_cards_title
     - paragraphs.paragraphs_type.content_cards
-  module:
-    - hdbt_admin_tools
 _core:
   default_config_hash: pQYRa6lxk6jv6g5WBIjqTcKCrnzv1LUeJip8dLgmViU
 id: paragraph.content_cards.default
@@ -27,8 +25,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_content_cards_design:
-    type: design_field_widget
-    weight: 1
+    type: options_select
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }

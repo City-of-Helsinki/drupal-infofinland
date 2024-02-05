@@ -9,7 +9,6 @@ dependencies:
     - field.field.paragraph.liftup_with_image.field_liftup_with_image_title
     - paragraphs.paragraphs_type.liftup_with_image
   module:
-    - hdbt_admin_tools
     - media_library
     - text
 _core:
@@ -28,8 +27,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_liftup_with_image_design:
-    type: design_field_widget
-    weight: 0
+    type: options_select
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }

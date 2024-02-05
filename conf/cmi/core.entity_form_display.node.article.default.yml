@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.article.field_yoast_seo
     - node.type.article
   module:
-    - hdbt_admin_tools
     - media_library
     - metatag
     - paragraphs
@@ -132,6 +131,11 @@ content:
     third_party_settings: {  }
   scheduler_settings:
     weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
