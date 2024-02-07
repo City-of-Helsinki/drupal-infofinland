@@ -117,9 +117,6 @@
             "drupal/hdbt": {
                 "Quick-Fix too many req to cache in hdbt_get_settings - the hdbt should be upgraded to latest release, but it is a larger task": "./patches/hdbt/hdbt-quick-fix-hdbt_get_settings.patch"
             },
-            "drupal/hdbt_admin": {
-                "Fix always open in new tab": "./patches/hdbt_admin/fix_new_tab.patch"
-            },
             "drupal/redis": {
                 "TTL handling broken, always permanent": "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
             }

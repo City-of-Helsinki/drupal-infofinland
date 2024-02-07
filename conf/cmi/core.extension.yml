@@ -48,8 +48,6 @@ module:
   focal_point: 0
   gin_toolbar: 0
   hal: 0
-  hdbt_admin_editorial: 0
-  hdbt_admin_tools: 0
   hdbt_component_library: 0
   hdbt_content: 0
   hdbt_hyphenopoly: 0
