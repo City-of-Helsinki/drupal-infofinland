@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c22406e9c5a54dbc2d011561e5096f35",
+    "content-hash": "55b5af22e73bd9b4eddf06796ccfdac8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4173,29 +4173,53 @@
         },
         {
             "name": "drupal/helfi_drupal_tools",
-            "version": "dev-main",
+            "version": "dev-drush-10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-tools.git",
-                "reference": "fe029d2669b2a03dc78bea919efc598492a36afd"
+                "reference": "f063599143079b099b49e613eb7691662958a3b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-tools/zipball/fe029d2669b2a03dc78bea919efc598492a36afd",
-                "reference": "fe029d2669b2a03dc78bea919efc598492a36afd",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-tools/zipball/f063599143079b099b49e613eb7691662958a3b1",
+                "reference": "f063599143079b099b49e613eb7691662958a3b1",
                 "shasum": ""
             },
-            "default-branch": true,
+            "require": {
+                "drush/drush": "^10 || ^11 || ^12"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "drupal/coder": "^8.3",
+                "phpspec/prophecy-phpunit": "^2",
+                "phpunit/phpunit": "^9.6"
+            },
             "type": "drupal-drush",
+            "autoload": {
+                "psr-4": {
+                    "DrupalTools\\": "src"
+                },
+                "files": [
+                    "src/Update/migrations.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "DrupalToolsTest\\": "tests/fixtures"
+                },
+                "files": [
+                    "tests/fixtures/migration_fixture.php"
+                ]
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Helfi - Drupal tools",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-tools/tree/main",
+                "source": "https://github.com/City-of-Helsinki/drupal-tools/tree/drush-10",
                 "issues": "https://github.com/City-of-Helsinki/drupal-tools/issues"
             },
-            "time": "2022-05-19T05:43:34+00:00"
+            "time": "2023-10-27T06:16:44+00:00"
         },
         {
             "name": "drupal/helfi_media_formtool",
@@ -18256,5 +18280,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }

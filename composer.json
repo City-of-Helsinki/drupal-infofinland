@@ -25,7 +25,7 @@
         "drupal/hdbt_admin": "^1.0",
         "drupal/helfi_api_base": "^2.0",
         "drupal/helfi_azure_fs": "^1.0",
-        "drupal/helfi_drupal_tools": "dev-main",
+        "drupal/helfi_drupal_tools": "dev-drush-10",
         "drupal/helfi_platform_config": "2.4.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
