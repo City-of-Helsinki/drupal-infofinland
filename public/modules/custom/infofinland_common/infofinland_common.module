@@ -7,6 +7,8 @@
 
 declare(strict_types = 1);
 
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\EntityChangedInterface;
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Url;
 use Drupal\Core\Form\FormStateInterface;
@@ -278,6 +280,43 @@ function infofinland_common_form_node_page_form_alter(&$form, FormStateInterface
 }
 
 /**
+ * Workaround for https://www.drupal.org/project/drupal/issues/3285657.
+ *
+ * @param &$form
+ *   Form.
+ * @param ContentEntityInterface $entity
+ *   Content entity.
+ */
+function _infofinland_common_fix_revision_validation(&$form, ContentEntityInterface $entity): void {
+  if (!isset($form['changed']) || !$entity instanceof EntityChangedInterface) {
+    return;
+  }
+
+  /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
+  $storage = \Drupal::entityTypeManager()
+    ->getStorage($entity->getEntityTypeId());
+
+  $latestRevisionId = $storage
+    ->getLatestRevisionId($entity->id());
+
+  if ($entity->id() != $latestRevisionId) {
+    /** @var ContentEntityInterface|EntityChangedInterface $latestRevision */
+    $latestRevision = $storage->loadRevision($latestRevisionId);
+
+    if ($latestRevision->getChangedTime() > $entity->getChangedTime()) {
+      // Ensure that EntityChangedConstraintValidator::validate passes if
+      // the database has revisions that are published after the current
+      // translation was last edited. This can happen with content_moderation
+      // module when moderation status is changed form "Draft" -> "Published".
+      //
+      // See: https://www.drupal.org/project/drupal/issues/3285657.
+      $form['changed']['#default_value'] = $latestRevision->getChangedTime();
+    }
+  }
+
+}
+
+/**
  * Implements hook_form_alter().
  *
  * Node page edit form.
@@ -289,6 +328,7 @@ function infofinland_common_form_node_page_edit_form_alter(&$form, FormStateInte
   $form['actions']['submit']['#submit'][] = 'redirectFunction';
   $node = $form_state->getFormObject()->getEntity();
   _hide_form_fields($form);
+  _infofinland_common_fix_revision_validation($form, $node);
 
   // If municipality is not set or there's no reference from national page, hide info paragraphs field.
   if ($node->get('field_municipality_selection')->isEmpty() || $node->get('field_municipality_info')->isEmpty()) {
