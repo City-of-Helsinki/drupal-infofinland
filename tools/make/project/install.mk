@@ -1,7 +1,5 @@
 ifeq ($(DRUPAL_CONF_EXISTS),yes)
 	DRUPAL_NEW_TARGETS := up build drush-si drush-cr drush-locale-update drush-uli
-else
-	DRUPAL_NEW_TARGETS := up build drush-si helfi-drush-enable-modules drush-locale-update drush-uli
 endif
 DRUPAL_POST_INSTALL_TARGETS := drush-deploy drush-locale-update drush-uli
 
@@ -25,12 +23,6 @@ oc-sync:
 	$(call drush,cr)
 	$(call drush,cim -y)
 	$(call drush,cr)
-
-PHONY += helfi-drush-enable-modules
-helfi-drush-enable-modules: ## Enable modules and base configurations.
-	$(call step,Install base configurations...)
-	$(call drush,cr)
-	$(call drush,en -y helfi_platform_config helfi_platform_config_base)
 
 PHONY += drush-locale-update
 drush-locale-update: ## Update translations.

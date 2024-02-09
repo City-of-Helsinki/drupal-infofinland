@@ -98,7 +98,8 @@
             "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "drupal/core-project-message": true
+            "drupal/core-project-message": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
