@@ -103,6 +103,7 @@ module:
   purge_tokens: 0
   purge_ui: 0
   queue_ui: 0
+  raven: 0
   readonly_field_widget: 0
   redirect: 0
   redirect_404: 0
