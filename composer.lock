@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c22406e9c5a54dbc2d011561e5096f35",
+    "content-hash": "2e2019acff59923b7f6515e3534953ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1515,7 +1515,7 @@
             ],
             "authors": [
                 {
-                    "name": "claymor",
+                    "name": "m.krestnicov",
                     "homepage": "https://www.drupal.org/user/3193903"
                 },
                 {
@@ -3610,10 +3610,6 @@
                 {
                     "name": "mpotter",
                     "homepage": "https://www.drupal.org/user/616192"
-                },
-                {
-                    "name": "nedjo",
-                    "homepage": "https://www.drupal.org/user/4481"
                 }
             ],
             "description": "Enables administrators to package configuration into modules",
@@ -3658,6 +3654,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
                 {
                     "name": "Hydra",
                     "homepage": "https://www.drupal.org/user/647364"
@@ -3801,6 +3801,10 @@
                 {
                     "name": "mglaman",
                     "homepage": "https://www.drupal.org/user/2416470"
+                },
+                {
+                    "name": "robbin.zhao",
+                    "homepage": "https://www.drupal.org/user/616818"
                 },
                 {
                     "name": "twistor",
@@ -4173,29 +4177,53 @@
         },
         {
             "name": "drupal/helfi_drupal_tools",
-            "version": "dev-main",
+            "version": "dev-drush-10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-tools.git",
-                "reference": "fe029d2669b2a03dc78bea919efc598492a36afd"
+                "reference": "f063599143079b099b49e613eb7691662958a3b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-tools/zipball/fe029d2669b2a03dc78bea919efc598492a36afd",
-                "reference": "fe029d2669b2a03dc78bea919efc598492a36afd",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-tools/zipball/f063599143079b099b49e613eb7691662958a3b1",
+                "reference": "f063599143079b099b49e613eb7691662958a3b1",
                 "shasum": ""
             },
-            "default-branch": true,
+            "require": {
+                "drush/drush": "^10 || ^11 || ^12"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "drupal/coder": "^8.3",
+                "phpspec/prophecy-phpunit": "^2",
+                "phpunit/phpunit": "^9.6"
+            },
             "type": "drupal-drush",
+            "autoload": {
+                "psr-4": {
+                    "DrupalTools\\": "src"
+                },
+                "files": [
+                    "src/Update/migrations.php"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "DrupalToolsTest\\": "tests/fixtures"
+                },
+                "files": [
+                    "tests/fixtures/migration_fixture.php"
+                ]
+            },
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "Helfi - Drupal tools",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-tools/tree/main",
+                "source": "https://github.com/City-of-Helsinki/drupal-tools/tree/drush-10",
                 "issues": "https://github.com/City-of-Helsinki/drupal-tools/issues"
             },
-            "time": "2022-05-19T05:43:34+00:00"
+            "time": "2023-10-27T06:16:44+00:00"
         },
         {
             "name": "drupal/helfi_media_formtool",
@@ -4262,6 +4290,7 @@
                 "source": "https://github.com/City-of-Helsinki/drupal-module-helfi-media-map/tree/1.0.2",
                 "issues": "https://github.com/City-of-Helsinki/drupal-module-helfi-media-map/issues"
             },
+            "abandoned": true,
             "time": "2021-11-18T05:55:15+00:00"
         },
         {
@@ -4527,6 +4556,10 @@
                     "homepage": "https://www.drupal.org/user/99340"
                 },
                 {
+                    "name": "dww",
+                    "homepage": "https://www.drupal.org/user/46549"
+                },
+                {
                     "name": "geek-merlin",
                     "homepage": "https://www.drupal.org/user/229048"
                 },
@@ -4541,10 +4574,6 @@
                 {
                     "name": "oknate",
                     "homepage": "https://www.drupal.org/user/471638"
-                },
-                {
-                    "name": "podarok",
-                    "homepage": "https://www.drupal.org/user/116002"
                 },
                 {
                     "name": "ram4nd",
@@ -5655,6 +5684,10 @@
                     "homepage": "https://shadcn.com"
                 },
                 {
+                    "name": "roaguicr",
+                    "homepage": "https://www.drupal.org/user/2334450"
+                },
+                {
                     "name": "rrrob",
                     "homepage": "https://www.drupal.org/user/273533"
                 },
@@ -6230,10 +6263,6 @@
                 {
                     "name": "nielsvm",
                     "homepage": "https://www.drupal.org/user/163285"
-                },
-                {
-                    "name": "SqyD",
-                    "homepage": "https://www.drupal.org/user/106525"
                 }
             ],
             "description": "Provides a generic external cache invalidation API and queue service.",
@@ -6965,6 +6994,10 @@
                     "homepage": "https://www.drupal.org/user/616836"
                 },
                 {
+                    "name": "Hjalteschurmann",
+                    "homepage": "https://www.drupal.org/user/3730405"
+                },
+                {
                     "name": "kreynen",
                     "homepage": "https://www.drupal.org/user/48877"
                 },
@@ -7546,10 +7579,6 @@
                     "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
-                    "name": "Dane Powell",
-                    "homepage": "https://www.drupal.org/user/339326"
-                },
-                {
                     "name": "gielfeldt",
                     "homepage": "https://www.drupal.org/user/366993"
                 },
@@ -7631,6 +7660,10 @@
                 {
                     "name": "thunderbot",
                     "homepage": "https://www.drupal.org/user/3511180"
+                },
+                {
+                    "name": "volkerk",
+                    "homepage": "https://www.drupal.org/user/57527"
                 }
             ],
             "description": "This module offers supporting functionalities to make configuration updates easier.",
@@ -7734,20 +7767,8 @@
             "authors": [
                 {
                     "name": "Agnes Chisholm",
-                    "homepage": "https://www.drupal.org/user/66428",
+                    "homepage": "https://www.drupal.org/user/173461",
                     "email": "amaria@chisholmtech.com"
-                },
-                {
-                    "name": "beeradb",
-                    "homepage": "https://www.drupal.org/user/120651"
-                },
-                {
-                    "name": "elevins",
-                    "homepage": "https://www.drupal.org/user/781882"
-                },
-                {
-                    "name": "entendu",
-                    "homepage": "https://www.drupal.org/user/173461"
                 },
                 {
                     "name": "fathima.asmat",
@@ -7925,6 +7946,10 @@
                 {
                     "name": "nsalves",
                     "homepage": "https://www.drupal.org/user/3557178"
+                },
+                {
+                    "name": "pmaiacar",
+                    "homepage": "https://www.drupal.org/user/3575425"
                 }
             ],
             "description": "Allows retrieving webform elements and submitting webforms via REST",
@@ -17768,12 +17793,12 @@
             "version": "3.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
                 "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1359e176e9307e906dc3d890bcc9603ff6d90619",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/1359e176e9307e906dc3d890bcc9603ff6d90619",
                 "reference": "1359e176e9307e906dc3d890bcc9603ff6d90619",
                 "shasum": ""
             },
@@ -17817,6 +17842,20 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
+            "funding": [
+                {
+                    "url": "https://github.com/PHPCSStandards",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/jrfnl",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/php_codesniffer",
+                    "type": "open_collective"
+                }
+            ],
             "time": "2022-06-18T07:21:10+00:00"
         },
         {
@@ -18256,5 +18295,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }
