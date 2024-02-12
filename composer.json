@@ -44,6 +44,7 @@
         "drupal/pathauto": "^1.9",
         "drupal/purge": "^3.2",
         "drupal/queue_ui": "^3.0",
+        "drupal/raven": "^4.0",
         "drupal/readonly_field_widget": "^1.4",
         "drupal/redis": "^1.5",
         "drupal/role_delegation": "^1.2",
