@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "9ceeda347d4c51e9c68745e01a83bc43",
-=======
     "content-hash": "d05e6a4dd1c23aa85f61d272a6e663db",
->>>>>>> dev
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4164,8 +4160,6 @@
             "time": "2023-10-27T06:16:44+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "drupal/helfi_media_formtool",
             "version": "dev-main",
             "source": {
@@ -4340,7 +4334,6 @@
             "time": "2022-01-28T09:28:37+00:00"
         },
         {
->>>>>>> dev
             "name": "drupal/image_style_quality",
             "version": "1.4.0",
             "source": {
@@ -6619,8 +6612,6 @@
             }
         },
         {
-<<<<<<< HEAD
-=======
             "name": "drupal/siteimprove",
             "version": "1.12.0",
             "source": {
@@ -6700,7 +6691,6 @@
             }
         },
         {
->>>>>>> dev
             "name": "drupal/smtp",
             "version": "1.1.0",
             "source": {
@@ -7170,8 +7160,6 @@
             }
         },
         {
-<<<<<<< HEAD
-=======
             "name": "drupal/update_helper",
             "version": "2.0.0",
             "source": {
@@ -7247,7 +7235,6 @@
             }
         },
         {
->>>>>>> dev
             "name": "drupal/varnish_purge",
             "version": "2.2.0",
             "source": {
@@ -7308,8 +7295,6 @@
             }
         },
         {
-<<<<<<< HEAD
-=======
             "name": "drupal/view_unpublished",
             "version": "1.0.0",
             "source": {
@@ -7363,7 +7348,6 @@
             }
         },
         {
->>>>>>> dev
             "name": "drupal/webform",
             "version": "6.1.3",
             "source": {
