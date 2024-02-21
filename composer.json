@@ -38,8 +38,8 @@
         "drupal/hdbt_admin": "^1.0",
         "drupal/helfi_api_base": "^2.0",
         "drupal/helfi_azure_fs": "^1.0",
-        "drupal/helfi_drupal_tools": "dev-main",
-        "drupal/image_style_quality": "^1.4",
+        "drupal/helfi_drupal_tools": "dev-drush-10",
+        "drupal/helfi_platform_config": "2.4.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
         "drupal/jsonapi_menu_items": "^1.2",
@@ -128,6 +128,7 @@
                 "3301239 - PoStreamReader::readLine() throws an error on module install": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
                 "[#UHF-7008] Add multilingual support for caching basefield definitions (https://www.drupal.org/project/drupal/issues/3114824)": "https://www.drupal.org/files/issues/2020-02-20/3114824_2.patch",
                 "[#UHF-7008] Core localization file download URL is wrong (https://www.drupal.org/project/drupal/issues/3022876)": "https://git.drupalcode.org/project/drupal/-/commit/40a96136b2dfe4322338508dffa636f6cb407900.patch"
+                "3285657 - Cannot save or publish originating node or translations": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
             },
             "drupal/ctools": {
                 "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
