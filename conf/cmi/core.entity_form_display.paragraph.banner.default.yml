@@ -8,11 +8,9 @@ dependencies:
     - field.field.paragraph.banner.field_banner_link
     - field.field.paragraph.banner.field_banner_link_design
     - field.field.paragraph.banner.field_banner_title
-    - field.field.paragraph.banner.field_icon
     - paragraphs.paragraphs_type.banner
   module:
     - link
-    - select2_icon
     - text
 _core:
   default_config_hash: 8wgVOUD1i4Nrbf2GrsDH0Qr3YSFafxtiGarqH6RLLUc
@@ -56,12 +54,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_icon:
-    type: select2_icon_widget
-    weight: 2
-    region: content
-    settings: {  }
     third_party_settings: {  }
   translation:
     weight: 10
