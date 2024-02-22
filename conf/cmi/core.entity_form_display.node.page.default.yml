@@ -25,7 +25,6 @@ dependencies:
   module:
     - content_moderation
     - field_group
-    - hdbt_admin_editorial
     - metatag
     - paragraphs
     - paragraphs_asymmetric_translation_widgets

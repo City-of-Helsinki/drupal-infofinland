@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.list_of_links.field_list_of_links_title
     - paragraphs.paragraphs_type.list_of_links
   module:
-    - hdbt_admin_editorial
     - paragraphs
 _core:
   default_config_hash: LBbBIE1JvrmAnOImQR0rd-u3Nc3i-SRD2WicIGCCwqU
@@ -18,8 +17,8 @@ bundle: list_of_links
 mode: default
 content:
   field_list_of_links_design:
-    type: design_field_widget
-    weight: 1
+    type: options_select
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
