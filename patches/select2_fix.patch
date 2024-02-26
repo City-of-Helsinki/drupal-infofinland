@@ -1,0 +1,39 @@
+diff --git a/gin.info.yml b/gin.info.yml
+index 879e11d..ed9ab87 100755
+--- a/gin.info.yml
++++ b/gin.info.yml
+@@ -15,6 +15,9 @@ libraries:
+   - gin/gin
+ 
+ libraries-override:
++  # Custom patch to fix select2 fields.
++  select2/select2.min: gin/select2.min
++
+   system/base:
+     css:
+       component:
+diff --git a/gin.libraries.yml b/gin.libraries.yml
+index 342255d..f970c1f 100644
+--- a/gin.libraries.yml
++++ b/gin.libraries.yml
+@@ -285,3 +285,20 @@ linkit:
+   css:
+     component:
+       dist/css/components/linkit.css: { minified: false }
++
++# Custom patch to fix select2 fields.
++select2.min:
++  remote: https://github.com/select2/select2
++  license:
++    name: MIT
++    url: https://github.com/select2/select2/blob/master/LICENSE.md
++    gpl-compatible: true
++  js:
++    dist/js/select2.min.js: { minified: true, preprocess: false }
++  css:
++    component:
++      dist/css/select2.min.css: { preprocess: false }
++  dependencies:
++    - core/jquery.once
++    - core/drupal
++    - core/sortable
