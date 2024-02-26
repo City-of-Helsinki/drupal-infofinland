@@ -73,6 +73,7 @@
         "drupal/select2": "^1.13",
         "drupal/simple_sitemap": "^3.1",
         "drupal/smtp": "^1.0",
+        "drupal/social_media": "1.9.0-rc2",
         "drupal/structure_sync": "^2.0",
         "drupal/subrequests": "^3.0",
         "drupal/token_filter": "^1.4",
