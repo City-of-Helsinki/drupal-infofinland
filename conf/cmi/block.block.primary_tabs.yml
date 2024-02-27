@@ -4,7 +4,7 @@ status: true
 dependencies:
   theme:
     - infofinland_admin
-id: tabs
+id: primary_tabs
 theme: infofinland_admin
 region: header
 weight: -4
