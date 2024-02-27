@@ -11,8 +11,8 @@ _core:
   default_config_hash: exT4lfsQK-ekjJqsVu1l0uJ7eGvkRqcwOZdzEXQFBqw
 id: infofinland_language_switcher
 theme: infofinland
-region: content
-weight: -3
+region: header_top
+weight: 2
 provider: null
 plugin: 'language_block:language_content'
 settings:
