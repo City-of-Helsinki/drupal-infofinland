@@ -11,7 +11,7 @@ _core:
 id: infofinland_sitebranding
 theme: infofinland
 region: header_top
-weight: 1
+weight: -4
 provider: null
 plugin: system_branding_block
 settings:

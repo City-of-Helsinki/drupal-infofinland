@@ -1,0 +1,20 @@
+uuid: 48d104da-055d-460d-aa74-4cc540ae483f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - infofinland_admin
+id: breadcrumbs_2
+theme: infofinland_admin
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
