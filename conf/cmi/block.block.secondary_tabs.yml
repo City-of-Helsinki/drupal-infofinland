@@ -6,7 +6,7 @@ dependencies:
     - infofinland_admin
 id: secondary_tabs
 theme: infofinland_admin
-region: pre_content
+region: header
 weight: -3
 provider: null
 plugin: local_tasks_block
