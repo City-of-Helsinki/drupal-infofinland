@@ -6,7 +6,7 @@ dependencies:
     - system
   theme:
     - infofinland_admin
-id: breadcrumbs_2
+id: infofinland_admin_breadcrumbs
 theme: infofinland_admin
 region: breadcrumb
 weight: 0
