@@ -14,9 +14,9 @@ dependencies:
     - field.field.node.landing_page.field_url
     - field.field.node.landing_page.field_yoast_seo
     - node.type.landing_page
+    - workflows.workflow.editorial
   module:
     - content_moderation
-    - hdbt_admin_editorial
     - media_library
     - metatag
     - paragraphs
