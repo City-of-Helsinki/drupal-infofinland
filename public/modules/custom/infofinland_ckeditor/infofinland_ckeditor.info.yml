@@ -2,8 +2,8 @@ name: Infofinland ckeditor
 description: Custom module for ckeditor customizations.
 type: module
 package: custom
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9
 dependencies:
-  - ckeditor
+  - drupal:ckeditor
   - drupal:editor
-  - linkit
+  - drupal:linkit
