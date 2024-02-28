@@ -1,0 +1,17 @@
+modal_window_position:
+  version: 1.x
+  js:
+    assets/js/modalWindowPosition.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+link_plugin_enhancements:
+  version: 1.x
+  js:
+    assets/js/linkPluginEnhancements.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
