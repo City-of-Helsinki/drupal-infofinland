@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Drupal\hdbt_admin_editorial\Plugin\Field\FieldWidget;
+namespace Drupal\infofinland_ckeditor\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;

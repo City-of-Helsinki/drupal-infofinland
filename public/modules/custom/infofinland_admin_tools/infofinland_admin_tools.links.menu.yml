@@ -58,12 +58,6 @@ infofinland_admin_tools.footer_bottom_menu:
   route_parameters: { menu: 'footer-bottom-navigation' }
   weight: 4
 
-infofinland_admin_tools.component_library:
-  title: 'HDBT - Component library'
-  parent: infofinland_admin_tools.overview
-  route_name: hdbt_component_library.component_library
-  weight: 1
-
 infofinland_admin_tools.taxonomy:
   title: 'Taxonomy'
   parent: infofinland_admin_tools.overview
