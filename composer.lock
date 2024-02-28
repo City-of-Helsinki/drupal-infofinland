@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "397da3fb024d12867a17dace16f86b6f",
+    "content-hash": "ed937f54a50f56391bceca2cbb25cbd0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4603,36 +4603,32 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "6.0.2",
+            "version": "6.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "6.0.2"
+                "reference": "6.0.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-6.0.2.zip",
-                "reference": "6.0.2",
-                "shasum": "b7d965d122403c0d1cd8b891db3ea56004026804"
+                "url": "https://ftp.drupal.org/files/projects/linkit-6.0.0-beta3.zip",
+                "reference": "6.0.0-beta3",
+                "shasum": "39a5bf54cbc88324d788a573df7b3fecf7622065"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10.0.0"
-            },
-            "conflict": {
-                "drupal/core": ">=10.1"
+                "drupal/core": "^8.7.7 || ^9"
             },
             "require-dev": {
-                "drupal/ckeditor": "*",
                 "drupal/imce": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.0.2",
-                    "datestamp": "1696865395",
+                    "version": "6.0.0-beta3",
+                    "datestamp": "1632946984",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -18250,7 +18246,6 @@
         "drupal/entity_usage": 10,
         "drupal/helfi_drupal_tools": 20,
         "drupal/inline_entity_form": 5,
-        "drupal/linkit": 10,
         "drupal/node_revision_delete": 15,
         "drupal/ultimate_cron": 15,
         "drupal/yoast_seo": 15
