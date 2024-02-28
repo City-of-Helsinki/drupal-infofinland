@@ -3,7 +3,7 @@ description: Admin theme for infofinland based on Gin -theme
 type: theme
 base theme: gin
 tags: sub-theme
-core_version_requirement: ^10
+core_version_requirement: ^9 || ^10
 
 # Libraries
 libraries:
