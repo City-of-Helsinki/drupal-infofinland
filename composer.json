@@ -40,11 +40,12 @@
         "drupal/helfi_api_base": "^2.0",
         "drupal/helfi_azure_fs": "^1.0",
         "drupal/helfi_drupal_tools": "dev-drush-10",
+        "drupal/image_style_quality": "1.4.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/legal": "^2.0",
-        "drupal/linkit": "^6.0.0@beta",
+        "drupal/linkit": "6.0.0-beta3",
         "drupal/mailsystem": "^4.3",
         "drupal/media_entity_browser": "^2.0",
         "drupal/media_entity_soundcloud": "^3.1",
@@ -141,7 +142,7 @@
                 "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
             },
             "drupal/paragraphs": {
-                "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13836790": "https://www.drupal.org/files/issues/2020-09-25/2904705-115.patch",
+                "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13836790": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
                 "[#UHF-2059] Enhancements for the Admin UI": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/fdccb32397cc6fa19b4d0077b21a2b18aa6be297/patches/helfi_customizations_for_paragraphs_widget_8.x-1.12.patch"
             },
             "drupal/publication_date": {
