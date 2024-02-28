@@ -1,0 +1,20 @@
+uuid: bf603c98-0db8-49a1-b10a-8b48d12fd37a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - infofinland_admin
+id: primary_tabs
+theme: infofinland_admin
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

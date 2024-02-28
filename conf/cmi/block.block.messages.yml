@@ -1,0 +1,20 @@
+uuid: 262d7bd7-9cd6-44a0-a857-75c9bd1dd480
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - infofinland_admin
+id: messages
+theme: infofinland_admin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

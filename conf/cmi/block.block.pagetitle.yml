@@ -1,0 +1,18 @@
+uuid: fb786557-9905-4570-a703-15ce8976ceab
+langcode: en
+status: true
+dependencies:
+  theme:
+    - infofinland_admin
+id: pagetitle
+theme: infofinland_admin
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }
