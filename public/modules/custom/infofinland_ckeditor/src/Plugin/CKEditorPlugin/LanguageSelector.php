@@ -71,7 +71,6 @@ class LanguageSelector extends CKEditorPluginBase {
   public function getLibraries(Editor $editor): array {
     return [
       'infofinland_ckeditor/language_selector',
-      'select2_icon/select2_icon',
     ];
   }
 
