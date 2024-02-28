@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains HDBT Admin theme.
+ */
+
+use Drupal\Core\Language\LanguageInterface;
+
+/**
+ * Implements hook_preprocess().
+ */
+function infofinland_admin_preprocess(&$variables) {
+  $language = Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
+  $variables['current_langcode'] = $language->getId();
+  $variables['current_language'] = $language->getName();
+}

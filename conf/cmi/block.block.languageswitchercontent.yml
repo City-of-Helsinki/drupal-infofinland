@@ -1,0 +1,20 @@
+uuid: 87ce2036-35d8-4ff6-9cbb-1bcc6b9c9190
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - infofinland_admin
+id: languageswitchercontent
+theme: infofinland_admin
+region: header
+weight: -2
+provider: null
+plugin: 'language_block:language_content'
+settings:
+  id: 'language_block:language_content'
+  label: 'Language switcher (Content)'
+  label_display: '0'
+  provider: language
+visibility: {  }

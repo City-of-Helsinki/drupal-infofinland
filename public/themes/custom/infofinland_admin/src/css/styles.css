@@ -1,0 +1,28 @@
+.language-switcher {
+  position: relative;
+  margin-top: 10px;
+}
+
+a {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.language-switcher__dropdown {
+  display: flex;
+}
+
+.language-switcher .language-link {
+  font-size: .875rem;
+  margin: 0 4px;
+  padding: 2px 4px;
+  color: #000;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.language-switcher .language-link.is-active {
+  cursor: default;
+  font-weight: 700;
+}
