@@ -17,12 +17,6 @@ infofinland_admin_tools.site_information_child:
   route_name: system.site_information_settings
   weight: 0
 
-infofinland_admin_tools.site_settings_form:
-  title: 'Site settings'
-  parent: infofinland_admin_tools.site_information
-  route_name: infofinland_admin_tools.site_settings_form
-  weight: -8
-
 infofinland_admin_tools.menus:
   title: 'Menus'
   parent: infofinland_admin_tools.overview
@@ -79,13 +73,3 @@ infofinland_admin_tools.user_interface_translations:
   title: 'User interface translations'
   parent: infofinland_admin_tools.overview
   route_name: locale.translate_page
-
-infofinland_admin_tools.cookie_consent_content:
-  title: 'Cookie consent intro'
-  parent: infofinland_admin_tools.site_information
-  route_name: infofinland_admin_tools.cookie_consent_intro_form
-
-infofinland_admin_tools.eu_cookie_consent_content:
-  title: 'Cookie consent intro'
-  parent: eu_cookie_compliance
-  route_name: infofinland_admin_tools.cookie_consent_intro_form
