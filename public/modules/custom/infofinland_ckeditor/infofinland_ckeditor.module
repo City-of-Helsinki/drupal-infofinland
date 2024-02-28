@@ -139,7 +139,7 @@ function infofinland_ckeditor_form_linkit_editor_dialog_form_alter(&$form, FormS
  * Validation for link attributes.
  *
  * String "true" / "false" values are handled in javascript.
- * See: ./modules/hdbt_admin_editorial/assets/js/plugins/hds-button/plugin.js.
+ * See: ./modules/infofinland_ckeditor/assets/js/plugins/hds-button/plugin.js.
  */
 function _infofinland_ckeditor_attributes_validate(array &$form, FormStateInterface $form_state) {
   $attributes = $form_state->getValue('attributes');

@@ -37,7 +37,7 @@ class LanguageSelector extends CKEditorPluginBase {
     return [
       'language_selector' => [
         'label' => $this->t('Language selector'),
-        'image' => 'themes/contrib/hdbt_admin/modules/hdbt_admin_editorial/assets/js/plugins/language_selector/icons/language_selector.png',
+        'image' => 'themes/contrib/hdbt_admin/modules/infofinland_ckeditor/assets/js/plugins/language_selector/icons/language_selector.png',
       ],
     ];
   }
@@ -48,7 +48,7 @@ class LanguageSelector extends CKEditorPluginBase {
   public function getFile(): string {
     // Make sure that the path to the plugin.js matches the file structure of
     // the CKEditor plugin you are implementing.
-    return $this->getModuleList()->getPath('hdbt_admin_editorial') . '/assets/js/plugins/language_selector/plugin.js';
+    return $this->getModuleList()->getPath('infofinland_ckeditor') . '/assets/js/plugins/language_selector/plugin.js';
   }
 
   /**
@@ -70,7 +70,7 @@ class LanguageSelector extends CKEditorPluginBase {
    */
   public function getLibraries(Editor $editor): array {
     return [
-      'hdbt_admin_editorial/language_selector',
+      'infofinland_ckeditor/language_selector',
       'select2_icon/select2_icon',
     ];
   }

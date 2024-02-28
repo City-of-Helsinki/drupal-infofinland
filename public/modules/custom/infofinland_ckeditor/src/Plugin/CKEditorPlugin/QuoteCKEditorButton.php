@@ -32,7 +32,7 @@ class QuoteCKEditorButton extends CKEditorPluginBase {
     return [
       'quote' => [
         'label' => $this->t('Quote'),
-        'image' => 'themes/contrib/hdbt_admin/modules/hdbt_admin_editorial/assets/js/plugins/quote/icons/quote.png',
+        'image' => 'themes/contrib/hdbt_admin/modules/infofinland_ckeditor/assets/js/plugins/quote/icons/quote.png',
       ],
     ];
   }
@@ -43,7 +43,7 @@ class QuoteCKEditorButton extends CKEditorPluginBase {
   public function getFile() {
     // Make sure that the path to the plugin.js matches the file structure of
     // the CKEditor plugin you are implementing.
-    return $this->getModuleList()->getPath('hdbt_admin_editorial') . '/assets/js/plugins/quote/plugin.js';
+    return $this->getModuleList()->getPath('infofinland_ckeditor') . '/assets/js/plugins/quote/plugin.js';
   }
 
   /**

@@ -29,7 +29,7 @@ class HDSButtonCKEditor extends PluginBase implements CKEditorPluginInterface, C
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'hdbt_admin_editorial') . '/assets/js/plugins/hds-button/plugin.js';
+    return drupal_get_path('module', 'infofinland_ckeditor') . '/assets/js/plugins/hds-button/plugin.js';
   }
 
   /**
