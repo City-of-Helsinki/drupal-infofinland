@@ -1,0 +1,12 @@
+infofinland_admin_tools.list_all:
+  path: '/admin/tools'
+  defaults:
+    _controller: '\Drupal\infofinland_admin_tools\Controller\ListController::build'
+    _title: 'Tools'
+  requirements:
+    _permission: 'administer nodes'
+
+infofinland_admin_tools.taxonomy:
+  path: '/admin/structure/taxonomy'
+  requirements:
+    _permission: 'access taxonomy overview'
