@@ -37,7 +37,7 @@ class LanguageSelector extends CKEditorPluginBase {
     return [
       'language_selector' => [
         'label' => $this->t('Language selector'),
-        'image' => 'themes/contrib/hdbt_admin/modules/infofinland_ckeditor/assets/js/plugins/language_selector/icons/language_selector.png',
+        'image' => 'modules/infofinland_ckeditor/assets/js/plugins/language_selector/icons/language_selector.png',
       ],
     ];
   }
