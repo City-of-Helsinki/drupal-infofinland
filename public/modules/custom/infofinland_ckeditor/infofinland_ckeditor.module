@@ -5,16 +5,8 @@
  * Contains editorial alterations.
  */
 
-use Drupal\Core\Entity\EntityForm;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Url;
-use Drupal\hdbt_admin_tools\Form\SiteSettings;
 use Drupal\helfi_api_base\Link\UrlHelper;
-use Drupal\select2_icon\Plugin\Field\FieldType\Select2Icon;
-use Drupal\user\UserInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter().
