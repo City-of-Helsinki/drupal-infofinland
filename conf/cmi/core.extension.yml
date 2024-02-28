@@ -54,7 +54,9 @@ module:
   helfi_azure_fs: 0
   image: 0
   image_style_quality: 0
+  infofinland_admin_tools: 0
   infofinland_brokenlink_checker: 0
+  infofinland_ckeditor: 0
   infofinland_common: 0
   infofinland_gdpr: 0
   infofinland_permissions: 0
