@@ -22,13 +22,7 @@ a {
   text-decoration: none;
 }
 
-.language-switcher .language-link.is-active {
-  cursor: default;
-  font-weight: 700;
-}
-
-.language-links .is-disabled {
+.language-switcher .language-links .is-disabled {
+  opacity: 0.6;
   color: #999898;
-  cursor: default;
-  text-decoration: none;
 }
