@@ -1,0 +1,24 @@
+name: Infofinland - admin
+description: Admin theme for infofinland based on Gin -theme
+type: theme
+base theme: gin
+tags: sub-theme
+core_version_requirement: ^9 || ^10
+
+# Libraries
+libraries:
+  - infofinland_admin/global-styling
+
+# Regions
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

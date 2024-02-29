@@ -1,0 +1,69 @@
+infofinland_admin_tools.overview:
+  title: 'Tools'
+  description: 'Content management helper pages.'
+  route_name: infofinland_admin_tools.list_all
+  parent: system.admin
+  weight: -9
+
+infofinland_admin_tools.site_information:
+  title: 'Site information'
+  parent: infofinland_admin_tools.overview
+  route_name: system.site_information_settings
+  weight: 0
+
+infofinland_admin_tools.site_information_child:
+  title: 'Site information'
+  parent: infofinland_admin_tools.site_information
+  route_name: system.site_information_settings
+  weight: 0
+
+infofinland_admin_tools.menus:
+  title: 'Menus'
+  parent: infofinland_admin_tools.overview
+  route_name: entity.menu.collection
+  weight: 0
+
+infofinland_admin_tools.header_top_menu:
+  title: 'Header top navigation menu links'
+  parent: infofinland_admin_tools.menus
+  route_name: entity.menu.edit_form
+  route_parameters: { menu: 'header-top-navigation' }
+  weight: 0
+
+infofinland_admin_tools.header_branding_menu:
+  title: 'Header branding navigation menu links'
+  parent: infofinland_admin_tools.menus
+  route_name: entity.menu.edit_form
+  route_parameters: { menu: 'branding-navigation' }
+  weight: 1
+
+infofinland_admin_tools.main_menu:
+  title: 'Main menu'
+  parent: infofinland_admin_tools.menus
+  route_name: entity.menu.edit_form
+  route_parameters: { menu: 'main' }
+  weight: 2
+
+infofinland_admin_tools.footer_top_menu:
+  title: 'Footer top navigation menu links'
+  parent: infofinland_admin_tools.menus
+  route_name: entity.menu.edit_form
+  route_parameters: { menu: 'footer-top-navigation' }
+  weight: 3
+
+infofinland_admin_tools.footer_bottom_menu:
+  title: 'Footer bottom navigation menu links'
+  parent: infofinland_admin_tools.menus
+  route_name: entity.menu.edit_form
+  route_parameters: { menu: 'footer-bottom-navigation' }
+  weight: 4
+
+infofinland_admin_tools.taxonomy:
+  title: 'Taxonomy'
+  parent: infofinland_admin_tools.overview
+  route_name: infofinland_admin_tools.taxonomy
+
+infofinland_admin_tools.user_interface_translations:
+  title: 'User interface translations'
+  parent: infofinland_admin_tools.overview
+  route_name: locale.translate_page

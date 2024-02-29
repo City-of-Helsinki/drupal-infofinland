@@ -9,8 +9,8 @@ options:
   multiple_nodes_connection: true
   use_authentication: 0
   authentication_type: Basic
-  username: 'elastic'
-  password: 'changeme'
+  username: elastic
+  password: changeme
   timeout: '3'
   rewrite:
     rewrite_index: 1

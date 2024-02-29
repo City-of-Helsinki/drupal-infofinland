@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.link.field_yoast_seo
     - node.type.link
   module:
-    - hdbt_admin_editorial
     - paragraphs
     - path
     - scheduler

@@ -1,0 +1,7 @@
+name: 'Infofinland Admin tools'
+description: 'Infofinland tools for administrators and content producers.'
+type: module
+package: custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - config_translation
