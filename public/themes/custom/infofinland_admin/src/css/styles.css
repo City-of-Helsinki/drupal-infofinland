@@ -26,3 +26,9 @@ a {
   cursor: default;
   font-weight: 700;
 }
+
+.language-links .is-disabled {
+  color: #999898;
+  cursor: default;
+  text-decoration: none;
+}
