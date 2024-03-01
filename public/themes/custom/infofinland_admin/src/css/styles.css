@@ -26,3 +26,7 @@ a {
   opacity: 0.6;
   color: #999898;
 }
+
+.language-links .is-active {
+  font-weight: 700;
+}
