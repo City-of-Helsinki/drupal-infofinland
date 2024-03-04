@@ -1,0 +1,11 @@
+services:
+  infofinland_common.repositories.client:
+    class: Drupal\infofinland_common\Repositories\ClientRepository
+    decorates: simple_oauth.repositories.client
+    public: false
+    arguments: [ '@infofinland_common.repositories.client.inner']
+
+  infofinland_common.route_subscriber:
+    class: Drupal\infofinland_common\Routing\OAuthRouteSubscriber
+    tags:
+      - { name: event_subscriber }
