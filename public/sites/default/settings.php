@@ -209,6 +209,12 @@ if (getenv('INFOFINLAND_UI_URL')) {
   $config['next.next_site.infofinland_ui']['preview_secret'] = getenv('DRUPAL_PREVIEW_SECRET');
 }
 
+// Hardcoded simple_oauth keys for local development.
+if (getenv('APP_ENV') === 'local') {
+  $config['simple_oauth.settings']['public_key'] = '/app/conf/local-keys/public.key';
+  $config['simple_oauth.settings']['private_key'] = '/app/conf/local-keys/private.key';
+}
+
 // Environment specific overrides.
 if (file_exists(__DIR__ . '/all.settings.php')) {
   include __DIR__ . '/all.settings.php';
