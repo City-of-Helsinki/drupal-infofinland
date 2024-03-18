@@ -40,7 +40,6 @@ module:
   field_group: 0
   field_ui: 0
   file: 0
-  filelog: 0
   filter: 0
   flysystem: 0
   flysystem_azure: 0
@@ -50,6 +49,7 @@ module:
   hdbt_component_library: 0
   hdbt_content: 0
   hdbt_hyphenopoly: 0
+  health_check: 0
   helfi_api_base: 0
   helfi_azure_fs: 0
   image: 0
@@ -87,7 +87,6 @@ module:
   next_extras: 0
   next_jsonapi: 0
   node: 0
-  node_revision_delete: 0
   obfuscate: 0
   options: 0
   paragraphs_type_permissions: 0
