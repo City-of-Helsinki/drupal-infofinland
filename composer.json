@@ -81,7 +81,7 @@
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
         "drupal/yoast_seo": "^2.0@alpha",
-        "drush/drush": "^10.4"
+        "drush/drush": "^11"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
