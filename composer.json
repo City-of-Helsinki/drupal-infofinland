@@ -38,7 +38,7 @@
         "drupal/hdbt": "^1.0",
         "drupal/hdbt_admin": "^1.0",
         "drupal/helfi_api_base": "^2.0",
-        "drupal/helfi_azure_fs": "^1.0",
+        "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-drush-10",
         "drupal/image_style_quality": "1.4.0",
         "drupal/inline_entity_form": "^1.0@RC",
