@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - menu_ui
-    - node_revision_delete
     - scheduler
 third_party_settings:
   menu_ui:
@@ -24,10 +23,6 @@ third_party_settings:
     unpublish_enable: true
     unpublish_required: false
     unpublish_revision: false
-  node_revision_delete:
-    minimum_age_to_delete: 0
-    minimum_revisions_to_keep: 5
-    when_to_delete: 0
 _core:
   default_config_hash: ah3vIiRAXEYtaITIDXDkTMxz_d55Eu7rV-nNz1ZknEU
 name: 'Landing page'
