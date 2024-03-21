@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb7941168b28f846e4e2e64a2871cf37",
+    "content-hash": "1d735267d04f92782f7631052385711b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3938,38 +3938,6 @@
                 "issues": "https://github.com/City-of-Helsinki/drupal-hdbt/issues"
             },
             "time": "2021-11-02T16:27:26+00:00"
-        },
-        {
-            "name": "drupal/hdbt_admin",
-            "version": "1.6.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/City-of-Helsinki/drupal-hdbt-admin.git",
-                "reference": "4543162c81428201c980c245c70e74139902b56e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-hdbt-admin/zipball/4543162c81428201c980c245c70e74139902b56e",
-                "reference": "4543162c81428201c980c245c70e74139902b56e",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/admin_toolbar": "^2.3",
-                "drupal/gin": "^3.0"
-            },
-            "type": "drupal-theme",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Helsinki Drupal Base admin theme",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/tree/1.6.12",
-                "issues": "https://github.com/City-of-Helsinki/drupal-hdbt-admin/issues"
-            },
-            "time": "2022-10-04T06:49:36+00:00"
         },
         {
             "name": "drupal/health_check",
