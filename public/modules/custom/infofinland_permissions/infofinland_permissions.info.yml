@@ -2,4 +2,4 @@ name: InfoFinland permissions
 description: 'Municipality related custom permissions'
 package: 'Custom'
 type: module
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10

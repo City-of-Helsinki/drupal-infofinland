@@ -2,4 +2,4 @@ name: select2_icon
 description: 'Temporary placeholder to allow deleting hdbt_admin'
 package: 'Custom'
 type: module
-core_version_requirement: ^9 | ^10
+core_version_requirement: ^9 || ^10
