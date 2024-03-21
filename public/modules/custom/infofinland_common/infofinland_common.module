@@ -340,7 +340,7 @@ function infofinland_common_editor_js_settings_alter(array &$settings) {
 function infofinland_common_page_attachments(array &$attachments) {
   $theme = \Drupal::theme()->getActiveTheme()->getName();
 
-  if ($theme !== 'hdbt_admin') {
+  if ($theme !== 'gin') {
     return;
   }
 
