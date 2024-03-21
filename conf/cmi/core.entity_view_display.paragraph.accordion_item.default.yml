@@ -23,3 +23,4 @@ content:
     region: content
 hidden:
   field_accordion_item_content: true
+  search_api_excerpt: true
