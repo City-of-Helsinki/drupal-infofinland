@@ -1,0 +1,59 @@
+<?php
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_user_cancel().
+ */
+function infofinland_user_cancel_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_reassign':
+      // Anonymize all of the nodes for this old account.
+      _infofinland_user_cancel_reassign_nodes_to_anonymous($account);
+      break;
+  }
+}
+
+/**
+ * Reassigns all node revisions by $account to by owned by anonymous (uid 0).
+ *
+ * Replicating functionality of node module, because node code is intended to
+ * be run from a form or otherwise batched.
+ *
+ * @param \Drupal\user\UserInterface $account
+ *   The user.
+ */
+function _infofinland_user_cancel_reassign_nodes_to_anonymous(UserInterface $account): void {
+
+    $database = \Drupal::database();
+    $tables = [
+      'node_field_data' => 'uid',
+      'node_field_revision' => 'uid',
+      'node_revision' => 'revision_uid',
+    ];
+
+    $user_id = $account->id();
+    foreach ($tables as $table => $uid_field) {
+      $matches = $database->select($table)
+        ->condition($uid_field, $user_id)
+        ->countQuery()
+        ->execute()
+        ->fetchField();
+
+      if ((int) $matches < 1) {
+        continue;
+      }
+
+      $database->update($table)
+        ->fields([$uid_field => 0])
+        ->condition($uid_field, $user_id)
+        ->execute();
+      \Drupal::logger('infofinland_user_cancel')->notice(t('Set @count rows from @table to 0 from @uid',
+        [
+          '@count' => $matches,
+          '@table' => $table,
+          '@uid' => $user_id,
+        ]
+      ));
+    }
+
+  }
