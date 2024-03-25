@@ -7,6 +7,7 @@ const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const SvgToJson = require('./webpack.svgToJson');
 const SvgToCss = require('./webpack.svgToCss');
+const RtlCssPlugin = require('rtlcss-webpack-plugin')
 const { merge } = require('webpack-merge');
 
 // Handle entry points.
@@ -146,6 +147,9 @@ module.exports = (env, argv) => {
       ),
       new MiniCssExtractPlugin({
         filename: 'css/[name].min.css',
+      }),
+      new RtlCssPlugin ({
+        filename: 'css/[name].rtl.min.css'
       })
     ],
     watchOptions: {
