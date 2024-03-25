@@ -2944,6 +2944,10 @@
                     "homepage": "https://www.drupal.org/node/2159059/committers"
                 },
                 {
+                    "name": "skek",
+                    "homepage": "https://www.drupal.org/user/417078"
+                },
+                {
                     "name": "sokru",
                     "homepage": "https://www.drupal.org/user/388235"
                 },
@@ -7513,7 +7517,7 @@
             "version": "v7.17.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:elastic/elasticsearch-php.git",
+                "url": "https://github.com/elastic/elasticsearch-php.git",
                 "reference": "2d302233f2bb0926812d82823bb820d405e130fc"
             },
             "dist": {
@@ -7569,6 +7573,10 @@
                 "elasticsearch",
                 "search"
             ],
+            "support": {
+                "issues": "https://github.com/elastic/elasticsearch-php/issues",
+                "source": "https://github.com/elastic/elasticsearch-php/tree/v7.17.2"
+            },
             "time": "2023-04-21T15:31:12+00:00"
         },
         {
