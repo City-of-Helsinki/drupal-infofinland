@@ -55,6 +55,7 @@ module:
   infofinland_common: 0
   infofinland_gdpr: 0
   infofinland_permissions: 0
+  infofinland_user_cancel: 0
   jsonapi: 0
   jsonapi_extras: 0
   jsonapi_menu_items: 0
