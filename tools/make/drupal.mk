@@ -7,7 +7,7 @@ CLEAN_EXCLUDE += $(WEBROOT)/sites/default/files
 DRUPAL_DISABLE_MODULES ?= no
 DRUPAL_ENABLE_MODULES ?= no
 DRUPAL_PROFILE ?= minimal
-DRUPAL_SYNC_FILES ?= no
+DRUPAL_SYNC_FILES ?= yes
 DRUPAL_SYNC_SOURCE ?= main
 DRUSH_RSYNC_MODE ?= Pakzu
 DRUSH_RSYNC_OPTS ?=  -- --omit-dir-times --no-perms --no-group --no-owner --chmod=ugo=rwX
