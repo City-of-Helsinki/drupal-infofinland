@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Helper functions related to deleting user accounts.
+ */
+
 use Drupal\user\UserInterface;
 
 /**
@@ -24,36 +30,36 @@ function infofinland_user_cancel_user_cancel($edit, UserInterface $account, $met
  */
 function _infofinland_user_cancel_reassign_nodes_to_anonymous(UserInterface $account): void {
 
-    $database = \Drupal::database();
-    $tables = [
-      'node_field_data' => 'uid',
-      'node_field_revision' => 'uid',
-      'node_revision' => 'revision_uid',
-    ];
+  $database = \Drupal::database();
+  $tables = [
+    'node_field_data' => 'uid',
+    'node_field_revision' => 'uid',
+    'node_revision' => 'revision_uid',
+  ];
 
-    $user_id = $account->id();
-    foreach ($tables as $table => $uid_field) {
-      $matches = $database->select($table)
-        ->condition($uid_field, $user_id)
-        ->countQuery()
-        ->execute()
-        ->fetchField();
+  $user_id = $account->id();
+  foreach ($tables as $table => $uid_field) {
+    $matches = $database->select($table)
+      ->condition($uid_field, $user_id)
+      ->countQuery()
+      ->execute()
+      ->fetchField();
 
-      if ((int) $matches < 1) {
-        continue;
-      }
-
-      $database->update($table)
-        ->fields([$uid_field => 0])
-        ->condition($uid_field, $user_id)
-        ->execute();
-      \Drupal::logger('infofinland_user_cancel')->notice(t('Set @count rows from @table to 0 from @uid',
-        [
-          '@count' => $matches,
-          '@table' => $table,
-          '@uid' => $user_id,
-        ]
-      ));
+    if ((int) $matches < 1) {
+      continue;
     }
 
+    $database->update($table)
+      ->fields([$uid_field => 0])
+      ->condition($uid_field, $user_id)
+      ->execute();
+    \Drupal::logger('infofinland_user_cancel')->notice(t('Set @count rows from @table to 0 from @uid',
+      [
+        '@count' => $matches,
+        '@table' => $table,
+        '@uid' => $user_id,
+      ]
+    ));
   }
+
+}
