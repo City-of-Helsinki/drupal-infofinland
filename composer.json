@@ -80,7 +80,9 @@
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
         "drupal/yoast_seo": "^2.0@alpha",
-        "drush/drush": "^11"
+        "drush/drush": "^11",
+        "npm-asset/select2": "^4.0",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
@@ -107,7 +109,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-project-message": true,
             "php-http/discovery": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "oomphinc/composer-installers-extender": true
         },
         "audit": {
             "abandoned": "report"
@@ -131,9 +134,6 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/gin": {
-                "Fix select2 js load error": "./patches/select2_fix.patch"
-            },
             "drupal/core": {
                 "3099026 - Claro's preprocessing of field multiple value form's table header cell removes potential changes by others": "https://www.drupal.org/files/issues/2021-11-25/3099026-32_0.patch",
                 "3015480 - Allow skipping translation check at field level for non-translatable fields": "https://www.drupal.org/files/issues/2018-11-22/3015480-add_config_to_allow_skipping_translation_check-4.patch",
@@ -179,12 +179,14 @@
                 "[#UHF-1872] Linkit support for link field": "https://www.drupal.org/files/issues/2021-08-20/avoid-linkit-CI-issue.patch"
             }
         },
+        "installer-types": ["npm-asset"],
         "installer-paths": {
             "public/core": [
                 "type:drupal-core"
             ],
             "public/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "type:npm-asset"
             ],
             "public/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -214,6 +216,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "scripts": {
