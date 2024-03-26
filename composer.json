@@ -20,8 +20,8 @@
         "drupal/config_update": "^1.7",
         "drupal/consumer_image_styles": "^4.0",
         "drupal/consumers": "^1.12",
-        "drupal/core-composer-scaffold": "^9.4",
-        "drupal/core-recommended": "^9.4",
+        "drupal/core-composer-scaffold": "^9.5",
+        "drupal/core-recommended": "^9.5",
         "drupal/crop": "^2.2",
         "drupal/default_content": "2.0.0-alpha2",
         "drupal/diff": "^1.0",
@@ -66,6 +66,7 @@
         "drupal/readonly_field_widget": "^1.4",
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.5",
+        "drupal/restui": "^1.21",
         "drupal/role_delegation": "^1.2",
         "drupal/scheduler": "^1.4",
         "drupal/search_api": "^1.2",
@@ -87,7 +88,7 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
         "drupal/coder": "^8.3",
-        "drupal/core-dev": "^9.4",
+        "drupal/core-dev": "^9.5",
         "jangregor/phpstan-prophecy": "^1.0",
         "mglaman/phpstan-drupal": "^1.2",
         "phpspec/prophecy-phpunit": "^2",
@@ -145,9 +146,6 @@
                 "[#UHF-7008] Add multilingual support for caching basefield definitions (https://www.drupal.org/project/drupal/issues/3114824)": "https://www.drupal.org/files/issues/2020-02-20/3114824_2.patch",
                 "[#UHF-7008] Core localization file download URL is wrong (https://www.drupal.org/project/drupal/issues/3022876)": "https://git.drupalcode.org/project/drupal/-/commit/40a96136b2dfe4322338508dffa636f6cb407900.patch",
                 "3285657 - Cannot save or publish originating node or translations": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
-            },
-            "drupal/ctools": {
-                "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
             },
             "drupal/diff": {
                 "Revision overview form problem, issue 3390329": "./patches/revision_overview_form.patch"
