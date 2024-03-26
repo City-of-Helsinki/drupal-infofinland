@@ -13,11 +13,6 @@ dependencies:
     - field.storage.node.field_description
     - field.storage.node.field_link_target_site
     - field.storage.paragraph.field_link_collection
-    - field.storage.node.field_email_address
-    - field.storage.paragraph.field_contact_data
-    - field.storage.node.field_phonenumber
-    - field.storage.node.field_postal_address
-    - field.storage.node.field_visiting_address
     - field.storage.paragraph.field_title
     - search_api.server.elastic
   module:
@@ -132,70 +127,6 @@ field_settings:
       module:
         - node
         - paragraphs
-  field_ptv_email_address:
-    label: 'PTV email address'
-    datasource_id: 'entity:node'
-    property_path: 'field_content:entity:field_contact_data:entity:field_email_address'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_content
-        - field.storage.node.field_email_address
-        - field.storage.paragraph.field_contact_data
-      module:
-        - node
-        - paragraphs
-  field_ptv_phonenumber:
-    label: 'PTV phonenumber'
-    datasource_id: 'entity:node'
-    property_path: 'field_content:entity:field_contact_data:entity:field_phonenumber'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_content
-        - field.storage.node.field_phonenumber
-        - field.storage.paragraph.field_contact_data
-      module:
-        - node
-        - paragraphs
-  field_ptv_postal_address:
-    label: 'PTV postal address'
-    datasource_id: 'entity:node'
-    property_path: 'field_content:entity:field_contact_data:entity:field_postal_address'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_content
-        - field.storage.node.field_postal_address
-        - field.storage.paragraph.field_contact_data
-      module:
-        - node
-        - paragraphs
-  field_ptv_title:
-    label: 'PTV title'
-    datasource_id: 'entity:node'
-    property_path: 'field_content:entity:field_contact_data:entity:title'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_content
-        - field.storage.paragraph.field_contact_data
-      module:
-        - node
-        - paragraphs
-  field_ptv_visiting_address:
-    label: 'PTV visiting address'
-    datasource_id: 'entity:node'
-    property_path: 'field_content:entity:field_contact_data:entity:field_visiting_address'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_content
-        - field.storage.node.field_visiting_address
-        - field.storage.paragraph.field_contact_data
-      module:
-        - node
-        - paragraphs
   field_text:
     label: Text
     datasource_id: 'entity:node'
@@ -273,11 +204,6 @@ processor_settings:
       - field_description
       - field_link_target_site
       - field_link_title
-      - field_ptv_email_address
-      - field_ptv_phonenumber
-      - field_ptv_postal_address
-      - field_ptv_title
-      - field_ptv_visiting_address
       - field_text
       - field_title
       - title
@@ -305,11 +231,6 @@ processor_settings:
       - field_description
       - field_link_target_site
       - field_link_title
-      - field_ptv_email_address
-      - field_ptv_phonenumber
-      - field_ptv_postal_address
-      - field_ptv_title
-      - field_ptv_visiting_address
       - field_text
       - field_title
       - title
@@ -326,8 +247,6 @@ processor_settings:
       - field_columns_left_text
       - field_columns_right_text
       - field_description
-      - field_ptv_postal_address
-      - field_ptv_visiting_address
       - field_text
     spaces: ''
     ignored: ._-
