@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\infofinland_common\Repositories;
 
+use Drupal\simple_oauth\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 
 /**
@@ -17,17 +20,26 @@ final class ClientRepository implements ClientRepositoryInterface {
   /**
    * {@inheritdoc}
    */
-  public function getClientEntity($clientIdentifier, $grantType = NULL, $clientSecret = NULL, $mustValidateSecret = TRUE) {
+  public function getClientEntity($clientIdentifier): ?ClientEntityInterface {
+    return $this
+      ->original_service
+      ->getClientEntity($clientIdentifier);
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public function validateClient($clientIdentifier, $clientSecret, $grantType): bool {
     // Do not validate client secret in local development environment.
     // This makes it easier to set up frontend since passwords stored
     // in ContentEntities are not validated.
     if (getenv('APP_ENV') === 'local') {
-      $mustValidateSecret = FALSE;
+      return TRUE;
     }
 
     return $this
       ->original_service
-      ->getClientEntity($clientIdentifier, $grantType, $clientSecret, $mustValidateSecret);
+      ->validateClient($clientIdentifier, $clientSecret, $grantType);
   }
 
 }

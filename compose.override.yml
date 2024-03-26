@@ -6,4 +6,5 @@ services:
       DRUPAL_PREVIEW_SECRET: "1234567890"
       INFOFINLAND_UI_URL: "http://localhost:3000"
       INFOFINLAND_UI_PREVIEW_URL: "http://localhost:3000/api/preview"
+      DRUPAL_HASH_SALT: "xpnnLpFnXet4XOXlYo0qwdBhU4pXWEqKNkjNv108emA"
 
