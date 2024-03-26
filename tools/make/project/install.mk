@@ -39,9 +39,3 @@ drush-locale-update: ## Update translations.
 	$(call drush,locale:check)
 	$(call drush,locale:update)
 	$(call drush,cr)
-
-PHONY += drush-helfi-locale-import
-drush-helfi-locale-import:  ## Update translations from helfi platform config.
-	$(call step,Import helfi platform config translations...)
-	$(call drush,helfi:locale-import helfi_platform_config)
-	$(call drush,cr)
