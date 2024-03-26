@@ -25,4 +25,3 @@ regions:
 # Libraries
 libraries:
   - infofinland/global-styling
-  - infofinland/global-scripting
