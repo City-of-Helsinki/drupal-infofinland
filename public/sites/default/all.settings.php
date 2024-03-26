@@ -5,8 +5,6 @@
  * Contains site specific overrides.
  */
 
-$settings['hash_salt'] = getenv('DRUPAL_HASH_SALT') ?: 'CHANGE-ME-IN-ENVIRONMENT-SETTINGS';
-
 if (getenv('ELASTIC_URL')) {
   $config['elasticsearch_connector.cluster.infofinland']['url'] = getenv('ELASTIC_URL');
 
@@ -17,3 +15,16 @@ if (getenv('ELASTIC_URL')) {
     $config['elasticsearch_connector.cluster.infofinland']['options']['password'] = getenv('ELASTIC_PASSWORD');
   }
 }
+
+if (getenv('INFOFINLAND_UI_URL')) {
+  $config['next.next_site.infofinland_ui']['base_url'] = getenv('INFOFINLAND_UI_URL');
+  $config['next.next_site.infofinland_ui']['preview_url'] = getenv('INFOFINLAND_UI_PREVIEW_URL');
+  $config['next.next_site.infofinland_ui']['preview_secret'] = getenv('DRUPAL_PREVIEW_SECRET');
+}
+
+// Hardcoded simple_oauth keys for local development.
+if (getenv('APP_ENV') === 'local') {
+  $config['simple_oauth.settings']['public_key'] = '/app/conf/local-keys/public.key';
+  $config['simple_oauth.settings']['private_key'] = '/app/conf/local-keys/private.key';
+}
+

@@ -20,8 +20,8 @@
         "drupal/config_update": "^1.7",
         "drupal/consumer_image_styles": "^4.0",
         "drupal/consumers": "^1.12",
-        "drupal/core-composer-scaffold": "^9.4",
-        "drupal/core-recommended": "^9.4",
+        "drupal/core-composer-scaffold": "^9.5",
+        "drupal/core-recommended": "^9.5",
         "drupal/crop": "^2.2",
         "drupal/default_content": "2.0.0-alpha2",
         "drupal/diff": "^1.0",
@@ -38,7 +38,7 @@
         "drupal/hdbt": "^1.0",
         "drupal/helfi_api_base": "^2.0",
         "drupal/helfi_azure_fs": "^2.0",
-        "drupal/helfi_drupal_tools": "dev-drush-10",
+        "drupal/helfi_drupal_tools": "dev-main",
         "drupal/image_style_quality": "1.4.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
@@ -66,6 +66,7 @@
         "drupal/readonly_field_widget": "^1.4",
         "drupal/redirect": "^1.8",
         "drupal/redis": "^1.5",
+        "drupal/restui": "^1.21",
         "drupal/role_delegation": "^1.2",
         "drupal/scheduler": "^1.4",
         "drupal/search_api": "^1.2",
@@ -80,13 +81,20 @@
         "drupal/varnish_purge": "^2.1",
         "drupal/webform_rest": "^4.0",
         "drupal/yoast_seo": "^2.0@alpha",
-        "drush/drush": "^11"
+        "drush/drush": "^11",
+        "npm-asset/select2": "^4.0",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
         "drupal/coder": "^8.3",
-        "drupal/core-dev": "^9.4",
+        "drupal/core-dev": "^9.5",
+        "jangregor/phpstan-prophecy": "^1.0",
+        "mglaman/phpstan-drupal": "^1.2",
         "phpspec/prophecy-phpunit": "^2",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
         "phpunit/phpunit": "~9.4.0"
     },
     "conflict": {
@@ -101,7 +109,12 @@
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-project-message": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "oomphinc/composer-installers-extender": true
+        },
+        "audit": {
+            "abandoned": "report"
         }
     },
     "extra": {
@@ -122,9 +135,6 @@
             "drupal/core": "-p2"
         },
         "patches": {
-            "drupal/gin": {
-                "Fix select2 js load error": "./patches/select2_fix.patch"
-            },
             "drupal/core": {
                 "3099026 - Claro's preprocessing of field multiple value form's table header cell removes potential changes by others": "https://www.drupal.org/files/issues/2021-11-25/3099026-32_0.patch",
                 "3015480 - Allow skipping translation check at field level for non-translatable fields": "https://www.drupal.org/files/issues/2018-11-22/3015480-add_config_to_allow_skipping_translation_check-4.patch",
@@ -136,9 +146,6 @@
                 "[#UHF-7008] Add multilingual support for caching basefield definitions (https://www.drupal.org/project/drupal/issues/3114824)": "https://www.drupal.org/files/issues/2020-02-20/3114824_2.patch",
                 "[#UHF-7008] Core localization file download URL is wrong (https://www.drupal.org/project/drupal/issues/3022876)": "https://git.drupalcode.org/project/drupal/-/commit/40a96136b2dfe4322338508dffa636f6cb407900.patch",
                 "3285657 - Cannot save or publish originating node or translations": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
-            },
-            "drupal/ctools": {
-                "3300682 - The context is not a valid context.": "https://www.drupal.org/files/issues/2022-08-03/3300682-50.patch"
             },
             "drupal/diff": {
                 "Revision overview form problem, issue 3390329": "./patches/revision_overview_form.patch"
@@ -163,19 +170,18 @@
             "drupal/hdbt": {
                 "Quick-Fix too many req to cache in hdbt_get_settings - the hdbt should be upgraded to latest release, but it is a larger task": "./patches/hdbt/hdbt-quick-fix-hdbt_get_settings.patch"
             },
-            "drupal/redis": {
-                "TTL handling broken, always permanent": "https://www.drupal.org/files/issues/2020-10-30/3179757-4.patch"
-            },
             "drupal/linkit": {
                 "[#UHF-1872] Linkit support for link field": "https://www.drupal.org/files/issues/2021-08-20/avoid-linkit-CI-issue.patch"
             }
         },
+        "installer-types": ["npm-asset"],
         "installer-paths": {
             "public/core": [
                 "type:drupal-core"
             ],
             "public/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "type:npm-asset"
             ],
             "public/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -205,6 +211,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "scripts": {
