@@ -70,7 +70,7 @@
         "drupal/smtp": "^1.0",
         "drupal/social_media": "^2.0",
         "drupal/subrequests": "^3.0",
-        "drupal/token_filter": "^1.4",
+        "drupal/token_filter": "^2.0",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "^4.0@dev",
         "drupal/varnish_purge": "^2.1",
