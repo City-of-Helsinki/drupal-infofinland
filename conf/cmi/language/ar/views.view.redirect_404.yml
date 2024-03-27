@@ -16,11 +16,18 @@ display:
             items_per_page_options_all_label: '- الكل -'
             offset_label: الإزاحة
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
         langcode:
           label: اللغة
         redirect_404_operations:
           label: عمليات
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: اللغة

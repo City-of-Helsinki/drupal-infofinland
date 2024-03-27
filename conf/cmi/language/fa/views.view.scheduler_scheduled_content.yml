@@ -56,6 +56,7 @@ display:
     display_options:
       tab_options:
         title: محتوا
+    display_title: 'Content Overview'
   user_page:
     display_options:
       tab_options:

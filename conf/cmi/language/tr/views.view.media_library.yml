@@ -8,12 +8,16 @@ display:
           action_title: Eylem
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Sayfa başına öğe sayısı'
             items_per_page_options_all_label: '- Tümü -'
             offset_label: 'Başlangıç değeri'
       exposed_form:
         options:
+          submit_button: 'Apply filters'
           reset_button_label: Sıfırla
           exposed_sorts_label: 'Sıralama anahtarı'
           sort_asc_label: Artan
@@ -25,6 +29,12 @@ display:
         created:
           expose:
             label: 'Newest first'
+        name:
+          expose:
+            label: 'Name (A-Z)'
+        name_1:
+          expose:
+            label: 'Name (Z-A)'
       filters:
         status:
           expose:
@@ -53,6 +63,8 @@ display:
       fields:
         media_bulk_form:
           action_title: Eylem
+        name:
+          separator: ', '
         edit_media:
           text: Edit
         delete_media:

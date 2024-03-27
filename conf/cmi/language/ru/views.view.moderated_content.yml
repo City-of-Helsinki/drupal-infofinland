@@ -1,16 +1,26 @@
+label: 'Moderated content'
+description: 'Find and moderate content.'
 display:
   default:
     display_title: 'По умолчанию'
     display_options:
+      title: 'Moderated content'
       fields:
         title:
           label: Заголовок
+          separator: ', '
         type:
           label: 'Тип материала'
+          separator: ', '
         name:
           label: Автор
+          separator: ', '
+        moderation_state:
+          label: 'Moderation state'
+          separator: ', '
         changed:
           label: Обновлено
+          separator: ', '
         operations:
           label: Операции
       pager:
@@ -31,6 +41,9 @@ display:
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'
           sort_desc_label: 'По убыванию'
+      empty:
+        area_text_custom:
+          content: 'No moderated content available. Only pending versions of content, such as drafts, are listed here.'
       filters:
         title:
           expose:
@@ -38,6 +51,11 @@ display:
         type:
           expose:
             label: 'Тип материала'
+        moderation_state:
+          expose:
+            label: 'Moderation state'
         langcode:
           expose:
             label: Язык
+  moderated_content:
+    display_title: 'Moderated content'

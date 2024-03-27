@@ -35,4 +35,4 @@ display:
         area:
           admin_label: Прийняте
   page_1:
-    display_title: Сторінка
+    display_title: Page

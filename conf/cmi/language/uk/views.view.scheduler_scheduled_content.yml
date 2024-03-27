@@ -1,6 +1,5 @@
 display:
   default:
-    display_title: Головне
     display_options:
       exposed_form:
         options:
@@ -62,6 +61,7 @@ display:
         langcode:
           expose:
             label: Мова
+    display_title: Головне
   overview:
     display_options:
       menu:

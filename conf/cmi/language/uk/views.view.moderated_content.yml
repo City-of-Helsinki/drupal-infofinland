@@ -2,7 +2,7 @@ label: 'Ухвалювані матеріали'
 description: 'Немає доступного модерованого вмісту. Тут перераховані лише ті, що очікують на розгляд зміст, такі як чернетки.'
 display:
   default:
-    display_title: Базово
+    display_title: Default
     display_options:
       title: 'Ухвалювані матеріали'
       fields:

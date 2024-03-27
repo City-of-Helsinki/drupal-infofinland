@@ -1,3 +1,5 @@
+label: Redirect
+description: 'List of redirects'
 display:
   default:
     display_title: Master
@@ -19,11 +21,13 @@ display:
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
       fields:
         redirect_bulk_form:
           action_title: 'With selection'
         redirect_source__path:
           label: Lähettäjä
+          separator: ', '
         created:
           label: Luotu
       filters:
@@ -56,5 +60,9 @@ display:
         language:
           expose:
             label: 'Alkuperäinen kieli'
+      title: Redirect
+      empty:
+        area_text_custom:
+          content: 'There is no redirect yet.'
   page_1:
     display_title: Sivu

@@ -1,3 +1,5 @@
+label: 'Scheduled content'
+description: 'Find and manage scheduled content.'
 display:
   default:
     display_options:
@@ -20,19 +22,25 @@ display:
           action_title: Åtgärd
         title:
           label: Titel
+          separator: ', '
         type:
           label: 'Content Type'
+          separator: ', '
         name:
           label: Författare
+          separator: ', '
         status:
           label: Tila
           settings:
             format_custom_true: Publicerad
             format_custom_false: 'Ej publicerad'
+          separator: ', '
         publish_on:
           label: 'Publish on'
+          separator: ', '
         unpublish_on:
           label: 'Unpublish on'
+          separator: ', '
         operations:
           label: Funktioner
       filters:
@@ -55,6 +63,10 @@ display:
         langcode:
           expose:
             label: Språk
+      title: 'Scheduled Content'
+      empty:
+        area_text_custom:
+          content: 'No scheduled content.'
     display_title: Master
   overview:
     display_options:
@@ -62,6 +74,7 @@ display:
         title: Scheduled
       tab_options:
         title: Innehåll
+    display_title: 'Content Overview'
   user_page:
     display_options:
       menu:

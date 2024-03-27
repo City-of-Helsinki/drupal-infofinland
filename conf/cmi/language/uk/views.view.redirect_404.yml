@@ -40,4 +40,4 @@ display:
           expose:
             label: Розв’язано
   page_1:
-    display_title: Сторінка
+    display_title: Page

@@ -1,6 +1,10 @@
+label: محتوا
+description: 'یافتن و اداره محتوا.'
 display:
   default:
+    display_title: پیش‌فرض
     display_options:
+      title: محتوا
       fields:
         title:
           label: عنوان
@@ -17,7 +21,6 @@ display:
           label: به‌روز
         operations:
           label: کارکردها
-      title: محتوا
       pager:
         options:
           tags:
@@ -54,7 +57,6 @@ display:
         langcode:
           expose:
             label: زبان
-    display_title: پیش‌فرض
   page_1:
     display_title: صفحه
     display_options:
@@ -62,5 +64,3 @@ display:
         title: محتوا
       tab_options:
         title: محتوا
-label: محتوا
-description: 'یافتن و اداره محتوا.'

@@ -2,7 +2,7 @@ label: Медіа
 description: 'Пошук медіа та керування ними.'
 display:
   default:
-    display_title: Базово
+    display_title: Default
     display_options:
       title: Медіа
       fields:
@@ -15,7 +15,7 @@ display:
           label: 'Назва медіа'
           separator: ', '
         bundle:
-          label: Тип
+          label: Type
           separator: ', '
         uid:
           label: Автор
@@ -58,7 +58,7 @@ display:
             label: 'Назва медіа'
         bundle:
           expose:
-            label: Тип
+            label: Type
         status:
           expose:
             label: Істина

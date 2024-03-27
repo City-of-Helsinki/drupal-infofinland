@@ -1,7 +1,9 @@
+label: 'Moderated content'
 display:
   default:
     display_title: پیش‌فرض
     display_options:
+      title: 'Moderated content'
       fields:
         title:
           label: عنوان
@@ -40,3 +42,5 @@ display:
         langcode:
           expose:
             label: زبان
+  moderated_content:
+    display_title: 'Moderated content'

@@ -1,3 +1,4 @@
+label: Glossary
 description: 'All content, by letter.'
 display:
   default:
@@ -12,6 +13,9 @@ display:
           label: 'Last update'
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Éléments par page'
             items_per_page_options_all_label: '- Tout -'
@@ -21,7 +25,12 @@ display:
           submit_button: Apply
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
   attachment_1:
     display_title: Attachment
   page_1:
     display_title: Sivu
+    display_options:
+      menu:
+        title: Glossary

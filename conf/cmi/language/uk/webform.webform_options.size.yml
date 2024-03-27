@@ -1,2 +1,8 @@
 label: Розмір
 category: Загальне
+options: |
+  Extra Small: Extra Small
+  Small: Small
+  Medium: Medium
+  Large: Large
+  Extra Large: Extra Large

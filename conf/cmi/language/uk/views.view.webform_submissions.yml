@@ -1,4 +1,5 @@
 label: 'Надсилання з вебформи'
+description: 'Default webform submissions views.'
 display:
   default:
     display_title: Головне
@@ -40,15 +41,25 @@ display:
       header:
         result:
           content: 'Показ @start - @end з @total'
+      empty:
+        area_text_custom:
+          content: 'No submissions available.'
       arguments:
         in_draft:
           exception:
             title: Все
       title: 'Надсилання з вебформи'
-  embed_administer:
+  embed_default:
+    display_title: 'Embed: Default'
     display_options:
+      display_description: 'Display submissions.'
+  embed_administer:
+    display_title: 'Embed: Administer'
+    display_options:
+      display_description: 'Administer submissions.'
       fields:
         webform_submission_bulk_form:
+          label: 'Webform submission operations bulk form'
           action_title: Дія
         sid:
           label: '#'
@@ -74,6 +85,9 @@ display:
         operations:
           label: Операції
       filters:
+        in_draft:
+          expose:
+            label: 'Is draft'
         sticky:
           expose:
             label: Прикріплені
@@ -81,9 +95,12 @@ display:
           expose:
             label: Заблоковано
   embed_manage:
+    display_title: 'Embed: Manage'
     display_options:
+      display_description: 'Manage submissions.'
       fields:
         webform_submission_bulk_form:
+          label: 'Webform submission operations bulk form'
           action_title: Дія
         sid:
           label: '#'
@@ -113,6 +130,9 @@ display:
           label: Операції
           text: редагувати
       filters:
+        in_draft:
+          expose:
+            label: 'Is draft'
         sticky:
           expose:
             label: Прикріплені
@@ -120,7 +140,9 @@ display:
           expose:
             label: Заблоковано
   embed_review:
+    display_title: 'Embed: Review'
     display_options:
+      display_description: 'Review submissions.'
       fields:
         sid:
           label: '#'
@@ -147,6 +169,9 @@ display:
           label: Операції
           text: переглянути
       filters:
+        in_draft:
+          expose:
+            label: 'Is draft'
         sticky:
           expose:
             label: Прикріплені

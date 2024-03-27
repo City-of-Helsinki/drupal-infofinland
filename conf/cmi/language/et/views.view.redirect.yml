@@ -24,6 +24,7 @@ display:
       fields:
         redirect_source__path:
           label: Kellelt
+          separator: ', '
         created:
           label: Loodud
       filters:

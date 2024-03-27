@@ -23,6 +23,7 @@ display:
       fields:
         name:
           label: Название
+          separator: ', '
         version:
           label: Версия
         language:

@@ -22,6 +22,7 @@ display:
       fields:
         name:
           label: الاسم
+          separator: ', '
         version:
           label: النسخة
         language:

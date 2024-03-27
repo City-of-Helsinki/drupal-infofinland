@@ -9,19 +9,25 @@ display:
           action_title: Eylem
         thumbnail__target_id:
           label: Thumbnail
+          separator: ', '
         name:
           label: 'Media name'
+          separator: ', '
         bundle:
           label: Tip
+          separator: ', '
         uid:
           label: Yazar
+          separator: ', '
         status:
           label: Durum
           settings:
             format_custom_false: 'Yayında değil'
             format_custom_true: Yayında
+          separator: ', '
         changed:
           label: Güncellendi
+          separator: ', '
         operations:
           label: İşlemler
       pager:

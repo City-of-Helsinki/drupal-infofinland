@@ -16,11 +16,18 @@ display:
             items_per_page_options_all_label: '- همه -'
             offset_label: جابجایی
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
         langcode:
           label: زبان
         redirect_404_operations:
           label: کارکردها
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: زبان
