@@ -5,11 +5,11 @@ dependencies:
   config:
     - filter.format.full_html
   module:
-    - ckeditor
+    - ckeditor5
 _core:
   default_config_hash: gbKl_x1IJKUaF94IUbOx7E4G4-5WM7C33s7ABH74Rz8
 format: full_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
     rows:

@@ -22,7 +22,7 @@ display:
             last: 'Остання »'
       fields:
         name:
-          label: 'Назва (ім''я)'
+          label: "Назва (ім'я)"
           separator: ', '
         version:
           label: Версія
