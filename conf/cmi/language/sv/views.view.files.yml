@@ -6,8 +6,11 @@ display:
     display_options:
       title: Filer
       fields:
+        fid:
+          label: Fid
         filename:
           label: Namn
+          separator: ', '
         filemime:
           label: 'Typ av MIME'
         filesize:
@@ -16,6 +19,7 @@ display:
           label: Tila
           settings:
             format_custom_false: Temporär
+            format_custom_true: Permanent
         created:
           label: 'Datum för uppladdning'
         changed:

@@ -6,8 +6,11 @@ display:
     display_options:
       title: Файлы
       fields:
+        fid:
+          label: Fid
         filename:
           label: Название
+          separator: ', '
         filemime:
           label: MIME-тип
         filesize:

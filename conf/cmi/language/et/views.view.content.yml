@@ -1,11 +1,16 @@
+label: Sisu
+description: 'Otsi ja halda lehe sisu.'
 display:
   default:
+    display_title: Vaikimisi
     display_options:
+      title: Sisu
       fields:
         title:
           label: Pealkiri
         type:
           label: 'Sisu tüüp'
+          separator: ', '
         name:
           label: Autor
         status:
@@ -17,7 +22,6 @@ display:
           label: Uuendatud
         operations:
           label: Toimingud
-      title: Sisu
       pager:
         options:
           tags:
@@ -55,7 +59,6 @@ display:
         langcode:
           expose:
             label: Keel
-    display_title: Vaikimisi
   page_1:
     display_title: Lehekülg
     display_options:
@@ -64,5 +67,3 @@ display:
       tab_options:
         title: Sisu
         description: 'Otsi ja halda sisu'
-label: Sisu
-description: 'Otsi ja halda lehe sisu.'

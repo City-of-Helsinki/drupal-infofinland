@@ -1,0 +1,56 @@
+label: Watchdog
+description: 'Recent log messages'
+display:
+  default:
+    display_title: Varsayılan
+    display_options:
+      title: 'Recent log messages'
+      fields:
+        nothing:
+          admin_label: Icon
+        wid:
+          label: WID
+        severity:
+          label: Severity
+        type:
+          label: Tip
+        timestamp:
+          label: Date
+        message:
+          label: Message
+          alter:
+            alt: '{{ message }}'
+        name:
+          label: Kullanıcı
+          separator: ', '
+        link:
+          label: İşlemler
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Sayfa başına öğe sayısı'
+            items_per_page_options_all_label: '- Tümü -'
+            offset_label: 'Başlangıç değeri'
+      exposed_form:
+        options:
+          submit_button: Süzgeç
+          reset_button_label: Sıfırla
+          exposed_sorts_label: 'Sıralama anahtarı'
+          sort_asc_label: Artan
+          sort_desc_label: Azalan
+      empty:
+        area:
+          admin_label: 'No log messages available.'
+          content: 'No log messages available.'
+      filters:
+        type:
+          expose:
+            label: Tip
+        severity:
+          expose:
+            label: Severity
+  page:
+    display_title: Sayfa

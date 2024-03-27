@@ -15,12 +15,24 @@ display:
             items_per_page_label: 'Inlägg per sida'
             items_per_page_options_all_label: '- Alla -'
             offset_label: Kompensera
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
+        timestamp:
+          label: 'Last accessed'
         langcode:
           label: Språk
         redirect_404_operations:
           label: Funktioner
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: Språk

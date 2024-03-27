@@ -20,17 +20,24 @@ display:
           action_title: Tegevus
         title:
           label: Pealkiri
+          separator: ', '
+        type:
+          separator: ', '
         name:
           label: Autor
+          separator: ', '
         status:
           label: Olek
           settings:
             format_custom_true: Avaldatud
             format_custom_false: Avaldamata
+          separator: ', '
         publish_on:
           label: 'Publish on'
+          separator: ', '
         unpublish_on:
           label: 'Unpublish on'
+          separator: ', '
         operations:
           label: Toimingud
       filters:

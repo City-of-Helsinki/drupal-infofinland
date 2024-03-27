@@ -129,6 +129,7 @@ module:
   twig_tweak: 0
   ultimate_cron: 0
   update: 0
+  upgrade_status: 0
   user: 0
   varnish_purge_tags: 0
   varnish_purger: 0

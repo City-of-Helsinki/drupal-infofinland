@@ -1,1 +1,7 @@
 label: 'Сімейний стан'
+category: Demographic
+options: |
+  Single: Single
+  Married: Married
+  Divorced: Divorced
+  Widowed: Widowed

@@ -1,4 +1,5 @@
 label: Redirect
+description: 'List of redirects'
 display:
   default:
     display_title: Master
@@ -26,6 +27,7 @@ display:
           action_title: 'With selection'
         redirect_source__path:
           label: Från
+          separator: ', '
         created:
           label: Skapad
       filters:
@@ -44,5 +46,8 @@ display:
           expose:
             label: Ursprungsspråk
       title: Redirect
+      empty:
+        area_text_custom:
+          content: 'There is no redirect yet.'
   page_1:
     display_title: Sida

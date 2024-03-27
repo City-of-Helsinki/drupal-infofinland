@@ -7,6 +7,8 @@ display:
           submit_button: Aplicar
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           expose:
@@ -21,12 +23,15 @@ display:
       fields:
         name:
           label: Nombre
+          separator: ', '
         version:
           label: Versión
         language:
           label: Idioma
         revision:
           label: Revisión
+        accepted:
+          label: 'Time Accepted'
       title: Aceptado
       empty:
         area:

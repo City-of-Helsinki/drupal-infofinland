@@ -15,14 +15,27 @@ display:
             items_per_page_label: 'Kirjeid lehel'
             items_per_page_options_all_label: '- Kõik -'
             offset_label: Nihe
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
+        timestamp:
+          label: 'Last accessed'
         langcode:
           label: Keel
         redirect_404_operations:
           label: Toimingud
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: Keel
+      title: 'Fix 404 pages'
   page_1:
     display_title: Lehekülg

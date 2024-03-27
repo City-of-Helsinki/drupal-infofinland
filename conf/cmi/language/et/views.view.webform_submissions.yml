@@ -12,6 +12,8 @@ display:
       pager:
         options:
           tags:
+            previous: ‹‹
+            next: ››
             first: '« Esimene'
             last: 'Viimane »'
           expose:
@@ -19,10 +21,19 @@ display:
             items_per_page_options_all_label: '- Kõik -'
             offset_label: Nihe
       fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
         created:
           label: Loodud
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Toimingud
+          text: view
       header:
         result:
           content: 'Kuvatakse @start - @end / @total'
@@ -35,25 +46,100 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Tegevus
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Loodud
+          separator: ', '
+        completed:
+          label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         operations:
           label: Toimingud
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
   embed_manage:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Tegevus
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Loodud
+          separator: ', '
+        completed:
+          label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Toimingud
+          text: view
         edit_webform_submission:
           label: Toimingud
+          text: edit
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
   embed_review:
     display_options:
       fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Loodud
+          separator: ', '
+        completed:
+          label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Toimingud
+          text: view
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked

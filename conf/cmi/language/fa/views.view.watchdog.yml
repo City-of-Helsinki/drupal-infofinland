@@ -1,0 +1,48 @@
+label: Watchdog
+description: 'Recent log messages'
+display:
+  default:
+    display_title: پیش‌فرض
+    display_options:
+      title: 'Recent log messages'
+      fields:
+        nothing:
+          admin_label: Icon
+        severity:
+          label: Severity
+        type:
+          label: نوع
+        timestamp:
+          label: Date
+        message:
+          label: Message
+        name:
+          label: کاربر
+        link:
+          label: کارکردها
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'آیتم‌ها در هر صفحه'
+            items_per_page_options_all_label: '- همه -'
+            offset_label: جابجایی
+      exposed_form:
+        options:
+          submit_button: فیلتر
+          reset_button_label: بازنشانی
+          exposed_sorts_label: 'مرتب کن بر اساس'
+          sort_asc_label: صعودی
+          sort_desc_label: نزولی
+      empty:
+        area:
+          admin_label: 'No log messages available.'
+          content: 'No log messages available.'
+      filters:
+        type:
+          expose:
+            label: نوع
+        severity:
+          expose:
+            label: Severity
+  page:
+    display_title: صفحه

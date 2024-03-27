@@ -2,12 +2,19 @@ display:
   default:
     display_options:
       fields:
+        langcode:
+          label: Kieli
+        moderation_state:
+          label: Julkaisutila
+        field_page_name:
+          label: Nimi
         title:
           label: Otsikko
         type:
           label: Sisältötyyppi
+          separator: ', '
         name:
-          label: Päivittänyt
+          label: Tekijä
         status:
           label: Tila
           settings:
@@ -17,12 +24,6 @@ display:
           label: Päivitetty
         operations:
           label: Toimenpiteet
-        langcode:
-          label: Kieli
-        moderation_state:
-          label: Julkaisutila
-        field_page_name:
-          label: Nimi
       title: Sisältö
       pager:
         options:
@@ -30,11 +31,14 @@ display:
             next: 'Seuraava ›'
             previous: '‹ Edellinen'
             first: '« Ensimmäinen'
+            last: 'Last »'
       exposed_form:
         options:
           submit_button: Suodatus
           reset_button_label: Palauta
           exposed_sorts_label: Lajittele
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'Ei sisältöä.'

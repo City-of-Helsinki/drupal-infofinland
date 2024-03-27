@@ -36,7 +36,7 @@ display:
         date:
           label: Додано
   page_1:
-    display_title: Сторінка
+    display_title: Page
     display_options:
       tab_options:
         description: 'Правила сайту'

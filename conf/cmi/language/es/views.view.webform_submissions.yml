@@ -1,3 +1,4 @@
+label: 'Webform submissions'
 display:
   default:
     display_title: Master
@@ -7,9 +8,13 @@ display:
           submit_button: Aplicar
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           tags:
+            previous: ‹‹
+            next: ››
             first: '« Primero'
             last: 'Último »'
           expose:
@@ -17,10 +22,21 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Operaciones
+          text: view
       header:
         result:
           content: 'Mostrando @start - @end de @total'
@@ -28,30 +44,112 @@ display:
         in_draft:
           exception:
             title: Todo(s)
+      title: 'Webform submissions'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
+        completed:
+          label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         operations:
           label: Operaciones
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
   embed_manage:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
+        completed:
+          label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Operaciones
+          text: view
         edit_webform_submission:
           label: Operaciones
+          text: edit
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
   embed_review:
     display_options:
       fields:
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Creado
+          separator: ', '
+        completed:
+          label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Operaciones
+          text: view
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked

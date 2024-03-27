@@ -5,6 +5,9 @@ display:
     display_title: Vaikimisi
     display_options:
       title: 'Hiljutine sisu'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Rakenda

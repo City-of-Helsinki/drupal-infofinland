@@ -1,12 +1,16 @@
 label: Files
+description: 'Find and manage files.'
 display:
   default:
     display_title: Varsayılan
     display_options:
       title: Files
       fields:
+        fid:
+          label: Fid
         filename:
           label: Name
+          separator: ', '
         filemime:
           label: 'MIME type'
         filesize:

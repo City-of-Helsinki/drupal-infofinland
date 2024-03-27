@@ -2,7 +2,7 @@ label: 'Термін таксономії'
 description: 'Матеріали, що стосуються певного терміну таксономії.'
 display:
   default:
-    display_title: Базово
+    display_title: Default
     display_options:
       pager:
         options:
@@ -28,4 +28,4 @@ display:
   feed_1:
     display_title: Канал
   page_1:
-    display_title: Сторінка
+    display_title: Page
