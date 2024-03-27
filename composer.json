@@ -9,12 +9,12 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6.7",
-        "drupal/admin_toolbar": "^2.5",
+        "drupal/admin_toolbar": "^3.0",
         "drupal/adv_varnish": "^4.0",
-        "drupal/allowed_formats": "^1.5",
+        "drupal/allowed_formats": "^2.0",
         "drupal/ckeditor_bidi": "^3.1",
         "drupal/color_field": "^2.5",
-        "drupal/config_ignore": "^2.3",
+        "drupal/config_ignore": "^3.0",
         "drupal/config_replace": "^2.0",
         "drupal/config_rewrite": "^1.4",
         "drupal/config_update": "^1.7",
@@ -33,18 +33,18 @@
         "drupal/features": "^3.12",
         "drupal/field_group": "^3.2",
         "drupal/filelog": "^2.1",
-        "drupal/focal_point": "^1.5",
+        "drupal/focal_point": "^2.0",
         "drupal/gin": "^3.0",
         "drupal/hdbt": "^1.0",
         "drupal/helfi_api_base": "^2.0",
         "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-main",
-        "drupal/image_style_quality": "1.4.0",
+        "drupal/image_style_quality": "^1.4",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
         "drupal/jsonapi_menu_items": "^1.2",
         "drupal/legal": "^2.0",
-        "drupal/linkit": "6.0.0-beta3",
+        "drupal/linkit": "^6.0",
         "drupal/mailsystem": "^4.3",
         "drupal/media_entity_browser": "^2.0",
         "drupal/media_entity_soundcloud": "^3.1",
@@ -169,9 +169,6 @@
             },
             "drupal/hdbt": {
                 "Quick-Fix too many req to cache in hdbt_get_settings - the hdbt should be upgraded to latest release, but it is a larger task": "./patches/hdbt/hdbt-quick-fix-hdbt_get_settings.patch"
-            },
-            "drupal/linkit": {
-                "[#UHF-1872] Linkit support for link field": "https://www.drupal.org/files/issues/2021-08-20/avoid-linkit-CI-issue.patch"
             }
         },
         "installer-types": ["npm-asset"],
