@@ -3,7 +3,6 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.organisaatiot.field_ptv_org_id
     - taxonomy.vocabulary.organisaatiot
   module:
     - path
@@ -16,14 +15,6 @@ content:
   description:
     type: text_textfield
     weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_ptv_org_id:
-    type: string_textfield
-    weight: 101
     region: content
     settings:
       size: 60

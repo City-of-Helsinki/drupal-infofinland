@@ -3,7 +3,6 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.municipalitys.field_ptv_code
     - taxonomy.vocabulary.municipalitys
   module:
     - path
@@ -12,14 +11,6 @@ targetEntityType: taxonomy_term
 bundle: municipalitys
 mode: default
 content:
-  field_ptv_code:
-    type: string_textfield
-    weight: 1
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
