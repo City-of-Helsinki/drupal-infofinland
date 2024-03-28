@@ -15,13 +15,15 @@ function infofinland_common_update_9001(): void {
   $full_format = Drupal::configFactory()
     ->getEditable('filter.format.full_html');
   $raw_data = $full_format->getRawData();
-  if (($key = array_search('filter_token', $raw_data['dependencies']['module'])) !== false) {
+
+  if (($key = array_search('token_filter', $raw_data['dependencies']['module'])) !== false) {
     unset($raw_data['dependencies']['module'][$key]);
   }
-  if (array_key_exists('filter_token', $raw_data['filters'])) {
-    unset($raw_data['filters']['filter_token']);
+  if (array_key_exists('token_filter', $raw_data['filters'])) {
+    unset($raw_data['filters']['token_filter']);
   }
   $full_format->setData($raw_data);
+  $full_format->save();
 }
 
 /**
