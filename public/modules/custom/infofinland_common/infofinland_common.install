@@ -18,6 +18,7 @@ function infofinland_common_update_9001(): void {
   $moduleInstaller = \Drupal::service('module_installer');
 
   $modules = [
+    'config_filter',
     'config_replace',
     'hdbt_component_library',
     'hdbt_content',
