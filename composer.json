@@ -14,6 +14,7 @@
         "drupal/ckeditor5_paste_filter": "^1.0",
         "drupal/ckeditor_bidi": "^4.0",
         "drupal/color_field": "^3.0",
+        "drupal/config_filter": "^2.0",
         "drupal/config_ignore": "^3.0",
         "drupal/config_rewrite": "^1.4",
         "drupal/config_update": "^2.0",
