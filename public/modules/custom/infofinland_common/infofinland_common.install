@@ -8,9 +8,26 @@
 declare(strict_types=1);
 
 /**
- * Disable modules
+ * handle filter token
  */
 function infofinland_common_update_9001(): void {
+  // Remove filter token from full_html format.
+  $full_format = Drupal::configFactory()
+    ->getEditable('filter.format.full_html');
+  $raw_data = $full_format->getRawData();
+  if (($key = array_search('filter_token', $raw_data['dependencies']['module'])) !== false) {
+    unset($raw_data['dependencies']['module'][$key]);
+  }
+  if (array_key_exists('filter_token', $raw_data['filters'])) {
+    unset($raw_data['filters']['filter_token']);
+  }
+  $full_format->setData($raw_data);
+}
+
+/**
+ * Disable modules
+ */
+function infofinland_common_update_9002(): void {
   /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
   $moduleHandler = \Drupal::service('module_handler');
 
