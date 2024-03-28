@@ -1,0 +1,5 @@
+name: Infofinland ckeditor
+description: Custom module
+type: module
+package: custom
+core_version_requirement: ^9 || ^10

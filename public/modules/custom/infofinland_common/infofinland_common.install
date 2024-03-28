@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Contains installation tasks common module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Disable modules
+ */
+function infofinland_common_update_9001(): void {
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
+  $moduleHandler = \Drupal::service('module_handler');
+
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $moduleInstaller */
+  $moduleInstaller = \Drupal::service('module_installer');
+
+  $modules = [
+    'config_replace',
+    'hdbt_component_library',
+    'hdbt_content',
+    'hdbt_hyphenopoly',
+    'node_revision_delete'
+  ];
+
+  $enabled = [];
+  foreach ($modules as $module_name) {
+    if ($moduleHandler->moduleExists($module_name)) {
+      $enabled[] = $module_name;
+    }
+  }
+
+  $moduleInstaller->uninstall($enabled);
+
+}
