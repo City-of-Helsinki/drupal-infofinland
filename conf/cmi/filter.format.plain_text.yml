@@ -5,7 +5,6 @@ dependencies:
   module:
     - helfi_api_base
     - obfuscate
-    - token_filter
     - helfi_api_base
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
@@ -44,10 +43,3 @@ filters:
     status: true
     weight: 0
     settings: {  }
-  token_filter:
-    id: token_filter
-    provider: token_filter
-    status: false
-    weight: 0
-    settings:
-      replace_empty: '0'

@@ -8,7 +8,6 @@ dependencies:
     - linkit
     - media
     - obfuscate
-    - token_filter
 name: 'Simple HTML'
 format: simple_html
 weight: 0
@@ -105,10 +104,3 @@ filters:
     status: true
     weight: -44
     settings: {  }
-  token_filter:
-    id: token_filter
-    provider: token_filter
-    status: false
-    weight: -39
-    settings:
-      replace_empty: '0'
