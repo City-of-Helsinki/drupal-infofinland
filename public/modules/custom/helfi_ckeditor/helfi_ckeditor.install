@@ -34,7 +34,7 @@ function helfi_ckeditor_install($is_syncing) : void {
 /**
  * Install ckeditor5 and uninstall ckeditor4.
  */
-function helfi_ckeditor_update_9005(): void {
+function helfi_ckeditor_update_9001(): void {
   $moduleHandler = Drupal::service('module_handler');
 
   if (!$moduleHandler->moduleExists('ckeditor5')) {

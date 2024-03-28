@@ -27,9 +27,36 @@ function infofinland_common_update_9001(): void {
 }
 
 /**
- * Disable modules
+ * Install ckeditor5 and uninstall ckeditor4.
  */
 function infofinland_common_update_9002(): void {
+  $moduleHandler = Drupal::service('module_handler');
+  $moduleInstaller = Drupal::service('module_installer');
+
+  if (!$moduleHandler->moduleExists('ckeditor5')) {
+    try {
+      $moduleInstaller->install(['ckeditor5']);
+    }
+    catch(\Exception $e){
+        var_dump($e->getMessage());
+    }
+
+    if ($moduleHandler->moduleExists('ckeditor')) {
+      try {
+        $moduleInstaller->uninstall(['ckeditor']);
+      }
+      catch(\Exception $e){
+        var_dump($e->getMessage());
+      }
+    }
+  }
+
+}
+
+/**
+ * Disable modules
+ */
+function infofinland_common_update_9003(): void {
   /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
   $moduleHandler = \Drupal::service('module_handler');
 
@@ -37,21 +64,12 @@ function infofinland_common_update_9002(): void {
   $moduleInstaller = \Drupal::service('module_installer');
 
   try {
-    if (!$moduleHandler->moduleExists('helfi_ckeditor')) {
-      $moduleInstaller->install(['helfi_ckeditor']);
-    }
-  }
-  catch(\Exception $e){
-    var_dump($e->getMessage());
-  }
-
-  try {
     if (!$moduleHandler->moduleExists('phpass')) {
       $moduleInstaller->install(['phpass']);
     }
   }
   catch(\Exception $e) {
-    var_dump($e->getMessage());
+    echo $e->getMessage();
   }
 
   $modules = [
@@ -62,34 +80,26 @@ function infofinland_common_update_9002(): void {
     'node_revision_delete',
     'infofinland_ckeditor',
   ];
-  $enabled = [];
-  foreach ($modules as $module_name) {
-    if ($moduleHandler->moduleExists($module_name)) {
-      $enabled[] = $module_name;
-    }
-  }
-  $moduleInstaller->uninstall($enabled);
 
+  $moduleInstaller->uninstall($modules, true);
 
-  // delete from key_value where collection = 'system.schema' and name = 'ckeditor';
-  // delete from `key_value` where collection = 'system.schema' and name = 'hello';
-
-  // drupal_flush_all_caches();
 }
 
-/**
- * Install ckeditor5 and uninstall ckeditor4.
- */
-function infofinland_common_update_9003(): void {
-  $moduleHandler = Drupal::service('module_handler');
+function infofinland_common_update_9004(): void {
+  $modules = [
+    'config_replace',
+    'hdbt_component_library',
+    'hdbt_content',
+    'hdbt_hyphenopoly',
+    'node_revision_delete',
+    'infofinland_ckeditor',
+  ];
 
-  if (!$moduleHandler->moduleExists('ckeditor5')) {
-    /** @var \Drupal\Core\Extension\ModuleInstallerInterface $moduleInstaller */
-    $moduleInstaller = Drupal::service('module_installer');
-    $moduleInstaller->install(['ckeditor5']);
+  \Drupal::service('database')->delete('key_value')->condition('name', 'config_replace')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_component_library')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_content')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_hyphenopoly')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'node_revision_delete')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'infofinland_ckeditor')->execute();
 
-    if ($moduleHandler->moduleExists('ckeditor')) {
-      $moduleInstaller->uninstall(['ckeditor']);
-    }
-  }
 }

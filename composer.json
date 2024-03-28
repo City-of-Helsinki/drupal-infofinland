@@ -11,6 +11,7 @@
         "cweagans/composer-patches": "^1.6.7",
         "drupal/admin_toolbar": "^3.0",
         "drupal/allowed_formats": "^2.0",
+        "drupal/ckeditor": "^1.0",
         "drupal/ckeditor5_paste_filter": "^1.0",
         "drupal/ckeditor_bidi": "^4.0",
         "drupal/color_field": "^3.0",
