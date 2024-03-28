@@ -18,11 +18,18 @@ display:
             previous: ‹‹
             next: ››
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
         langcode:
           label: Kieli
         redirect_404_operations:
           label: Toimenpiteet
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: Kieli

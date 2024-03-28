@@ -98,7 +98,7 @@ display:
         name:
           label: Nimi
         uid:
-          label: Tekijä
+          label: Päivittänyt
         changed:
           label: Päivitetty
       arguments:

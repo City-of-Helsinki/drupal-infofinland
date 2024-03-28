@@ -5,10 +5,9 @@ dependencies: {  }
 _core:
   default_config_hash: 9Jic1G9pzey2mP5olncL3_CE4eTuYJQKYzR0GCOUFqA
 id: node
-label: Content
+label: Sisältö
 tags:
   canonical_url: '[node:url]'
-  content_language: '[node:langcode]'
   description: '[node:field_description]'
   title: '[node:title] | [site:name]'
   article_modified_time: '[node:created:html_datetime]'

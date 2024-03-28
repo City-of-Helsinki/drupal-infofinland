@@ -12,5 +12,5 @@ features:
   node_user_picture: false
 logo:
   path: themes/custom/infofinland/logo.svg
-  url: ''
+  url: null
   use_default: false

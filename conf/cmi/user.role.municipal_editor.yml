@@ -14,6 +14,7 @@ dependencies:
     - content_moderation
     - content_translation
     - entity_browser
+    - file
     - filter
     - media
     - node
@@ -47,6 +48,7 @@ permissions:
   - 'create paragraph content remote_video'
   - 'create paragraph content text'
   - 'create remote_video media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own link content'
   - 'delete own office_contact_info content'

@@ -33,6 +33,8 @@ display:
           action_title: إجراء
         created:
           label: الإنشاء
+        completed:
+          label: Completed
         operations:
           label: عمليات
   embed_manage:
@@ -42,6 +44,8 @@ display:
           action_title: إجراء
         created:
           label: الإنشاء
+        completed:
+          label: Completed
         view_webform_submission:
           label: عمليات
         edit_webform_submission:
@@ -51,5 +55,7 @@ display:
       fields:
         created:
           label: الإنشاء
+        completed:
+          label: Completed
         view_webform_submission:
           label: عمليات

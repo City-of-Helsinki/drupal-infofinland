@@ -14,11 +14,18 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
         langcode:
           label: Idioma
         redirect_404_operations:
           label: Operaciones
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: Idioma

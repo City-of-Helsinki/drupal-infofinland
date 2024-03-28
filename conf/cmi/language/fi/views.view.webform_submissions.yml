@@ -35,6 +35,8 @@ display:
           action_title: Toiminto
         created:
           label: Luotu
+        completed:
+          label: Completed
         operations:
           label: Toimenpiteet
   embed_manage:
@@ -44,6 +46,8 @@ display:
           action_title: Toiminto
         created:
           label: Luotu
+        completed:
+          label: Completed
         view_webform_submission:
           label: Toimenpiteet
         edit_webform_submission:
@@ -53,5 +57,7 @@ display:
       fields:
         created:
           label: Luotu
+        completed:
+          label: Completed
         view_webform_submission:
           label: Toimenpiteet

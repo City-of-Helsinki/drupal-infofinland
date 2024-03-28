@@ -13,7 +13,7 @@ display:
         bundle:
           label: Tyyppi
         uid:
-          label: Tekijä
+          label: Päivittänyt
         status:
           label: Tila
           settings:

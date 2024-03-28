@@ -1,0 +1,11 @@
+uuid: 469531d1-90da-4eb9-8914-bb1d6b9ebe9a
+langcode: fi
+status: true
+dependencies:
+  config:
+    - simple_sitemap.type.default_hreflang
+id: default
+label: Default
+description: null
+type: default_hreflang
+weight: 0

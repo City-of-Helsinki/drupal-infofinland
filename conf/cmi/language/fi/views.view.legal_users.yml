@@ -28,5 +28,7 @@ display:
           label: Kieli
         revision:
           label: Versio
+        accepted:
+          label: 'Time Accepted'
   page_1:
     display_title: Sivu

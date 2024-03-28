@@ -35,6 +35,8 @@ display:
           action_title: Action
         created:
           label: Créé
+        completed:
+          label: Completed
         operations:
           label: Actions
   embed_manage:
@@ -44,6 +46,8 @@ display:
           action_title: Action
         created:
           label: Créé
+        completed:
+          label: Completed
         view_webform_submission:
           label: Actions
         edit_webform_submission:
@@ -53,5 +57,7 @@ display:
       fields:
         created:
           label: Créé
+        completed:
+          label: Completed
         view_webform_submission:
           label: Actions
