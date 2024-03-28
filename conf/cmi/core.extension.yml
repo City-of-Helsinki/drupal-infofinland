@@ -9,6 +9,7 @@ module:
   block: 0
   breakpoint: 0
   ckeditor5: 0
+  ckeditor5_paste_filter: 0
   color_field: 0
   config: 0
   config_ignore: 0
@@ -46,6 +47,7 @@ module:
   health_check: 0
   helfi_api_base: 0
   helfi_azure_fs: 0
+  helfi_ckeditor: 0
   image: 0
   image_style_quality: 0
   infofinland_admin_tools: 0
