@@ -24,6 +24,11 @@ function helfi_ckeditor_install_ckeditor5_supportive_plugins() : void {
 
     if ($module_handler->moduleExists('ckeditor')) {
       $moduleInstaller->uninstall(['ckeditor']);
+      // Rebuild module data that is stored in state.
+      \Drupal::service('extension.list.module')->reset();
+
+      // Rebuild all information based on new module data.
+      \Drupal::moduleHandler()->invokeAll('rebuild');
     }
 
     // Update translations manually as CKEditor plugin translations might not
