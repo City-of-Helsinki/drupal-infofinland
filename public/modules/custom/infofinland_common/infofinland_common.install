@@ -47,7 +47,6 @@ function infofinland_common_update_9002(): void {
       'hdbt_hyphenopoly',
       'infofinland_ckeditor',
       'node_revision_delete',
-      'token_filter',
     ];
 
     // Load the existing configuration.
