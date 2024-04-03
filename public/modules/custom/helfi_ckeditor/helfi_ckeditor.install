@@ -24,6 +24,22 @@ function helfi_ckeditor_install_ckeditor5_supportive_plugins() : void {
 
     if ($module_handler->moduleExists('ckeditor')) {
       $moduleInstaller->uninstall(['ckeditor']);
+
+      // Load the existing configuration.
+      $config = \Drupal::configFactory()->getEditable('core.extension');
+
+      // Get the current list of enabled modules.
+      $enabled_modules = $config->get('module') ?? [];
+
+      // Disable the ckeditor.
+      if (isset($enabled_modules['ckeditor'])) {
+        unset($enabled_modules['ckeditor']);
+      }
+
+      // Update the configuration with the new list of enabled modules.
+      $config->set('module', $enabled_modules);
+      $config->save();
+
       // Rebuild module data that is stored in state.
       \Drupal::service('extension.list.module')->reset();
 
