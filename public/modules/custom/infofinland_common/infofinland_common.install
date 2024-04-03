@@ -37,27 +37,44 @@ function infofinland_common_update_9002(): void {
   $moduleInstaller = \Drupal::service('module_installer');
 
   try {
+    $modules_to_disable = [
+      'ckeditor',
+      'ckeditor_bidi',
+      'config_filter',
+      'config_replace',
+      'hdbt_component_library',
+      'hdbt_content',
+      'hdbt_hyphenopoly',
+      'infofinland_ckeditor',
+      'node_revision_delete',
+      'token_filter',
+    ];
+
     // Load the existing configuration.
     $config = \Drupal::configFactory()->getEditable('core.extension');
 
     // Get the current list of enabled modules.
     $enabled_modules = $config->get('module') ?? [];
 
-    // Disable the ckeditor.
-    if (isset($enabled_modules['ckeditor'])) {
-      unset($enabled_modules['ckeditor']);
-      // Update the configuration with the new list of enabled modules.
-      $config->set('module', $enabled_modules);
-      $config->save();
-
-      $moduleInstaller->uninstall(['ckeditor']);
-
-      // Rebuild module data that is stored in state.
-      \Drupal::service('extension.list.module')->reset();
-
-      // Rebuild all information based on new module data.
-      \Drupal::moduleHandler()->invokeAll('rebuild');
+    // Disable the specified modules.
+    foreach ($modules_to_disable as $module) {
+      if (isset($enabled_modules[$module])) {
+        unset($enabled_modules[$module]);
+      }
     }
+
+    // Update the configuration with the new list of enabled modules.
+    $config->set('module', $enabled_modules);
+    $config->save();
+
+    // Rebuild module data that is stored in state.
+    \Drupal::service('extension.list.module')->reset();
+
+    // Rebuild all information based on new module data.
+    \Drupal::moduleHandler()->invokeAll('rebuild');
+
+    // Try uninstalling modules that are no longer installed.
+    $moduleInstaller->uninstall($modules_to_disable);
 
     if (!$moduleHandler->moduleExists('phpass')) {
       $moduleInstaller->install(['phpass']);
@@ -66,18 +83,6 @@ function infofinland_common_update_9002(): void {
   catch(\Exception $e) {
     echo $e->getMessage();
   }
-
-  $modules = [
-    'config_replace',
-    'hdbt_component_library',
-    'hdbt_content',
-    'hdbt_hyphenopoly',
-    'node_revision_delete',
-    'infofinland_ckeditor',
-  ];
-
-  $moduleInstaller->uninstall($modules, true);
-
 }
 
 function infofinland_common_update_9003(): void {
