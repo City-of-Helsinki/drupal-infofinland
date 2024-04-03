@@ -27,36 +27,9 @@ function infofinland_common_update_9001(): void {
 }
 
 /**
- * Install ckeditor5 and uninstall ckeditor4.
- */
-function infofinland_common_update_9002(): void {
-  $moduleHandler = Drupal::service('module_handler');
-  $moduleInstaller = Drupal::service('module_installer');
-
-  if (!$moduleHandler->moduleExists('ckeditor5')) {
-    try {
-      $moduleInstaller->install(['ckeditor5']);
-    }
-    catch(\Exception $e){
-        var_dump($e->getMessage());
-    }
-
-    if ($moduleHandler->moduleExists('ckeditor')) {
-      try {
-        $moduleInstaller->uninstall(['ckeditor']);
-      }
-      catch(\Exception $e){
-        var_dump($e->getMessage());
-      }
-    }
-  }
-
-}
-
-/**
  * Disable modules
  */
-function infofinland_common_update_9003(): void {
+function infofinland_common_update_9002(): void {
   /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
   $moduleHandler = \Drupal::service('module_handler');
 
@@ -85,7 +58,7 @@ function infofinland_common_update_9003(): void {
 
 }
 
-function infofinland_common_update_9004(): void {
+function infofinland_common_update_9003(): void {
   $modules = [
     'config_replace',
     'hdbt_component_library',

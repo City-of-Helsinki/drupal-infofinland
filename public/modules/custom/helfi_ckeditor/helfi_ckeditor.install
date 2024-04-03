@@ -11,38 +11,18 @@ declare(strict_types=1);
  * Installs CKEditor5 plugins and extensions.
  */
 function helfi_ckeditor_install_ckeditor5_supportive_plugins() : void {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $moduleInstaller */
   $module_installer = \Drupal::service('module_installer');
+  $module_handler = Drupal::service('module_handler');
 
-  if (!\Drupal::moduleHandler()->moduleExists('ckeditor5_paste_filter')) {
+  if ($module_handler->moduleExists('ckeditor5_paste_filter')) {
     $module_installer->install(['ckeditor5_paste_filter']);
   }
-}
 
-/**
- * Implements hook_install().
- */
-function helfi_ckeditor_install($is_syncing) : void {
-  // Do not perform following steps if the module is being installed as part
-  // of a configuration import.
-  if ($is_syncing) {
-    return;
-  }
-
-  helfi_ckeditor_install_ckeditor5_supportive_plugins();
-}
-
-/**
- * Install ckeditor5 and uninstall ckeditor4.
- */
-function helfi_ckeditor_update_9001(): void {
-  $moduleHandler = Drupal::service('module_handler');
-
-  if (!$moduleHandler->moduleExists('ckeditor5')) {
-    /** @var \Drupal\Core\Extension\ModuleInstallerInterface $moduleInstaller */
-    $moduleInstaller = Drupal::service('module_installer');
+  if (!$module_handler->moduleExists('ckeditor5')) {
     $moduleInstaller->install(['ckeditor5']);
 
-    if ($moduleHandler->moduleExists('ckeditor')) {
+    if ($module_handler->moduleExists('ckeditor')) {
       $moduleInstaller->uninstall(['ckeditor']);
     }
 
@@ -56,4 +36,16 @@ function helfi_ckeditor_update_9001(): void {
       _locale_parse_js_file($file);
     }
   }
+}
+
+/**
+ * Implements hook_install().
+ */
+function helfi_ckeditor_install($is_syncing) : void {
+  // Do not perform following steps if the module is being installed as part
+  // of a configuration import.
+  if ($is_syncing) {
+    return;
+  }
+  helfi_ckeditor_install_ckeditor5_supportive_plugins();
 }
