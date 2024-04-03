@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.municipality_info.field_municipality_info_link
-    - field.field.paragraph.municipality_info.field_municipality_info_ptv
     - field.field.paragraph.municipality_info.field_municipality_info_text
     - field.field.paragraph.municipality_info.field_national_page
     - paragraphs.paragraphs_type.municipality_info
@@ -19,16 +18,6 @@ content:
   field_municipality_info_link:
     type: entity_reference_autocomplete
     weight: 3
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_municipality_info_ptv:
-    type: entity_reference_autocomplete
-    weight: 2
     region: content
     settings:
       match_operator: CONTAINS

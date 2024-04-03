@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.helsinki_kanava
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.language_link_collection
-    - paragraphs.paragraphs_type.ptv_contact
     - paragraphs.paragraphs_type.remote_video
     - paragraphs.paragraphs_type.text
   module:
@@ -34,7 +33,6 @@ settings:
       image: image
       text: text
       language_link_collection: language_link_collection
-      ptv_contact: ptv_contact
       remote_video: remote_video
       helsinki_kanava: helsinki_kanava
     negate: 0

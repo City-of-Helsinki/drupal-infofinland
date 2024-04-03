@@ -3,7 +3,6 @@ langcode: fi
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.municipalitys.field_ptv_code
     - taxonomy.vocabulary.municipalitys
   module:
     - text
@@ -18,14 +17,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_ptv_code:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   langcode: true
