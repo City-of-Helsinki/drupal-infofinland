@@ -3,7 +3,6 @@ _core:
 mode: simple
 ignored_config_entities:
   - elasticsearch_connector.cluster.infofinland
-  - 'eu_cookie_compliance.cookie_category*'
   - 'next.next_site.*'
   - next.settings
   - simple_oauth.settings
