@@ -13,11 +13,6 @@ dependencies:
     - field.storage.node.field_description
     - field.storage.node.field_link_target_site
     - field.storage.paragraph.field_link_collection
-    - field.storage.node.field_email_address
-    - field.storage.paragraph.field_contact_data
-    - field.storage.node.field_phonenumber
-    - field.storage.node.field_postal_address
-    - field.storage.node.field_visiting_address
     - field.storage.paragraph.field_title
     - search_api.server.elastic
   module:
@@ -181,6 +176,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  custom_value: {  }
   entity_status: {  }
   entity_type: {  }
   highlight:
