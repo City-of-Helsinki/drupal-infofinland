@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: 9Jic1G9pzey2mP5olncL3_CE4eTuYJQKYzR0GCOUFqA
 id: node
-label: Sisältö
+label: Content
 tags:
   canonical_url: '[node:url]'
   description: '[node:field_description]'

@@ -19,9 +19,9 @@ display:
             next: ››
       fields:
         path:
-          label: Path
+          label: Polku
         count:
-          label: Count
+          label: 'Lukumäärä'
         langcode:
           label: Kieli
         redirect_404_operations:
@@ -29,7 +29,7 @@ display:
       filters:
         path:
           expose:
-            label: Path
+            label: Polku
         langcode:
           expose:
             label: Kieli

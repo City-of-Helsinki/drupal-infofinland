@@ -1,4 +1,4 @@
-description: 'List of redirects'
+description: 'Uudelleenohjaukset'
 display:
   default:
     display_title: Master
@@ -8,8 +8,8 @@ display:
           submit_button: Suodatus
           reset_button_label: Palauta
           exposed_sorts_label: Lajittele
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Nousevasti
+          sort_desc_label: Laskevasti
       pager:
         options:
           tags:
@@ -59,6 +59,6 @@ display:
             label: 'Alkuperäinen kieli'
       empty:
         area_text_custom:
-          content: 'There is no redirect yet.'
+          content: 'Ei uudelleenohjauksia'
   page_1:
     display_title: Sivu
