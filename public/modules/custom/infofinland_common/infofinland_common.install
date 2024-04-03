@@ -37,23 +37,20 @@ function infofinland_common_update_9002(): void {
   $moduleInstaller = \Drupal::service('module_installer');
 
   try {
-    if ($moduleHandler->moduleExists('ckeditor')) {
-      $moduleInstaller->uninstall(['ckeditor']);
+    // Load the existing configuration.
+    $config = \Drupal::configFactory()->getEditable('core.extension');
 
-      // Load the existing configuration.
-      $config = \Drupal::configFactory()->getEditable('core.extension');
+    // Get the current list of enabled modules.
+    $enabled_modules = $config->get('module') ?? [];
 
-      // Get the current list of enabled modules.
-      $enabled_modules = $config->get('module') ?? [];
-
-      // Disable the ckeditor.
-      if (isset($enabled_modules['ckeditor'])) {
-        unset($enabled_modules['ckeditor']);
-      }
-
+    // Disable the ckeditor.
+    if (isset($enabled_modules['ckeditor'])) {
+      unset($enabled_modules['ckeditor']);
       // Update the configuration with the new list of enabled modules.
       $config->set('module', $enabled_modules);
       $config->save();
+
+      $moduleInstaller->uninstall(['ckeditor']);
 
       // Rebuild module data that is stored in state.
       \Drupal::service('extension.list.module')->reset();
