@@ -75,6 +75,7 @@ function infofinland_common_update_9002(): void {
     // Try uninstalling modules that are no longer installed.
     $moduleInstaller->uninstall($modules_to_disable);
 
+    // Install phpass if it is not installed.
     if (!$moduleHandler->moduleExists('phpass')) {
       $moduleInstaller->install(['phpass']);
     }
