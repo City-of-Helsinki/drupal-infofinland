@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Running purge queue: $(date)"
-
 function has_items {
   NUM_ITEMS=$(drush p:queue-stats --format=json | jq .number_of_items)
 
@@ -14,9 +12,15 @@ function has_items {
 while true
 do
   if has_items; then
-    echo "Flushing purge queue: $(date)"
-    drush p:queue-work --no-interaction --finish
+    RESULT=$(drush p:queue-work --no-interaction --finish --format=json | jq --arg DATE "$(date +'%Y-%m-%dT%H:%M:%S%:z')" -c '.[] |= . + {"date" : $DATE}')
+    # RESULT is an array of json objects. Process each result and
+    # only output the failed items.
+    echo $RESULT | jq -c '.[]' | while read LINE; do
+      if [ $(echo "$LINE" | jq .failed) -gt "0" ]; then
+        echo $LINE
+      fi
+    done
   fi
-  # Sleep for 60 seconds.
+
   sleep 60
 done

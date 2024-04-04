@@ -100,7 +100,7 @@ filters:
     id: helfi_link_converter
     provider: helfi_api_base
     status: false
-    weight: -47
+    weight: -10
     settings: {  }
   obfuscate_mail:
     id: obfuscate_mail

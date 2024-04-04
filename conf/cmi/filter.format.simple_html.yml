@@ -59,7 +59,7 @@ filters:
     id: helfi_link_converter
     provider: helfi_api_base
     status: false
-    weight: -47
+    weight: -10
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
