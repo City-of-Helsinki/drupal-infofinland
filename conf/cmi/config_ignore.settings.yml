@@ -1,9 +1,9 @@
 _core:
   default_config_hash: PipyKPJHaHaJB3D4LeRoRJxSSd7QbBM0gb5wpSrEFfc
+mode: simple
 ignored_config_entities:
-  - 'eu_cookie_compliance.cookie_category*'
+  - elasticsearch_connector.cluster.infofinland
   - 'next.next_site.*'
   - next.settings
   - simple_oauth.settings
-  - elasticsearch_connector.cluster.infofinland
   - update.settings

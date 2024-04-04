@@ -1,0 +1,13 @@
+uuid: 42cab773-2558-42aa-a82b-e05f3bae6d22
+langcode: fi
+status: true
+dependencies: {  }
+id: default_hreflang
+label: 'Default hreflang'
+description: 'The default hreflang sitemap type.'
+sitemap_generator: default
+url_generators:
+  - custom
+  - entity
+  - entity_menu_link_content
+  - arbitrary

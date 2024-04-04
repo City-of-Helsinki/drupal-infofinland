@@ -53,6 +53,9 @@ display:
         langcode:
           expose:
             label: Idioma
+      empty:
+        area_text_custom:
+          content: 'No scheduled content.'
     display_title: Master
   overview:
     display_options:
@@ -60,6 +63,7 @@ display:
         title: Scheduled
       tab_options:
         title: Contenido
+    display_title: 'Content Overview'
   user_page:
     display_options:
       menu:
@@ -70,3 +74,6 @@ display:
         uid:
           exception:
             title: Todo(s)
+      empty:
+        area_text_custom:
+          content: 'No scheduled content for user {{ arguments.uid }}'

@@ -1,6 +1,10 @@
+label: Contenu
+description: 'Find and manage content.'
 display:
   default:
+    display_title: 'Par défaut'
     display_options:
+      title: Contenu
       fields:
         title:
           label: Titre
@@ -17,7 +21,6 @@ display:
           label: 'Mis à jour'
         operations:
           label: Actions
-      title: Contenu
       pager:
         options:
           tags:
@@ -53,7 +56,6 @@ display:
         langcode:
           expose:
             label: Langue
-    display_title: 'Par défaut'
   page_1:
     display_title: Sivu
     display_options:
@@ -62,5 +64,3 @@ display:
       tab_options:
         title: Contenu
         description: 'Find and manage content'
-label: Contenu
-description: 'Find and manage content.'

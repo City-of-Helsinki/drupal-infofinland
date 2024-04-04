@@ -7,8 +7,8 @@ display:
           submit_button: Käytä
           reset_button_label: Palauta
           exposed_sorts_label: Lajittele
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Nousevasti
+          sort_desc_label: Laskevasti
       pager:
         options:
           expose:
@@ -18,7 +18,7 @@ display:
             previous: '‹ Edellinen'
             next: 'Seuraava ›'
             first: '« Ensimmäinen'
-            last: 'Last »'
+            last: 'Viimeinen »'
       fields:
         name:
           label: Nimi
@@ -28,5 +28,7 @@ display:
           label: Kieli
         revision:
           label: Versio
+        accepted:
+          label: 'Hyväksytty'
   page_1:
     display_title: Sivu

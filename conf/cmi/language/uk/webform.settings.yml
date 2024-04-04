@@ -24,6 +24,3 @@ settings:
       title: Широкий
 element:
   default_more_title: Ще
-  default_section_title_tag: h2
-mail:
-  default_from_name: '[site:name]'

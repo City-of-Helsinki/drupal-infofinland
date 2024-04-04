@@ -1,0 +1,105 @@
+<?php
+
+/**
+ * @file
+ * Contains installation tasks common module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * handle filter token
+ */
+function infofinland_common_update_9001(): void {
+  // Remove filter token from full_html format.
+  $full_format = Drupal::configFactory()
+    ->getEditable('filter.format.full_html');
+  $raw_data = $full_format->getRawData();
+
+  if (($key = array_search('token_filter', $raw_data['dependencies']['module'])) !== false) {
+    unset($raw_data['dependencies']['module'][$key]);
+  }
+  if (array_key_exists('token_filter', $raw_data['filters'])) {
+    unset($raw_data['filters']['token_filter']);
+  }
+  $full_format->setData($raw_data);
+  $full_format->save();
+}
+
+/**
+ * Disable modules
+ */
+function infofinland_common_update_9002(): void {
+  /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
+  $moduleHandler = \Drupal::service('module_handler');
+
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $moduleInstaller */
+  $moduleInstaller = \Drupal::service('module_installer');
+
+  try {
+    $modules_to_disable = [
+      'ckeditor',
+      'ckeditor_bidi',
+      'config_filter',
+      'config_replace',
+      'hdbt_component_library',
+      'hdbt_content',
+      'hdbt_hyphenopoly',
+      'infofinland_ckeditor',
+      'node_revision_delete',
+    ];
+
+    // Load the existing configuration.
+    $config = \Drupal::configFactory()->getEditable('core.extension');
+
+    // Get the current list of enabled modules.
+    $enabled_modules = $config->get('module') ?? [];
+
+    // Disable the specified modules.
+    foreach ($modules_to_disable as $module) {
+      if (isset($enabled_modules[$module])) {
+        unset($enabled_modules[$module]);
+      }
+    }
+
+    // Update the configuration with the new list of enabled modules.
+    $config->set('module', $enabled_modules);
+    $config->save();
+
+    // Rebuild module data that is stored in state.
+    \Drupal::service('extension.list.module')->reset();
+
+    // Rebuild all information based on new module data.
+    \Drupal::moduleHandler()->invokeAll('rebuild');
+
+    // Try uninstalling modules that are no longer installed.
+    $moduleInstaller->uninstall($modules_to_disable);
+
+    // Install phpass if it is not installed.
+    if (!$moduleHandler->moduleExists('phpass')) {
+      $moduleInstaller->install(['phpass']);
+    }
+  }
+  catch(\Exception $e) {
+    echo $e->getMessage();
+  }
+}
+
+function infofinland_common_update_9003(): void {
+  $modules = [
+    'config_replace',
+    'hdbt_component_library',
+    'hdbt_content',
+    'hdbt_hyphenopoly',
+    'node_revision_delete',
+    'infofinland_ckeditor',
+  ];
+
+  \Drupal::service('database')->delete('key_value')->condition('name', 'config_replace')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_component_library')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_content')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_hyphenopoly')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'node_revision_delete')->execute();
+  \Drupal::service('database')->delete('key_value')->condition('name', 'infofinland_ckeditor')->execute();
+
+}

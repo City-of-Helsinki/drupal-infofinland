@@ -27,6 +27,8 @@ display:
           label: Idioma
         revision:
           label: Revisión
+        accepted:
+          label: 'Time Accepted'
       title: Aceptado
       empty:
         area:

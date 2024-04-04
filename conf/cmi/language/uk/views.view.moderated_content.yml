@@ -8,19 +8,14 @@ display:
       fields:
         title:
           label: Заголовок
-          separator: ', '
         type:
           label: 'Тип матеріалів'
-          separator: ', '
         name:
           label: Автор
-          separator: ', '
         moderation_state:
           label: 'Стан модерації'
-          separator: ', '
         changed:
           label: Оновлено
-          separator: ', '
         operations:
           label: Операції
       pager:

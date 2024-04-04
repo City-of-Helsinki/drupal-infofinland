@@ -14,11 +14,18 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
         langcode:
           label: Langue
         redirect_404_operations:
           label: Actions
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: Langue

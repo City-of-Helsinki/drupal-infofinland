@@ -27,5 +27,7 @@ display:
           label: Språk
         revision:
           label: Version
+        accepted:
+          label: 'Time Accepted'
   page_1:
     display_title: Sida

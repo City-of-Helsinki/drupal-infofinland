@@ -30,9 +30,9 @@ display:
         changes:
           label: Modifications
         date:
-          label: 'Date d''ajout'
+          label: "Date d'ajout"
   page_1:
     display_title: Sivu
     display_options:
       tab_options:
-        description: 'Conditions Générales d''Utilisation (CGU)'
+        description: "Conditions Générales d'Utilisation (CGU)"

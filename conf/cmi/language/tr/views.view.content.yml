@@ -1,6 +1,10 @@
+label: İçerik
+description: 'İçeriği bul ve yönet.'
 display:
   default:
+    display_title: Varsayılan
     display_options:
+      title: İçerik
       fields:
         title:
           label: Başlık
@@ -17,7 +21,6 @@ display:
           label: Güncellendi
         operations:
           label: İşlemler
-      title: İçerik
       pager:
         options:
           tags:
@@ -55,7 +58,6 @@ display:
         langcode:
           expose:
             label: Dil
-    display_title: Varsayılan
   page_1:
     display_title: Sayfa
     display_options:
@@ -64,5 +66,3 @@ display:
       tab_options:
         title: İçerik
         description: 'İçeriği bulun ve yönetin'
-label: İçerik
-description: 'İçeriği bul ve yönet.'

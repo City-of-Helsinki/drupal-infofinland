@@ -18,11 +18,18 @@ display:
             previous: ‹‹
             next: ››
       fields:
+        path:
+          label: Polku
+        count:
+          label: 'Lukumäärä'
         langcode:
           label: Kieli
         redirect_404_operations:
           label: Toimenpiteet
       filters:
+        path:
+          expose:
+            label: Polku
         langcode:
           expose:
             label: Kieli
