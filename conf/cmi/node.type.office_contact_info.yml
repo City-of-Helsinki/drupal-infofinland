@@ -22,9 +22,9 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Toimipaikan yhteystiedot'
+name: 'Office contact information'
 type: office_contact_info
-description: 'Toimipaikan yhteystiedot sivu. Data tulee PTV integraation kautta.'
+description: 'Office contact information page. Comes from PTV integration.'
 help: ''
 new_revision: true
 preview_mode: 1

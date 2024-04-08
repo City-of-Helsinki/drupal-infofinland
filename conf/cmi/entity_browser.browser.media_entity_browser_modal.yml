@@ -14,7 +14,7 @@ label: 'Media Entity Browser (Modal)'
 display: modal
 display_configuration:
   width: '1070'
-  height: '700'
+  height: ''
   link_text: 'Select media'
   auto_open: false
 selection_display: no_display

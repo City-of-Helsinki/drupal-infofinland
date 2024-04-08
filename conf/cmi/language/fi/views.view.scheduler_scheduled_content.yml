@@ -1,5 +1,5 @@
-label: 'Scheduled content'
-description: 'Find and manage scheduled content.'
+label: 'Ajastettu sisältö'
+description: 'Etsi ja hallitse ajastettua sisältöä'
 display:
   default:
     display_options:
