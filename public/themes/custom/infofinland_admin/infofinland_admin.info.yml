@@ -8,6 +8,7 @@ core_version_requirement: ^9 || ^10
 # Libraries
 libraries:
   - infofinland_admin/global-styling
+  - infofinland_admin/ckeditor5-rtl
 
 # Regions
 regions:
