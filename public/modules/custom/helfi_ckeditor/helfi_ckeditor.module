@@ -34,6 +34,9 @@ function helfi_ckeditor_ckeditor5_plugin_info_alter(array &$plugin_definitions):
   $plugin_definitions['ckeditor5_table'] = new CKEditor5PluginDefinition($original_table_plugin);
 }
 
+/**
+ * Implements hook_js_settings_alter().
+ */
 function helfi_ckeditor_js_settings_alter(array &$settings, AttachedAssetsInterface $assets) {
   $content_language = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
   $settings['editor']['formats']['full_html']['editorSettings']['language']['ui'] = $content_language->getId();
