@@ -30,3 +30,7 @@ a {
 .language-links .is-active {
   font-weight: 700;
 }
+
+#field-municipality-info-values .form-textarea-wrapper {
+  width: 300px;
+}
