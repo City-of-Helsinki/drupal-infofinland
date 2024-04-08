@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 use Drupal\ckeditor5\Plugin\CKEditor5PluginDefinition;
 use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Language\LanguageInterface;
 
 /**
  * Modify the list of available CKEditor 5 plugins.
@@ -34,7 +35,7 @@ function helfi_ckeditor_ckeditor5_plugin_info_alter(array &$plugin_definitions):
 }
 
 function helfi_ckeditor_js_settings_alter(array &$settings, AttachedAssetsInterface $assets) {
-  $content_language = \Drupal::languageManager()->getCurrentLanguage(\Drupal\Core\Language\LanguageInterface::TYPE_CONTENT);
+  $content_language = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
   $settings['editor']['formats']['full_html']['editorSettings']['language']['ui'] = $content_language->getId();
   $settings['editor']['formats']['simple_html']['editorSettings']['language']['ui'] = $content_language->getId();
 }
