@@ -3,8 +3,3 @@ global-styling:
   css:
     theme:
       src/css/styles.css: {}
-
-ckeditor5-content-direction:
-  version: 1.0
-  js:
-    src/js/ckeditor5_content_direction.js: { attributes: { defer: true } }
