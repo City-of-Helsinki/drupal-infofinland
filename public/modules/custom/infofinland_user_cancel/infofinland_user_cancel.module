@@ -3,12 +3,17 @@
 /**
  * @file
  * Helper functions related to deleting user accounts.
+ *
+ * This is in a separate module so it can be turned off easier
+ * and we can reassign module weights / run order if necessary.
  */
 
 use Drupal\user\UserInterface;
 
 /**
  * Implements hook_user_cancel().
+ *
+ * This has to run before node module's user_cancel hook.
  */
 function infofinland_user_cancel_user_cancel($edit, UserInterface $account, $method) {
   switch ($method) {
@@ -22,8 +27,7 @@ function infofinland_user_cancel_user_cancel($edit, UserInterface $account, $met
 /**
  * Reassigns all node revisions by $account to by owned by anonymous (uid 0).
  *
- * Replicating functionality of node module, because node code is intended to
- * be run from a form or otherwise batched.
+ * Prevents crashes and timeouts when revisions are handled by node module hook.
  *
  * @param \Drupal\user\UserInterface $account
  *   The user.
