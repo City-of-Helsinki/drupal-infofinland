@@ -10,9 +10,6 @@ display:
           action_title: Дія
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Елементів на сторінку'
             items_per_page_options_all_label: '- Усе -'
@@ -50,7 +47,7 @@ display:
                 title: Неопубліковано
         name:
           expose:
-            label: 'Назва (ім''я)'
+            label: "Назва (ім'я)"
         bundle:
           expose:
             label: 'Тип носія'
@@ -65,8 +62,6 @@ display:
       fields:
         media_bulk_form:
           action_title: Дія
-        name:
-          separator: ', '
         edit_media:
           alter:
             text: 'Редагувати {{ name }}'
@@ -87,7 +82,7 @@ display:
       filters:
         name:
           expose:
-            label: 'Назва (ім''я)'
+            label: "Назва (ім'я)"
       header:
         display_link_grid:
           label: Сітка
@@ -100,7 +95,7 @@ display:
         thumbnail__target_id:
           label: Мініатюра
         name:
-          label: 'Назва (ім''я)'
+          label: "Назва (ім'я)"
         uid:
           label: Автор
         changed:
@@ -112,7 +107,7 @@ display:
       filters:
         name:
           expose:
-            label: 'Назва (ім''я)'
+            label: "Назва (ім'я)"
       header:
         display_link_grid:
           label: Сітка

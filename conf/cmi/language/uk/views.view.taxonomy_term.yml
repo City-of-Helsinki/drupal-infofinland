@@ -6,9 +6,6 @@ display:
     display_options:
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Елементів на сторінку'
             items_per_page_options_all_label: '- Усе -'
@@ -24,7 +21,6 @@ display:
         tid:
           exception:
             title: Все
-          title: '{{ arguments.tid }}'
   feed_1:
     display_title: Канал
   page_1:

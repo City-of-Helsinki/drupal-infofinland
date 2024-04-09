@@ -16,11 +16,18 @@ display:
             items_per_page_options_all_label: '- Tümü -'
             offset_label: 'Başlangıç değeri'
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
         langcode:
           label: Dil
         redirect_404_operations:
           label: İşlemler
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: Dil

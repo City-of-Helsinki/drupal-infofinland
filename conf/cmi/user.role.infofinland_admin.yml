@@ -138,6 +138,7 @@ permissions:
   - 'delete message revisions'
   - 'delete office_contact_info revisions'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own image media'
   - 'delete own landing_page content'
   - 'delete own link content'

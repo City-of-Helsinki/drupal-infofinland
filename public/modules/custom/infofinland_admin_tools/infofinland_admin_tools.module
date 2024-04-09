@@ -5,6 +5,8 @@
  * Admin tools.
  */
 
+use Drupal\Core\Entity\ContentEntityInterface;
+
 /**
  * Implements hook_toolbar_alter().
  */
@@ -16,3 +18,43 @@ function infofinland_admin_tools_toolbar_alter(&$items) {
   }
 }
 
+/**
+ *  Implements hook_language_switch_links_alter().
+ */
+function infofinland_admin_tools_language_switch_links_alter(array &$links) {
+  $route_match = \Drupal::routeMatch();
+  $entity = FALSE;
+
+  // Determine if the current route represents an entity.
+  if (
+    ($route = $route_match->getRouteObject()) &&
+    ($parameters = $route->getOption('parameters'))
+  ) {
+    foreach ($parameters as $name => $options) {
+      if (isset($options['type']) && strpos($options['type'], 'entity:') === 0) {
+        $parameter = $route_match->getParameter($name);
+        if ($parameter instanceof ContentEntityInterface && $parameter->hasLinkTemplate('canonical')) {
+          $entity = $parameter;
+          break;
+        }
+      }
+    }
+  }
+
+  // Compare the links with current entity and check for possible translations.
+  foreach ($links as $lang_code => &$link) {
+    $link['#abbreviation'] = $lang_code;
+
+    if ($entity && $entity instanceof ContentEntityInterface) {
+      if (
+        !$entity->hasTranslation($lang_code) ||
+        (
+          method_exists($entity->getTranslation($lang_code), 'isPublished') &&
+          !$entity->getTranslation($lang_code)->isPublished()
+        )
+      ) {
+        $link['#untranslated'] = TRUE;
+      }
+    }
+  }
+}

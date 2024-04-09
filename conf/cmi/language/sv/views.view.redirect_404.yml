@@ -16,11 +16,18 @@ display:
             items_per_page_options_all_label: '- Alla -'
             offset_label: Kompensera
       fields:
+        path:
+          label: Path
+        count:
+          label: Count
         langcode:
           label: Språk
         redirect_404_operations:
           label: Funktioner
       filters:
+        path:
+          expose:
+            label: Path
         langcode:
           expose:
             label: Språk

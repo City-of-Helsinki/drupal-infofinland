@@ -1,13 +1,47 @@
 title: Контакт
 description: 'Проста електронна контактна веб-форма.'
+elements: |-
+  name:
+    '#title': 'Your Name'
+    '#type': textfield
+    '#required': true
+    '#default_value': '[current-user:display-name]'
+  sender_email:
+    '#title': 'Sender Email'
+    '#type': email
+    '#required': true
+    '#default_value': '[current-user:mail]'
+  feedback_email:
+    '#title': 'Feedback Email'
+    '#type': email
+    '#required': true
+    '#default_value': infofinland.palaute@hel.fi
+  page:
+    '#title': Page
+    '#type': textfield
+    '#required': true
+  subject:
+    '#title': Subject
+    '#type': textfield
+    '#required': true
+    '#test': 'Test email'
+  message:
+    '#title': Message
+    '#type': textarea
+    '#required': true
+    '#test': 'Test email'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Send message'
 settings:
   confirmation_message: 'Ваше повідомлення було надіслано.'
 handlers:
   email_confirmation:
     label: 'Підтвердження поштою'
     settings:
-      body: '[webform_submission:values:message:value]'
+      subject: '[webform_submission:values:subject:raw]'
   email_notification:
     label: 'Електронне сповіщення'
     settings:
-      body: '[webform_submission:values:message:value]'
+      subject: '[webform_submission:values:subject:raw]'
