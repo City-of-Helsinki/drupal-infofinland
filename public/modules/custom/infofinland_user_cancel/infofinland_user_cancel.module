@@ -11,6 +11,20 @@
 use Drupal\user\UserInterface;
 
 /**
+ * Implements hook_module_implements_alter().
+ */
+function infofinland_user_cancel_module_implements_alter(&$implementations, $hook) : void {
+  // Move infofinland_user_cancel_user_cancel() implementation to the top of the
+  // list, so this is always run first before any other alter hooks, more
+  // specifically before 'node_user_cancel()' which causes issues when mass
+  // reassigning node revisions.
+  if ($hook === 'user_cancel') {
+    $group = $implementations['infofinland_user_cancel'];
+    $implementations = ['infofinland_user_cancel' => $group] + $implementations;
+  }
+}
+
+/**
  * Implements hook_user_cancel().
  *
  * This has to run before node module's user_cancel hook.
