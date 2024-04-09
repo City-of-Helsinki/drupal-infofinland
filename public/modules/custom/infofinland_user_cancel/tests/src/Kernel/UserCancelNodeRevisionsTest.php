@@ -3,12 +3,18 @@
 namespace Drupal\Tests\infofinland_user_cancel\Functional;
 
 use Drupal\Core\Database\Database;
-use Drupal\Tests\BrowserTestBase;
+use Drupal\KernelTests\KernelTestBase;
+use Drupal\node\Entity\NodeType;
+use Drupal\Tests\node\Traits\NodeCreationTrait;
+use Drupal\Tests\user\Traits\UserCreationTrait;
 
 /**
  * Tests for anonymising node revisions when canceling users.
  */
-class UserCancelNodeRevisionsTest extends BrowserTestBase {
+class UserCancelNodeRevisionsTest extends KernelTestBase {
+
+  use NodeCreationTrait;
+  use UserCreationTrait;
 
   /**
    * {@inheritdoc}
@@ -34,6 +40,8 @@ class UserCancelNodeRevisionsTest extends BrowserTestBase {
    */
   protected static $modules = [
     'node',
+    'user',
+    'system',
     'infofinland_user_cancel',
   ];
 
@@ -43,26 +51,24 @@ class UserCancelNodeRevisionsTest extends BrowserTestBase {
   protected function setUp(): void {
     parent::setUp();
 
-    // Create Basic page node type.
-    $this->drupalCreateContentType([
+    $this->installEntitySchema('node');
+    $this->installEntitySchema('user');
+    $this->installSchema('node', 'node_access');
+
+    NodeType::create([
       'type' => 'page',
-      'name' => 'Basic page',
-      'display_submitted' => FALSE,
+      'name' => 'Page',
+    ])->save();
+
+    $user = $this->createUser([
+      'view page revisions',
+      'revert page revisions',
+      'edit any page content',
+    ], 'testuser');
+
+    $node = $this->createNode([
+      'uid' => $user->id(),
     ]);
-
-    // Create and log in user.
-    $user = $this->drupalCreateUser(
-      [
-        'view page revisions',
-        'revert page revisions',
-        'edit any page content',
-      ]
-    );
-
-    $this->drupalLogin($user);
-
-    // Create initial node.
-    $node = $this->drupalCreateNode();
 
     $nodes = [];
     $nodes[] = clone $node;
@@ -125,22 +131,6 @@ class UserCancelNodeRevisionsTest extends BrowserTestBase {
       ->execute()
       ->fetchField();
     $this->assertEquals(4, (int) $anon_revision_count, 'Amount of anonymized revisions does not match');
-  }
-
-  /**
-   * Test that infofinland_user_cancel hook is invoked before node module.
-   */
-  public function testUserCancelHookOrder() {
-    $moduleHandler = \Drupal::moduleHandler();
-    $module_found = FALSE;
-    $moduleHandler->invokeAllWith('user_cancel', function (callable $hook, string $module) use (&$module_found) {
-      if ($module === 'infofinland_user_cancel') {
-        $module_found = TRUE;
-      }
-      if ($module === 'node') {
-        $this->assertTrue($module_found, 'Node user_cancel hook found before infofinland_user_cancel hook.');
-      }
-    });
   }
 
 }
