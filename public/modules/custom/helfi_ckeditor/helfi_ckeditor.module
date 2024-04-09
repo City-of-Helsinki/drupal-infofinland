@@ -56,8 +56,12 @@ function helfi_ckeditor_js_settings_alter(array &$settings) {
   $language_id = $content_language->getId();
 
   foreach ($settings['editor']['formats'] as $name => $array) {
+
     $settings['editor']['formats'][$name]['editorSettings']['language']['ui'] = $language_id;
-    if ($ui_language_direction === 'ltr') {
+    if (
+      $ui_language_direction === 'ltr' &&
+      is_array($settings['editor']['formats'][$name]['editorSettings']['toolbar']['items'])
+    ) {
       $settings['editor']['formats'][$name]['editorSettings']['toolbar']['items'] = array_reverse(
         $settings['editor']['formats'][$name]['editorSettings']['toolbar']['items']
       );
