@@ -60,6 +60,7 @@ function helfi_ckeditor_js_settings_alter(array &$settings) {
     $settings['editor']['formats'][$name]['editorSettings']['language']['ui'] = $language_id;
     if (
       $ui_language_direction === 'ltr' &&
+      $content_language === 'rtl' &&
       isset($settings['editor']['formats'][$name]['editorSettings']['toolbar']['items']) &&
       is_array($settings['editor']['formats'][$name]['editorSettings']['toolbar']['items'])
     ) {
