@@ -6,7 +6,6 @@ dependencies:
     - filter.format.simple_html
   module:
     - ckeditor5
-    - ckeditor5_paste_filter
 format: simple_html
 editor: ckeditor5
 settings:
@@ -111,6 +110,11 @@ settings:
           enabled: true
           weight: 15
           search: '<a name="[^"]*">(.*?)<\/a>'
+          replace: $1
+        -
+          enabled: true
+          weight: 16
+          search: '<span.*?>(.*?)<\/span>'
           replace: $1
     ckeditor5_sourceEditing:
       allowed_tags: {  }
