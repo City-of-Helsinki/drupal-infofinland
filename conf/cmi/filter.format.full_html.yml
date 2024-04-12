@@ -6,7 +6,6 @@ dependencies:
     - editor
     - helfi_api_base
     - linkit
-    - media
 name: HTML
 format: full_html
 weight: 0
@@ -88,12 +87,3 @@ filters:
     weight: -48
     settings:
       title: true
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
