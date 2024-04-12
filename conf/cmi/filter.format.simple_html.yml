@@ -42,7 +42,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<br> <p> <strong> <em> <a href data-hds-icon-start data-is-external data-protocol data-hds-component data-hds-variant rel target="_blank" data-entity-type data-entity-uuid data-entity-substitution> <ul> <ol start> <li> <span dir>'
+      allowed_html: '<strong> <em> <br> <p> <span dir> <ul> <dl> <dt> <ol start> <li> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a href data-entity-type data-entity-uuid data-entity-substitution rel target="_blank">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:
