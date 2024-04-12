@@ -3,7 +3,7 @@
 trigger:
   branches:
     include:
-      - develop
+      - dev
   paths:
     exclude:
       - README.md
