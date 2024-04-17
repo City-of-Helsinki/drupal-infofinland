@@ -39,6 +39,5 @@ permissions:
   - 'view paragraph content municipality_info'
   - 'view paragraph content municipality_liftup'
   - 'view paragraph content municipality_liftup_item'
-  - 'view paragraph content ptv_contact'
   - 'view paragraph content remote_video'
   - 'view paragraph content text'
