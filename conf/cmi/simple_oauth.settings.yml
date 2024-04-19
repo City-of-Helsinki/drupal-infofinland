@@ -3,7 +3,7 @@ _core:
 access_token_expiration: 300
 authorization_code_expiration: 300
 refresh_token_expiration: 1209600
-token_cron_batch_size: 0
+token_cron_batch_size: 100
 public_key: /var/www/html/keys/public.key
 private_key: /var/www/html/keys/private.key
 remember_clients: true
