@@ -86,7 +86,7 @@ function infofinland_common_update_9002(): void {
 }
 
 /**
- *
+ * Implements hook_update_N().
  */
 function infofinland_common_update_9003(): void {
   \Drupal::service('database')->delete('key_value')->condition('name', 'config_replace')->execute();

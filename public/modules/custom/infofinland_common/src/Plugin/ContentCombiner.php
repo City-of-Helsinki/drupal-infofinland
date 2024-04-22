@@ -11,11 +11,15 @@ use Drupal\paragraphs\Entity\Paragraph;
 class ContentCombiner {
 
   /**
-   * Loop thru field content and combines text paragraphs into a one.
+   * Combine paragraphs content.
+   *
+   * Loop through field content and combines text paragraphs into a one.
    * After it removes the combined ones from the node.
    *
    * @param \Drupal\Core\Entity\EntityInterface $node
+   *   Node to process.
    * @param bool $includeRevision
+   *   To include revisions or not.
    *
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
@@ -50,7 +54,8 @@ class ContentCombiner {
       $combined = $combined . $fieldText;
       $combinedKeys[] = $key;
 
-      // If next paragraph isn't text, but we combined things, we need to create a new paragraph.
+      // If next paragraph isn't text, but we combined things,
+      // we need to create a new paragraph.
       if (((isset($paragraphs[$key + 1]) && $paragraphs[$key + 1]->getType() != 'text')
           || !isset($paragraphs[$key + 1]))
         && $combined != '' && count($combinedKeys) > 1) {

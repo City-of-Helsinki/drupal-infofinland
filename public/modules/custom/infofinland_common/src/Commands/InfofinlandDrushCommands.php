@@ -3,7 +3,6 @@
 namespace Drupal\infofinland_common\Commands;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\node\Entity\Node;
 use Drush\Commands\DrushCommands;
 
 /**
@@ -52,8 +51,10 @@ class InfofinlandDrushCommands extends DrushCommands {
       ->range(0, $amount)
       ->execute();
 
-    // Load all the nodes.
-    $nodes = Node::loadMultiple($nids);
+    $nodes = $this->entityTypeManager
+      ->getStorage('node')
+      ->load($nids);
+
     foreach ($nodes as $node) {
       $node->save();
       $this->output()->writeln($node->id());
@@ -64,14 +65,16 @@ class InfofinlandDrushCommands extends DrushCommands {
    * Drush command that saves nodes.
    *
    * @param string $nid
-   *   node id.
+   *   Node id.
    *
    * @command infofinland:unpublish-node
    * @usage infofinland:unpublish-node 32611
    */
   public function unpublishNode($nid) {
     if ($nid) {
-      $node = Node::load($nid);
+      $node = $this->entityTypeManager
+        ->getStorage('node')
+        ->load($nid);
       $translation_languages = $node->getTranslationLanguages();
 
       foreach ($translation_languages as $language) {

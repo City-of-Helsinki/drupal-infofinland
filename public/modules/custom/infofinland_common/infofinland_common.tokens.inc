@@ -8,7 +8,7 @@
 use Drupal\Core\Render\BubbleableMetadata;
 
 /**
- * Implements hook_token_info()
+ * Implements hook_token_info().
  */
 function infofinland_common_token_info() {
   $info = [];
@@ -22,7 +22,7 @@ function infofinland_common_token_info() {
 }
 
 /**
- * Implements hook_tokens()
+ * Implements hook_tokens().
  *
  * Custom token for getting menu path in english.
  */

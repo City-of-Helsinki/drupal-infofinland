@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- *
+ * Controller for local tasks.
  */
 class LocalTasksController extends ControllerBase {
 

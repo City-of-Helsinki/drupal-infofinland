@@ -6,7 +6,7 @@ use Drupal\simple_oauth\Controller\Oauth2Token;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- *
+ * Controller for oauth2 tokens.
  */
 class OAuth2TokenController extends Oauth2Token {
 
