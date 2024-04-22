@@ -18,7 +18,8 @@ use Drupal\editor\Entity\Editor;
 use Drupal\node\Entity\Node;
 use Drupal\user\Entity\User;
 use Drupal\media\Entity\Media;
-use \Drupal\Core\Entity\RevisionLogInterface;
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\RevisionLogInterface;
 
 /**
  * Implements hook_cron().
@@ -600,4 +601,44 @@ function infofinland_common_elasticsearch_connector_load_library_options_alter(&
  */
 function infofinland_common_preprocess_html(&$variables) {
   $variables['attributes']['class'][] = 'infofinland-admin';
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ *
+ * Orders entity reference query by length so autocomplete shows the exact match at the top.
+ *
+ * @see https://www.drupal.org/project/drupal/issues/3304175
+ * @see \Drupal\Core\Entity\Plugin\EntityReferenceSelection\DefaultSelection::buildEntityQuery()
+ */
+function infofinland_common_query_entity_reference_alter(AlterableInterface $query): void {
+  if (!$query->hasAllTags('entity_query', 'entity_query_node')) {
+    return;
+  }
+
+  $title_field = 'node_field_data.title';
+  $conditions = $query->conditions();
+
+  if (empty($conditions) || !isset($conditions[0]['field'])) {
+    return;
+  }
+
+  $has_title = false;
+  foreach ($conditions as $condition) {
+    if (is_array($condition) && $condition['field'] === $title_field) {
+      $has_title = true;
+    }
+  }
+
+  if (!$has_title) {
+    return;
+  }
+
+  $query->addExpression("LENGTH($title_field)", 'title_length');
+  $query->orderBy('title_length');
+
+  // Prevent a mysql error.
+  if (!empty($query->getGroupBy())) {
+    $query->groupBy('title_length');
+  }
 }
