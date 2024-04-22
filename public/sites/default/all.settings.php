@@ -22,6 +22,9 @@ if (getenv('INFOFINLAND_UI_URL')) {
   $config['next.next_site.infofinland_ui']['preview_secret'] = getenv('DRUPAL_PREVIEW_SECRET');
 }
 
+$config['simple_oauth.settings']['public_key'] = '/var/www/html/keys/public.key';
+$config['simple_oauth.settings']['private_key'] = '/var/www/html/keys/private.key';
+
 // Hardcoded simple_oauth keys for local development.
 if (getenv('APP_ENV') === 'local') {
   $config['simple_oauth.settings']['public_key'] = '/app/conf/local-keys/public.key';
