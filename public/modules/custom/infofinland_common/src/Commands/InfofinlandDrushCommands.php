@@ -2,10 +2,9 @@
 
 namespace Drupal\infofinland_common\Commands;
 
-use Drush\Commands\DrushCommands;
-use Drupal\node\Entity\Node;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-
+use Drupal\node\Entity\Node;
+use Drush\Commands\DrushCommands;
 
 /**
  * A drush command file.
@@ -35,22 +34,23 @@ class InfofinlandDrushCommands extends DrushCommands {
    * Drush command that saves nodes.
    *
    * @param string $amount
-   *   Amount of nodes to be saved
+   *   Amount of nodes to be saved.
    * @param string $startNid
-   *   Nid where to start with entity query
+   *   Nid where to start with entity query.
+   *
    * @command infofinland:node-save
    * @usage infofinland:node-save 10 32611
    */
   public function savenodes($amount = 10, $startNid = 32610) {
     // Get an array of all 'page' node IDs.
     $nids = $this->entityTypeManager->getStorage('node')->getQuery()
-    ->accessCheck(FALSE)
-    ->condition('type', 'page')
-    ->condition('langcode', 'fi')
-    ->condition('nid', $startNid, '>')
-    ->sort('nid', 'ASC')
-    ->range(0, $amount)
-    ->execute();
+      ->accessCheck(FALSE)
+      ->condition('type', 'page')
+      ->condition('langcode', 'fi')
+      ->condition('nid', $startNid, '>')
+      ->sort('nid', 'ASC')
+      ->range(0, $amount)
+      ->execute();
 
     // Load all the nodes.
     $nodes = Node::loadMultiple($nids);
@@ -64,7 +64,8 @@ class InfofinlandDrushCommands extends DrushCommands {
    * Drush command that saves nodes.
    *
    * @param string $nid
-   *   node id
+   *   node id.
+   *
    * @command infofinland:unpublish-node
    * @usage infofinland:unpublish-node 32611
    */
@@ -82,4 +83,5 @@ class InfofinlandDrushCommands extends DrushCommands {
       }
     }
   }
+
 }

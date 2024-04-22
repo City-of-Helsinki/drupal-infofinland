@@ -5,26 +5,27 @@
  * Infofinland Common module.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
+use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Entity\EntityForm;
-use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageInterface;
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+use Drupal\editor\Entity\Editor;
+use Drupal\media\Entity\Media;
+use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\ParagraphInterface;
-use Drupal\editor\Entity\Editor;
-use Drupal\node\Entity\Node;
+use Drupal\path_alias\PathAliasInterface;
 use Drupal\user\Entity\User;
-use Drupal\media\Entity\Media;
-use Drupal\Core\Database\Query\AlterableInterface;
-use Drupal\Core\Entity\RevisionLogInterface;
 
 /**
  * Implements hook_cron().
  */
-function infofinland_common_cron(){
+function infofinland_common_cron() {
   $last_run = \Drupal::state()->get('infofinland_common_orphan_paragraph_delete.last_run', 0);
   $time_now = \Drupal::time()->getRequestTime();
   $frequency = 86400;
@@ -68,7 +69,8 @@ function infofinland_common_form_alter(array &$form, FormStateInterface $form_st
   if ($form_id === 'menu_link_content_menu_link_content_form') {
     $form['link']['widget'][0]['uri']['#selection_handler'] = "default:node";
     $form['link']['widget'][0]['uri']['#selection_settings'] = [
-      'target_bundles' => ['landing_page' => 'landing_page', 'page' => 'page'], //etc
+    // Etc.
+      'target_bundles' => ['landing_page' => 'landing_page', 'page' => 'page'],
     ];
   }
 }
@@ -93,7 +95,7 @@ function redirectFunction(array &$form, FormStateInterface $form_state) {
 /**
  * Implements hook_ENTITY_TYPE_update().
  */
-function infofinland_common_path_alias_update(Drupal\path_alias\PathAliasInterface $path_alias) {
+function infofinland_common_path_alias_update(PathAliasInterface $path_alias) {
   $path_alias_manager = \Drupal::entityTypeManager()->getStorage('path_alias');
   // Load translated path aliases.
   $alias_objects = $path_alias_manager->loadByProperties([
@@ -117,7 +119,7 @@ function infofinland_common_path_alias_update(Drupal\path_alias\PathAliasInterfa
 function infofinland_common_preprocess_status_messages(&$variables) {
   if (isset($variables['message_list']['warning'])) {
     $status_messages = $variables['message_list']['warning'];
-    foreach($status_messages as $delta => $message) {
+    foreach ($status_messages as $delta => $message) {
       if (strpos((string) $message, 'The current translation is not in sync with the Finnish one') !== FALSE) {
         $variables['attributes']['class'] = 'custom-messages--warning';
       }
@@ -248,6 +250,9 @@ function infofinland_common_form_media_form_alter(&$form, FormStateInterface $fo
   }
 }
 
+/**
+ *
+ */
 function infofinland_common_inline_entity_form_entity_form_alter(&$form, &$form_state) {
   $current_user = \Drupal::currentUser();
   $roles = $current_user->getRoles();
@@ -296,18 +301,19 @@ function infofinland_common_form_node_page_edit_form_alter(&$form, FormStateInte
     $form['field_municipality_info']['#access'] = FALSE;
   }
 
-  if ($node->id() !== null) {
+  if ($node->id() !== NULL) {
     if ($node->langcode->value === 'fi') {
       return;
     }
     $contentFi = $node->getTranslation('fi')->get('field_content')->referencedEntities();
     $contentCountFi = count($contentFi);
     $currentNode = $node->get('field_content')->referencedEntities();
-    $contentCountCurrent= count($currentNode);
+    $contentCountCurrent = count($currentNode);
     if ($contentCountCurrent !== $contentCountFi) {
       \Drupal::messenger()->addWarning('The current translation is not in sync with the Finnish one');
       return;
-    } else {
+    }
+    else {
       for ($x = 0; $x < $contentCountCurrent; $x++) {
         if ($currentNode[$x]->getType() !== $contentFi[$x]->getType()) {
           \Drupal::messenger()->addWarning('The current translation is not in sync with the Finnish one');
@@ -326,7 +332,7 @@ function infofinland_common_form_node_page_edit_form_alter(&$form, FormStateInte
 function infofinland_common_editor_js_settings_alter(array &$settings) {
   $content_language = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
   $rtl_languages = ['fa', 'ar'];
-  if (in_array($content_language, $rtl_languages)){
+  if (in_array($content_language, $rtl_languages)) {
     foreach ($settings['editor']['formats'] as $name => $value) {
       $settings['editor']['formats'][$name]['editorSettings']['contentsLangDirection'] = 'rtl';
     }
@@ -347,7 +353,7 @@ function infofinland_common_page_attachments(array &$attachments) {
 
   $content_language = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
   $rtl_languages = ['fa', 'ar'];
-  if (in_array($content_language->getId(), $rtl_languages)){
+  if (in_array($content_language->getId(), $rtl_languages)) {
     $attachments['#attached']['library'][] = 'infofinland_common/infofinland_admin_rtl';
   }
 }
@@ -481,10 +487,9 @@ function infofinland_common_paragraph_presave(Paragraph $entity) {
   }
   $entity->set('field_municipality', ['target_id' => $municipality_tax_id]);
 
-  $alias_url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $nid);
+  $alias_url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
   $entity->set('field_municipality_page_url', $alias_url);
 }
-
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -561,7 +566,6 @@ function infofinland_common_ckeditor_css_alter(array &$css, Editor $editor) {
  * Implements hook_library_info_alter().
  *
  * Fix media entity browser styles.
- *
  */
 function infofinland_common_library_info_alter(&$libraries, $extension) {
   if ($extension == 'media_entity_browser' && isset($libraries['view'])) {
@@ -573,7 +577,6 @@ function infofinland_common_library_info_alter(&$libraries, $extension) {
  * Implements hook_entity_type_alter().
  *
  * Temp fix for this issue: https://www.drupal.org/project/drupal/issues/2955321
- *
  */
 function infofinland_common_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type) {
@@ -592,8 +595,8 @@ function infofinland_common_elasticsearch_connector_load_library_options_alter(&
    *
    * @fixme rather than disabling verification, should set CURLOPT_SSLCERT to correct value.
    */
-    $options['curl'][CURLOPT_SSL_VERIFYPEER] = FALSE;
-    $options['curl'][CURLOPT_SSL_VERIFYHOST] = FALSE;
+  $options['curl'][CURLOPT_SSL_VERIFYPEER] = FALSE;
+  $options['curl'][CURLOPT_SSL_VERIFYHOST] = FALSE;
 }
 
 /**
@@ -623,10 +626,10 @@ function infofinland_common_query_entity_reference_alter(AlterableInterface $que
     return;
   }
 
-  $has_title = false;
+  $has_title = FALSE;
   foreach ($conditions as $condition) {
     if (is_array($condition) && $condition['field'] === $title_field) {
-      $has_title = true;
+      $has_title = TRUE;
     }
   }
 

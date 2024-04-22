@@ -5,6 +5,9 @@ namespace Drupal\infofinland_common\Controller;
 use Drupal\simple_oauth\Controller\Oauth2Token;
 use Psr\Http\Message\ServerRequestInterface;
 
+/**
+ *
+ */
 class OAuth2TokenController extends Oauth2Token {
 
   /**
@@ -28,7 +31,7 @@ class OAuth2TokenController extends Oauth2Token {
 
           // Override request body.
           $request = $request->withParsedBody(array_merge($body, [
-            'client_id' => $defaultClient->uuid()
+            'client_id' => $defaultClient->uuid(),
           ]));
         }
       }
@@ -38,4 +41,3 @@ class OAuth2TokenController extends Oauth2Token {
   }
 
 }
-
