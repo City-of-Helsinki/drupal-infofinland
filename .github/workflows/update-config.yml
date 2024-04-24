@@ -44,10 +44,6 @@ jobs:
           drush locale:check && drush locale:update
           drush updb -y
 
-          # Update translations from helfi_platform_config. These translations
-          # consists of overrides for non customised translations and will
-          # override current translation with a non customised translation.
-          drush helfi:locale-import helfi_platform_config
           drush cex -y
 
           # Update platform
