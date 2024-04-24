@@ -31,7 +31,7 @@ display:
             next: 'Seuraava ›'
             previous: '‹ Edellinen'
             first: '« Ensimmäinen'
-            last: 'Last »'
+            last: 'Viimeinen »'
       exposed_form:
         options:
           submit_button: Suodatus

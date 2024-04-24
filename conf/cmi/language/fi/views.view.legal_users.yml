@@ -19,7 +19,7 @@ display:
             previous: '‹ Edellinen'
             next: 'Seuraava ›'
             first: '« Ensimmäinen'
-            last: 'Last »'
+            last: 'Viimeinen »'
       fields:
         name:
           label: Nimi
