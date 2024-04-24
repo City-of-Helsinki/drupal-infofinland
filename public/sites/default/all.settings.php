@@ -31,3 +31,20 @@ if (getenv('APP_ENV') === 'local') {
   $config['simple_oauth.settings']['private_key'] = '/app/conf/local-keys/private.key';
 }
 
+$additionalEnvVars = [
+  'PROJECT_NAME',
+  'REDIS_HOST',
+  'REDIS_PORT',
+  'SENTRY_DSN',
+  'SENTRY_ENVIRONMENT',
+  // Project specific variables.
+  'DRUPAL_PREVIEW_SECRET',
+  'ELASTIC_URL',
+  'ELASTIC_USER',
+  'ELASTIC_PASSWORD',
+  'INFOFINLAND_UI_PREVIEW_URL',
+  'INFOFINLAND_UI_URL'
+];
+foreach ($additionalEnvVars as $var) {
+  $preflight_checks['environmentVariables'][] = $var;
+}
