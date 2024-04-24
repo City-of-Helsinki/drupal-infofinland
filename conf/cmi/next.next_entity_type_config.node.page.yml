@@ -13,3 +13,5 @@ site_resolver: site_selector
 configuration:
   sites:
     infofinland_ui: infofinland_ui
+revalidator: null
+revalidator_configuration: {  }

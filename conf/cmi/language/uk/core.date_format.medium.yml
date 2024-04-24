@@ -1,1 +1,2 @@
 label: 'Базова середня дата'
+pattern: 'jS F Y'

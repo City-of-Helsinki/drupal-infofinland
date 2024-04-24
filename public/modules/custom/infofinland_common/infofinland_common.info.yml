@@ -5,3 +5,5 @@ type: module
 core_version_requirement: ^9 || ^10
 libraries:
   - infofinland_common/infofinland_common
+dependencies:
+  - simple_oauth:simple_oauth

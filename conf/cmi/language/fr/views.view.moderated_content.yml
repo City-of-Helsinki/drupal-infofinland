@@ -1,16 +1,26 @@
+label: 'Moderated content'
+description: 'Find and moderate content.'
 display:
   default:
     display_title: 'Par défaut'
     display_options:
+      title: 'Moderated content'
       fields:
         title:
           label: Titre
+          separator: ', '
         type:
           label: 'Type de contenu'
+          separator: ', '
         name:
           label: Auteur
+          separator: ', '
+        moderation_state:
+          label: 'Moderation state'
+          separator: ', '
         changed:
           label: 'Mis à jour'
+          separator: ', '
         operations:
           label: Actions
       pager:
@@ -29,6 +39,11 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      empty:
+        area_text_custom:
+          content: 'No moderated content available. Only pending versions of content, such as drafts, are listed here.'
       filters:
         title:
           expose:
@@ -36,6 +51,11 @@ display:
         type:
           expose:
             label: 'Type de contenu'
+        moderation_state:
+          expose:
+            label: 'Moderation state'
         langcode:
           expose:
             label: Langue
+  moderated_content:
+    display_title: 'Moderated content'

@@ -5,8 +5,11 @@ display:
     display_options:
       title: الملفات
       fields:
+        fid:
+          label: FId
         filename:
           label: الاسم
+          separator: ', '
         filemime:
           label: 'نوع MIME'
         filesize:

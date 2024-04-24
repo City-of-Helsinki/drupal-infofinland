@@ -15,6 +15,7 @@ label: Page
 description: 'Valitse sivut, joilla viesti näkyy. Tällöin viesti näkyy vain niillä sivuilla.'
 required: false
 translatable: false
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

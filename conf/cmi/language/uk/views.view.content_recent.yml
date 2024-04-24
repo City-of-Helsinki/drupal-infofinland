@@ -5,6 +5,9 @@ display:
     display_title: Базово
     display_options:
       title: 'Останні матеріали'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Застосувати

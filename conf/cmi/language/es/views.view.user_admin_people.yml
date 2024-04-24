@@ -19,10 +19,18 @@ display:
           label: Käyttäjäroolit
         created:
           label: 'Miembro desde hace'
+          settings:
+            future_format: '@interval'
+            past_format: '@interval'
         access:
           label: 'Último acceso'
+          settings:
+            future_format: '@interval hence'
+            past_format: '@interval ago'
         operations:
           label: Operaciones
+        mail:
+          separator: ', '
       pager:
         options:
           tags:
@@ -39,6 +47,8 @@ display:
           submit_button: Filtro
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'Ei saatavilla olevia ihmisiä.'

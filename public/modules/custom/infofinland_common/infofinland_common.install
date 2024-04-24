@@ -86,20 +86,25 @@ function infofinland_common_update_9002(): void {
 }
 
 function infofinland_common_update_9003(): void {
-  $modules = [
-    'config_replace',
-    'hdbt_component_library',
-    'hdbt_content',
-    'hdbt_hyphenopoly',
-    'node_revision_delete',
-    'infofinland_ckeditor',
-  ];
-
   \Drupal::service('database')->delete('key_value')->condition('name', 'config_replace')->execute();
   \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_component_library')->execute();
   \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_content')->execute();
   \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_hyphenopoly')->execute();
   \Drupal::service('database')->delete('key_value')->condition('name', 'node_revision_delete')->execute();
   \Drupal::service('database')->delete('key_value')->condition('name', 'infofinland_ckeditor')->execute();
+}
 
+/**
+ * Delete expired tokens.
+ *
+ * @see \simple_oauth_cron()
+ * @see \Drupal\simple_oauth\ExpiredCollector
+ */
+function infofinland_common_update_9004(): void {
+  $time = \Drupal::time();
+  $database = \Drupal::database();
+
+  $database->delete('oauth2_token')
+    ->condition('expire', $time->getRequestTime(), '<')
+    ->execute();
 }

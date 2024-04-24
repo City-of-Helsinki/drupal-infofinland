@@ -19,6 +19,7 @@ label: 'Right column'
 description: ''
 required: true
 translatable: false
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -16,6 +16,7 @@ label: 'Image file'
 description: 'Add the image file that you want to use from media-library.'
 required: true
 translatable: false
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -16,6 +16,7 @@ label: 'Background color'
 description: ''
 required: true
 translatable: false
+skip_translation_check: null
 default_value:
   -
     target_uuid: 1be01bdb-215b-4ff3-8edc-fe160c26b7a3

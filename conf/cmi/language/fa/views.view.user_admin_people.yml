@@ -21,6 +21,8 @@ display:
           label: 'Member for'
         access:
           label: 'Last access'
+          settings:
+            past_format: '@interval ago'
         operations:
           label: کارکردها
       pager:

@@ -18,6 +18,7 @@ label: Links
 description: 'The links that you want the paragraph to display.'
 required: true
 translatable: false
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

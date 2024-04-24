@@ -1,4 +1,4 @@
+keep: 10
 entity_types:
   - node
   - paragraph
-keep: 10

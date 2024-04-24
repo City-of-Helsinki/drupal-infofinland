@@ -1,5 +1,4 @@
 label: Tiedostot
-description: 'Find and manage files.'
 display:
   default:
     display_title: Oletus
@@ -10,6 +9,7 @@ display:
           label: FId
         filename:
           label: Nimi
+          separator: ', '
         filemime:
           label: 'MIME tyyppi'
         filesize:
@@ -33,6 +33,7 @@ display:
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
       exposed_form:
         options:
           submit_button: Suodatus
@@ -54,7 +55,6 @@ display:
           expose:
             label: Tila
   page_1:
-    display_title: 'Files overview'
     display_options:
       menu:
         title: Tiedostot
@@ -79,6 +79,7 @@ display:
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
       arguments:
         fid:
           exception:

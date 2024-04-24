@@ -13,6 +13,7 @@ label: 'Automaattipäivitys sallittu'
 description: ''
 required: false
 translatable: false
+skip_translation_check: null
 default_value:
   -
     value: 1
