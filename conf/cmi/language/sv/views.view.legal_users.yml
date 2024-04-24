@@ -23,6 +23,9 @@ display:
       fields:
         name:
           label: Namn
+          separator: ', '
+        version:
+          label: Version
         language:
           label: Språk
         revision:

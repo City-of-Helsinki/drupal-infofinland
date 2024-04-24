@@ -19,10 +19,18 @@ display:
           label: Roles
         created:
           label: 'Member for'
+          settings:
+            future_format: '@interval'
+            past_format: '@interval'
         access:
           label: 'Last access'
+          settings:
+            future_format: '@interval hence'
+            past_format: '@interval ago'
         operations:
           label: Actions
+        mail:
+          separator: ', '
       pager:
         options:
           tags:
@@ -39,6 +47,8 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'No people available.'

@@ -14,6 +14,7 @@ display:
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
           tags:
             previous: ‹‹
             next: ››
@@ -21,7 +22,9 @@ display:
         path:
           label: Polku
         count:
-          label: 'Lukumäärä'
+          label: Lukumäärä
+        timestamp:
+          label: 'Last accessed'
         langcode:
           label: Kieli
         redirect_404_operations:
@@ -33,5 +36,6 @@ display:
         langcode:
           expose:
             label: Kieli
+      title: 'Fix 404 pages'
   page_1:
     display_title: Sivu

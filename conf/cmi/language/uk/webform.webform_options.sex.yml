@@ -1,1 +1,5 @@
 label: Стать
+category: Demographic
+options: |
+  Male: Male
+  Female: Female

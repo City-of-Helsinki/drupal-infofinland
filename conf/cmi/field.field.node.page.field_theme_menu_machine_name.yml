@@ -13,6 +13,7 @@ label: 'Theme menu machine name'
 description: ''
 required: false
 translatable: false
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -15,6 +15,7 @@ label: 'Video URL'
 description: 'Should be in format https://www.helsinkikanava.fi/web/helsinkikanava/player/embed/vod?assetId=66368125'
 required: true
 translatable: true
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -24,6 +24,7 @@ label: Kuva
 description: ''
 required: true
 translatable: true
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

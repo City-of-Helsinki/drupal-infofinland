@@ -17,7 +17,9 @@ label: Kuvaus
 description: 'Valinnainen lyhyt kuvaus lohkolle.'
 required: false
 translatable: true
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

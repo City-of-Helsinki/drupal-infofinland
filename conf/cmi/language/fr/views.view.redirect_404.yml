@@ -1,3 +1,4 @@
+label: 'Redirect 404'
 display:
   default:
     display_title: Master
@@ -7,17 +8,26 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           expose:
             items_per_page_label: 'Éléments par page'
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
         path:
           label: Path
         count:
           label: Count
+        daily_count:
+          label: 'Daily count'
+        timestamp:
+          label: 'Last accessed'
         langcode:
           label: Langue
         redirect_404_operations:
@@ -29,5 +39,14 @@ display:
         langcode:
           expose:
             label: Langue
+        resolved:
+          expose:
+            label: Resolved
+      title: 'Fix 404 pages'
+      empty:
+        area_text_custom:
+          content: 'There are no 404 errors to fix.'
   page_1:
     display_title: Sivu
+    display_options:
+      display_description: 'Lists 404 error paths with no redirect assigned yet.'

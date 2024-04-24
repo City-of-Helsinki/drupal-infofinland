@@ -25,8 +25,8 @@ content:
         entity_reference_entity_view:
           view_mode: default
         entity_reference_label:
-          link: 0
-      show_description: 0
+          link: false
+      show_description: false
     third_party_settings: {  }
   field_municipality_page:
     type: entity_reference_autocomplete

@@ -17,6 +17,7 @@ label: 'Linkin tyyli'
 description: 'Valitse minkälaisen tyylin haluat linkkipainikkeelle.'
 required: true
 translatable: true
+skip_translation_check: null
 default_value:
   -
     value: primary

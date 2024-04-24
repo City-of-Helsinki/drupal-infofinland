@@ -388,4 +388,3 @@ $env_indicator_settings = dirname(__FILE__) . '/env.indicator.settings.php';
 if (file_exists($env_indicator_settings)) {
   require_once $env_indicator_settings;
 }
-

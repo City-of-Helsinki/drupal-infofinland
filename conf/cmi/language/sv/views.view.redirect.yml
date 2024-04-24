@@ -27,6 +27,7 @@ display:
           action_title: 'With selection'
         redirect_source__path:
           label: Från
+          separator: ', '
         created:
           label: Skapad
       filters:

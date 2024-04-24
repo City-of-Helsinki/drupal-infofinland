@@ -1,3 +1,5 @@
+label: 'Scheduled content'
+description: 'Find and manage scheduled content.'
 display:
   default:
     display_options:
@@ -6,6 +8,8 @@ display:
           submit_button: Filtro
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           tags:
@@ -18,19 +22,25 @@ display:
           action_title: Acción
         title:
           label: Título
+          separator: ', '
         type:
           label: 'Content Type'
+          separator: ', '
         name:
           label: Autor
+          separator: ', '
         status:
           label: Estado
           settings:
             format_custom_true: Publicado
             format_custom_false: 'Sin publicar'
+          separator: ', '
         publish_on:
           label: 'Publish on'
+          separator: ', '
         unpublish_on:
           label: 'Unpublish on'
+          separator: ', '
         operations:
           label: Operaciones
       filters:
@@ -53,6 +63,7 @@ display:
         langcode:
           expose:
             label: Idioma
+      title: 'Scheduled Content'
       empty:
         area_text_custom:
           content: 'No scheduled content.'
@@ -63,6 +74,7 @@ display:
         title: Scheduled
       tab_options:
         title: Contenido
+        description: 'Find and manage scheduled content'
     display_title: 'Content Overview'
   user_page:
     display_options:
@@ -70,6 +82,8 @@ display:
         title: Scheduled
       tab_options:
         title: Contenido
+        description: 'Find and manage scheduled content'
+      display_description: "Scheduled content tab on user profile, showing just that user's scheduled content"
       arguments:
         uid:
           exception:

@@ -1,16 +1,36 @@
+label: Watchdog
+description: 'Recent log messages'
 display:
   default:
     display_title: Базово
     display_options:
+      title: 'Recent log messages'
       fields:
+        nothing:
+          admin_label: Icon
+        wid:
+          label: WID
+        severity:
+          label: Severity
         type:
           label: Тип
+        timestamp:
+          label: Date
+        message:
+          label: Message
+          alter:
+            path: 'admin/reports/dblog/event/{{ wid }}'
+            alt: '{{ message }}'
         name:
           label: Користувач
+          separator: ', '
         link:
           label: Операції
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Елементів на сторінку'
             items_per_page_options_all_label: '- Усе -'
@@ -22,9 +42,16 @@ display:
           exposed_sorts_label: 'Впорядкувати за'
           sort_asc_label: Зрост
           sort_desc_label: Спад
+      empty:
+        area:
+          admin_label: 'No log messages available.'
+          content: 'No log messages available.'
       filters:
         type:
           expose:
             label: Тип
+        severity:
+          expose:
+            label: Severity
   page:
     display_title: Сторінка

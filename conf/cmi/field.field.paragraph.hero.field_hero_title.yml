@@ -15,6 +15,7 @@ label: Otsikko
 description: 'Näkyvä otsikko lohkolle. Tätä arvoa käytetään ensimmäisen tason otsikkona sivulle jos hero-lohko on lisätty sivulle.'
 required: false
 translatable: true
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings: {  }

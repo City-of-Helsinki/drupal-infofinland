@@ -1,3 +1,4 @@
+label: 'Webform submissions'
 display:
   default:
     display_title: Master
@@ -12,6 +13,8 @@ display:
       pager:
         options:
           tags:
+            previous: ‹‹
+            next: ››
             first: '« Первая'
             last: 'Последняя »'
           expose:
@@ -19,10 +22,21 @@ display:
             items_per_page_options_all_label: '- Все -'
             offset_label: Пропустить
       fields:
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Операции
+          text: view
       header:
         result:
           content: 'Отображается с @start по @end из @total'
@@ -30,36 +44,121 @@ display:
         in_draft:
           exception:
             title: Все
+      title: 'Webform submissions'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Действие
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
         completed:
           label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         operations:
           label: Операции
+      filters:
+        in_draft:
+          expose:
+            label: 'Is draft'
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
   embed_manage:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Действие
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
         completed:
           label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Операции
+          text: view
         edit_webform_submission:
           label: Операции
+          text: edit
+      filters:
+        in_draft:
+          expose:
+            label: 'Is draft'
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
   embed_review:
     display_options:
       fields:
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Draft
+          separator: ', '
+        sticky:
+          label: Sticky
+          separator: ', '
+        locked:
+          label: Locked
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
         completed:
           label: Completed
+          separator: ', '
+        remote_addr:
+          label: 'IP address'
+          separator: ', '
         view_webform_submission:
           label: Операции
+          text: view
+      filters:
+        in_draft:
+          expose:
+            label: 'Is draft'
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked

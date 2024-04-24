@@ -15,6 +15,7 @@ label: 'Message type'
 description: ''
 required: true
 translatable: false
+skip_translation_check: null
 default_value:
   -
     value: notice
