@@ -17,6 +17,7 @@ label: Design
 description: 'Choose the paragraph design from the dropdown. Depending on what design you choose there may be different fields that you need to fill.'
 required: true
 translatable: false
+skip_translation_check: null
 default_value:
   -
     value: without-image-left

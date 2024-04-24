@@ -1,1 +1,2 @@
 label: 'Базова довга дата'
+pattern: 'j.n.Y - H:i'

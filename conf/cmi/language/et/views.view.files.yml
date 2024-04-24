@@ -6,8 +6,11 @@ display:
     display_options:
       title: Failid
       fields:
+        fid:
+          label: FId
         filename:
           label: Nimi
+          separator: ', '
         filemime:
           label: MIME-tüüp
         filesize:
@@ -23,6 +26,7 @@ display:
           label: 'Muutmise kuupäev'
         count:
           label: Kasutuskoht
+          format_plural_string: !!binary MSBwbGFjZQNAY291bnQgcGxhY2Vz
       pager:
         options:
           tags:
@@ -70,6 +74,7 @@ display:
           label: 'Registreerin moodulit'
         count:
           label: 'Kasutuse loendur'
+          format_plural_string: !!binary MQNAY291bnQ=
       pager:
         options:
           tags:

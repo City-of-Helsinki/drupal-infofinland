@@ -10,6 +10,7 @@ display:
           label: العنوان
         type:
           label: 'نوع المحتوى'
+          separator: ', '
         name:
           label: المؤلف
         status:
@@ -48,7 +49,6 @@ display:
           expose:
             label: الحالة
           group_info:
-            label: 'Published status'
             group_items:
               1:
                 title: منشور

@@ -15,11 +15,16 @@ display:
             items_per_page_label: 'Sayfa başına öğe sayısı'
             items_per_page_options_all_label: '- Tümü -'
             offset_label: 'Başlangıç değeri'
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
         path:
           label: Path
         count:
           label: Count
+        timestamp:
+          label: 'Last accessed'
         langcode:
           label: Dil
         redirect_404_operations:
@@ -31,5 +36,6 @@ display:
         langcode:
           expose:
             label: Dil
+      title: 'Fix 404 pages'
   page_1:
     display_title: Sayfa

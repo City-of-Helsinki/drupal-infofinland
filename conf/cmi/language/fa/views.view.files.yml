@@ -5,6 +5,8 @@ display:
     display_options:
       title: Files
       fields:
+        fid:
+          label: FId
         filename:
           label: Name
         filemime:

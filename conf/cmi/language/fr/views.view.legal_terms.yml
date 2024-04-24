@@ -7,6 +7,8 @@ display:
           submit_button: Apply
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           expose:
@@ -19,6 +21,8 @@ display:
             first: '« Premier'
             last: 'Dernier »'
       fields:
+        version:
+          label: Version
         language:
           label: Langue
         revision:
@@ -31,8 +35,11 @@ display:
           label: Modifications
         date:
           label: "Date d'ajout"
+      title: 'T&C History'
   page_1:
     display_title: Sivu
     display_options:
+      menu:
+        title: 'T&C History'
       tab_options:
         description: "Conditions Générales d'Utilisation (CGU)"

@@ -8,6 +8,8 @@ display:
       fields:
         nothing:
           admin_label: Ikoon
+        wid:
+          label: WID
         severity:
           label: Tõsidus
         type:
@@ -16,12 +18,18 @@ display:
           label: Kuupäev
         message:
           label: Teade
+          alter:
+            alt: '{{ message }}'
         name:
           label: Kasutaja
+          separator: ', '
         link:
           label: Toimingud
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Kirjeid lehel'
             items_per_page_options_all_label: '- Kõik -'

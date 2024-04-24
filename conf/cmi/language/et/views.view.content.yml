@@ -10,6 +10,7 @@ display:
           label: Pealkiri
         type:
           label: 'Sisu tüüp'
+          separator: ', '
         name:
           label: Autor
         status:

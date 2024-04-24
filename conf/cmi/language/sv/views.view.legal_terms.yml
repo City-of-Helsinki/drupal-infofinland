@@ -21,6 +21,8 @@ display:
             first: '« Första'
             last: 'Sista »'
       fields:
+        version:
+          label: Version
         language:
           label: Språk
         revision:
