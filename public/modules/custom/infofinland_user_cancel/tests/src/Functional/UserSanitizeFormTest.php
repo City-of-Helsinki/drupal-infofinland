@@ -62,7 +62,6 @@ class UserSanitizeFormTest extends BrowserTestBase {
       'access user profiles',
       'administer users',
       'cancel account',
-      'delete user accounts',
       'sanitize user accounts',
     ], 'adminUser');
 
