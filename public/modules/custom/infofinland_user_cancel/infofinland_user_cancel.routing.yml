@@ -1,0 +1,10 @@
+infofinland_user_cancel.user_sanitize:
+  path: '/user/{user}/sanitize'
+  defaults:
+    _form: 'Drupal\infofinland_user_cancel\Entity\Form\UserEntitySanitizeForm'
+    _title: 'Sanitize user account'
+  requirements:
+    _permission: 'sanitize user accounts'
+    _csrf_token: 'TRUE'
+  options:
+    _admin_route: TRUE
