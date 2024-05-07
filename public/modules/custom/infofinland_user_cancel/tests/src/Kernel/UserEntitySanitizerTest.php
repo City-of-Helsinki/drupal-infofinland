@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Drupal\Tests\infofinland_user_cancel\Kernel\Entity\Utility;
 
 use Drupal\infofinland_user_cancel\Entity\Utility\UserEntitySanitizer;
-use Drupal\KernelTests\KernelTestBase;
 use Drupal\Tests\helfi_api_base\Kernel\ApiKernelTestBase;
 use Drupal\Tests\user\Traits\UserCreationTrait;
 use Drupal\user\Entity\User;
@@ -16,7 +15,7 @@ use Drupal\user\Entity\User;
  * @group infofinland_user_cancel
  * @coversDefaultClass \Drupal\infofinland_user_cancel\Entity\Utility\UserEntitySanitizer
  */
-class UserEntitySanitizerTest extends KernelTestBase {
+class UserEntitySanitizerTest extends ApiKernelTestBase {
 
   use UserCreationTrait;
 
