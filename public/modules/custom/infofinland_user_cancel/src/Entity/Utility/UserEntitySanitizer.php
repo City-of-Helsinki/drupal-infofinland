@@ -68,15 +68,21 @@ final class UserEntitySanitizer {
     foreach ($fields as $field) {
       switch ($field) {
         case 'username':
-          $user->setUsername($random->word(20));
+          $user->setUsername("Sanitized: {$random->word(10)}");
           break;
 
         case 'email':
-          $user->setEmail("{$random->word(20)}@drupal.hel.ninja");
+          $user->setEmail("sanitized.{$random->word(10)}@drupal.hel.ninja");
           break;
 
         case 'password':
           $user->setPassword($random->string(32));
+          break;
+
+        default:
+          if ($user->hasField($field)) {
+            $user->set($field, "Sanitized: {$random->word(10)}");
+          }
           break;
       }
       $save = TRUE;
