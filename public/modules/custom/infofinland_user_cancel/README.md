@@ -8,7 +8,7 @@ To utilize this feature, assign the `sanitize user accounts` permission to the a
 
 ### Drush command
 Sanitize username and email fields for uids 5,6 and 7.
-`drush helfi:user-sanitize 5,6,7 --fields=username,email` 
+`drush user:sanitize 5,6,7 --fields=username,email`
 
 Sanitize username, email and password for uid 5
-`drush helfi:user-sanitize 5` 
+`drush user:sanitize 5`

@@ -44,11 +44,11 @@ final class UserSanitizeCommands extends DrushCommands {
    * @return int
    *   The exit code.
    */
-  #[Command(name: 'helfi:user-sanitize')]
+  #[Command(name: 'user:sanitize')]
   #[Argument(name: 'uids', description: 'A comma delimited list of user ids.')]
   #[Option(name: 'fields', description: 'A comma delimited list of fields to sanitize.')]
-  #[Usage(name: 'drush helfi:user-sanitize 5,6,7 --fields=username,email', description: 'Sanitize username and email fields for uids 5,6 and 7.')]
-  #[Usage(name: 'drush helfi:user-sanitize 5', description: 'Sanitize username, email and password for uid 5')]
+  #[Usage(name: 'drush user:sanitize 5,6,7 --fields=username,email', description: 'Sanitize username and email fields for uids 5,6 and 7.')]
+  #[Usage(name: 'drush user:sanitize 5', description: 'Sanitize username, email and password for uid 5')]
   public function sanitize(string $uids, array $options = ['fields' => self::FIELDS]) : int {
     $sanitized_users = [];
 

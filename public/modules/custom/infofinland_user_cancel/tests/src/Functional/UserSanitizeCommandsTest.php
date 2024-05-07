@@ -71,7 +71,7 @@ class UserSanitizeCommandsTest extends BrowserTestBase {
    * Tests helfi:yser-sanitize command with field options.
    */
   public function testUserSanitizeCommandWithFields() {
-    $this->drush('helfi:user-sanitize', [$this->testUser->id()], ['fields' => 'username']);
+    $this->drush('user:sanitize', [$this->testUser->id()], ['fields' => 'username']);
 
     $storage = \Drupal::entityTypeManager()->getStorage('user');
     $storage->resetCache([$this->testUser->id()]);
@@ -87,7 +87,7 @@ class UserSanitizeCommandsTest extends BrowserTestBase {
    * Tests helfi:yser-sanitize command without field options.
    */
   public function testUserSanitizeCommandWithOutFields() {
-    $this->drush('helfi:user-sanitize', [$this->testUser->id()]);
+    $this->drush('user:sanitize', [$this->testUser->id()]);
 
     $storage = \Drupal::entityTypeManager()->getStorage('user');
     $storage->resetCache([$this->testUser->id()]);
