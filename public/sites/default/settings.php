@@ -383,8 +383,3 @@ if (empty($settings['deployment_identifier'])) {
   $settings['deployment_identifier'] = filemtime(__DIR__ . '/../../../composer.lock');
 }
 
-// Environment indicator hack, see the file for more info
-$env_indicator_settings = dirname(__FILE__) . '/env.indicator.settings.php';
-if (file_exists($env_indicator_settings)) {
-  require_once $env_indicator_settings;
-}
