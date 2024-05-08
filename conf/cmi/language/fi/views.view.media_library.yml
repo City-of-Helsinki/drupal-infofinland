@@ -1,4 +1,3 @@
-description: 'Find and manage media.'
 display:
   default:
     display_title: Oletus
@@ -10,8 +9,8 @@ display:
       pager:
         options:
           tags:
-            next: ››
-            previous: ‹‹
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
