@@ -43,6 +43,4 @@ drush-locale-update: ## Update translations.
 
 PHONY += drush-helfi-locale-import
 drush-helfi-locale-import:  ## Update translations from helfi platform config.
-	$(call step,Import helfi platform config translations...)
-	$(call drush,helfi:locale-import helfi_platform_config)
-	$(call drush,cr)
+	# no-op
