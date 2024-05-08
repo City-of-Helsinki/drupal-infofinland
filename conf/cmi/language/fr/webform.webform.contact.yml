@@ -1,5 +1,4 @@
-title: Контакт
-description: 'Проста електронна контактна веб-форма.'
+title: Contact
 elements: |-
   name:
     '#title': 'Your Name'
@@ -36,16 +35,16 @@ elements: |-
     '#title': 'Submit button(s)'
     '#submit__label': 'Send message'
 settings:
-  confirmation_message: 'Ваше повідомлення було надіслано.'
+  confirmation_message: 'Your message has been sent.'
 handlers:
   email_confirmation:
-    label: 'Підтвердження поштою'
+    label: 'Email confirmation'
     settings:
       from_name: _default
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'
   email_notification:
-    label: 'Електронне сповіщення'
+    label: 'Email notification'
     settings:
       from_name: '[webform_submission:values:name:raw]'
       subject: '[webform_submission:values:subject:raw]'
