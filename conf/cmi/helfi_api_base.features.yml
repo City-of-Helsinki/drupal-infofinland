@@ -1,2 +1,2 @@
-disable_email_sending: true
+disable_email_sending: false
 user_expire: false
