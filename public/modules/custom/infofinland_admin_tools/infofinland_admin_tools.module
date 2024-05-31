@@ -22,7 +22,7 @@ function infofinland_admin_tools_toolbar_alter(&$items) {
  *  Implements hook_language_switch_links_alter().
  */
 function infofinland_admin_tools_language_switch_links_alter(array &$links) {
-  $route_match = \Drupal::routeMatch();
+  $route_match = Drupal::routeMatch();
   $entity = FALSE;
 
   // Determine if the current route represents an entity.
@@ -31,9 +31,15 @@ function infofinland_admin_tools_language_switch_links_alter(array &$links) {
     ($parameters = $route->getOption('parameters'))
   ) {
     foreach ($parameters as $name => $options) {
-      if (isset($options['type']) && strpos($options['type'], 'entity:') === 0) {
+      if (
+        isset($options['type']) &&
+        str_starts_with($options['type'], 'entity:')
+      ) {
         $parameter = $route_match->getParameter($name);
-        if ($parameter instanceof ContentEntityInterface && $parameter->hasLinkTemplate('canonical')) {
+        if (
+          $parameter instanceof ContentEntityInterface &&
+          $parameter->hasLinkTemplate('canonical')
+        ) {
           $entity = $parameter;
           break;
         }
@@ -41,20 +47,31 @@ function infofinland_admin_tools_language_switch_links_alter(array &$links) {
     }
   }
 
+  $language_resolver = \Drupal::service('helfi_api_base.default_language_resolver');
+  $primary_languages = $language_resolver->getDefaultLanguages();
+
   // Compare the links with current entity and check for possible translations.
   foreach ($links as $lang_code => &$link) {
     $link['#abbreviation'] = $lang_code;
 
-    if ($entity && $entity instanceof ContentEntityInterface) {
-      if (
-        !$entity->hasTranslation($lang_code) ||
-        (
-          method_exists($entity->getTranslation($lang_code), 'isPublished') &&
-          !$entity->getTranslation($lang_code)->isPublished()
-        )
-      ) {
-        $link['#untranslated'] = TRUE;
-      }
+    if (in_array($lang_code, $primary_languages)) {
+      $link['#primary_language'] = TRUE;
+    }
+
+    if (!$entity instanceof ContentEntityInterface) {
+      continue;
+    }
+
+    if (!$entity->hasTranslation($lang_code)) {
+      $link['#untranslated'] = TRUE;
+      continue;
+    }
+
+    if (
+      method_exists($entity->getTranslation($lang_code), 'isPublished') &&
+      !$entity->getTranslation($lang_code)->isPublished()
+    ) {
+      $link['#untranslated'] = TRUE;
     }
   }
 }
