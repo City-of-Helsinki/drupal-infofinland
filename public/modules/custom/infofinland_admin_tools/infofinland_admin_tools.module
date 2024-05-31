@@ -50,6 +50,21 @@ function infofinland_admin_tools_language_switch_links_alter(array &$links) {
   $language_resolver = \Drupal::service('helfi_api_base.default_language_resolver');
   $primary_languages = $language_resolver->getDefaultLanguages();
 
+  // UHF-10175 routematch returns old revision in some cases
+  if (
+    $entity instanceof ContentEntityInterface &&
+    $entity->getEntityType()->isRevisionable() &&
+    !$entity->isLatestRevision()
+  ) {
+    try {
+      $entity_storage = \Drupal::entityTypeManager()->getStorage($entity->getEntityTypeId());
+      $entity = $entity_storage->load($entity->id());
+    }
+    catch(\Exception $e) {
+      // Do nothing.
+    }
+  }
+
   // Compare the links with current entity and check for possible translations.
   foreach ($links as $lang_code => &$link) {
     $link['#abbreviation'] = $lang_code;
