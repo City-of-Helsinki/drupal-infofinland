@@ -16,11 +16,10 @@ class OAuthRouteSubscriber extends RouteSubscriberBase {
    */
   public function alterRoutes(RouteCollection $collection): void {
     if ($route = $collection->get('oauth2_token.token')) {
-      $route->setDefaults(array(
+      $route->setDefaults([
         '_controller' => OAuth2TokenController::class . '::token',
-      ));
+      ]);
     }
   }
 
 }
-
