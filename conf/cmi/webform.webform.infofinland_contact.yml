@@ -1,4 +1,4 @@
-uuid: 0c8a4f9c-9468-4e14-b572-8c45d445ff8d
+uuid: ab2de020-512a-487f-86d1-43b16fa022cb
 langcode: en
 status: open
 dependencies:
@@ -14,9 +14,9 @@ open: null
 close: null
 uid: null
 template: false
-archive: true
-id: contact
-title: Contact
+archive: false
+id: infofinland_contact
+title: 'Infofinland Contact'
 description: 'Basic email contact webform.'
 categories: {  }
 elements: |-
