@@ -52,7 +52,6 @@ module:
   infofinland_admin_tools: 0
   infofinland_brokenlink_checker: 0
   infofinland_common: 0
-  infofinland_gdpr: 0
   infofinland_permissions: 0
   infofinland_user_cancel: 0
   jsonapi: 0
