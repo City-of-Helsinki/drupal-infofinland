@@ -114,7 +114,7 @@ function infofinland_common_update_9004(): void {
  */
 function infofinland_common_update_9005(): void {
   $logFilePath = 'sites/default/files/logs/infofinland_gdpr.log';
-  if(file_exists($logFilePath)){
+  if (file_exists($logFilePath)) {
     unlink($logFilePath);
   }
 }
