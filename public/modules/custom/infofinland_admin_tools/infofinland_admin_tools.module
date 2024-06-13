@@ -50,7 +50,7 @@ function infofinland_admin_tools_language_switch_links_alter(array &$links) {
   $language_resolver = \Drupal::service('helfi_api_base.default_language_resolver');
   $primary_languages = $language_resolver->getDefaultLanguages();
 
-  // UHF-10175 routematch returns old revision in some cases
+  // UHF-10175 routematch returns old revision in some cases.
   if (
     $entity instanceof ContentEntityInterface &&
     $entity->getEntityType()->isRevisionable() &&
