@@ -20,8 +20,8 @@
         "drupal/config_update": "^2.0",
         "drupal/consumer_image_styles": "^4.0",
         "drupal/consumers": "^1.12",
-        "drupal/core": "~10.2.0",
-        "drupal/core-composer-scaffold": "~10.2.0",
+        "drupal/core": "^10.3",
+        "drupal/core-composer-scaffold": "^10.3",
         "drupal/crop": "^2.2",
         "drupal/default_content": "2.0.0-alpha2",
         "drupal/diff": "^1.0",
@@ -133,38 +133,34 @@
         },
         "patches": {
             "drupal/core": {
-                "3015480 - Allow skipping translation check at field level for non-translatable fields": "https://www.drupal.org/files/issues/2018-11-22/3015480-add_config_to_allow_skipping_translation_check-4.patch",
-                "3101344 - Cannot save translated nodes after upgrading to 8.8 due to invalid path": "https://www.drupal.org/files/issues/2021-11-15/drupal-path-error-when-not-visible-3101344-81-D9.patch",
-                "2838602 - [PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch",
-                "3007031 - hasTranslationChanges on multiple languages outside of saving process is costly": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff",
-                "2815779 - Deleting a translation leaves behind orphaned revisions": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch",
-                "3301239 - PoStreamReader::readLine() throws an error on module install": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
-                "[#UHF-7008] Add multilingual support for caching basefield definitions (https://www.drupal.org/project/drupal/issues/3114824)": "https://www.drupal.org/files/issues/2020-02-20/3114824_2.patch",
-                "[#UHF-7008] Core localization file download URL is wrong (https://www.drupal.org/project/drupal/issues/3022876)": "https://git.drupalcode.org/project/drupal/-/commit/40a96136b2dfe4322338508dffa636f6cb407900.patch",
-                "3285657 - Cannot save or publish originating node or translations": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
+                "Allow skipping translation check at field level for non-translatable fields (https://drupal.org/i/3015480)": "https://www.drupal.org/files/issues/2018-11-22/3015480-add_config_to_allow_skipping_translation_check-4.patch",
+                "[PP-2] Optimize CEB::hasTranslationChanges by caching its result and serving subsequent calls from the result cache - big performance boost (https://drupal.org/i/2838602)": "https://www.drupal.org/files/issues/2019-09-16/2838602-54.patch",
+                "hasTranslationChanges on multiple languages outside of saving process is costly (https://drupal.org/i/3007031)": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff",
+                "Deleting a translation leaves behind orphaned revisions (https://drupal.org/i/2815779)": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch",
+                "PoStreamReader::readLine() throws an error on module install (https://drupal.org/i/3301239)": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
+                "[#UHF-7008] Add multilingual support for caching basefield definitions (https://drupal.org/i/3114824)": "https://www.drupal.org/files/issues/2020-02-20/3114824_2.patch",
+                "[#UHF-7008] Core localization file download URL is wrong (https://drupal.org/i/3022876)": "https://git.drupalcode.org/project/drupal/-/commit/40a96136b2dfe4322338508dffa636f6cb407900.patch",
+                "Cannot save or publish originating node or translations (https://drupal.org/i/3285657)": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
             },
             "drupal/diff": {
-                "Revision overview form problem, issue 3390329": "./patches/revision_overview_form.patch"
+                "Revision overview form problem (https://drupal.org/i/3390329)": "./patches/revision_overview_form.patch"
             },
             "drupal/paragraphs": {
-                "https://www.drupal.org/project/paragraphs/issues/2904705#comment-13836790": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
+                "Paragraphs asymmetric translation support (https://drupal.org/i/2904705#comment-13836790)": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
                 "[#UHF-2059] Enhancements for the Admin UI": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/fdccb32397cc6fa19b4d0077b21a2b18aa6be297/patches/helfi_customizations_for_paragraphs_widget_8.x-1.12.patch"
             },
             "drupal/publication_date": {
-                "[#UHF-7721] Fixed node preview when publication date is not set. (https://www.drupal.org/project/publication_date/issues/3074373)": "https://www.drupal.org/files/issues/2022-12-20/publication_date_is_required_for_completing_the_form-3074373-11.patch"
-            },
-            "drupal/subrequests": {
-                "Get same results on different request": "https://www.drupal.org/files/issues/2019-07-18/change_request_type-63049395-09.patch"
+                "[#UHF-7721] Fixed node preview when publication date is not set. (https://drupal.org/i/3074373)": "https://www.drupal.org/files/issues/2022-12-20/publication_date_is_required_for_completing_the_form-3074373-11.patch"
             },
             "drupal/decoupled_router": {
-                "Fixing redirect multilanguage 404": "https://www.drupal.org/files/issues/2022-12-01/decouple_router-3111456-resolve-language-issue-58--get-translation.patch"
+                "Fixing redirect multilanguage 404 (https://drupal.org/i/3111456)": "https://www.drupal.org/files/issues/2022-12-01/decouple_router-3111456-resolve-language-issue-58--get-translation.patch"
             },
             "drupal/redirect": {
-                "3057250 - Validation issue on adding url redirect": "https://www.drupal.org/files/issues/2022-09-01/3057250-53.patch",
-                "2991423 - Redirection issue when interface language is different from content language": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
+                "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2022-09-01/3057250-53.patch",
+                "Redirection issue when interface language is different from content language (https://drupal.org/i/2991423)": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
             },
             "drupal/webform": {
-                "3431852 - Deprecated function: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in webform_form_alter()": "https://www.drupal.org/files/issues/2024-03-18/issue-3431852-deprecation-warning-webform_form_alter.patch"
+                "Deprecated function: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in webform_form_alter() (https://drupal.org/i/3431852)": "https://www.drupal.org/files/issues/2024-03-18/issue-3431852-deprecation-warning-webform_form_alter.patch"
             }
         },
         "installer-types": ["npm-asset"],
