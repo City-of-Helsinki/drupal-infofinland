@@ -14,7 +14,7 @@ open: null
 close: null
 uid: null
 template: false
-archive: false
+archive: true
 id: contact
 title: Contact
 description: 'Basic email contact webform.'
