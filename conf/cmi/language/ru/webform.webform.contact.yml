@@ -39,5 +39,11 @@ settings:
 handlers:
   email_confirmation:
     label: 'Email confirmation'
+    settings:
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'
   email_notification:
     label: 'Email notification'
+    settings:
+      subject: '[webform_submission:values:subject:raw]'
+      body: '[webform_submission:values:message:value]'

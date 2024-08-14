@@ -1,4 +1,5 @@
 label: 'Scheduled content'
+description: 'Find and manage scheduled content.'
 display:
   default:
     display_options:
@@ -74,6 +75,7 @@ display:
       tab_options:
         title: Contenu
         description: 'Find and manage scheduled content'
+      display_description: "Overview of all scheduled content, as a tab on main 'content admin' page"
     display_title: 'Content Overview'
   user_page:
     display_options:
@@ -82,8 +84,12 @@ display:
       tab_options:
         title: Contenu
         description: 'Find and manage scheduled content'
+      display_description: "Scheduled content tab on user profile, showing just that user's scheduled content"
       arguments:
         uid:
           exception:
             title: Tout
+      empty:
+        area_text_custom:
+          content: 'No scheduled content for user {{ arguments.uid }}'
     display_title: 'User profile tab'
