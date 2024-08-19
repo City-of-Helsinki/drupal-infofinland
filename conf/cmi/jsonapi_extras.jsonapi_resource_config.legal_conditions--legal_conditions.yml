@@ -1,0 +1,71 @@
+uuid: 68533fa3-1203-49df-bffc-d0ca0ae76649
+langcode: en
+status: true
+dependencies:
+  module:
+    - legal
+id: legal_conditions--legal_conditions
+disabled: false
+path: legal_conditions/legal_conditions
+resourceType: legal_conditions--legal_conditions
+resourceFields:
+  tc_id:
+    disabled: false
+    fieldName: tc_id
+    publicName: tc_id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  version:
+    disabled: false
+    fieldName: version
+    publicName: version
+    enhancer:
+      id: ''
+  revision:
+    disabled: false
+    fieldName: revision
+    publicName: revision
+    enhancer:
+      id: ''
+  language:
+    disabled: false
+    fieldName: language
+    publicName: language
+    enhancer:
+      id: ''
+  conditions:
+    disabled: false
+    fieldName: conditions
+    publicName: conditions
+    enhancer:
+      id: ''
+  format:
+    disabled: false
+    fieldName: format
+    publicName: format
+    enhancer:
+      id: ''
+  date:
+    disabled: false
+    fieldName: date
+    publicName: date
+    enhancer:
+      id: ''
+  extras:
+    disabled: false
+    fieldName: extras
+    publicName: extras
+    enhancer:
+      id: ''
+  changes:
+    disabled: false
+    fieldName: changes
+    publicName: changes
+    enhancer:
+      id: ''

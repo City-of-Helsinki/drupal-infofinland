@@ -1,0 +1,131 @@
+uuid: e61649da-3a48-453a-ba85-fd97aa9b1f55
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.list_of_links
+id: paragraph--list_of_links
+disabled: false
+path: paragraph/list_of_links
+resourceType: paragraph--list_of_links
+resourceFields:
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  revision_id:
+    disabled: false
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  created:
+    disabled: false
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  parent_id:
+    disabled: false
+    fieldName: parent_id
+    publicName: parent_id
+    enhancer:
+      id: ''
+  parent_type:
+    disabled: false
+    fieldName: parent_type
+    publicName: parent_type
+    enhancer:
+      id: ''
+  parent_field_name:
+    disabled: false
+    fieldName: parent_field_name
+    publicName: parent_field_name
+    enhancer:
+      id: ''
+  behavior_settings:
+    disabled: false
+    fieldName: behavior_settings
+    publicName: behavior_settings
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: false
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: false
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: false
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  content_translation_source:
+    disabled: false
+    fieldName: content_translation_source
+    publicName: content_translation_source
+    enhancer:
+      id: ''
+  content_translation_outdated:
+    disabled: false
+    fieldName: content_translation_outdated
+    publicName: content_translation_outdated
+    enhancer:
+      id: ''
+  content_translation_changed:
+    disabled: false
+    fieldName: content_translation_changed
+    publicName: content_translation_changed
+    enhancer:
+      id: ''
+  field_list_of_links_design:
+    disabled: false
+    fieldName: field_list_of_links_design
+    publicName: field_list_of_links_design
+    enhancer:
+      id: ''
+  field_list_of_links_links:
+    disabled: false
+    fieldName: field_list_of_links_links
+    publicName: field_list_of_links_links
+    enhancer:
+      id: ''
+  field_list_of_links_title:
+    disabled: false
+    fieldName: field_list_of_links_title
+    publicName: field_list_of_links_title
+    enhancer:
+      id: ''
