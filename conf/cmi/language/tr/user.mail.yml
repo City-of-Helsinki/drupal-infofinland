@@ -51,6 +51,7 @@ register_no_approval_required:
     --  [site:name] team
 register_pending_approval:
   subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
+  body: "[user:display-name],\r\n\r\nThank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another email containing information about how to log in, set your password, and other details.\r\n\r\n--  [site:name] team"
 register_pending_approval_admin:
   subject: 'Account details for [user:display-name] at [site:name] (pending admin approval)'
   body: |-

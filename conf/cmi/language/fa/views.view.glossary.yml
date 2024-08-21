@@ -7,8 +7,6 @@ display:
           label: عنوان
         name:
           label: نویسنده
-        changed:
-          label: 'Last update'
       pager:
         options:
           expose:
