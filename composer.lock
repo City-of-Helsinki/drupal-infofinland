@@ -3794,12 +3794,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-tools.git",
-                "reference": "eadca37ff757c3de0b1a309d37ddd2c6d4910740"
+                "reference": "5c46212ec813932eb9f8e94bbf2d14e1e92b2a39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-tools/zipball/eadca37ff757c3de0b1a309d37ddd2c6d4910740",
-                "reference": "eadca37ff757c3de0b1a309d37ddd2c6d4910740",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-tools/zipball/5c46212ec813932eb9f8e94bbf2d14e1e92b2a39",
+                "reference": "5c46212ec813932eb9f8e94bbf2d14e1e92b2a39",
                 "shasum": ""
             },
             "require": {
@@ -3871,7 +3871,7 @@
                 "source": "https://github.com/City-of-Helsinki/drupal-tools/tree/main",
                 "issues": "https://github.com/City-of-Helsinki/drupal-tools/issues"
             },
-            "time": "2024-08-12T09:17:00+00:00"
+            "time": "2024-08-16T09:24:27+00:00"
         },
         {
             "name": "drupal/image_style_quality",
@@ -5323,17 +5323,17 @@
         },
         {
             "name": "drupal/raven",
-            "version": "4.0.32",
+            "version": "4.0.33",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/raven.git",
-                "reference": "4.0.32"
+                "reference": "4.0.33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/raven-4.0.32.zip",
-                "reference": "4.0.32",
-                "shasum": "0f6c330029bccd6925d30ed1f285e2faba9022cc"
+                "url": "https://ftp.drupal.org/files/projects/raven-4.0.33.zip",
+                "reference": "4.0.33",
+                "shasum": "74f556f4d2f6615508a08491b517ca98b69c971c"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10",
@@ -5348,8 +5348,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.32",
-                    "datestamp": "1723585972",
+                    "version": "4.0.33",
+                    "datestamp": "1723776384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
