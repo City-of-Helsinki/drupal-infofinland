@@ -169,7 +169,7 @@ display:
           entity_type: webform_submission
           entity_field: created
           plugin_id: field
-          label: Luotu
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -309,7 +309,7 @@ display:
           admin_label: ''
           entity_type: webform_submission
           plugin_id: entity_link
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -361,27 +361,26 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Seuraava ›'
-            previous: '‹ Edellinen'
-            first: '« Ensimmäinen'
-            last: 'Viimeinen »'
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50, 100, 200'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- Kaikki -'
+            items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
           quantity: 9
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
-          submit_button: Käytä
+          submit_button: Apply
           reset_button: false
-          reset_button_label: Palauta
-          exposed_sorts_label: Lajittele
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -448,7 +447,7 @@ display:
           exception:
             value: all
             title_enable: false
-            title: Kaikki
+            title: All
           title_enable: false
           title: ''
           default_argument_type: fixed
@@ -662,7 +661,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Toiminto
+          action_title: Action
           include_exclude: exclude
           selected_actions: {  }
         sid:
@@ -942,7 +941,7 @@ display:
           entity_type: webform_submission
           entity_field: created
           plugin_id: field
-          label: Luotu
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -1159,7 +1158,7 @@ display:
           entity_type: null
           entity_field: null
           plugin_id: entity_operations
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -1598,7 +1597,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Toiminto
+          action_title: Action
           include_exclude: include
           selected_actions:
             - webform_submission_make_lock_action
@@ -1882,7 +1881,7 @@ display:
           entity_type: webform_submission
           entity_field: created
           plugin_id: field
-          label: Luotu
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -2098,7 +2097,7 @@ display:
           admin_label: ''
           entity_type: webform_submission
           plugin_id: entity_link
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -2151,7 +2150,7 @@ display:
           admin_label: ''
           entity_type: webform_submission
           plugin_id: entity_link_edit
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false
@@ -2734,7 +2733,7 @@ display:
           entity_type: webform_submission
           entity_field: created
           plugin_id: field
-          label: Luotu
+          label: Created
           exclude: false
           alter:
             alter_text: false
@@ -2950,7 +2949,7 @@ display:
           admin_label: ''
           entity_type: webform_submission
           plugin_id: entity_link
-          label: Toimenpiteet
+          label: Operations
           exclude: false
           alter:
             alter_text: false

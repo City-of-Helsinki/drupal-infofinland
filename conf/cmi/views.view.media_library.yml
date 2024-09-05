@@ -143,8 +143,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Seuraava ›'
-            previous: '‹ Edellinen'
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page: false
             items_per_page_label: 'Merkintöjä sivua kohti'
@@ -153,7 +153,6 @@ display:
             items_per_page_options_all_label: '- Kaikki -'
             offset: false
             offset_label: Offset
-          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -1154,7 +1153,7 @@ display:
           entity_type: media
           entity_field: uid
           plugin_id: field
-          label: Päivittänyt
+          label: Tekijä
           type: entity_reference_label
           settings:
             link: true
