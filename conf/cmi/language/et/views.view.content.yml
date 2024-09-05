@@ -20,6 +20,9 @@ display:
             format_custom_true: Avaldatud
         changed:
           label: Uuendatud
+        langcode:
+          label: Keel
+          separator: ', '
         operations:
           label: Toimingud
       pager:
