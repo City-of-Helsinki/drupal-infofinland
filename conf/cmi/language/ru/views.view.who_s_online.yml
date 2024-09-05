@@ -1,4 +1,5 @@
 label: "Who's online block"
+description: 'Näyttää viimeksi aktiivisina olleiden käyttäjien käyttäjätunnukset ja aktiivisten käyttäjien kokonaismäärän.'
 display:
   default:
     display_title: 'По умолчанию'
