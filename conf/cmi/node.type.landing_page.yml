@@ -25,10 +25,10 @@ third_party_settings:
     unpublish_revision: false
 _core:
   default_config_hash: ah3vIiRAXEYtaITIDXDkTMxz_d55Eu7rV-nNz1ZknEU
-name: 'Landing page'
+name: Laskeutumissivu
 type: landing_page
-description: 'Content type for pages which serves as an entry point for a particular section of the site. Use landing page when you want to create a collection of links and information about a certain subject. '
-help: ''
+description: 'Laskeutumissivu sisältötyyppiä suositellaan käytettäväksi silloin kun sivua halutaan käyttää jonkin tietyn osion tai aiheen etusivuna. Laskeutumissivu koostuu pääosin nostoista, listauksista ja linkeistä.'
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false

@@ -20,6 +20,9 @@ display:
             format_custom_true: Опубликовано
         changed:
           label: Обновлено
+        langcode:
+          label: Язык
+          separator: ', '
         operations:
           label: Операции
       pager:

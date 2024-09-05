@@ -19,6 +19,8 @@ display:
             format_custom_true: 'منتشر شده'
         changed:
           label: به‌روز
+        langcode:
+          label: زبان
         operations:
           label: کارکردها
       pager:

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser_modal
     - filter.format.simple_html
     - media.type.file
     - media.type.image

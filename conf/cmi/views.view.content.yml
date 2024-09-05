@@ -14,20 +14,20 @@ dependencies:
 _core:
   default_config_hash: 9-2iisPYYsVrKKdCr6KjJUxQpLrdV8WzmG82vdEbnCk
 id: content
-label: Content
+label: Sisältö
 module: node
-description: 'Find and manage content.'
+description: 'Etsi ja ylläpidä sisältöä.'
 tag: default
 base_table: node_field_data
 base_field: nid
 display:
   default:
     id: default
-    display_title: Master
+    display_title: Oletus
     display_plugin: default
     position: 0
     display_options:
-      title: Content
+      title: Sisältö
       fields:
         node_bulk_form:
           id: node_bulk_form
@@ -93,7 +93,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
-          label: Title
+          label: Otsikko
           exclude: false
           alter:
             alter_text: false
@@ -114,7 +114,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Name
+          label: Nimi
           exclude: false
           alter:
             alter_text: false
@@ -179,7 +179,7 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: field
-          label: 'Content type'
+          label: Sisältötyyppi
           exclude: false
           alter:
             alter_text: false
@@ -244,7 +244,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: 'Last updated by'
+          label: Päivittänyt
           exclude: false
           alter:
             alter_text: false
@@ -309,7 +309,7 @@ display:
           entity_type: node
           entity_field: langcode
           plugin_id: field
-          label: Language
+          label: Kieli
           exclude: false
           alter:
             alter_text: false
@@ -375,7 +375,7 @@ display:
           entity_type: node
           entity_field: status
           plugin_id: field
-          label: Status
+          label: Tila
           exclude: true
           alter:
             alter_text: false
@@ -420,8 +420,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_false: Unpublished
-            format_custom_true: Published
+            format_custom_false: Julkaisematon
+            format_custom_true: Julkaistu
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -441,7 +441,7 @@ display:
           admin_label: ''
           entity_type: node
           plugin_id: moderation_state_field
-          label: 'Moderation state'
+          label: Julkaisutila
           exclude: false
           alter:
             alter_text: false
@@ -502,7 +502,7 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: field
-          label: Updated
+          label: Päivitetty
           exclude: false
           alter:
             alter_text: false
@@ -534,7 +534,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: entity_operations
-          label: Operations
+          label: Toimenpiteet
           exclude: false
           alter:
             alter_text: false
@@ -581,17 +581,18 @@ display:
         options:
           items_per_page: 50
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Suodatus
           reset_button: true
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -608,7 +609,7 @@ display:
           field: area_text_custom
           plugin_id: text_custom
           empty: true
-          content: 'No content available.'
+          content: 'Ei sisältöä.'
       sorts: {  }
       arguments:
         field_municipality_selection_target_id:
@@ -618,7 +619,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: empty
           exception:
             value: all
@@ -645,6 +646,7 @@ display:
           validate_options: {  }
           break_phrase: true
           not: false
+          target_entity_type_id: taxonomy_term
       filters:
         title:
           id: title
@@ -662,7 +664,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Otsikko
             description: ''
             use_operator: false
             operator: title_op
@@ -752,7 +754,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: 'Content type'
+            label: Sisältötyyppi
             description: ''
             use_operator: false
             operator: type_op
@@ -799,7 +801,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: Status
+            label: Tila
             description: ''
             use_operator: false
             operator: status_op
@@ -813,7 +815,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Published status'
+            label: Julkaisutila
             description: ''
             identifier: status
             optional: true
@@ -824,11 +826,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Julkaistu
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: Julkaisematon
                 operator: '='
                 value: '0'
         langcode:
@@ -859,7 +861,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: 'Translation language'
+            label: Kieli
             description: ''
             use_operator: false
             operator: langcode_op
@@ -1097,7 +1099,7 @@ display:
         - 'config:workflow_list'
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Sivu
     display_plugin: page
     position: 1
     display_options:
@@ -1109,15 +1111,15 @@ display:
       path: admin/content
       menu:
         type: 'default tab'
-        title: Content
+        title: Sisältö
         description: ''
         weight: -10
         menu_name: admin
         context: ''
       tab_options:
         type: normal
-        title: Content
-        description: 'Find and manage content'
+        title: Sisältö
+        description: 'Etsi ja hallitse sisältöä'
         weight: -10
         menu_name: admin
     cache_metadata:

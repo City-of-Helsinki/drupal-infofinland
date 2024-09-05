@@ -157,7 +157,7 @@ display:
           entity_type: media
           entity_field: media
           plugin_id: field
-          label: 'Media name'
+          label: 'Median nimi'
           exclude: false
           alter:
             alter_text: false
@@ -269,7 +269,7 @@ display:
           entity_type: media
           entity_field: uid
           plugin_id: field
-          label: Tekijä
+          label: Päivittänyt
           exclude: false
           alter:
             alter_text: false
@@ -529,7 +529,7 @@ display:
             next: 'Seuraava ›'
             previous: '‹ Edellinen'
             first: '« Ensimmäinen'
-            last: 'Last »'
+            last: 'Viimeinen »'
           expose:
             items_per_page: false
             items_per_page_label: 'Merkintöjä sivua kohti'
@@ -539,6 +539,7 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
@@ -593,7 +594,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: empty
           exception:
             value: all
@@ -620,6 +621,7 @@ display:
           validate_options: {  }
           break_phrase: true
           not: false
+          target_entity_type_id: taxonomy_term
       filters:
         name:
           id: name
@@ -637,7 +639,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: 'Media name'
+            label: 'Median nimi'
             description: ''
             use_operator: false
             operator: name_op

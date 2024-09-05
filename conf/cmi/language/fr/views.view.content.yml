@@ -20,6 +20,9 @@ display:
             format_custom_true: Publié
         changed:
           label: 'Mis à jour'
+        langcode:
+          label: Langue
+          separator: ', '
         operations:
           label: Actions
       pager:

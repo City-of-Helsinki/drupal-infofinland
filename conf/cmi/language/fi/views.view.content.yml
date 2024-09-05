@@ -2,8 +2,6 @@ display:
   default:
     display_options:
       fields:
-        langcode:
-          label: Kieli
         moderation_state:
           label: Julkaisutila
         field_page_name:
@@ -22,6 +20,9 @@ display:
             format_custom_true: Julkaistu
         changed:
           label: Päivitetty
+        langcode:
+          label: Kieli
+          separator: ', '
         operations:
           label: Toimenpiteet
       title: Sisältö

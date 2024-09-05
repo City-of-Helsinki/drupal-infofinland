@@ -33,7 +33,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: Name
+          label: Nimi
           exclude: false
           alter:
             alter_text: false
@@ -77,7 +77,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: standard
-          label: Version
+          label: Versio
           exclude: false
           alter:
             alter_text: false
@@ -126,7 +126,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: language
-          label: Language
+          label: Kieli
           exclude: false
           alter:
             alter_text: false
@@ -176,7 +176,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: standard
-          label: Revision
+          label: Versio
           exclude: false
           alter:
             alter_text: false
@@ -225,7 +225,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: date
-          label: 'Time Accepted'
+          label: Hyväksytty
           exclude: false
           alter:
             alter_text: false
@@ -277,26 +277,27 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Kaikki -'
             offset: false
             offset_label: Offset
           quantity: 9
+          pagination_heading_level: h4
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Käytä
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -455,7 +456,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Sivu
     display_plugin: page
     position: 1
     display_options:
