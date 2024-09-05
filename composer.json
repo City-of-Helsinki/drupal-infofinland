@@ -141,7 +141,7 @@
                 "Cannot save or publish originating node or translations (https://drupal.org/i/3285657)": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
             },
             "drupal/diff": {
-                "Revision overview form problem (https://drupal.org/i/3390329)": "./patches/revision_overview_form.patch"
+                "Revision overview form problem (https://www.drupal.org/i/3390329)": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/05989cc82b2817de994ad4e9289ccb777f71f23f/patches/diff_8.x_1.3_revision_overview_form.patch"
             },
             "drupal/paragraphs": {
                 "Paragraphs asymmetric translation support (https://drupal.org/i/2904705#comment-13836790)": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
@@ -154,11 +154,8 @@
                 "Fixing redirect multilanguage 404 (https://drupal.org/i/3111456)": "https://www.drupal.org/files/issues/2022-12-01/decouple_router-3111456-resolve-language-issue-58--get-translation.patch"
             },
             "drupal/redirect": {
-                "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2022-09-01/3057250-53.patch",
+                "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2024-08-11/redirect--2024-08-11--3057250-79.patch",
                 "Redirection issue when interface language is different from content language (https://drupal.org/i/2991423)": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
-            },
-            "drupal/webform": {
-                "Deprecated function: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated in webform_form_alter() (https://drupal.org/i/3431852)": "https://www.drupal.org/files/issues/2024-03-18/issue-3431852-deprecation-warning-webform_form_alter.patch"
             }
         },
         "installer-types": ["npm-asset"],
