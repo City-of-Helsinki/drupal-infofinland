@@ -1,4 +1,4 @@
-label: 'Webform submissions'
+label: 'Envíos de formulario web'
 display:
   default:
     display_title: Master
@@ -23,10 +23,10 @@ display:
             offset_label: Desplazamiento
       fields:
         sid:
-          label: '#'
+          label: Nº
           separator: ', '
         in_draft:
-          label: Draft
+          label: Borrador
           separator: ', '
         created:
           label: Creado
@@ -44,17 +44,17 @@ display:
         in_draft:
           exception:
             title: Todo(s)
-      title: 'Webform submissions'
+      title: 'Envíos de formulario web'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
         sid:
-          label: '#'
+          label: Nº
           separator: ', '
         in_draft:
-          label: Draft
+          label: Borrador
           separator: ', '
         sticky:
           label: Sticky
@@ -66,7 +66,7 @@ display:
           label: Creado
           separator: ', '
         completed:
-          label: Completed
+          label: Completado
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -86,10 +86,10 @@ display:
         webform_submission_bulk_form:
           action_title: Acción
         sid:
-          label: '#'
+          label: Nº
           separator: ', '
         in_draft:
-          label: Draft
+          label: Borrador
           separator: ', '
         sticky:
           label: Sticky
@@ -101,7 +101,7 @@ display:
           label: Creado
           separator: ', '
         completed:
-          label: Completed
+          label: Completado
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -123,10 +123,10 @@ display:
     display_options:
       fields:
         sid:
-          label: '#'
+          label: Nº
           separator: ', '
         in_draft:
-          label: Draft
+          label: Borrador
           separator: ', '
         sticky:
           label: Sticky
@@ -138,7 +138,7 @@ display:
           label: Creado
           separator: ', '
         completed:
-          label: Completed
+          label: Completado
           separator: ', '
         remote_addr:
           label: 'IP address'

@@ -1,5 +1,5 @@
-label: 'Webform submissions'
-description: 'Default webform submissions views.'
+label: 'Soumissions de webform'
+description: 'Vue par défaut des soumissions de webform.'
 display:
   default:
     display_title: Master
@@ -27,7 +27,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Brouillon
           separator: ', '
         created:
           label: Créé
@@ -43,20 +43,20 @@ display:
           content: 'Affichage de @start à @end sur @total'
       empty:
         area_text_custom:
-          content: 'No submissions available.'
+          content: "Aucune soumission n'est disponible."
       arguments:
         in_draft:
           exception:
             title: Tout
-      title: 'Webform submissions'
+      title: 'Soumissions de webform'
   embed_default:
-    display_title: 'Embed: Default'
+    display_title: 'Intégrer : Par défaut'
     display_options:
-      display_description: 'Display submissions.'
+      display_description: 'Afficher les soumissions.'
   embed_administer:
-    display_title: 'Embed: Administer'
+    display_title: 'Intégrer : Administrer'
     display_options:
-      display_description: 'Administer submissions.'
+      display_description: 'Administrer les soumissions.'
       fields:
         webform_submission_bulk_form:
           action_title: Action
@@ -64,7 +64,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Brouillon
           separator: ', '
         sticky:
           label: Sticky
@@ -76,7 +76,7 @@ display:
           label: Créé
           separator: ', '
         completed:
-          label: Completed
+          label: Terminé
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -86,7 +86,7 @@ display:
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: 'Est un brouillon'
         sticky:
           expose:
             label: Sticky
@@ -94,9 +94,9 @@ display:
           expose:
             label: Locked
   embed_manage:
-    display_title: 'Embed: Manage'
+    display_title: 'Intégrer : Gérer'
     display_options:
-      display_description: 'Manage submissions.'
+      display_description: 'Gérer les soumissions.'
       fields:
         webform_submission_bulk_form:
           action_title: Action
@@ -104,7 +104,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Brouillon
           separator: ', '
         sticky:
           label: Sticky
@@ -116,7 +116,7 @@ display:
           label: Créé
           separator: ', '
         completed:
-          label: Completed
+          label: Terminé
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -130,7 +130,7 @@ display:
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: 'Est un brouillon'
         sticky:
           expose:
             label: Sticky
@@ -138,15 +138,15 @@ display:
           expose:
             label: Locked
   embed_review:
-    display_title: 'Embed: Review'
+    display_title: 'Intégrer : Évaluer'
     display_options:
-      display_description: 'Review submissions.'
+      display_description: 'Évaluer les soumissions.'
       fields:
         sid:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Brouillon
           separator: ', '
         sticky:
           label: Sticky
@@ -158,7 +158,7 @@ display:
           label: Créé
           separator: ', '
         completed:
-          label: Completed
+          label: Terminé
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -169,7 +169,7 @@ display:
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: 'Est un brouillon'
         sticky:
           expose:
             label: Sticky

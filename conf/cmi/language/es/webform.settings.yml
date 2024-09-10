@@ -1,22 +1,24 @@
 settings:
-  default_form_close_message: 'Sorry… This form is closed to new submissions.'
+  default_form_close_message: 'Lo sentimos ... Este formulario está cerrado a nuevos envíos.'
   default_submit_button_label: Submit
   default_reset_button_label: Restablecer
   default_delete_button_label: Eliminar
-  default_wizard_prev_button_label: '< Previous'
-  default_wizard_next_button_label: 'Next >'
-  default_wizard_start_label: Start
-  default_wizard_confirmation_label: Complete
-  default_wizard_toggle_show_label: 'Show all'
-  default_wizard_toggle_hide_label: 'Hide all'
+  default_form_access_denied_message: 'Please login to access this form.'
+  default_wizard_prev_button_label: '< Anterior'
+  default_wizard_next_button_label: 'Siguiente >'
+  default_wizard_start_label: Comienzo
+  default_wizard_confirmation_label: Completo
+  default_wizard_toggle_show_label: 'Mostrar todo'
+  default_wizard_toggle_hide_label: 'Ocultar todo'
   default_preview_next_button_label: Preview
-  default_preview_prev_button_label: '< Previous'
+  default_preview_prev_button_label: '< Anterior'
   default_preview_label: Preview
-  default_draft_button_label: 'Save Draft'
-  default_draft_saved_message: 'Submission saved. You may return to this form later and it will restore the current values.'
-  default_confirmation_back_label: 'Back to form'
-  default_previous_submission_message: 'You have already submitted this webform. <a href="#">View your previous submission</a>.'
-  default_previous_submissions_message: 'You have already submitted this webform. <a href="#">View your previous submissions</a>.'
+  default_draft_button_label: 'Guardar borrador'
+  default_draft_saved_message: 'Envío guardado. Usted puede volver a este formuario luego y recuperará sus valores actuales.'
+  default_confirmation_back_label: 'Volver al formulario'
+  default_submission_access_denied_message: 'Please login to access this submission.'
+  default_previous_submission_message: 'Ya ha enviado este formulario web. <a href="#">Ver su envío anterior</a>.'
+  default_previous_submissions_message: 'Ya ha enviado este formulario web. <a href="#">Ver sus envíos anteriores</a>.'
   dialog_options:
     narrow:
       title: Narrow
@@ -27,5 +29,7 @@ settings:
 element:
   default_more_title: Más
   default_section_title_tag: h2
+file:
+  file_private_redirect_message: 'Please login to access the uploaded file.'
 mail:
   default_from_name: '[site:name]'

@@ -1,4 +1,4 @@
-label: 'Webform submissions'
+label: 'Veebivormi vastused'
 display:
   default:
     display_title: Master
@@ -23,10 +23,10 @@ display:
             offset_label: Nihe
       fields:
         sid:
-          label: '#'
+          label: nr
           separator: ', '
         in_draft:
-          label: Draft
+          label: Mustand
           separator: ', '
         created:
           label: Loodud
@@ -44,17 +44,17 @@ display:
         in_draft:
           exception:
             title: Kõik
-      title: 'Webform submissions'
+      title: 'Veebivormi vastused'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Tegevus
         sid:
-          label: '#'
+          label: nr
           separator: ', '
         in_draft:
-          label: Draft
+          label: Mustand
           separator: ', '
         sticky:
           label: Sticky
@@ -66,7 +66,7 @@ display:
           label: Loodud
           separator: ', '
         completed:
-          label: Completed
+          label: Lõpetatud
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -86,10 +86,10 @@ display:
         webform_submission_bulk_form:
           action_title: Tegevus
         sid:
-          label: '#'
+          label: nr
           separator: ', '
         in_draft:
-          label: Draft
+          label: Mustand
           separator: ', '
         sticky:
           label: Sticky
@@ -101,7 +101,7 @@ display:
           label: Loodud
           separator: ', '
         completed:
-          label: Completed
+          label: Lõpetatud
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -123,10 +123,10 @@ display:
     display_options:
       fields:
         sid:
-          label: '#'
+          label: nr
           separator: ', '
         in_draft:
-          label: Draft
+          label: Mustand
           separator: ', '
         sticky:
           label: Sticky
@@ -138,7 +138,7 @@ display:
           label: Loodud
           separator: ', '
         completed:
-          label: Completed
+          label: Lõpetatud
           separator: ', '
         remote_addr:
           label: 'IP address'
