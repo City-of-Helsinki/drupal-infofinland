@@ -112,7 +112,7 @@ function infofinland_common_update_9004(): void {
     ->execute();
 }
 
-/*
+/**
  * Remove gdpr log file if exists.
  */
 function infofinland_common_update_9005(): void {
