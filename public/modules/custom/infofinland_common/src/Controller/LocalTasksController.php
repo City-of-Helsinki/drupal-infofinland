@@ -2,12 +2,15 @@
 
 namespace Drupal\infofinland_common\Controller;
 
-use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
+/**
+ * Controller for local tasks.
+ */
 class LocalTasksController extends ControllerBase {
 
   /**
@@ -64,4 +67,5 @@ class LocalTasksController extends ControllerBase {
     $this->messenger()->addMessage($this->t('All language versions for this page published.'));
     return $this->redirect('entity.node.edit_form', ['node' => $node->id()]);
   }
+
 }

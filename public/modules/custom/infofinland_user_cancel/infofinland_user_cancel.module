@@ -9,7 +9,6 @@
  */
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\user\UserInterface;
 
@@ -35,7 +34,7 @@ function infofinland_user_cancel_module_implements_alter(&$implementations, $hoo
 function infofinland_user_cancel_user_cancel($edit, UserInterface $account, $method) {
   switch ($method) {
     case 'user_cancel_reassign':
-      // Anonymize all of the nodes for this old account.
+      // Anonymize all the nodes for this old account.
       _infofinland_user_cancel_reassign_nodes_to_anonymous($account);
       break;
   }

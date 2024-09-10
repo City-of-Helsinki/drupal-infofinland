@@ -5,8 +5,7 @@
  * Custom module for checking broken links.
  */
 
-
- /**
+/**
  * Implements hook_cron().
  */
 function infofinland_brokenlink_checker_cron(): void {

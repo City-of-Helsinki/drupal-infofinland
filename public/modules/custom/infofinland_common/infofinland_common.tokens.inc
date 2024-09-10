@@ -8,27 +8,24 @@
 use Drupal\Core\Render\BubbleableMetadata;
 
 /**
- * Implements hook_token_info()
+ * Implements hook_token_info().
  */
-
 function infofinland_common_token_info() {
   $info = [];
 
-  $info['tokens']['array']['join-path-en'] = array(
+  $info['tokens']['array']['join-path-en'] = [
     'name' => t('Menu link parents en'),
     'description' => t('Menu link parents in english'),
-  );
+  ];
 
   return $info;
 }
 
-
 /**
- * Implements hook_tokens()
+ * Implements hook_tokens().
  *
  * Custom token for getting menu path in english.
  */
-
 function infofinland_common_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
   $replacements = [];
 
@@ -54,7 +51,8 @@ function infofinland_common_tokens($type, $tokens, array $data, array $options, 
 
             if ($field_url) {
               $value = \Drupal::service('pathauto.alias_cleaner')->cleanString($field_url, $options);
-            } else {
+            }
+            else {
               $value = is_array($array[$key]) ? \Drupal::service('renderer')->render($array[$key]) : (string) $array[$key];
             }
             $values[] = $value;

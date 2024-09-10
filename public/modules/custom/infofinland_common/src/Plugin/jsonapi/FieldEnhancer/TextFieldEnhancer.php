@@ -5,11 +5,9 @@ namespace Drupal\infofinland_common\Plugin\jsonapi\FieldEnhancer;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\jsonapi_extras\Plugin\ResourceFieldEnhancerBase;
+use Drupal\path_alias\AliasManagerInterface;
 use Shaper\Util\Context;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\path_alias\AliasManagerInterface;
-use DOMDocument;
-use DOMXPath;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -38,9 +36,9 @@ class TextFieldEnhancer extends ResourceFieldEnhancerBase implements ContainerFa
   protected $aliasManager;
 
   /**
-   * The request
-   * 
-   * @var Symfony\Component\HttpFoundation\Request 
+   * The request.
+   *
+   * @var Symfony\Component\HttpFoundation\Request
    */
   protected $request;
 
@@ -72,12 +70,12 @@ class TextFieldEnhancer extends ResourceFieldEnhancerBase implements ContainerFa
    * {@inheritdoc}
    */
   protected function doUndoTransform($data, Context $context) {
-    $doc = new DOMDocument();
+    $doc = new \DOMDocument();
     $splittedURL = explode('/', $this->request->getRequestUri());
 
     if (isset($data['value'])) {
       $doc->loadHTML($data['value']);
-      $xpath = new DOMXPath($doc);
+      $xpath = new \DOMXPath($doc);
       $nodeList = $xpath->query('//a/@href');
       if ($nodeList) {
         for ($i = 0; $i < $nodeList->length; $i++) {
@@ -91,7 +89,7 @@ class TextFieldEnhancer extends ResourceFieldEnhancerBase implements ContainerFa
 
     if (isset($data['processed'])) {
       $doc->loadHTML($data['processed']);
-      $processedXpath = new DOMXPath($doc);
+      $processedXpath = new \DOMXPath($doc);
       $nodeList2 = $processedXpath->query('//a/@href');
       if ($nodeList2) {
         for ($i = 0; $i < $nodeList2->length; $i++) {
