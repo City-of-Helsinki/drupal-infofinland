@@ -1,6 +1,3 @@
-label: 'Phone type'
-category: Demographic
-options: |
-  Home: Home
-  Office: Office
-  Cell: Cell
+label: 'Тип телефону'
+category: Демографічна
+options: "Дім: Дім\r\nОфіс: Офіс\r\nМобільний: Мобільний\n"

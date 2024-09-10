@@ -5,18 +5,17 @@
  * Infofinland permissions module.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-use Drupal\node\NodeInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
 use Drupal\user\Entity\User;
 use Drupal\views\ViewExecutable;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Access\AccessResult;
-
 
 /**
- * hook_node_access_records().
+ * Implements hook_node_access_records().
  *
  * Returns the grants a node needs.
  */
@@ -57,7 +56,7 @@ function infofinland_permissions_node_access_records(NodeInterface $node) {
 }
 
 /**
- * hook_node_grants().
+ * Implements hook_node_grants().
  *
  * Returns the grants a user has.
  */
@@ -86,11 +85,10 @@ function infofinland_permissions_node_grants(AccountInterface $account, $op) {
 }
 
 /**
- * hook_views_pre_build().
- *
- * Limit municipal user permissions to see media entities in media browser.
+ * Implements hook_views_pre_build().
  */
 function infofinland_permissions_views_pre_build(ViewExecutable $view) {
+  // Limit municipal user permissions to see media entities in media browser.
   if (!$current_user = \Drupal::currentUser()) {
     return;
   }
@@ -101,7 +99,8 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
     if (in_array('infofinland_user', $roles) || in_array('admin', $roles)) {
       $args[] = 'all';
       $view->setArguments($args);
-    } else {
+    }
+    else {
       $user = User::load($current_user->id());
       $args[] = $user->get('field_municipality')->getString();
       $view->setArguments($args);
@@ -113,10 +112,11 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
     if (in_array('infofinland_user', $roles) || in_array('admin', $roles)) {
       $args[] = 'all';
       $view->setArguments($args);
-    } else {
+    }
+    else {
       $args = [];
       $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
-        'vid' => 'municipalitys'
+        'vid' => 'municipalitys',
       ]);
 
       foreach ($terms as $term) {
@@ -128,7 +128,7 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
       // Allowed for everyone: Helsinki, Espoo,  Vantaa, Kauniainen.
       $allowed_municipality_ids = array_unique(['1', '2', '3', '4', ...$user_municipalities]);
       // Use exlude filtering to also show links without municipality.
-      $args[] = implode(',', array_diff($municipality_ids,$allowed_municipality_ids));
+      $args[] = implode(',', array_diff($municipality_ids, $allowed_municipality_ids));
       $view->setArguments($args);
     }
   }
@@ -138,7 +138,8 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
     if (in_array('infofinland_user', $roles) || in_array('admin', $roles)) {
       $args[] = 'all';
       $view->setArguments($args);
-    } else {
+    }
+    else {
       $user = User::load($current_user->id());
       $args[] = $user->get('field_municipality')->getString();
       $view->setArguments($args);

@@ -1,6 +1,3 @@
-label: 'Sex - International Civil Aviation Organization (ICAO)'
-category: Demographic
-options: |
-  M: Male
-  F: Female
-  X: Unspecified
+label: 'Стать - Міжнародна організація цивільної авіації (ICAO)'
+category: Демографічна
+options: "M: Чоловік\r\nF: Жінка \r\nX: Не визначено\n"

@@ -1,4 +1,4 @@
-label: 'Webform submissions'
+label: 'Отправленные формы'
 display:
   default:
     display_title: Master
@@ -26,7 +26,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Черновик
           separator: ', '
         created:
           label: Создано
@@ -44,7 +44,7 @@ display:
         in_draft:
           exception:
             title: Все
-      title: 'Webform submissions'
+      title: 'Отправленные формы'
   embed_administer:
     display_options:
       fields:
@@ -54,7 +54,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Черновик
           separator: ', '
         sticky:
           label: Sticky
@@ -66,7 +66,7 @@ display:
           label: Создано
           separator: ', '
         completed:
-          label: Completed
+          label: Завершено
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -76,7 +76,7 @@ display:
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: Черновик
         sticky:
           expose:
             label: Sticky
@@ -92,7 +92,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Черновик
           separator: ', '
         sticky:
           label: Sticky
@@ -104,7 +104,7 @@ display:
           label: Создано
           separator: ', '
         completed:
-          label: Completed
+          label: Завершено
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -118,7 +118,7 @@ display:
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: Черновик
         sticky:
           expose:
             label: Sticky
@@ -132,7 +132,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Черновик
           separator: ', '
         sticky:
           label: Sticky
@@ -144,7 +144,7 @@ display:
           label: Создано
           separator: ', '
         completed:
-          label: Completed
+          label: Завершено
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -155,7 +155,7 @@ display:
       filters:
         in_draft:
           expose:
-            label: 'Is draft'
+            label: Черновик
         sticky:
           expose:
             label: Sticky

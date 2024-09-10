@@ -1,4 +1,4 @@
-label: 'Webform submissions'
+label: Verkkolomakelähetykset
 display:
   default:
     display_title: Master
@@ -26,7 +26,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Keskeneräinen
           separator: ', '
         created:
           label: Luotu
@@ -41,7 +41,7 @@ display:
         in_draft:
           exception:
             title: Kaikki
-      title: 'Webform submissions'
+      title: Verkkolomakelähetykset
   embed_administer:
     display_options:
       fields:
@@ -51,7 +51,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Keskeneräinen
           separator: ', '
         sticky:
           label: Sticky
@@ -63,7 +63,7 @@ display:
           label: Luotu
           separator: ', '
         completed:
-          label: Completed
+          label: Valmis
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -86,7 +86,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Keskeneräinen
           separator: ', '
         sticky:
           label: Sticky
@@ -98,7 +98,7 @@ display:
           label: Luotu
           separator: ', '
         completed:
-          label: Completed
+          label: Valmis
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -123,7 +123,7 @@ display:
           label: '#'
           separator: ', '
         in_draft:
-          label: Draft
+          label: Keskeneräinen
           separator: ', '
         sticky:
           label: Sticky
@@ -135,7 +135,7 @@ display:
           label: Luotu
           separator: ', '
         completed:
-          label: Completed
+          label: Valmis
           separator: ', '
         remote_addr:
           label: 'IP address'

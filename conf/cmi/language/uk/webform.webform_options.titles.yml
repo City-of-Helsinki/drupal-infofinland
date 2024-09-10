@@ -1,8 +1,3 @@
 label: Заголовки
-category: Demographic
-options: |
-  Miss: Miss
-  Ms: Ms
-  Mr: Mr
-  Mrs: Mrs
-  Dr: Dr
+category: Демографічна
+options: "Miss: Miss\r\nMs: Ms\r\nMr: Mr\r\nMrs: Mrs\r\nDr: Dr\n"

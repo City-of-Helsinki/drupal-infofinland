@@ -1,8 +1,3 @@
-label: 'Likert: Would You'
+label: 'Likert : Le feriez-vous'
 category: Likert
-options: |
-  1: Definitely Not
-  2: Probably Not
-  3: Not Sure
-  4: Probably
-  5: Definitely
+options: "1: Absolument pas\r\n2: Probablement pas\r\n3: Pas sûr\r\n4: Probablement\r\n5: Absolument\n"
