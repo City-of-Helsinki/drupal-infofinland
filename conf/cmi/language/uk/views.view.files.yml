@@ -6,8 +6,11 @@ display:
     display_options:
       title: Файли
       fields:
+        fid:
+          label: FId
         filename:
           label: "Назва (ім'я)"
+          separator: ', '
         filemime:
           label: 'Тип MIME'
         filesize:
@@ -23,6 +26,9 @@ display:
           label: 'Дата зміни'
         count:
           label: 'Використано в'
+          alter:
+            path: 'admin/content/files/usage/{{ fid }}'
+          format_plural_string: !!binary MSBwbGFjZQNAY291bnQgcGxhY2Vz
       pager:
         options:
           tags:
@@ -70,6 +76,7 @@ display:
           label: 'Реєстрація модуля'
         count:
           label: 'Підрахунок використань'
+          format_plural_string: !!binary MQNAY291bnQ=
       pager:
         options:
           tags:

@@ -17,6 +17,7 @@ label: Linkki
 description: 'Sisäinen tai ulkoinen linkki haluttuun kohteeseen. Linkin teksti -kentän arvo näytetään sivuston käyttäjälle.'
 required: true
 translatable: true
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

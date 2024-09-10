@@ -1,0 +1,5 @@
+services:
+  Drupal\infofinland_user_cancel\Entity\Utility\UserEntitySanitizer: '@infofinland_user_cancel.user_entity_sanitizer'
+  infofinland_user_cancel.user_entity_sanitizer:
+    class: Drupal\infofinland_user_cancel\Entity\Utility\UserEntitySanitizer
+    autowire: true

@@ -9,19 +9,25 @@ display:
           action_title: Tegevus
         thumbnail__target_id:
           label: Pisipilt
+          separator: ', '
         name:
           label: 'Meedia nimetus'
+          separator: ', '
         bundle:
           label: Liik
+          separator: ', '
         uid:
           label: Autor
+          separator: ', '
         status:
           label: Olek
           settings:
             format_custom_false: Avaldamata
             format_custom_true: Avaldatud
+          separator: ', '
         changed:
           label: Uuendatud
+          separator: ', '
         operations:
           label: Toimingud
       pager:

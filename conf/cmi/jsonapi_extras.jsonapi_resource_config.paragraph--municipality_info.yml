@@ -1,0 +1,131 @@
+uuid: 8263d3d6-2b8a-41c1-994f-0780f8c0f5a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.municipality_info
+id: paragraph--municipality_info
+disabled: false
+path: paragraph/municipality_info
+resourceType: paragraph--municipality_info
+resourceFields:
+  id:
+    disabled: false
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+  uuid:
+    disabled: false
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+  revision_id:
+    disabled: false
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    disabled: false
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  type:
+    disabled: false
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  status:
+    disabled: false
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  created:
+    disabled: false
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+  parent_id:
+    disabled: false
+    fieldName: parent_id
+    publicName: parent_id
+    enhancer:
+      id: ''
+  parent_type:
+    disabled: false
+    fieldName: parent_type
+    publicName: parent_type
+    enhancer:
+      id: ''
+  parent_field_name:
+    disabled: false
+    fieldName: parent_field_name
+    publicName: parent_field_name
+    enhancer:
+      id: ''
+  behavior_settings:
+    disabled: false
+    fieldName: behavior_settings
+    publicName: behavior_settings
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: false
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: false
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: false
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  content_translation_source:
+    disabled: false
+    fieldName: content_translation_source
+    publicName: content_translation_source
+    enhancer:
+      id: ''
+  content_translation_outdated:
+    disabled: false
+    fieldName: content_translation_outdated
+    publicName: content_translation_outdated
+    enhancer:
+      id: ''
+  content_translation_changed:
+    disabled: false
+    fieldName: content_translation_changed
+    publicName: content_translation_changed
+    enhancer:
+      id: ''
+  field_municipality_info_link:
+    disabled: false
+    fieldName: field_municipality_info_link
+    publicName: field_municipality_info_link
+    enhancer:
+      id: ''
+  field_municipality_info_text:
+    disabled: false
+    fieldName: field_municipality_info_text
+    publicName: field_municipality_info_text
+    enhancer:
+      id: ''
+  field_national_page:
+    disabled: false
+    fieldName: field_national_page
+    publicName: field_national_page
+    enhancer:
+      id: ''

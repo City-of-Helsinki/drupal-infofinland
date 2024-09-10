@@ -10,6 +10,7 @@ display:
           label: Заголовок
         type:
           label: 'Тип матеріалів'
+          separator: ', '
         name:
           label: Автор
         status:
@@ -19,6 +20,9 @@ display:
             format_custom_true: Опубліковано
         changed:
           label: Оновлено
+        langcode:
+          label: Мова
+          separator: ', '
         operations:
           label: Операції
       pager:

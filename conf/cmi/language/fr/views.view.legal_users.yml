@@ -7,6 +7,8 @@ display:
           submit_button: Apply
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           expose:
@@ -21,13 +23,20 @@ display:
       fields:
         name:
           label: Nom
+          separator: ', '
+        version:
+          label: Version
         language:
           label: Langue
         revision:
           label: Révision
+        accepted:
+          label: 'Time Accepted'
       title: Accepté
       empty:
         area:
           admin_label: Accepté
+          content:
+            value: 'No users have accepted Terms & Conditions yet.'
   page_1:
     display_title: Sivu

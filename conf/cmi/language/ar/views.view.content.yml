@@ -10,6 +10,7 @@ display:
           label: العنوان
         type:
           label: 'نوع المحتوى'
+          separator: ', '
         name:
           label: المؤلف
         status:
@@ -19,6 +20,9 @@ display:
             format_custom_true: منشور
         changed:
           label: التحديث
+        langcode:
+          label: اللغة
+          separator: ', '
         operations:
           label: عمليات
       pager:
@@ -48,7 +52,6 @@ display:
           expose:
             label: الحالة
           group_info:
-            label: 'Published status'
             group_items:
               1:
                 title: منشور

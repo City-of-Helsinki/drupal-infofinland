@@ -1,10 +1,12 @@
 label: 'Uusin sisältö'
-description: 'Recent content.'
 display:
   default:
     display_title: Oletus
     display_options:
       title: 'Uusin sisältö'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Käytä

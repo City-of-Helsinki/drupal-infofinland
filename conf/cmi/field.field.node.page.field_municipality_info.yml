@@ -16,6 +16,7 @@ label: 'Nostot valtakunnallisille sivuille'
 description: 'Valtakunnalliselle sivulle nousevat tiedot.'
 required: false
 translatable: false
+skip_translation_check: null
 default_value: {  }
 default_value_callback: ''
 settings:

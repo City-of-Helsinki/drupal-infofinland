@@ -10,6 +10,7 @@ display:
           label: Titre
         type:
           label: 'Type de contenu'
+          separator: ', '
         name:
           label: Auteur
         status:
@@ -19,6 +20,9 @@ display:
             format_custom_true: Publié
         changed:
           label: 'Mis à jour'
+        langcode:
+          label: Langue
+          separator: ', '
         operations:
           label: Actions
       pager:
@@ -33,6 +37,8 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'No content available.'

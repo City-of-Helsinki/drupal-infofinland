@@ -736,6 +736,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
@@ -800,7 +801,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: empty
           exception:
             value: all
@@ -827,6 +828,7 @@ display:
           validate_options: {  }
           break_phrase: true
           not: true
+          target_entity_type_id: taxonomy_term
       filters:
         status:
           id: status

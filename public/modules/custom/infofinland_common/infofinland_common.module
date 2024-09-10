@@ -119,11 +119,14 @@ function infofinland_common_preprocess_status_messages(&$variables) {
   if (isset($variables['message_list']['warning'])) {
     $status_messages = $variables['message_list']['warning'];
     foreach ($status_messages as $message) {
-      if (strpos((string) $message, 'The current translation is not in sync with the Finnish one') !== FALSE) {
+      if (!is_string($message) && !$message instanceof Stringable) {
+        continue;
+      }
+
+      if (str_contains((string) $message, 'The current translation is not in sync with the Finnish one')) {
         $variables['attributes']['class'] = 'custom-messages--warning';
       }
     }
-
   }
 }
 

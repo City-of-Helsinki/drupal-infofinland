@@ -1,0 +1,6 @@
+services:
+  infofinland_user_cancel.user_sanitize_commands:
+    class: \Drupal\infofinland_user_cancel\Commands\UserSanitizeCommands
+    arguments: ['@infofinland_user_cancel.user_entity_sanitizer']
+    tags:
+      - { name: drush.command }

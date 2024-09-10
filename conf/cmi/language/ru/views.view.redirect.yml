@@ -26,6 +26,7 @@ display:
           action_title: 'With selection'
         redirect_source__path:
           label: От
+          separator: ', '
         created:
           label: Создано
       filters:

@@ -9,6 +9,9 @@ display:
           action_title: Tegevus
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Kirjeid lehel'
             items_per_page_options_all_label: '- Kõik -'
@@ -61,6 +64,8 @@ display:
       fields:
         media_bulk_form:
           action_title: Tegevus
+        name:
+          separator: ', '
         edit_media:
           text: Muuda
         delete_media:

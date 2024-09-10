@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser_modal
     - environment_indicator.switcher.development
     - environment_indicator.switcher.production
     - environment_indicator.switcher.stage
@@ -42,6 +43,7 @@ dependencies:
     - pathauto
     - queue_ui
     - redirect
+    - redis
     - responsive_image
     - role_delegation
     - scheduler
@@ -64,6 +66,7 @@ permissions:
   - 'access files overview'
   - 'access media overview'
   - 'access media_entity_browser_modal entity browser pages'
+  - 'access redis report'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'

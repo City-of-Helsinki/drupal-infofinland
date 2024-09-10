@@ -1,5 +1,4 @@
 label: Luokittelutermi
-description: 'Content belonging to a certain taxonomy term.'
 display:
   default:
     display_title: Oletus
@@ -7,11 +6,12 @@ display:
       pager:
         options:
           tags:
-            next: ››
-            previous: ‹‹
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
       exposed_form:
         options:
           submit_button: Käytä

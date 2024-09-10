@@ -23,6 +23,7 @@ display:
       fields:
         name:
           label: Name
+          separator: ', '
         version:
           label: Sürüm
         language:

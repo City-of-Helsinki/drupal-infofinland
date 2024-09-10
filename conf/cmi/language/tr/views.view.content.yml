@@ -10,6 +10,7 @@ display:
           label: Başlık
         type:
           label: 'İçerik türü'
+          separator: ', '
         name:
           label: Yazar
         status:
@@ -19,6 +20,9 @@ display:
             format_custom_true: Yayında
         changed:
           label: Güncellendi
+        langcode:
+          label: Dil
+          separator: ', '
         operations:
           label: İşlemler
       pager:

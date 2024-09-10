@@ -21,18 +21,23 @@ display:
           label: 'Käyttäjä jo'
         access:
           label: 'Viimeksi paikalla'
+          settings:
+            past_format: '@interval ago'
         operations:
           label: Toimenpiteet
+        mail:
+          separator: ', '
       pager:
         options:
           tags:
             next: 'Seuraava ›'
             previous: '‹ Edellinen'
             first: '« Ensimmäinen'
-            last: 'Last »'
+            last: 'Viimeinen »'
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- Kaikki -'
+            offset_label: Offset
       exposed_form:
         options:
           submit_button: Suodatus

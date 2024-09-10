@@ -15,11 +15,18 @@ display:
             items_per_page_label: 'Элементов на страницу'
             items_per_page_options_all_label: '- Все -'
             offset_label: Пропустить
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
         path:
           label: Path
         count:
           label: Count
+        daily_count:
+          label: 'Кол-во за день'
+        timestamp:
+          label: 'Last accessed'
         langcode:
           label: Язык
         redirect_404_operations:
@@ -31,5 +38,6 @@ display:
         langcode:
           expose:
             label: Язык
+      title: 'Fix 404 pages'
   page_1:
     display_title: Страница

@@ -17,6 +17,7 @@ label: Design
 description: 'Choose the paragraph design from the dropdown. '
 required: true
 translatable: false
+skip_translation_check: null
 default_value:
   -
     value: align-center
