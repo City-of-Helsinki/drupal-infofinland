@@ -1,7 +1,3 @@
 label: Освіта
-category: Demographic
-options: |
-  High School: High School
-  Associate Degree: Associate Degree
-  Graduate or Professional Degree: Graduate or Professional Degree
-  Some College: Some College
+category: Демографічна
+options: "Середня школа: Середня школа\r\nСтупінь спеціаліста: Ступінь спеціаліста\r\nВища освіта або професійний ступінь: Вища освіта або професійний ступінь \r\nДеякі коледжі: Деякі коледжі\n"

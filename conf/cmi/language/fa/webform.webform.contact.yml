@@ -42,7 +42,7 @@ handlers:
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'
   email_notification:
-    label: 'Email notification'
+    label: 'اطلاع رسانی از طریق پست الکترونیکی'
     settings:
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'

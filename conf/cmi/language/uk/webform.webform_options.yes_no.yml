@@ -1,5 +1,3 @@
 label: Так/Ні
 category: Загальне
-options: |
-  Yes: Yes
-  No: No
+options: "Так: Так\r\nНі: Ні\n"

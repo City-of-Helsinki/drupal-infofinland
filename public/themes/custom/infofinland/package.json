@@ -4,13 +4,10 @@
   "description": "Webpack configuration for Infofinland theme",
   "author": "Druid",
   "license": "MIT",
-  "engines": {
-    "node": "20"
-  },
   "scripts": {
     "dev": "webpack --progress --mode=development --config  webpack.config.js --watch",
     "build": "webpack --progress --mode=production --config webpack.config.js",
-    "preinstall": "npx browserslist@latest --update-db",
+    "preinstall": "npx update-browserslist-db@latest",
     "lint": "lint-staged",
     "lint:js": "eslint --fix src/"
   },
@@ -31,7 +28,7 @@
     "css-declaration-sorter": "^7.0.0",
     "css-loader": "^6.5.0",
     "es6-promise": "^4.1.1",
-    "eslint": "^8.52.0",
+    "eslint": "^8.57.0",
     "eslint-import-resolver-webpack": "0.13.8",
     "eslint-plugin-import": "^2.25.3",
     "expose-loader": "^4.0.0",
@@ -42,7 +39,7 @@
     "husky": "^8.0.0",
     "joi": "^17.4.0",
     "json5": "^2.2.3",
-    "lint-staged": "^13.0.0",
+    "lint-staged": "^15.2",
     "md5": "^2.3.0",
     "mini-css-extract-plugin": "^2.0.0",
     "normalize.css": "^8.0.1",

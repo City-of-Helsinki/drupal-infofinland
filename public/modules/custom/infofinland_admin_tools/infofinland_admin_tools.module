@@ -19,7 +19,7 @@ function infofinland_admin_tools_toolbar_alter(&$items) {
 }
 
 /**
- *  Implements hook_language_switch_links_alter().
+ * Implements hook_language_switch_links_alter().
  */
 function infofinland_admin_tools_language_switch_links_alter(array &$links) {
   $route_match = Drupal::routeMatch();
@@ -60,7 +60,7 @@ function infofinland_admin_tools_language_switch_links_alter(array &$links) {
       $entity_storage = \Drupal::entityTypeManager()->getStorage($entity->getEntityTypeId());
       $entity = $entity_storage->load($entity->id());
     }
-    catch(\Exception $e) {
+    catch (\Exception $e) {
       // Do nothing.
     }
   }

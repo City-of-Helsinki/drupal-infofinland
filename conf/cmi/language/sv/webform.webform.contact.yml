@@ -38,12 +38,12 @@ settings:
   confirmation_message: 'Your message has been sent.'
 handlers:
   email_confirmation:
-    label: 'Email confirmation'
+    label: E-postbekräftelse
     settings:
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'
   email_notification:
-    label: 'Email notification'
+    label: E-postmeddelande
     settings:
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'

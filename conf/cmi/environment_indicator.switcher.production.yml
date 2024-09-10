@@ -5,7 +5,7 @@ dependencies: {  }
 machine: production
 description: null
 name: Production
-weight: '1'
+weight: 1
 url: 'https://edit.infofinland.fi/'
 fg_color: '#000000'
 bg_color: '#ffffff'

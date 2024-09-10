@@ -8,7 +8,6 @@
 declare(strict_types=1);
 
 use Drupal\ckeditor5\Plugin\CKEditor5PluginDefinition;
-use Drupal\Core\Asset\AttachedAssetsInterface;
 use Drupal\Core\Language\LanguageInterface;
 
 /**

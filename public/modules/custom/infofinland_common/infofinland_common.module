@@ -5,26 +5,27 @@
  * Infofinland Common module.
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
+use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Entity\EntityForm;
-use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageInterface;
-use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+use Drupal\editor\Entity\Editor;
+use Drupal\media\Entity\Media;
+use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\ParagraphInterface;
-use Drupal\editor\Entity\Editor;
-use Drupal\node\Entity\Node;
+use Drupal\path_alias\PathAliasInterface;
 use Drupal\user\Entity\User;
-use Drupal\media\Entity\Media;
-use Drupal\Core\Database\Query\AlterableInterface;
-use Drupal\Core\Entity\RevisionLogInterface;
 
 /**
  * Implements hook_cron().
  */
-function infofinland_common_cron(){
+function infofinland_common_cron() {
   $last_run = \Drupal::state()->get('infofinland_common_orphan_paragraph_delete.last_run', 0);
   $time_now = \Drupal::time()->getRequestTime();
   $frequency = 86400;
@@ -50,7 +51,7 @@ function infofinland_common_form_alter(array &$form, FormStateInterface $form_st
   $form['color_palette']['#access'] = FALSE;
 
   if ($form_id === 'node_page_edit_form') {
-    $form['actions']['submit']['#submit'][] = 'redirectFunction';
+    $form['actions']['submit']['#submit'][] = '_infofinland_common_redirect_function';
   }
 
   if ($form_id === 'user_form' || $form_id === 'node_link_edit_form' || $form_id === 'node_link_form') {
@@ -64,11 +65,15 @@ function infofinland_common_form_alter(array &$form, FormStateInterface $form_st
     }
   }
 
-  // Limit the autocomplete widget on the menu link page to only landing pages and basic pages.
+  // Limit the autocomplete widget on the menu link page
+  // to only landing pages and basic pages.
   if ($form_id === 'menu_link_content_menu_link_content_form') {
-    $form['link']['widget'][0]['uri']['#selection_handler'] = "default:node";
+    $form['link']['widget'][0]['uri']['#selection_handler'] = 'default:node';
     $form['link']['widget'][0]['uri']['#selection_settings'] = [
-      'target_bundles' => ['landing_page' => 'landing_page', 'page' => 'page'], //etc
+      'target_bundles' => [
+        'landing_page' => 'landing_page',
+        'page' => 'page',
+      ],
     ];
   }
 }
@@ -76,7 +81,7 @@ function infofinland_common_form_alter(array &$form, FormStateInterface $form_st
 /**
  * Stay at node edit form after save.
  */
-function redirectFunction(array &$form, FormStateInterface $form_state) {
+function _infofinland_common_redirect_function(array &$form, FormStateInterface $form_state) {
   /** @var \Drupal\Core\Entity\EntityForm $form_object */
   $form_object = $form_state->getFormObject();
   if ($form_object instanceof EntityForm) {
@@ -93,7 +98,7 @@ function redirectFunction(array &$form, FormStateInterface $form_state) {
 /**
  * Implements hook_ENTITY_TYPE_update().
  */
-function infofinland_common_path_alias_update(Drupal\path_alias\PathAliasInterface $path_alias) {
+function infofinland_common_path_alias_update(PathAliasInterface $path_alias) {
   $path_alias_manager = \Drupal::entityTypeManager()->getStorage('path_alias');
   // Load translated path aliases.
   $alias_objects = $path_alias_manager->loadByProperties([
@@ -111,13 +116,11 @@ function infofinland_common_path_alias_update(Drupal\path_alias\PathAliasInterfa
 
 /**
  * Implements hook_preprocess_HOOK().
- *
- * @param $variables
  */
 function infofinland_common_preprocess_status_messages(&$variables) {
   if (isset($variables['message_list']['warning'])) {
     $status_messages = $variables['message_list']['warning'];
-    foreach($status_messages as $delta => $message) {
+    foreach ($status_messages as $message) {
       if (!is_string($message) && !$message instanceof Stringable) {
         continue;
       }
@@ -132,7 +135,8 @@ function infofinland_common_preprocess_status_messages(&$variables) {
 /**
  * Implements hook_entity_prepare_form_HOOK().
  *
- * Adding and removing municipality info paragraphs for municipality pages before form.
+ * Adding and removing municipality info paragraphs
+ * for municipality pages before form.
  */
 function infofinland_common_entity_prepare_form(EntityInterface $entity, $operation, FormStateInterface $form_state) {
   if ($entity->bundle() !== 'page') {
@@ -146,7 +150,8 @@ function infofinland_common_entity_prepare_form(EntityInterface $entity, $operat
   $national_page_ids = [];
   $existing_municipality_info_paragraph_ids = [];
 
-  // Get municipality liftup paragraphs that have a reference to this (municipality) page.
+  // Get municipality liftup paragraphs
+  // that have a reference to this (municipality) page.
   $drupal_db = \Drupal::database();
   $results = $drupal_db->select('paragraph__field_municipality_page', 'pfmp')
     ->fields('pfmp', ['entity_id'])
@@ -210,7 +215,7 @@ function infofinland_common_entity_prepare_form(EntityInterface $entity, $operat
 /**
  * Hide fields for node page form.
  */
-function _hide_form_fields(&$form) {
+function _infofinland_common_hide_form_fields(&$form) {
   $current_user = \Drupal::currentUser();
   $roles = $current_user->getRoles();
 
@@ -234,7 +239,7 @@ function _hide_form_fields(&$form) {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Media form alter.
  */
@@ -251,6 +256,9 @@ function infofinland_common_form_media_form_alter(&$form, FormStateInterface $fo
   }
 }
 
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
 function infofinland_common_inline_entity_form_entity_form_alter(&$form, &$form_state) {
   $current_user = \Drupal::currentUser();
   $roles = $current_user->getRoles();
@@ -263,7 +271,7 @@ function infofinland_common_inline_entity_form_entity_form_alter(&$form, &$form_
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Node page add form.
  */
@@ -278,39 +286,42 @@ function infofinland_common_form_node_page_form_alter(&$form, FormStateInterface
     $form['field_municipality_info']['#access'] = FALSE;
   }
 
-  _hide_form_fields($form);
+  _infofinland_common_hide_form_fields($form);
 }
 
 /**
- * Implements hook_form_alter().
- *
- * Node page edit form.
+ * Implements hook_form_FORM_ID_alter().
  */
 function infofinland_common_form_node_page_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id != 'node_page_edit_form') {
     return;
   }
-  $form['actions']['submit']['#submit'][] = 'redirectFunction';
+  $form['actions']['submit']['#submit'][] = '_infofinland_common_redirect_function';
   $node = $form_state->getFormObject()->getEntity();
-  _hide_form_fields($form);
+  _infofinland_common_hide_form_fields($form);
 
-  // If municipality is not set or there's no reference from national page, hide info paragraphs field.
-  if ($node->get('field_municipality_selection')->isEmpty() || $node->get('field_municipality_info')->isEmpty()) {
+  // If municipality is not set or there's no reference from national page,
+  // hide info paragraphs field.
+  if (
+    $node->get('field_municipality_selection')->isEmpty() ||
+    $node->get('field_municipality_info')->isEmpty()
+  ) {
     $form['field_municipality_info']['#access'] = FALSE;
   }
 
-  if ($node->id() !== null) {
+  if ($node->id() !== NULL) {
     if ($node->langcode->value === 'fi') {
       return;
     }
     $contentFi = $node->getTranslation('fi')->get('field_content')->referencedEntities();
     $contentCountFi = count($contentFi);
     $currentNode = $node->get('field_content')->referencedEntities();
-    $contentCountCurrent= count($currentNode);
+    $contentCountCurrent = count($currentNode);
     if ($contentCountCurrent !== $contentCountFi) {
       \Drupal::messenger()->addWarning('The current translation is not in sync with the Finnish one');
       return;
-    } else {
+    }
+    else {
       for ($x = 0; $x < $contentCountCurrent; $x++) {
         if ($currentNode[$x]->getType() !== $contentFi[$x]->getType()) {
           \Drupal::messenger()->addWarning('The current translation is not in sync with the Finnish one');
@@ -329,7 +340,7 @@ function infofinland_common_form_node_page_edit_form_alter(&$form, FormStateInte
 function infofinland_common_editor_js_settings_alter(array &$settings) {
   $content_language = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)->getId();
   $rtl_languages = ['fa', 'ar'];
-  if (in_array($content_language, $rtl_languages)){
+  if (in_array($content_language, $rtl_languages)) {
     foreach ($settings['editor']['formats'] as $name => $value) {
       $settings['editor']['formats'][$name]['editorSettings']['contentsLangDirection'] = 'rtl';
     }
@@ -350,7 +361,7 @@ function infofinland_common_page_attachments(array &$attachments) {
 
   $content_language = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
   $rtl_languages = ['fa', 'ar'];
-  if (in_array($content_language->getId(), $rtl_languages)){
+  if (in_array($content_language->getId(), $rtl_languages)) {
     $attachments['#attached']['library'][] = 'infofinland_common/infofinland_admin_rtl';
   }
 }
@@ -386,14 +397,14 @@ function infofinland_common_node_presave(Node $entity) {
       $entity->set('field_finnish_title', $entity->get('title')->getString());
     }
 
-    add_paragraphs_to_node_translations($entity);
+    _infofinland_common_add_paragraphs_to_node_translations($entity);
   }
 }
 
 /**
  * Custom function for adding paragraphs from finnish page node to translations.
  */
-function add_paragraphs_to_node_translations(Node $entity) {
+function _infofinland_common_add_paragraphs_to_node_translations(Node $entity): void {
   if ($entity->langcode->value !== 'fi' || is_null($entity->id())) {
     return;
   }
@@ -409,7 +420,11 @@ function add_paragraphs_to_node_translations(Node $entity) {
   $added_paragraphs = [];
   foreach ($field_content_new as $key => $new_row) {
     if (!in_array($new_row['target_id'], $old_ids)) {
-      $added_paragraphs[] = ['target' => $new_row['target_id'], 'delta' => $key, 'revision' => $new_row['target_revision_id']];
+      $added_paragraphs[] = [
+        'target' => $new_row['target_id'],
+        'delta' => $key,
+        'revision' => $new_row['target_revision_id'],
+      ];
     }
   }
 
@@ -439,8 +454,15 @@ function add_paragraphs_to_node_translations(Node $entity) {
         $duplicateParagraph->set('langcode', $lang);
         $duplicateParagraph->save();
 
-        $array = ['target_id' => $duplicateParagraph->id(), 'target_revision_id' => $duplicateParagraph->getRevisionId()];
-        $field_content_merged = array_merge(array_slice($translated_content, 0, $added_paragraph['delta']), [$array], array_slice($translated_content, $added_paragraph['delta']));
+        $array = [
+          'target_id' => $duplicateParagraph->id(),
+          'target_revision_id' => $duplicateParagraph->getRevisionId(),
+        ];
+        $field_content_merged = array_merge(
+          array_slice($translated_content, 0, $added_paragraph['delta']),
+          [$array],
+          array_slice($translated_content, $added_paragraph['delta'])
+        );
       }
     }
 
@@ -484,10 +506,9 @@ function infofinland_common_paragraph_presave(Paragraph $entity) {
   }
   $entity->set('field_municipality', ['target_id' => $municipality_tax_id]);
 
-  $alias_url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $nid);
+  $alias_url = \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $nid);
   $entity->set('field_municipality_page_url', $alias_url);
 }
-
 
 /**
  * Implements hook_ENTITY_TYPE_presave().
@@ -539,11 +560,6 @@ function infofinland_common_user_login_submit(&$form, FormStateInterface $form_s
 
 /**
  * Implements hook_ckeditor_css_alter().
- *
- * Injects our CSS sheets anytime CKEditor has loaded.
- *
- * @param array $css
- * @param $editor
  */
 function infofinland_common_ckeditor_css_alter(array &$css, Editor $editor) {
   if (!$editor->hasAssociatedFilterFormat()) {
@@ -564,7 +580,6 @@ function infofinland_common_ckeditor_css_alter(array &$css, Editor $editor) {
  * Implements hook_library_info_alter().
  *
  * Fix media entity browser styles.
- *
  */
 function infofinland_common_library_info_alter(&$libraries, $extension) {
   if ($extension == 'media_entity_browser' && isset($libraries['view'])) {
@@ -576,7 +591,6 @@ function infofinland_common_library_info_alter(&$libraries, $extension) {
  * Implements hook_entity_type_alter().
  *
  * Temp fix for this issue: https://www.drupal.org/project/drupal/issues/2955321
- *
  */
 function infofinland_common_entity_type_alter(array &$entity_types) {
   foreach ($entity_types as $entity_type) {
@@ -590,13 +604,10 @@ function infofinland_common_entity_type_alter(array &$entity_types) {
  * Implements hook_elasticsearch_connector_load_library_options_alter().
  */
 function infofinland_common_elasticsearch_connector_load_library_options_alter(&$options, &$context) {
-  /**
-   * Set cURL options to trust self-signed certificate.
-   *
-   * @fixme rather than disabling verification, should set CURLOPT_SSLCERT to correct value.
-   */
-    $options['curl'][CURLOPT_SSL_VERIFYPEER] = FALSE;
-    $options['curl'][CURLOPT_SSL_VERIFYHOST] = FALSE;
+  // Set cURL options to trust self-signed certificate.
+  // @todo instead of disabling verification, set CURLOPT_SSLCERT.
+  $options['curl'][CURLOPT_SSL_VERIFYPEER] = FALSE;
+  $options['curl'][CURLOPT_SSL_VERIFYHOST] = FALSE;
 }
 
 /**
@@ -609,7 +620,8 @@ function infofinland_common_preprocess_html(&$variables) {
 /**
  * Implements hook_query_TAG_alter().
  *
- * Orders entity reference query by length so autocomplete shows the exact match at the top.
+ * Orders entity reference query by length
+ * so autocomplete shows the exact match at the top.
  *
  * @see https://www.drupal.org/project/drupal/issues/3304175
  * @see \Drupal\Core\Entity\Plugin\EntityReferenceSelection\DefaultSelection::buildEntityQuery()
@@ -626,10 +638,10 @@ function infofinland_common_query_entity_reference_alter(AlterableInterface $que
     return;
   }
 
-  $has_title = false;
+  $has_title = FALSE;
   foreach ($conditions as $condition) {
     if (is_array($condition) && $condition['field'] === $title_field) {
-      $has_title = true;
+      $has_title = TRUE;
     }
   }
 

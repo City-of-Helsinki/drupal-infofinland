@@ -21,7 +21,7 @@ display:
         sid:
           separator: ', '
         in_draft:
-          label: Draft
+          label: مسودة
           separator: ', '
         created:
           label: الإنشاء
@@ -44,7 +44,7 @@ display:
         sid:
           separator: ', '
         in_draft:
-          label: Draft
+          label: مسودة
           separator: ', '
         sticky:
           label: Sticky
@@ -56,7 +56,7 @@ display:
           label: الإنشاء
           separator: ', '
         completed:
-          label: Completed
+          label: 'تم الإنهاء'
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -78,7 +78,7 @@ display:
         sid:
           separator: ', '
         in_draft:
-          label: Draft
+          label: مسودة
           separator: ', '
         sticky:
           label: Sticky
@@ -90,7 +90,7 @@ display:
           label: الإنشاء
           separator: ', '
         completed:
-          label: Completed
+          label: 'تم الإنهاء'
           separator: ', '
         remote_addr:
           label: 'IP address'
@@ -114,7 +114,7 @@ display:
         sid:
           separator: ', '
         in_draft:
-          label: Draft
+          label: مسودة
           separator: ', '
         sticky:
           label: Sticky
@@ -126,7 +126,7 @@ display:
           label: الإنشاء
           separator: ', '
         completed:
-          label: Completed
+          label: 'تم الإنهاء'
           separator: ', '
         remote_addr:
           label: 'IP address'

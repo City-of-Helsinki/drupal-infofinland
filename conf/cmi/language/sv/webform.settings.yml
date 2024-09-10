@@ -1,18 +1,20 @@
 settings:
-  default_form_close_message: 'Sorry… This form is closed to new submissions.'
+  default_form_close_message: 'Tyvärr... Detta formulär är stängt för nya bidrag.'
   default_submit_button_label: Submit
   default_reset_button_label: Återställ
   default_delete_button_label: Radera
-  default_wizard_prev_button_label: '< Previous'
-  default_wizard_next_button_label: 'Next >'
-  default_wizard_start_label: Start
-  default_wizard_confirmation_label: Complete
+  default_form_access_denied_message: 'Please login to access this form.'
+  default_wizard_prev_button_label: '< Föregående'
+  default_wizard_next_button_label: 'Nästa >'
+  default_wizard_start_label: Från
+  default_wizard_confirmation_label: Slutförd
   default_preview_next_button_label: Preview
-  default_preview_prev_button_label: '< Previous'
+  default_preview_prev_button_label: '< Föregående'
   default_preview_label: Preview
-  default_draft_button_label: 'Save Draft'
-  default_draft_saved_message: 'Submission saved. You may return to this form later and it will restore the current values.'
-  default_previous_submission_message: 'You have already submitted this webform. <a href="#">View your previous submission</a>.'
+  default_draft_button_label: 'Spara utkast'
+  default_draft_saved_message: 'Formulär sparat. Du kan återvända till detta formulär senare och fortsätta inmatningen.'
+  default_submission_access_denied_message: 'Please login to access this submission.'
+  default_previous_submission_message: 'Du har redan skickat in detta formulär. <a href="#">Se ditt tidigare inlägg</a>.'
   dialog_options:
     narrow:
       title: Narrow
@@ -23,3 +25,5 @@ settings:
 element:
   default_more_title: More
   default_section_title_tag: h2
+file:
+  file_private_redirect_message: 'Please login to access the uploaded file.'

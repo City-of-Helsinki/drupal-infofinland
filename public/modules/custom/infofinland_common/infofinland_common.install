@@ -8,7 +8,7 @@
 declare(strict_types=1);
 
 /**
- * handle filter token
+ * Handle filter token.
  */
 function infofinland_common_update_9001(): void {
   // Remove filter token from full_html format.
@@ -16,7 +16,7 @@ function infofinland_common_update_9001(): void {
     ->getEditable('filter.format.full_html');
   $raw_data = $full_format->getRawData();
 
-  if (($key = array_search('token_filter', $raw_data['dependencies']['module'])) !== false) {
+  if (($key = array_search('token_filter', $raw_data['dependencies']['module'])) !== FALSE) {
     unset($raw_data['dependencies']['module'][$key]);
   }
   if (array_key_exists('token_filter', $raw_data['filters'])) {
@@ -27,7 +27,7 @@ function infofinland_common_update_9001(): void {
 }
 
 /**
- * Disable modules
+ * Disable modules.
  */
 function infofinland_common_update_9002(): void {
   /** @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler */
@@ -80,11 +80,14 @@ function infofinland_common_update_9002(): void {
       $moduleInstaller->install(['phpass']);
     }
   }
-  catch(\Exception $e) {
+  catch (\Exception $e) {
     echo $e->getMessage();
   }
 }
 
+/**
+ * Implements hook_update_N().
+ */
 function infofinland_common_update_9003(): void {
   \Drupal::service('database')->delete('key_value')->condition('name', 'config_replace')->execute();
   \Drupal::service('database')->delete('key_value')->condition('name', 'hdbt_component_library')->execute();
@@ -109,7 +112,7 @@ function infofinland_common_update_9004(): void {
     ->execute();
 }
 
-/*
+/**
  * Remove gdpr log file if exists.
  */
 function infofinland_common_update_9005(): void {
