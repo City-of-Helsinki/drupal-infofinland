@@ -4,9 +4,6 @@
   "description": "Webpack configuration for Infofinland theme",
   "author": "Druid",
   "license": "MIT",
-  "engines": {
-    "node": "20"
-  },
   "scripts": {
     "dev": "webpack --progress --mode=development --config  webpack.config.js --watch",
     "build": "webpack --progress --mode=production --config webpack.config.js",
