@@ -31,7 +31,7 @@ class OAuth2TokenController extends Oauth2Token {
 
           // Override request body.
           $request = $request->withParsedBody(array_merge($body, [
-            'client_id' => $defaultClient->uuid(),
+            'client_id' => $defaultClient->getClientId(),
           ]));
         }
       }
