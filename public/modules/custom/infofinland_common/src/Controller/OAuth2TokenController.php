@@ -19,6 +19,7 @@ class OAuth2TokenController extends Oauth2Token {
       $body = $request->getParsedBody();
 
       if (isset($body['client_id'])) {
+        /** @var \Drupal\consumers\Entity\ConsumerInterface[] $defaultClients */
         $defaultClients = $this
           ->entityTypeManager()
           ->getStorage('consumer')
