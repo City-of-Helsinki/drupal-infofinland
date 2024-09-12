@@ -19,6 +19,7 @@ class OAuth2TokenController extends Oauth2Token {
       $body = $request->getParsedBody();
 
       if (isset($body['client_id'])) {
+        /** @var \Drupal\consumers\Entity\ConsumerInterface[] $defaultClients */
         $defaultClients = $this
           ->entityTypeManager()
           ->getStorage('consumer')
@@ -31,7 +32,7 @@ class OAuth2TokenController extends Oauth2Token {
 
           // Override request body.
           $request = $request->withParsedBody(array_merge($body, [
-            'client_id' => $defaultClient->uuid(),
+            'client_id' => $defaultClient->getClientId(),
           ]));
         }
       }
