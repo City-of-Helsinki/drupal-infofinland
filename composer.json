@@ -154,7 +154,7 @@
                 "Get same results on different request": "https://www.drupal.org/files/issues/2024-08-06/subrequests-3049395-change-request-type.patch"
             },
             "drupal/decoupled_router": {
-                "Fixing redirect multilanguage 404": "https://www.drupal.org/files/issues/2024-08-05/decouple_router-3111456-resolve-language-issue-63--get-translation-re-rolled-and-good-redirect.patch"
+                "Fixing redirect multilanguage 404 (https://drupal.org/i/3111456)": "https://www.drupal.org/files/issues/2024-08-05/decouple_router-3111456-resolve-language-issue-63--get-translation-re-rolled-and-good-redirect.patch"
             },
             "drupal/redirect": {
                 "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2024-08-11/redirect--2024-08-11--3057250-79.patch",
