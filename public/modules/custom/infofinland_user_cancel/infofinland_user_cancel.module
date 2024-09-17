@@ -3,85 +3,12 @@
 /**
  * @file
  * Helper functions related to deleting user accounts.
- *
- * This is in a separate module so it can be turned off easier
- * and we can reassign module weights / run order if necessary.
  */
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\user\UserInterface;
-
-/**
- * Implements hook_module_implements_alter().
- */
-function infofinland_user_cancel_module_implements_alter(&$implementations, $hook) : void {
-  // Move infofinland_user_cancel_user_cancel() implementation to the top of the
-  // list, so this is always run first before any other alter hooks, more
-  // specifically before 'node_user_cancel()' which causes issues when mass
-  // reassigning node revisions.
-  if ($hook === 'user_cancel') {
-    $group = $implementations['infofinland_user_cancel'];
-    $implementations = ['infofinland_user_cancel' => $group] + $implementations;
-  }
-}
-
-/**
- * Implements hook_user_cancel().
- *
- * This has to run before node module's user_cancel hook.
- */
-function infofinland_user_cancel_user_cancel($edit, UserInterface $account, $method) {
-  switch ($method) {
-    case 'user_cancel_reassign':
-      // Anonymize all the nodes for this old account.
-      _infofinland_user_cancel_reassign_nodes_to_anonymous($account);
-      break;
-  }
-}
-
-/**
- * Reassigns all node revisions by $account to by owned by anonymous (uid 0).
- *
- * Prevents crashes and timeouts when revisions are handled by node module hook.
- *
- * @param \Drupal\user\UserInterface $account
- *   The user.
- */
-function _infofinland_user_cancel_reassign_nodes_to_anonymous(UserInterface $account): void {
-
-  $database = \Drupal::database();
-  $tables = [
-    'node_field_data' => 'uid',
-    'node_field_revision' => 'uid',
-    'node_revision' => 'revision_uid',
-  ];
-
-  $user_id = $account->id();
-  foreach ($tables as $table => $uid_field) {
-    $matches = $database->select($table)
-      ->condition($uid_field, $user_id)
-      ->countQuery()
-      ->execute()
-      ->fetchField();
-
-    if ((int) $matches < 1) {
-      continue;
-    }
-
-    $database->update($table)
-      ->fields([$uid_field => 0])
-      ->condition($uid_field, $user_id)
-      ->execute();
-    \Drupal::logger('infofinland_user_cancel')->notice(t('Set @count rows from @table to 0 from @uid',
-      [
-        '@count' => $matches,
-        '@table' => $table,
-        '@uid' => $user_id,
-      ]
-    ));
-  }
-}
 
 /**
  * Implements hook_entity_operation().
