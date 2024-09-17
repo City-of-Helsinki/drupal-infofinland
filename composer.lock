@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "438bb172d220f95cd1b32bd743287f38",
+    "content-hash": "0b1c6dacf8033671bf0497848f08cb3a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2971,29 +2971,30 @@
         },
         {
             "name": "drupal/decoupled_router",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/decoupled_router.git",
-                "reference": "2.0.4"
+                "reference": "2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/decoupled_router-2.0.4.zip",
-                "reference": "2.0.4",
-                "shasum": "8dacb4460c93a3fa9b034516a7e1caaf254be76b"
+                "url": "https://ftp.drupal.org/files/projects/decoupled_router-2.0.5.zip",
+                "reference": "2.0.5",
+                "shasum": "0899f6331358aac1476e72fc60a8f03d5654c654"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^9.5 || ^10 || ^11",
+                "php": ">=8.1"
             },
             "require-dev": {
-                "drupal/redirect": "^1.8"
+                "drupal/redirect": "dev-1.x"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.4",
-                    "datestamp": "1669803945",
+                    "version": "2.0.5",
+                    "datestamp": "1720638599",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4805,12 +4806,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config.git",
-                "reference": "0cc66ba6cb591347232d32e1f258cea413df53f1"
+                "reference": "ed720da0c6ae6db8879f5fd5407d6a2d17857e3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/0cc66ba6cb591347232d32e1f258cea413df53f1",
-                "reference": "0cc66ba6cb591347232d32e1f258cea413df53f1",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/ed720da0c6ae6db8879f5fd5407d6a2d17857e3e",
+                "reference": "ed720da0c6ae6db8879f5fd5407d6a2d17857e3e",
                 "shasum": ""
             },
             "require": {
@@ -4931,7 +4932,7 @@
                 "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/UHF-10079",
                 "issues": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/issues"
             },
-            "time": "2024-09-12T09:13:39+00:00"
+            "time": "2024-09-16T14:09:09+00:00"
         },
         {
             "name": "drupal/helfi_tpr",
