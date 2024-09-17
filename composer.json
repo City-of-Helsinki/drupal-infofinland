@@ -138,15 +138,9 @@
                 "hasTranslationChanges on multiple languages outside of saving process is costly (https://drupal.org/i/3007031)": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff",
                 "Deleting a translation leaves behind orphaned revisions (https://drupal.org/i/2815779)": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch",
                 "PoStreamReader::readLine() throws an error on module install (https://drupal.org/i/3301239)": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
-                "[#UHF-7008] Add multilingual support for caching basefield definitions (https://drupal.org/i/3114824)": "https://www.drupal.org/files/issues/2020-02-20/3114824_2.patch",
-                "[#UHF-7008] Core localization file download URL is wrong (https://drupal.org/i/3022876)": "https://git.drupalcode.org/project/drupal/-/commit/40a96136b2dfe4322338508dffa636f6cb407900.patch",
                 "Cannot save or publish originating node or translations (https://drupal.org/i/3285657)": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
             },
-            "drupal/diff": {
-                "Revision overview form problem (https://www.drupal.org/i/3390329)": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/05989cc82b2817de994ad4e9289ccb777f71f23f/patches/diff_8.x_1.3_revision_overview_form.patch"
-            },
             "drupal/paragraphs": {
-                "Paragraphs asymmetric translation support (https://drupal.org/i/2904705#comment-13836790)": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
                 "[#UHF-2059] Enhancements for the Admin UI": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/fdccb32397cc6fa19b4d0077b21a2b18aa6be297/patches/helfi_customizations_for_paragraphs_widget_8.x-1.12.patch"
             },
             "drupal/publication_date": {
