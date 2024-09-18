@@ -11,7 +11,7 @@ production | main | @main | https://infofinland.fi |  
 
 ## Instance specific features
 
-[The Infofinland frontend](https://github.com/City-of-Helsinki/infofinland-ui/) is built using Next.js. Because of this, the `helfi_platform_config` module isn't enabled. The reason is that the Next.js Drupal module has some dependencies that conflict with `helfi_platform_config`. To work around this, a special [`infofinland_dummy` module](./patches/helfi_platform_config/composer.json) is used, which replaces problematic drupal modules. This dummy module allows the compatible parts of `helfi_platform_config` to be used without causing issues.
+[The Infofinland frontend](https://github.com/City-of-Helsinki/infofinland-ui/) is built using Next.js. Some Next.js drupal modules conflict with `helfi_platform_config`. To work around this, a special [`infofinland_dummy` module](./patches/helfi_platform_config/composer.json) is used, which replaces problematic modules. This module allows the compatible parts of `helfi_platform_config` to be used.
 
 ## Requirements
 
