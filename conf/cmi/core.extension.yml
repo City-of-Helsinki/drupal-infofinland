@@ -45,6 +45,7 @@ module:
   helfi_azure_fs: 0
   helfi_ckeditor: 0
   helfi_platform_config: 0
+  helfi_user_roles: 0
   helfi_users: 0
   image: 0
   image_style_quality: 0
