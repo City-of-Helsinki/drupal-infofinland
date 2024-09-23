@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb936651582bf3f1fc9a8eb831b5c182",
+    "content-hash": "4ccc37814800b7ea56e3ea4bedbfb5b2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4802,16 +4802,16 @@
         },
         {
             "name": "drupal/helfi_platform_config",
-            "version": "dev-UHF-10079",
+            "version": "4.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config.git",
-                "reference": "1246701a062cd42a1c3996d92fc185033c57bb11"
+                "reference": "3a3d6c22a312a1f126b8aa97cc4de137b541955b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/1246701a062cd42a1c3996d92fc185033c57bb11",
-                "reference": "1246701a062cd42a1c3996d92fc185033c57bb11",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/3a3d6c22a312a1f126b8aa97cc4de137b541955b",
+                "reference": "3a3d6c22a312a1f126b8aa97cc4de137b541955b",
                 "shasum": ""
             },
             "require": {
@@ -4929,10 +4929,10 @@
             ],
             "description": "HELfi platform config",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/UHF-10079",
+                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/4.6.5",
                 "issues": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/issues"
             },
-            "time": "2024-09-18T10:02:28+00:00"
+            "time": "2024-09-20T10:40:37+00:00"
         },
         {
             "name": "drupal/helfi_tpr",
@@ -21915,7 +21915,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/helfi_drupal_tools": 20,
-        "drupal/helfi_platform_config": 20,
         "drupal/inline_entity_form": 5,
         "drupal/ultimate_cron": 15,
         "drupal/yoast_seo": 15

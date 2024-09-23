@@ -23,7 +23,7 @@
         "drupal/hdbt": "^5.6.24",
         "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-main",
-        "drupal/helfi_platform_config": "dev-UHF-10079",
+        "drupal/helfi_platform_config": "^4.6.5",
         "drupal/infofinland_dummy": "*",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
