@@ -44,6 +44,9 @@ module:
   helfi_api_base: 0
   helfi_azure_fs: 0
   helfi_ckeditor: 0
+  helfi_platform_config: 0
+  helfi_user_roles: 0
+  helfi_users: 0
   image: 0
   image_style_quality: 0
   infofinland_admin_tools: 0
@@ -65,6 +68,7 @@ module:
   media_entity_browser: 0
   media_entity_soundcloud: 0
   media_library: 0
+  menu_block_current_language: 0
   menu_link_attributes: 0
   menu_link_content: 0
   menu_ui: 0
