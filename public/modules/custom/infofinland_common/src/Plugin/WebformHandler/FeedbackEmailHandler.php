@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\infofinland_common\Plugin\WebformHandler;
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 use Drupal\webform\Plugin\WebformHandlerBase;
 use Drupal\webform\WebformSubmissionInterface;
@@ -18,7 +19,7 @@ use Drupal\webform\WebformSubmissionInterface;
  *   description = @Translation("Adds feedback email field to submission."),
  *   cardinality = \Drupal\webform\Plugin\WebformHandlerInterface::CARDINALITY_SINGLE,
  *   results = \Drupal\webform\Plugin\WebformHandlerInterface::RESULTS_PROCESSED,
- *   submission = \Drupal\webform\Plugin\WebformHandlerInterface::SUBMISSION_REQUIRED,
+ *   submission = \Drupal\webform\Plugin\WebformHandlerInterface::SUBMISSION_OPTIONAL,
  * )
  */
 class FeedbackEmailHandler extends WebformHandlerBase {
@@ -35,10 +36,9 @@ class FeedbackEmailHandler extends WebformHandlerBase {
   /**
    * {@inheritdoc}
    */
-  public function preSave(WebformSubmissionInterface $webform_submission) : void {
+  public function submitForm(array &$form, FormStateInterface $form_state, WebformSubmissionInterface $webform_submission) {
     $webform_submission->setElementData('feedback_email', $this->getDefaultFeedbackEmail());
 
-    // Override default email with node field.
     if ($id = $webform_submission->getElementData('uuid')) {
       $node = $this->entityTypeManager
         ->getStorage('node')
@@ -57,6 +57,7 @@ class FeedbackEmailHandler extends WebformHandlerBase {
       }
     }
 
+    parent::submitForm($form, $form_state, $webform_submission);
   }
 
   /**
