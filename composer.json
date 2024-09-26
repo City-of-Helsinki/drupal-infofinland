@@ -9,37 +9,22 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6.7",
-        "drupal/admin_toolbar": "^3.0",
-        "drupal/allowed_formats": "^2.0",
-        "drupal/ckeditor5_paste_filter": "^1.0",
         "drupal/ckeditor_bidi": "^4.0",
         "drupal/color_field": "^3.0",
         "drupal/config_filter": "^2.0",
-        "drupal/config_ignore": "^3.0",
-        "drupal/config_rewrite": "^1.4",
         "drupal/config_update": "^2.0",
         "drupal/consumer_image_styles": "^4.0",
         "drupal/consumers": "^1.12",
         "drupal/core": "^10.3",
         "drupal/core-composer-scaffold": "^10.3",
-        "drupal/crop": "^2.2",
-        "drupal/default_content": "2.0.0-alpha2",
-        "drupal/diff": "^1.0",
-        "drupal/elasticsearch_connector": "^7.0.0@alpha",
-        "drupal/entity_browser": "^2.8",
-        "drupal/entity_usage": "^2.0@beta",
         "drupal/environment_indicator": "^4.0",
-        "drupal/eu_cookie_compliance": "^1.19",
         "drupal/features": "^3.12",
-        "drupal/field_group": "^3.2",
-        "drupal/focal_point": "^2.0",
         "drupal/gin": "^3.0",
-        "drupal/hal": "^2.0",
         "drupal/hdbt": "^5.6.24",
-        "drupal/helfi_api_base": "^2.7",
         "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-main",
-        "drupal/image_style_quality": "^1.4",
+        "drupal/helfi_platform_config": "^4.6.5",
+        "drupal/infofinland_dummy": "*",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.19",
         "drupal/jsonapi_menu_items": "^1.2",
@@ -48,28 +33,14 @@
         "drupal/mailsystem": "^4.3",
         "drupal/media_entity_browser": "^2.0",
         "drupal/media_entity_soundcloud": "^3.1",
-        "drupal/menu_link_attributes": "^1.2",
-        "drupal/metatag": "^2.0",
         "drupal/migrate_source_csv": "^3.4",
         "drupal/next": "^1.4",
         "drupal/obfuscate": "^2.0",
-        "drupal/paragraphs": "^1.13",
-        "drupal/paragraphs_asymmetric_translation_widgets": "^1.0",
         "drupal/password_policy": "^4.0",
-        "drupal/pathauto": "^1.9",
         "drupal/queue_ui": "^3.0",
-        "drupal/raven": "^4.0",
-        "drupal/readonly_field_widget": "^1.4",
-        "drupal/redirect": "^1.8",
         "drupal/redis": "^1.5",
         "drupal/restui": "^1.21",
-        "drupal/role_delegation": "^1.2",
-        "drupal/scheduler": "^1.4",
-        "drupal/search_api": "^1.3",
-        "drupal/select2": "^1.13",
-        "drupal/simple_sitemap": "^4.0",
         "drupal/smtp": "^1.0",
-        "drupal/social_media": "^2.0",
         "drupal/subrequests": "^3.0",
         "drupal/token_filter": "^2.0",
         "drupal/ultimate_cron": "^2.0@alpha",
@@ -109,7 +80,8 @@
             "oomphinc/composer-installers-extender": true
         },
         "audit": {
-            "abandoned": "report"
+            "abandoned": "report",
+            "ignore": ["GHSA-mg8j-w93w-xjgc"]
         }
     },
     "extra": {
@@ -136,19 +108,13 @@
                 "hasTranslationChanges on multiple languages outside of saving process is costly (https://drupal.org/i/3007031)": "https://git.drupalcode.org/project/drupal/-/merge_requests/197.diff",
                 "Deleting a translation leaves behind orphaned revisions (https://drupal.org/i/2815779)": "https://www.drupal.org/files/issues/2019-11-25/8x9x-2815779-19.patch",
                 "PoStreamReader::readLine() throws an error on module install (https://drupal.org/i/3301239)": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
-                "[#UHF-7008] Add multilingual support for caching basefield definitions (https://drupal.org/i/3114824)": "https://www.drupal.org/files/issues/2020-02-20/3114824_2.patch",
-                "[#UHF-7008] Core localization file download URL is wrong (https://drupal.org/i/3022876)": "https://git.drupalcode.org/project/drupal/-/commit/40a96136b2dfe4322338508dffa636f6cb407900.patch",
                 "Cannot save or publish originating node or translations (https://drupal.org/i/3285657)": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
             },
-            "drupal/diff": {
-                "Revision overview form problem (https://www.drupal.org/i/3390329)": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/05989cc82b2817de994ad4e9289ccb777f71f23f/patches/diff_8.x_1.3_revision_overview_form.patch"
-            },
             "drupal/paragraphs": {
-                "Paragraphs asymmetric translation support (https://drupal.org/i/2904705#comment-13836790)": "https://www.drupal.org/files/issues/2023-09-27/paragraphs_support_asym_translations-2904705-141.patch",
                 "[#UHF-2059] Enhancements for the Admin UI": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/fdccb32397cc6fa19b4d0077b21a2b18aa6be297/patches/helfi_customizations_for_paragraphs_widget_8.x-1.12.patch"
             },
-            "drupal/publication_date": {
-                "[#UHF-7721] Fixed node preview when publication date is not set. (https://drupal.org/i/3074373)": "https://www.drupal.org/files/issues/2022-12-20/publication_date_is_required_for_completing_the_form-3074373-11.patch"
+	    "drupal/subrequests": {
+		"Get same results on different request (https://drupal.org/i/3049395)": "https://www.drupal.org/files/issues/2024-08-06/subrequests-3049395-change-request-type.patch"
             },
             "drupal/subrequests": {
                 "Get same results on different request": "https://www.drupal.org/files/issues/2024-08-06/subrequests-3049395-change-request-type.patch"
@@ -191,6 +157,10 @@
         }
     },
     "repositories": [
+        {
+            "type": "path",
+            "url": "./patches/helfi_platform_config"
+        },
         {
             "type": "composer",
             "url": "https://repository.drupal.hel.ninja"

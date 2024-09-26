@@ -1,0 +1,8 @@
+{
+  "name": "drupal/infofinland_dummy",
+  "description": "Circumvents dependency issues when installing helfi_platform_config.",
+  "type": "drupal-module",
+  "replace": {
+    "drupal/external_entities": "*"
+  }
+}

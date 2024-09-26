@@ -1,13 +1,17 @@
-# InfoFinland Drupal 9 site
+# InfoFinland Drupal site
 
-Drupal 9 website for the InfoFinland project.
+Drupal website for the InfoFinland project.
 
 ## Environments
 
-Env | Branch | Drush alias | URL | Notes
---- | ------ | ----------- | --- | -----
+Env | Branch | Drush alias | URL                                   | Notes
+--- | ------ | ----------- |---------------------------------------| -----
 development | * | - | https://drupal-infofinland.docker.so/ | Local development environment
-production | main | @main | TBD | Not implemented yet
+production | main | @main | https://infofinland.fi |  
+
+## Instance specific features
+
+[The Infofinland frontend](https://github.com/City-of-Helsinki/infofinland-ui/) is built using Next.js. Some Next.js drupal modules conflict with `helfi_platform_config`. To work around this, a special [`infofinland_dummy` module](./patches/helfi_platform_config/composer.json) is used, which replaces problematic modules. This module allows the compatible parts of `helfi_platform_config` to be used.
 
 ## Requirements
 
@@ -235,12 +239,12 @@ Check for coding style violantions by running `$ make lint-drupal`
 ### Gitflow workflow
 The Gitflow workflow is followed, with the following conventions:
 
-**Main branch**: `develop`. All feature branches are created from `develop` and merged back with pull requests. All new code must be added with pull requests, not committed directly.
+**Main branch**: `dev`. All feature branches are created from `dev` and merged back with pull requests. All new code must be added with pull requests, not committed directly.
 
 **Production branch:** `main`. Code running in production. Code is merged to `main` with release and hotfix branches.
 
-**Feature branches**: For example, `feature/IFU-000-add-content-type`, Use Jira ticket number in the branch name. Always created from and merged back to `develop` with pull requests after code review and testing.
+**Feature branches**: For example, `feature/IFU-000-add-content-type`, Use Jira ticket number in the branch name. Always created from and merged back to `dev` with pull requests after code review and testing.
 
 **Release branches**: Code for future and currently developed releases. Should include the version number, for example: `1.1.0`
 
-**Hotfix branches**: Branches for small fixes to production code. Should include the word hotfix, for example: `IFU-hotfix-drupal-updates`. Remember to also merge these back to `develop`.
+**Hotfix branches**: Branches for small fixes to production code. Should include the word hotfix, for example: `IFU-hotfix-drupal-updates`. Remember to also merge these back to `dev`.
