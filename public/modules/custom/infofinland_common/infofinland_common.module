@@ -21,6 +21,8 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\path_alias\PathAliasInterface;
 use Drupal\user\Entity\User;
+use Drupal\webform\Plugin\WebformHandlerInterface;
+use Drupal\webform\WebformSubmissionInterface;
 
 /**
  * Implements hook_cron().
@@ -655,5 +657,32 @@ function infofinland_common_query_entity_reference_alter(AlterableInterface $que
   // Prevent a mysql error.
   if (!empty($query->getGroupBy())) {
     $query->groupBy('title_length');
+  }
+}
+
+/**
+ * Read the feedback-email from content and set as email destination.
+ */
+function infofinland_common_webform_handler_invoke_pre_save_alter(WebformHandlerInterface $handler, array &$args) {
+  if (!$args[1] || !$args[1] instanceof WebformSubmissionInterface) {
+    return;
+  }
+  $submission = &$args[1];
+
+  if ($id = $submission->getElementData('uuid')) {
+    $node = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties([
+        'uuid' => $id,
+      ]);
+    $node = reset($node);
+
+    if (
+      $node instanceof \Drupal\node\NodeInterface &&
+      $node->hasField('field_feedback_email') &&
+      !$node->get('field_feedback_email')->isEmpty()
+    ) {
+      $submission->setElementData('feedback_email', $node->get('field_feedback_email')->getString());
+    }
   }
 }
