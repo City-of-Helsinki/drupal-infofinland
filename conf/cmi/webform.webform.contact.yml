@@ -183,7 +183,7 @@ settings:
   entity_limit_user_interval: null
   purge: completed
   purge_days: 180
-  results_disabled: true
+  results_disabled: false
   results_disabled_ignore: false
   results_customize: false
   token_view: false
@@ -312,4 +312,14 @@ handlers:
       theme_name: ''
       parameters: {  }
       debug: false
+  feedback_email:
+    id: infofinland_feedback_email
+    handler_id: feedback_email
+    label: 'Feedback email'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings:
+      default_email: infofinland.palaute@hel.fi
 variants: {  }
