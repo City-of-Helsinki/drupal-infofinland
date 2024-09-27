@@ -2,8 +2,6 @@ uuid: ab2de020-512a-487f-86d1-43b16fa022cb
 langcode: en
 status: open
 dependencies:
-  module:
-    - infofinland_common
   enforced:
     module:
       - webform
@@ -17,7 +15,7 @@ template: false
 archive: false
 id: infofinland_contact
 title: 'Infofinland Contact'
-description: 'Basic email contact webform.'
+description: '<p>Basic email contact webform.</p>'
 categories: {  }
 elements: |-
   name:
@@ -183,7 +181,7 @@ settings:
   entity_limit_user_interval: null
   purge: completed
   purge_days: 180
-  results_disabled: false
+  results_disabled: true
   results_disabled_ignore: false
   results_customize: false
   token_view: false
