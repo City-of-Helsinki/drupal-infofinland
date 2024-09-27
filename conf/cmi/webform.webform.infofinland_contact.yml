@@ -2,6 +2,8 @@ uuid: ab2de020-512a-487f-86d1-43b16fa022cb
 langcode: en
 status: open
 dependencies:
+  module:
+    - infofinland_common
   enforced:
     module:
       - webform
@@ -278,7 +280,7 @@ handlers:
     handler_id: email_notification
     label: 'Email notification'
     notes: ''
-    status: false
+    status: true
     conditions: {  }
     weight: -48
     settings:
@@ -310,4 +312,14 @@ handlers:
       theme_name: ''
       parameters: {  }
       debug: false
+  feedback_email:
+    id: infofinland_feedback_email
+    handler_id: feedback_email
+    label: 'Feedback email'
+    notes: ''
+    status: true
+    conditions: { }
+    weight: -50
+    settings:
+      default_email: infofinland.palaute@hel.fi
 variants: {  }
