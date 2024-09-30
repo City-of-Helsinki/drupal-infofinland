@@ -18,7 +18,7 @@ use Drupal\webform\WebformSubmissionInterface;
  *   description = @Translation("Adds feedback email field to submission."),
  *   cardinality = \Drupal\webform\Plugin\WebformHandlerInterface::CARDINALITY_SINGLE,
  *   results = \Drupal\webform\Plugin\WebformHandlerInterface::RESULTS_PROCESSED,
- *   submission = \Drupal\webform\Plugin\WebformHandlerInterface::SUBMISSION_REQUIRED,
+ *   submission = \Drupal\webform\Plugin\WebformHandlerInterface::SUBMISSION_OPTIONAL,
  * )
  */
 class FeedbackEmailHandler extends WebformHandlerBase {
@@ -47,7 +47,6 @@ class FeedbackEmailHandler extends WebformHandlerBase {
         ]);
 
       $node = reset($node);
-
       if (
         $node instanceof NodeInterface &&
         $node->hasField('field_feedback_email') &&
@@ -56,7 +55,6 @@ class FeedbackEmailHandler extends WebformHandlerBase {
         $webform_submission->setElementData('feedback_email', $node->get('field_feedback_email')->getString());
       }
     }
-
   }
 
   /**

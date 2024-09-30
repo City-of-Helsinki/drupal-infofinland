@@ -21,6 +21,8 @@ use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\paragraphs\ParagraphInterface;
 use Drupal\path_alias\PathAliasInterface;
 use Drupal\user\Entity\User;
+use Drupal\webform\Plugin\WebformHandlerInterface;
+use Drupal\webform\WebformSubmissionInterface;
 
 /**
  * Implements hook_cron().

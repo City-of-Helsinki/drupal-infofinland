@@ -15,7 +15,7 @@ class FeedbackFormTest extends ExistingSiteTestBase {
    */
   public function testFeedbackEmail() {
     $webform = Webform::load('contact');
-    $handler =  $webform->getHandler('feedback_email');
+    $handler = $webform->getHandler('feedback_email');
 
     // Feedback email handler must be enabled.
     $this->assertTrue($handler->isEnabled());

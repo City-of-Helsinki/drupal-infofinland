@@ -121,3 +121,14 @@ function infofinland_common_update_9005(): void {
     unlink($logFilePath);
   }
 }
+
+/**
+ * Remove webform submissions from database;
+ */
+function infofinland_common_update_9006(): void {
+  $storage_handler = \Drupal::entityTypeManager()
+    ->getStorage('webform_submission');
+
+  $ids = $storage_handler->loadMultiple();
+  $storage_handler->delete($ids);
+}
