@@ -399,8 +399,7 @@ function infofinland_common_node_presave(Node $entity) {
       $entity->set('field_finnish_title', $entity->get('title')->getString());
     }
 
-    // @fixme disabled paragraph duplication for now, runs out of memory on pages with many paragraphs if enabled.
-    // _infofinland_common_add_paragraphs_to_node_translations($entity);
+    _infofinland_common_add_paragraphs_to_node_translations($entity);
   }
 }
 
