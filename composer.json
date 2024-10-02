@@ -113,9 +113,6 @@
             "drupal/paragraphs": {
                 "[#UHF-2059] Enhancements for the Admin UI": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/fdccb32397cc6fa19b4d0077b21a2b18aa6be297/patches/helfi_customizations_for_paragraphs_widget_8.x-1.12.patch"
             },
-	    "drupal/subrequests": {
-		"Get same results on different request (https://drupal.org/i/3049395)": "https://www.drupal.org/files/issues/2024-08-06/subrequests-3049395-change-request-type.patch"
-            },
             "drupal/subrequests": {
                 "Get same results on different request": "https://www.drupal.org/files/issues/2024-08-06/subrequests-3049395-change-request-type.patch"
             },
@@ -125,6 +122,9 @@
             "drupal/redirect": {
                 "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2024-08-11/redirect--2024-08-11--3057250-79.patch",
                 "Redirection issue when interface language is different from content language (https://drupal.org/i/2991423)": "https://www.drupal.org/files/issues/2020-06-01/redirect-interface_language_different_from_content_language_2991423-13.patch"
+            },
+            "drupal/next": {
+                "Fix 500 error when submitting contact form and DB saving has been disabled, to be removed when drupal/next:2.0 is updated": "./patches/webforms.patch"
             }
         },
         "installer-types": ["npm-asset"],
