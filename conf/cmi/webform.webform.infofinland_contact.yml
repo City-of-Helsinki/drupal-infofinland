@@ -17,7 +17,7 @@ template: false
 archive: false
 id: infofinland_contact
 title: 'Infofinland Contact'
-description: 'Basic email contact webform.'
+description: '<p>Basic email contact webform.</p>'
 categories: {  }
 elements: |-
   name:
@@ -183,7 +183,7 @@ settings:
   entity_limit_user_interval: null
   purge: completed
   purge_days: 180
-  results_disabled: false
+  results_disabled: true
   results_disabled_ignore: false
   results_customize: false
   token_view: false
@@ -318,7 +318,7 @@ handlers:
     label: 'Feedback email'
     notes: ''
     status: true
-    conditions: {  }
+    conditions: { }
     weight: -50
     settings:
       default_email: infofinland.palaute@hel.fi
