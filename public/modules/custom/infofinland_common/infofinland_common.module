@@ -10,19 +10,16 @@ declare(strict_types=1);
 use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Url;
 use Drupal\editor\Entity\Editor;
 use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
-use Drupal\paragraphs\ParagraphInterface;
 use Drupal\path_alias\PathAliasInterface;
 use Drupal\user\Entity\User;
-use Drupal\webform\Plugin\WebformHandlerInterface;
-use Drupal\webform\WebformSubmissionInterface;
 
 /**
  * Implements hook_cron().
@@ -405,9 +402,15 @@ function infofinland_common_node_presave(Node $entity) {
 
 /**
  * Custom function for adding paragraphs from finnish page node to translations.
+ *
+ * #UHF-10742: This feature caused timeout and is moved to queue plugin.
  */
-function _infofinland_common_add_paragraphs_to_node_translations(Node $entity): void {
-  if ($entity->langcode->value !== 'fi' || is_null($entity->id())) {
+function _infofinland_common_add_paragraphs_to_node_translations(EntityInterface $entity): void {
+  if (
+    !$entity instanceof NodeInterface ||
+    is_null($entity->id()) ||
+    $entity->langcode->value !== 'fi'
+  ) {
     return;
   }
 
@@ -434,58 +437,15 @@ function _infofinland_common_add_paragraphs_to_node_translations(Node $entity): 
     return;
   }
 
-  $entity_type_manager = \Drupal::entityTypeManager();
-  $paragraph_storage = $entity_type_manager->getStorage('paragraph');
-  $translation_languages = $entity->getTranslationLanguages();
+  $item_to_queue = [
+    'nid' => $entity->id(),
+    'data' => json_encode($added_paragraphs)
+  ];
 
-  foreach ($translation_languages as $language) {
-    $lang = $language->getId();
-    if ($lang === 'fi') {
-      continue;
-    }
-
-    $node_translation = $entity->getTranslation($lang);
-    $translated_content = $node_translation->get('field_content')->getValue();
-
-    // Merge added finnish paragraphs to translation.
-    foreach ($added_paragraphs as $added_paragraph) {
-      $paragraph = $paragraph_storage->load($added_paragraph['target']);
-
-      if ($paragraph instanceof ParagraphInterface) {
-        $duplicateParagraph = $paragraph->createDuplicate();
-        $duplicateParagraph->set('langcode', $lang);
-        $duplicateParagraph->save();
-
-        $array = [
-          'target_id' => $duplicateParagraph->id(),
-          'target_revision_id' => $duplicateParagraph->getRevisionId(),
-        ];
-        $field_content_merged = array_merge(
-          array_slice($translated_content, 0, $added_paragraph['delta']),
-          [$array],
-          array_slice($translated_content, $added_paragraph['delta'])
-        );
-      }
-    }
-
-    if (!isset($field_content_merged)) {
-      continue;
-    }
-
-    /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
-    $storage = \Drupal::entityTypeManager()->getStorage($node_translation->getEntityTypeId());
-    $node_translation = $storage->createRevision($node_translation, $node_translation->isDefaultRevision());
-
-    $node_translation->set('moderation_state', 'draft');
-    $node_translation->field_content = $field_content_merged;
-
-    if ($node_translation instanceof RevisionLogInterface) {
-      $node_translation->setRevisionLogMessage('New content added for finnish page and copied to translations');
-      $current_user = \Drupal::currentUser();
-      $node_translation->setRevisionUserId($current_user->id());
-    }
-    $node_translation->save();
-  }
+  /** @var \Drupal\Core\Queue\QueueFactoryInterface $queue_factory */
+  $queue_factory = \Drupal::service('queue');
+  $queue_factory->get('paragraph_copy_worker')
+    ->createItem($item_to_queue);
 }
 
 /**
