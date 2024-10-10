@@ -54,5 +54,8 @@ display:
         langcode:
           expose:
             label: Dil
+      empty:
+        area_text_custom:
+          content: 'No moderated content available. Only pending versions of content, such as drafts, are listed here.'
   moderated_content:
     display_title: 'Moderated content'
