@@ -446,6 +446,12 @@ function _infofinland_common_add_paragraphs_to_node_translations(EntityInterface
   $queue_factory = \Drupal::service('queue');
   $queue_factory->get('paragraph_copy_worker')
     ->createItem($item_to_queue);
+
+  $message = \Drupal::translation()
+    ->translate(
+      'Paragraphs will be copied to other translations in few moments.'
+    );
+  \Drupal::messenger()->addMessage($message);
 }
 
 /**
