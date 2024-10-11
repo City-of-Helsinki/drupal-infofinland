@@ -58,7 +58,6 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
   /**
    * {@inheritdoc}
    */
-
   public function processItem($data): void {
     if (!isset($data['nid']) || !isset($data['data'])) {
       return;
@@ -94,13 +93,13 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
 
       $translated_paragraphs = $node_translation->get('field_content')->getValue();
 
-      foreach ($added_paragraphs as $added_paragraph) {
-        $new_paragraph = $paragraph_storage->load($added_paragraph['target']);
-        if (!$new_paragraph instanceof ParagraphInterface) {
+      foreach ($added_paragraphs as $added_paragraph_data) {
+        $added_paragraph = $paragraph_storage->load($added_paragraph_data['target']);
+        if (!$added_paragraph instanceof ParagraphInterface) {
           continue;
         }
 
-        $duplicateParagraph = $new_paragraph->addTranslation($lang);
+        $duplicateParagraph = $added_paragraph->addTranslation($lang);
 
         $paragraph_reference = [
           'target_id' => $duplicateParagraph->id(),
@@ -108,7 +107,7 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
         ];
 
         // Set the paragraph in correct position.
-        $paragraph_position = $added_paragraph['delta'];
+        $paragraph_position = $added_paragraph_data['delta'];
         $this->insertItemAtPosition($translated_paragraphs, $paragraph_reference, $paragraph_position);
       }
 
