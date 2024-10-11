@@ -99,7 +99,9 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
           continue;
         }
 
-        $duplicateParagraph = $added_paragraph->addTranslation($lang);
+        $duplicateParagraph = $added_paragraph->createDuplicate();
+        $duplicateParagraph->set('langcode', $lang);
+        $duplicateParagraph->save();
 
         $paragraph_reference = [
           'target_id' => $duplicateParagraph->id(),
