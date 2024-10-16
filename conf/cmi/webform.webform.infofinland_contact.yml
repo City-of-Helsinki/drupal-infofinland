@@ -318,7 +318,7 @@ handlers:
     label: 'Feedback email'
     notes: ''
     status: true
-    conditions: { }
+    conditions: {  }
     weight: -50
     settings:
       default_email: infofinland.palaute@hel.fi
