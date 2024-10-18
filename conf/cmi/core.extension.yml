@@ -47,6 +47,8 @@ module:
   helfi_platform_config: 0
   helfi_user_roles: 0
   helfi_users: 0
+  help: 0
+  help_topics: 0
   image: 0
   image_style_quality: 0
   infofinland_admin_tools: 0
