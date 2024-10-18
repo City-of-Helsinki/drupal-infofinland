@@ -37,6 +37,7 @@
         "drupal/next": "^1.4",
         "drupal/obfuscate": "^2.0",
         "drupal/password_policy": "^4.0",
+        "drupal/purge": "^3.6",
         "drupal/queue_ui": "^3.0",
         "drupal/redis": "^1.5",
         "drupal/restui": "^1.21",
