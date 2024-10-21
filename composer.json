@@ -111,6 +111,9 @@
                 "PoStreamReader::readLine() throws an error on module install (https://drupal.org/i/3301239)": "https://www.drupal.org/files/issues/2023-01-17/drupal_core-PoStreamReader_readLine_throws_an_error_on_module_install-3301239-7.patch",
                 "Cannot save or publish originating node or translations (https://drupal.org/i/3285657)": "https://www.drupal.org/files/issues/2022-06-14/core9.2-node-lock-translations-2744851.patch"
             },
+            "drupal/gin": {
+                "Fix Gin row weights. (https://www.drupal.org/project/gin/issues/3461093)": "./patches/gin_row_weights-3461093.patch"
+            },
             "drupal/paragraphs": {
                 "[#UHF-2059] Enhancements for the Admin UI": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-helfi-platform-config/fdccb32397cc6fa19b4d0077b21a2b18aa6be297/patches/helfi_customizations_for_paragraphs_widget_8.x-1.12.patch"
             },
