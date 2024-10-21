@@ -73,6 +73,7 @@ display:
           label: 'Registering module'
         count:
           label: 'Use count'
+          format_plural_string: !!binary MQNAY291bnQ=
       pager:
         options:
           tags:
