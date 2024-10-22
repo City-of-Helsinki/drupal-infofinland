@@ -110,7 +110,11 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
 
         // Set the paragraph in correct position.
         $paragraph_position = $added_paragraph_data['delta'];
-        $this->insertItemAtPosition($translated_paragraphs, $paragraph_reference, $paragraph_position);
+        $translated_paragraphs = $this->insertItemAtPosition(
+          $translated_paragraphs,
+          $paragraph_reference,
+          $paragraph_position
+        );
       }
 
       /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
@@ -139,14 +143,14 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
    * @param int $position
    *   The position where the content is inserted.
    */
-  private function insertItemAtPosition(array &$array, array $insert, int $position) {
+  private function insertItemAtPosition(array $array, array $insert, int $position): array {
     if (count($array) === 1)  {
       $array[] = $insert;
-      return;
+      return $array;
     }
 
     $remains = array_slice($array, max(0, $position));
-    $array = array_merge(
+    return array_merge(
       array_slice($array, 0, $position),
       [$insert],
       $remains
