@@ -24,6 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check if required secrets are set
+        env:
+          AUTOMATIC_UPDATE_TOKEN: ${{ secrets.AUTOMATIC_UPDATE_TOKEN }}
+        if: env.AUTOMATIC_UPDATE_TOKEN == ''
+        run: exit 1
+
       - name: Download latest dump
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -49,6 +55,10 @@ jobs:
           drush locale:check && drush locale:update
           drush updb -y
 
+          # Update translations from helfi_platform_config. These translations
+          # consists of overrides for non customised translations and will
+          # override current translation with a non customised translation.
+          drush helfi:locale-import helfi_platform_config
           drush cex -y
 
           # Update platform
@@ -73,6 +83,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: Update configuration
+          token: ${{ secrets.AUTOMATIC_UPDATE_TOKEN }}
           title: Automatic update
           labels: auto-update
           body: |
