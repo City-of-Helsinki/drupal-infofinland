@@ -13,6 +13,7 @@ dependencies:
     - media
     - paragraphs_type_permissions
     - system
+    - tfa
 _core:
   default_config_hash: 83Nuup-6oYkkdAsvg3nrR2pBOgtTXEV1JrzpCCLkYLM
 id: authenticated
@@ -22,6 +23,8 @@ is_admin: false
 permissions:
   - 'access content'
   - 'delete own files'
+  - 'disable own tfa'
+  - 'setup own tfa'
   - 'use text format full_html'
   - 'use text format simple_html'
   - 'use text format webform_default'
