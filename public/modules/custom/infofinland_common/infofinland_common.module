@@ -20,6 +20,7 @@ use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\path_alias\PathAliasInterface;
 use Drupal\user\Entity\User;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Implements hook_cron().
@@ -501,30 +502,26 @@ function infofinland_common_media_presave(Media $entity) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-function infofinland_common_form_user_login_form_alter(&$form, FormStateInterface $form_state) {
-  $form['#submit'][] = 'infofinland_common_user_login_submit';
-}
-
-/**
- * Form submission handler for user_login_form().
+ * Implements hook_user_login().
  *
  * Redirects the user to the content page after logging in.
  */
-function infofinland_common_user_login_submit(&$form, FormStateInterface $form_state) {
-  $url = Url::fromRoute('view.content.page_1');
+function infofinland_common_user_login($account) {
+  $current_route = Drupal::routeMatch()->getRouteName();
+  $request = Drupal::request();
+  $destination = $request->query->get('destination');
 
-  // Check if a destination was set, probably on an exception controller.
-  // @see \Drupal\user\Form\UserLoginForm::submitForm()
-  $request = \Drupal::service('request_stack')->getCurrentRequest();
-  if (!$request->request->has('destination')) {
-    $form_state->setRedirectUrl($url);
+  // // Check if a destination was set, probably on an exception controller.
+  if ($destination && $destination != '/user/login') {
+    return;
   }
-  else {
-    $request->query->set('destination', $request->request->get('destination'));
+
+  if (!in_array($current_route, ['user.reset', 'user.reset.login'])) {
+    $response = new RedirectResponse(Url::fromRoute('view.content.page_1')->toString());
+    $response->send();
   }
 }
+
 
 /**
  * Implements hook_ckeditor_css_alter().
