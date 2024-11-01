@@ -502,28 +502,6 @@ function infofinland_common_media_presave(Media $entity) {
 }
 
 /**
- * Implements hook_user_login().
- *
- * Redirects the user to the content page after logging in.
- */
-function infofinland_common_user_login($account) {
-  $current_route = Drupal::routeMatch()->getRouteName();
-  $request = Drupal::request();
-  $destination = $request->query->get('destination');
-
-  // // Check if a destination was set, probably on an exception controller.
-  if ($destination && $destination != '/user/login') {
-    return;
-  }
-
-  if (!in_array($current_route, ['user.reset', 'user.reset.login'])) {
-    $response = new RedirectResponse(Url::fromRoute('view.content.page_1')->toString());
-    $response->send();
-  }
-}
-
-
-/**
  * Implements hook_ckeditor_css_alter().
  */
 function infofinland_common_ckeditor_css_alter(array &$css, Editor $editor) {
