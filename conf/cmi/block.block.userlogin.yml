@@ -12,7 +12,7 @@ theme: infofinland
 region: footer_bottom
 weight: -4
 provider: null
-plugin: user_login_block
+plugin: tfa_user_login_block
 settings:
   id: user_login_block
   label: Kirjaudu

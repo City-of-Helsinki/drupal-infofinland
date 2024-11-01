@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser_modal
     - environment_indicator.switcher.development
     - environment_indicator.switcher.stage
     - environment_indicator.switcher.test
@@ -45,6 +46,7 @@ dependencies:
     - simple_sitemap
     - system
     - taxonomy
+    - tfa
     - toolbar
     - webform
 id: infofinland_user
@@ -156,6 +158,7 @@ permissions:
   - 'delete terms in language'
   - 'delete terms in municipalitys'
   - 'delete terms in organisaatiot'
+  - 'disable own tfa'
   - 'edit any file media'
   - 'edit any image media'
   - 'edit any landing_page content'
@@ -188,6 +191,7 @@ permissions:
   - 'revert office_contact_info revisions'
   - 'revert page revisions'
   - 'schedule publishing of nodes'
+  - 'setup own tfa'
   - 'translate any entity'
   - 'translate file media'
   - 'translate image media'
