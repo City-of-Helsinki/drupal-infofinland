@@ -139,23 +139,3 @@ function infofinland_common_update_9006(): void {
  */
 function infofinland_common_update_9007(&$sandbox): void {
 }
-
-/**
- * Ensure api users have no extra roles.
- */
-function infofinland_common_update_9008(): void {
-  /** @var \Drupal\user\UserInterface[] $users */
-  $users = \Drupal::entityTypeManager()
-    ->getStorage('user')
-    ->loadByProperties(['roles' => 'nextjs']);
-
-  foreach ($users as $user) {
-    foreach ($user->getRoles() as $role) {
-      if ($role !== 'nextjs') {
-        $user->removeRole($role);
-      }
-    }
-
-    $user->save();
-  }
-}
