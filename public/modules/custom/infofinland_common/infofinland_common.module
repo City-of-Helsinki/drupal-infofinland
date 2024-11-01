@@ -20,7 +20,6 @@ use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\path_alias\PathAliasInterface;
 use Drupal\user\Entity\User;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Implements hook_cron().
@@ -498,6 +497,32 @@ function infofinland_common_media_presave(Media $entity) {
   foreach ($new_municipalities as $new_municipality) {
     $multi_value[] = ['target_id' => $new_municipality];
     $entity->set('field_municipality', $multi_value);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function infofinland_common_form_user_login_form_alter(&$form, FormStateInterface $form_state): void {
+  array_unshift($form['#submit'], 'infofinland_common_user_login_submit');
+}
+
+/**
+ * Form submission handler for user_login_form().
+ *
+ * Redirects the user to the content page after logging in.
+ */
+function infofinland_common_user_login_submit(&$form, FormStateInterface $form_state): void {
+  $url = Url::fromRoute('view.content.page_1');
+
+  // Check if a destination was set, probably on an exception controller.
+  // @see \Drupal\user\Form\UserLoginForm::submitForm()
+  $request = \Drupal::service('request_stack')->getCurrentRequest();
+  if (!$request->request->has('destination')) {
+    $request->query->set('destination', $url->toString());
+  }
+  else {
+    $request->query->set('destination', $request->request->get('destination'));
   }
 }
 
