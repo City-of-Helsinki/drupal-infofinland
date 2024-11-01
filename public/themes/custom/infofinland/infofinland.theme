@@ -52,6 +52,13 @@ function infofinland_theme_suggestions_block_alter(&$suggestions) {
 }
 
 /**
+ * Implements template_preprocess_form
+ */
+function infofinland_form_tfa_entry_form_alter(&$variables): void {
+  $variables['#attributes']['class'][] = 'container';
+}
+
+/**
  * Implements hook_preprocess_html
  */
 function infofinland_preprocess_html(&$variables) {
