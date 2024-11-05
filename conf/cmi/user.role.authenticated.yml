@@ -12,6 +12,7 @@ dependencies:
     - legal
     - media
     - paragraphs_type_permissions
+    - raven
     - system
     - tfa
 _core:
@@ -24,6 +25,7 @@ permissions:
   - 'access content'
   - 'delete own files'
   - 'disable own tfa'
+  - 'send performance traces to sentry'
   - 'setup own tfa'
   - 'use text format full_html'
   - 'use text format simple_html'

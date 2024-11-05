@@ -40,6 +40,7 @@ dependencies:
     - password_policy
     - path
     - pathauto
+    - raven
     - redirect
     - role_delegation
     - scheduler
@@ -191,6 +192,7 @@ permissions:
   - 'revert office_contact_info revisions'
   - 'revert page revisions'
   - 'schedule publishing of nodes'
+  - 'send performance traces to sentry'
   - 'setup own tfa'
   - 'translate any entity'
   - 'translate file media'

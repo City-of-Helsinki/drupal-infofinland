@@ -20,6 +20,7 @@ dependencies:
     - media
     - node
     - paragraphs_type_permissions
+    - raven
     - system
     - tfa
     - toolbar
@@ -73,6 +74,7 @@ permissions:
   - 'edit own office_contact_info content'
   - 'edit own page content'
   - 'edit own remote_video media'
+  - 'send performance traces to sentry'
   - 'setup own tfa'
   - 'translate editable entities'
   - 'translate image media'

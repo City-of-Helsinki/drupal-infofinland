@@ -5,6 +5,7 @@ dependencies:
   module:
     - file
     - node
+    - raven
     - subrequests
     - tfa
 id: nextjs
@@ -17,4 +18,5 @@ permissions:
   - 'delete own files'
   - 'disable own tfa'
   - 'issue subrequests'
+  - 'send performance traces to sentry'
   - 'setup own tfa'

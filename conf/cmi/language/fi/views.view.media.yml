@@ -50,7 +50,7 @@ display:
           sort_desc_label: Desc
       empty:
         area_text_custom:
-          content: 'Ei mediaa saatavilla.'
+          content: 'Mediatiedostoja ei ole saatavilla.'
       filters:
         name:
           expose:
