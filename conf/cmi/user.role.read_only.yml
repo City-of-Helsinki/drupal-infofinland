@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - raven
     - tfa
 _core:
   default_config_hash: deQJrlqgsebK2qYi7RWmSwYprA60SnU9obIWHY77pjI
@@ -12,4 +13,5 @@ weight: 2
 is_admin: null
 permissions:
   - 'disable own tfa'
+  - 'send performance traces to sentry'
   - 'setup own tfa'
