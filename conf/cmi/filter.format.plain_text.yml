@@ -5,7 +5,6 @@ dependencies:
   module:
     - helfi_api_base
     - obfuscate
-    - helfi_api_base
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
 name: 'Plain text'

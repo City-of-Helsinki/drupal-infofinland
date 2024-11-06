@@ -16,7 +16,7 @@ stack: true
 timeout: 2.0
 message_limit: 2048
 trace: false
-fatal_error_handler: false
+fatal_error_handler: true
 fatal_error_handler_memory: 2560
 javascript_error_handler: false
 drush_error_handler: true
