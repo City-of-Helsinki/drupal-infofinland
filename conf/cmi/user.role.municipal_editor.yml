@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser_modal
     - filter.format.simple_html
     - media.type.image
     - media.type.remote_video
@@ -19,7 +20,9 @@ dependencies:
     - media
     - node
     - paragraphs_type_permissions
+    - raven
     - system
+    - tfa
     - toolbar
 id: municipal_editor
 label: Kuntapäivittäjä
@@ -64,12 +67,15 @@ permissions:
   - 'delete paragraph content list_of_links'
   - 'delete paragraph content remote_video'
   - 'delete paragraph content text'
+  - 'disable own tfa'
   - 'edit any image media'
   - 'edit own image media'
   - 'edit own link content'
   - 'edit own office_contact_info content'
   - 'edit own page content'
   - 'edit own remote_video media'
+  - 'send performance traces to sentry'
+  - 'setup own tfa'
   - 'translate editable entities'
   - 'translate image media'
   - 'translate link node'

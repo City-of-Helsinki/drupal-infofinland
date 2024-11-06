@@ -1,7 +1,10 @@
 uuid: c6a73a1b-05c1-4edc-95b4-ad2b33467af7
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - raven
+    - tfa
 _core:
   default_config_hash: NCarMlsKnDtHl8NrvTJRPEF3KAztLAHBHDo-H2Om7So
 id: editor
@@ -12,3 +15,6 @@ permissions:
   - 'access user profiles'
   - 'cancel account'
   - 'change own username'
+  - 'disable own tfa'
+  - 'send performance traces to sentry'
+  - 'setup own tfa'

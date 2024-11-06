@@ -8,6 +8,7 @@ dependencies:
     - legal
     - media
     - paragraphs_type_permissions
+    - raven
     - rest
     - subrequests
     - system
@@ -21,6 +22,7 @@ permissions:
   - 'access content'
   - 'issue subrequests'
   - 'restful post webform_rest_submit'
+  - 'send performance traces to sentry'
   - 'view Terms and Conditions'
   - 'view media'
   - 'view paragraph content accordion'

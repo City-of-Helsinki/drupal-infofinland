@@ -7,6 +7,8 @@ dependencies:
   module:
     - file
     - filter
+    - raven
+    - tfa
 _core:
   default_config_hash: EVzxFtbOrGVTXWw2GTh1fEzzqruPEqSo84k10-BF6eA
 id: content_producer
@@ -15,4 +17,7 @@ weight: 3
 is_admin: null
 permissions:
   - 'delete own files'
+  - 'disable own tfa'
+  - 'send performance traces to sentry'
+  - 'setup own tfa'
   - 'use text format simple_html'

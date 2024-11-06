@@ -503,8 +503,8 @@ function infofinland_common_media_presave(Media $entity) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function infofinland_common_form_user_login_form_alter(&$form, FormStateInterface $form_state) {
-  $form['#submit'][] = 'infofinland_common_user_login_submit';
+function infofinland_common_form_user_login_form_alter(&$form, FormStateInterface $form_state): void {
+  array_unshift($form['#submit'], 'infofinland_common_user_login_submit');
 }
 
 /**
@@ -512,14 +512,14 @@ function infofinland_common_form_user_login_form_alter(&$form, FormStateInterfac
  *
  * Redirects the user to the content page after logging in.
  */
-function infofinland_common_user_login_submit(&$form, FormStateInterface $form_state) {
+function infofinland_common_user_login_submit(&$form, FormStateInterface $form_state): void {
   $url = Url::fromRoute('view.content.page_1');
 
   // Check if a destination was set, probably on an exception controller.
   // @see \Drupal\user\Form\UserLoginForm::submitForm()
   $request = \Drupal::service('request_stack')->getCurrentRequest();
   if (!$request->request->has('destination')) {
-    $form_state->setRedirectUrl($url);
+    $request->query->set('destination', $url->toString());
   }
   else {
     $request->query->set('destination', $request->request->get('destination'));

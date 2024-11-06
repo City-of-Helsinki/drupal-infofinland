@@ -42,6 +42,7 @@ dependencies:
     - path
     - pathauto
     - queue_ui
+    - raven
     - redirect
     - redis
     - responsive_image
@@ -49,6 +50,7 @@ dependencies:
     - scheduler
     - system
     - taxonomy
+    - tfa
     - toolbar
     - webform
 id: infofinland_admin
@@ -168,6 +170,7 @@ permissions:
   - 'delete terms in language'
   - 'delete terms in municipalitys'
   - 'delete terms in organisaatiot'
+  - 'disable own tfa'
   - 'edit any file media'
   - 'edit any image media'
   - 'edit any landing_page content'
@@ -200,6 +203,8 @@ permissions:
   - 'revert office_contact_info revisions'
   - 'revert page revisions'
   - 'schedule publishing of nodes'
+  - 'send performance traces to sentry'
+  - 'setup own tfa'
   - 'translate any entity'
   - 'translate file media'
   - 'translate image media'

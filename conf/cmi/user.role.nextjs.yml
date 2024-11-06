@@ -5,7 +5,9 @@ dependencies:
   module:
     - file
     - node
+    - raven
     - subrequests
+    - tfa
 id: nextjs
 label: Nextjs
 weight: 4
@@ -14,4 +16,7 @@ permissions:
   - 'access user profiles'
   - 'bypass node access'
   - 'delete own files'
+  - 'disable own tfa'
   - 'issue subrequests'
+  - 'send performance traces to sentry'
+  - 'setup own tfa'
