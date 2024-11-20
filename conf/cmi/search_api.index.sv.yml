@@ -14,7 +14,7 @@ dependencies:
     - field.storage.node.field_link_target_site
     - field.storage.paragraph.field_link_collection
     - field.storage.paragraph.field_title
-    - search_api.server.elastic
+    - search_api.server.default
   module:
     - paragraphs
     - node
@@ -260,4 +260,4 @@ options:
   cron_limit: 50
   index_directly: false
   track_changes_in_references: true
-server: elastic
+server: default
