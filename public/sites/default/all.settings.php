@@ -6,13 +6,12 @@
  */
 
 if (getenv('ELASTIC_URL')) {
-  $config['elasticsearch_connector.cluster.infofinland']['url'] = getenv('ELASTIC_URL');
+  $config['search_api.server.default']['backend_config']['connector_config']['url'] = getenv('ELASTIC_URL');
 
   if (getenv('ELASTIC_USER') && getenv('ELASTIC_PASSWORD')) {
-    $config['elasticsearch_connector.cluster.infofinland']['options']['use_authentication'] = '1';
-    $config['elasticsearch_connector.cluster.infofinland']['options']['authentication_type'] = 'Basic';
-    $config['elasticsearch_connector.cluster.infofinland']['options']['username'] = getenv('ELASTIC_USER');
-    $config['elasticsearch_connector.cluster.infofinland']['options']['password'] = getenv('ELASTIC_PASSWORD');
+    $config['search_api.server.default']['backend_config']['connector'] = 'basicauth';
+    $config['search_api.server.default']['backend_config']['connector_config']['username'] = getenv('ELASTIC_USER');
+    $config['search_api.server.default']['backend_config']['connector_config']['password'] = getenv('ELASTIC_PASSWORD');
   }
 }
 
