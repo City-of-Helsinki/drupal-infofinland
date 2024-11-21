@@ -9,7 +9,7 @@ if (getenv('ELASTIC_URL')) {
   $config['search_api.server.default']['backend_config']['connector_config']['url'] = getenv('ELASTIC_URL');
 
   if (getenv('ELASTIC_USER') && getenv('ELASTIC_PASSWORD')) {
-    $config['search_api.server.default']['backend_config']['connector'] = 'basicauth';
+    $config['search_api.server.default']['backend_config']['connector'] = 'helfi_connector';
     $config['search_api.server.default']['backend_config']['connector_config']['username'] = getenv('ELASTIC_USER');
     $config['search_api.server.default']['backend_config']['connector_config']['password'] = getenv('ELASTIC_PASSWORD');
   }
