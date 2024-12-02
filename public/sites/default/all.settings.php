@@ -28,7 +28,7 @@ $additionalEnvVars = [
   'SENTRY_ENVIRONMENT',
   // Project specific variables.
   'DRUPAL_PREVIEW_SECRET',
-  'ELASTIC_URL',
+  'ELASTICSEARCH_URL',
   'ELASTIC_USER',
   'ELASTIC_PASSWORD',
   'INFOFINLAND_UI_PREVIEW_URL',
