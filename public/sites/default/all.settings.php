@@ -5,16 +5,6 @@
  * Contains site specific overrides.
  */
 
-if (getenv('ELASTIC_URL')) {
-  $config['search_api.server.default']['backend_config']['connector_config']['url'] = getenv('ELASTIC_URL');
-
-  if (getenv('ELASTIC_USER') && getenv('ELASTIC_PASSWORD')) {
-    $config['search_api.server.default']['backend_config']['connector'] = 'basicauth';
-    $config['search_api.server.default']['backend_config']['connector_config']['username'] = getenv('ELASTIC_USER');
-    $config['search_api.server.default']['backend_config']['connector_config']['password'] = getenv('ELASTIC_PASSWORD');
-  }
-}
-
 if (getenv('INFOFINLAND_UI_URL')) {
   $config['next.next_site.infofinland_ui']['base_url'] = getenv('INFOFINLAND_UI_URL');
   $config['next.next_site.infofinland_ui']['preview_url'] = getenv('INFOFINLAND_UI_PREVIEW_URL');
