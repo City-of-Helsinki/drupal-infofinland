@@ -4,21 +4,20 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_content
+    - field.storage.node.field_description
+    - field.storage.node.field_link_target_site
     - field.storage.paragraph.field_accordion_item_content
-    - field.storage.paragraph.field_columns_title
-    - field.storage.paragraph.field_text
     - field.storage.paragraph.field_accordion_item_heading
     - field.storage.paragraph.field_columns_left_column
     - field.storage.paragraph.field_columns_right_column
-    - field.storage.node.field_description
-    - field.storage.node.field_link_target_site
+    - field.storage.paragraph.field_columns_title
     - field.storage.paragraph.field_link_collection
+    - field.storage.paragraph.field_text
     - field.storage.paragraph.field_title
     - search_api.server.default
   module:
-    - paragraphs
     - node
-    - search_api
+    - paragraphs
 id: ru
 name: ru
 description: ''
