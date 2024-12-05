@@ -569,16 +569,6 @@ function infofinland_common_entity_type_alter(array &$entity_types) {
 }
 
 /**
- * Implements hook_elasticsearch_connector_load_library_options_alter().
- */
-function infofinland_common_elasticsearch_connector_load_library_options_alter(&$options, &$context) {
-  // Set cURL options to trust self-signed certificate.
-  // @todo instead of disabling verification, set CURLOPT_SSLCERT.
-  $options['curl'][CURLOPT_SSL_VERIFYPEER] = FALSE;
-  $options['curl'][CURLOPT_SSL_VERIFYHOST] = FALSE;
-}
-
-/**
  * Implements hook_preprocess_HOOK().
  */
 function infofinland_common_preprocess_html(&$variables) {
