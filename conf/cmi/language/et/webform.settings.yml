@@ -1,0 +1,22 @@
+settings:
+  default_submit_button_label: Submit
+  default_reset_button_label: Tühista
+  default_delete_button_label: Kustuta
+  default_form_access_denied_message: 'Please login to access this form.'
+  default_wizard_next_button_label: 'Järgmine >'
+  default_wizard_start_label: Algus
+  default_wizard_confirmation_label: Lõpetatud
+  default_preview_next_button_label: Preview
+  default_preview_label: Preview
+  default_submission_access_denied_message: 'Please login to access this submission.'
+  dialog_options:
+    narrow:
+      title: Narrow
+    normal:
+      title: Tavaline
+    wide:
+      title: Wide
+element:
+  default_more_title: Veel
+file:
+  file_private_redirect_message: 'Please login to access the uploaded file.'

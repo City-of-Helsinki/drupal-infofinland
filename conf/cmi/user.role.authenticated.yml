@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.full_html
     - filter.format.simple_html
+    - filter.format.webform_default
   module:
     - file
     - filter
@@ -17,7 +18,7 @@ dependencies:
 _core:
   default_config_hash: 83Nuup-6oYkkdAsvg3nrR2pBOgtTXEV1JrzpCCLkYLM
 id: authenticated
-label: 'Sisäänkirjautunut käyttäjä'
+label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
@@ -28,6 +29,7 @@ permissions:
   - 'setup own tfa'
   - 'use text format full_html'
   - 'use text format simple_html'
+  - 'use text format webform_default'
   - 'view Terms and Conditions'
   - 'view media'
   - 'view paragraph content accordion'
