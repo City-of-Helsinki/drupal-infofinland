@@ -46,6 +46,7 @@ dependencies:
     - system
     - taxonomy
     - toolbar
+    - webform
 _core:
   default_config_hash: oDxYEw5hRkjMNuwK8kHu8mvLUk1n07pQHZPC8JiU2nE
 id: admin
@@ -64,6 +65,7 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'access webform overview'
   - 'admin queue_ui'
   - 'administer Terms and Conditions'
   - 'administer account settings'
@@ -79,6 +81,7 @@ permissions:
   - 'administer sitemap settings'
   - 'administer url aliases'
   - 'administer users'
+  - 'administer webform submission'
   - 'assign admin role'
   - 'assign infofinland_user role'
   - 'assign municipal_editor role'
@@ -125,6 +128,7 @@ permissions:
   - 'delete any page content'
   - 'delete any remote_video media'
   - 'delete any soundcloud media'
+  - 'delete any webform submission'
   - 'delete content translations'
   - 'delete landing_page revisions'
   - 'delete link revisions'
@@ -230,6 +234,7 @@ permissions:
   - 'view all media revisions'
   - 'view all revisions'
   - 'view any unpublished content'
+  - 'view any webform submission'
   - 'view landing_page revisions'
   - 'view latest version'
   - 'view link revisions'
