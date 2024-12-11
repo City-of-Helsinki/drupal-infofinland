@@ -1,4 +1,4 @@
-title: Contact
+title: 'Ota yhteyttä'
 elements: |-
   name:
     '#title': 'Your Name'
@@ -35,7 +35,7 @@ elements: |-
     '#title': 'Submit button(s)'
     '#submit__label': 'Send message'
 settings:
-  confirmation_message: 'Your message has been sent.'
+  confirmation_message: 'Viestisi on lähetetty.'
 handlers:
   email_confirmation:
     settings:
