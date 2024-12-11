@@ -35,7 +35,7 @@ elements: |-
     '#title': 'Submit button(s)'
     '#submit__label': 'Send message'
 settings:
-  confirmation_message: 'Your message has been sent.'
+  confirmation_message: 'Votre message a été envoyé.'
 handlers:
   email_confirmation:
     label: 'Courriel de confirmation'
