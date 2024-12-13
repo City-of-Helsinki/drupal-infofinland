@@ -1,4 +1,4 @@
-title: Contact
+title: Контакт
 elements: |-
   name:
     '#title': 'Your Name'
@@ -35,7 +35,7 @@ elements: |-
     '#title': 'Submit button(s)'
     '#submit__label': 'Send message'
 settings:
-  confirmation_message: 'Your message has been sent.'
+  confirmation_message: 'Ваше сообщение отправлено.'
 handlers:
   email_confirmation:
     label: 'Подтверждение почтой'
