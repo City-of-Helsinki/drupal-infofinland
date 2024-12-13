@@ -12,7 +12,7 @@ settings:
     normal:
       title: طبيعي
     wide:
-      title: Wide
+      title: واسع
 element:
   default_more_title: المزيد
 file:
