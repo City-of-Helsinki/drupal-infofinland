@@ -5194,7 +5194,7 @@
         },
         {
             "name": "drupal/infofinland_dummy",
-            "version": "dev-UHF-11137",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./patches/helfi_platform_config",
