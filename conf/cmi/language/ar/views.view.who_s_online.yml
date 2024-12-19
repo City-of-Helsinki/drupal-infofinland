@@ -4,7 +4,7 @@ display:
   default:
     display_title: الافتراضي
     display_options:
-      title: "Who's online"
+      title: 'المتصلون الأن'
       exposed_form:
         options:
           submit_button: تطبيق
@@ -19,12 +19,12 @@ display:
         access:
           expose:
             label: 'آخر وصول'
-            description: 'A user is considered online for this long after they have last viewed a page.'
+            description: 'تحسب فترة وجود المستخدم عالخط منذ آخر عرض لصفحة.'
       header:
         result:
           content: 'Tällä hetkellä @total käyttäjää on online.'
   who_s_online_block:
-    display_title: "Who's online"
+    display_title: 'المتصلون الأن'
     display_options:
       display_description: 'Lista käyttäjistä jotka ovat online.'
-      block_description: "Who's online"
+      block_description: 'المتصلون الأن'
