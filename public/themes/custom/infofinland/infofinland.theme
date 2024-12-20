@@ -5,6 +5,9 @@
  * Functions to support theming in the Infofinland Subtheme.
  */
 
+declare(strict_types=1);
+
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Language\LanguageInterface;
 
 /**
@@ -42,7 +45,7 @@ function infofinland_preprocess(&$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ * Implements hook_theme_suggestions_HOOK_alter().
  */
 function infofinland_theme_suggestions_block_alter(&$suggestions) {
   // Load theme suggestions for blocks from parent theme.
@@ -52,14 +55,14 @@ function infofinland_theme_suggestions_block_alter(&$suggestions) {
 }
 
 /**
- * Implements template_preprocess_form
+ * Implements template_preprocess_form.
  */
 function infofinland_form_tfa_entry_form_alter(&$variables): void {
   $variables['#attributes']['class'][] = 'container';
 }
 
 /**
- * Implements hook_preprocess_html
+ * Implements hook_preprocess_html().
  */
 function infofinland_preprocess_html(&$variables) {
   // Add in no-index header.
@@ -81,13 +84,14 @@ function infofinland_preprocess_html(&$variables) {
 }
 
 if (!function_exists('hdbt_admin_tools_get_page_entity')) {
+
   /**
    * HDBT dependency, gets the current page main entity.
    *
    * @return \Drupal\Core\Entity\EntityInterface|null
    *   Current page main entity.
    */
-  function hdbt_admin_tools_get_page_entity(): ?\Drupal\Core\Entity\EntityInterface {
+  function hdbt_admin_tools_get_page_entity(): ?EntityInterface {
     $page_entity = &drupal_static(__FUNCTION__, NULL);
     if (!empty($page_entity)) {
       return $page_entity;
@@ -106,4 +110,5 @@ if (!function_exists('hdbt_admin_tools_get_page_entity')) {
 
     return NULL;
   }
+
 }

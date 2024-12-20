@@ -5,6 +5,8 @@
  * Token integration for the Infofinland common module.
  */
 
+declare(strict_types=1);
+
 use Drupal\Core\Render\BubbleableMetadata;
 
 /**

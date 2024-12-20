@@ -61,6 +61,7 @@ class FeedbackEmailHandler extends WebformHandlerBase {
    * Gets default feedback email.
    *
    * @return string|null
+   *   The email or null.
    */
   private function getDefaultFeedbackEmail() : ?string {
     return $this->configuration['default_email'] ?? NULL;

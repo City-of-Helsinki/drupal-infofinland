@@ -13,7 +13,7 @@ use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 final class ClientRepository implements ClientRepositoryInterface {
 
   public function __construct(
-    private ClientRepositoryInterface $original_service
+    private ClientRepositoryInterface $original_service,
   ) {
   }
 

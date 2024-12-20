@@ -5,8 +5,9 @@
  * Helper functions related to deleting user accounts.
  */
 
+declare(strict_types=1);
+
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\user\UserInterface;
 

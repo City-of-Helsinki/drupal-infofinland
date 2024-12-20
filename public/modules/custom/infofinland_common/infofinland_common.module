@@ -439,7 +439,7 @@ function _infofinland_common_add_paragraphs_to_node_translations(EntityInterface
 
   $item_to_queue = [
     'nid' => $entity->id(),
-    'data' => json_encode($added_paragraphs)
+    'data' => json_encode($added_paragraphs),
   ];
 
   /** @var \Drupal\Core\Queue\QueueFactoryInterface $queue_factory */

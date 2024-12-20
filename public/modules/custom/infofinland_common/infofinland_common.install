@@ -123,7 +123,7 @@ function infofinland_common_update_9005(): void {
 }
 
 /**
- * Remove webform submissions from database;
+ * Remove webform submissions from database.
  */
 function infofinland_common_update_9006(): void {
   $storage_handler = \Drupal::entityTypeManager()
@@ -132,7 +132,6 @@ function infofinland_common_update_9006(): void {
   $ids = $storage_handler->loadMultiple();
   $storage_handler->delete($ids);
 }
-
 
 /**
  * Update ownership of broken nodes. Removed.

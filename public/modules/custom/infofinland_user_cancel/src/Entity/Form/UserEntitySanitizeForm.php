@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\infofinland_user_cancel\Entity\Form;
 
 use Drupal\Core\Form\FormBase;
@@ -44,7 +46,7 @@ final class UserEntitySanitizeForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, AccountInterface $user = NULL): array {
+  public function buildForm(array $form, FormStateInterface $form_state, ?AccountInterface $user = NULL): array {
 
     if (!$user instanceof UserInterface) {
       return ['#markup' => $this->t('User account not found.')];

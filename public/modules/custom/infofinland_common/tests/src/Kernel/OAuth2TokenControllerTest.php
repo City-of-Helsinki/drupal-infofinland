@@ -67,7 +67,7 @@ class OAuth2TokenControllerTest extends KernelTestBase {
   /**
    * Tests OAuth2 token.
    */
-  public function testOAuth2Token(): void {
+  public function testOauth2Token(): void {
     // league/oauth2-server wants 600 file permissions for key.
     chmod('../conf/local-keys/private.key', 0600);
 
