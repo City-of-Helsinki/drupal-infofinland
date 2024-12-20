@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\infofinland_common\Controller;
 
 use Drupal\Core\Access\AccessResult;

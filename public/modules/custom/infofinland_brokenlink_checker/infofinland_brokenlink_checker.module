@@ -5,6 +5,8 @@
  * Custom module for checking broken links.
  */
 
+declare(strict_types=1);
+
 /**
  * Implements hook_cron().
  */
