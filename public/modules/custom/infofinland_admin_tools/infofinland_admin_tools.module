@@ -5,6 +5,8 @@
  * Admin tools.
  */
 
+declare(strict_types=1);
+
 use Drupal\Core\Entity\ContentEntityInterface;
 
 /**
