@@ -36,8 +36,8 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
    */
   public function __construct(
     array $configuration,
-          $plugin_id,
-          $plugin_definition,
+    $plugin_id,
+    $plugin_definition,
     protected EntityTypeManagerInterface $entityTypeManager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -128,9 +128,8 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
     }
   }
 
-
   /**
-   * Insert an item on any position in multidimensional array while preserving the order.
+   * Insert an item on any position in array while preserving the order.
    *
    * @param array $array
    *   The array we are modifying.
@@ -140,7 +139,7 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
    *   The position where the content is inserted.
    */
   private function insertItemAtPosition(array &$array, array $insert, int $position) {
-    if (count($array) === 1)  {
+    if (count($array) === 1) {
       $array[] = $insert;
       return;
     }

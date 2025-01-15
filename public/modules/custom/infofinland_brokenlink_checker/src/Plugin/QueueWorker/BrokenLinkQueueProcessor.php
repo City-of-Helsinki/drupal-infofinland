@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\infofinland_brokenlink_checker\Plugin\QueueWorker;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -8,8 +10,6 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\Core\Logger\LoggerChannelInterface;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\InvalidArgumentException;
 
 /**
  * Save queue item in a node.
@@ -100,10 +100,12 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
 
     try {
       $code = $this->checkUrlStatus($response->field_language_link_value);
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
       $logger_params['@message'] = $e->getMessage();
-      // This happens for example following reasons, 
-      // cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) 
+      // This happens for example following reasons,
+      // cURL error 28: Operation timed out after 30001 milliseconds with 0
+      // bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html)
       // If this happens, the broken link status gets an empty value.
       $this->logger->warning('Checking cURL status failed: parent_id: @parent_id , id: @id ,  url: @url - @message ', $logger_params);
       return;
@@ -111,28 +113,25 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
 
     if ($code === 200 || $code === 301 || $code === 302 || $code === 303) {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
-        $linkNode->set('field_broken_link', false);
+        $linkNode->set('field_broken_link', FALSE);
         $linkNode->save();
       }
 
       if ($languageLinkParagraph = $this->entityTypeManager->getStorage('paragraph')->load($response->id)) {
-        $languageLinkParagraph->set('field_broken_link', false);
+        $languageLinkParagraph->set('field_broken_link', FALSE);
         $languageLinkParagraph->save();
       }
-
-      // $logger_params['@code'] = $code;
-      // $this->logger->warning('Checking URL status passed: parent_id: @parent_id , id: @id , url: @url - code: @code ', $logger_params);
     }
     else {
       if ($linkNode = $this->entityTypeManager->getStorage('node')->load($response->parent_id)) {
-        $linkNode->set('field_broken_link', true);
+        $linkNode->set('field_broken_link', TRUE);
         $linkNode->save();
       }
 
       if ($languageLinkParagraph = $this->entityTypeManager->getStorage('paragraph')->load($response->id)) {
-        $languageLinkParagraph->set('field_broken_link', true);
+        $languageLinkParagraph->set('field_broken_link', TRUE);
         $languageLinkParagraph->save();
-      }  
+      }
 
       $logger_params['@code'] = $code;
       $this->logger->warning('Checking URL status failed: parent_id: @parent_id , id: @id , url: @url - code: @code ', $logger_params);
@@ -146,6 +145,7 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
    *   The url.
    *
    * @return int
+   *   The status code.
    */
   private function checkUrlStatus(string $url): int {
     $response = $this->httpClient->get($url, [
@@ -162,4 +162,5 @@ class BrokenLinkQueueProcessor extends QueueWorkerBase implements ContainerFacto
 
     return $response->getStatusCode();
   }
+
 }
