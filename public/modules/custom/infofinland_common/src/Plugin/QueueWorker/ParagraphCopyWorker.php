@@ -35,6 +35,7 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity type manager.
    * @param \Psr\Log\LoggerInterface $logger
+   *   The logger.
    */
   public function __construct(
     array $configuration,
