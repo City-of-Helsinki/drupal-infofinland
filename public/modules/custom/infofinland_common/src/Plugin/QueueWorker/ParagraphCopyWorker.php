@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
+use Drupal\Core\Utility\Error;
 use Drupal\paragraphs\ParagraphInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -88,7 +89,21 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
           ->getLatestTranslationAffectedRevisionId($entity->id(), $lang);
 
         $node_translation = $nodeStorage->loadRevision($latest_revision_id);
-        $node_translation = $node_translation->getTranslation($lang);
+
+        if ($node_translation && $node_translation->hasTranslation($lang)) {
+          $node_translation = $node_translation->getTranslation($lang);
+        }
+        else {
+          $error = sprintf(
+            'Paragraph copier cannot find translation for some reason.
+            Node id "%s" revision "%s" does not have a translation "%s".',
+            (string) $node_translation->id(),
+            (string) $latest_revision_id,
+            $lang
+          );
+          \Drupal::logger('infofinland_common')->error($error);
+          continue;
+        }
       }
 
       $translated_paragraphs = $node_translation->get('field_content')->getValue();
