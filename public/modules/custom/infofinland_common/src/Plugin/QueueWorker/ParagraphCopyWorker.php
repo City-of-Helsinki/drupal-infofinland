@@ -8,8 +8,8 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
-use Drupal\Core\Utility\Error;
 use Drupal\paragraphs\ParagraphInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -34,12 +34,14 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
    *   The plugin definition.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity type manager.
+   * @param \Psr\Log\LoggerInterface $logger
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
     protected EntityTypeManagerInterface $entityTypeManager,
+    protected LoggerInterface $logger,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -53,6 +55,7 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
       $plugin_id,
       $plugin_definition,
       $container->get('entity_type.manager'),
+      $container->get('logger.channel.infofinland_common'),
     );
   }
 
@@ -96,12 +99,12 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
         else {
           $error = sprintf(
             'Paragraph copier cannot find translation for some reason.
-            Node id "%s" revision "%s" does not have a translation "%s".',
-            (string) $node_translation->id(),
+            Entity id "%s" revision "%s" langcode "%s".',
+            (string) $entity->id(),
             (string) $latest_revision_id,
             $lang
           );
-          \Drupal::logger('infofinland_common')->error($error);
+          $this->logger->error($error);
           continue;
         }
       }
