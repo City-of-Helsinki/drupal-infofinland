@@ -13,9 +13,6 @@ parameters:
   treatPhpDocTypesAsCertain: false
   ignoreErrors:
     -
-      identifier: missingType.iterableValue
-      
-    -
       message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
       count: 1
       path: public/modules/custom/infofinland_admin_tools/src/Controller/ListController.php
@@ -189,26 +186,6 @@ parameters:
       message: "#^Call to an undefined method Drupal\\\\Core\\\\Entity\\\\EntityInterface\\:\\:setRevisionCreationTime\\(\\)\\.$#"
       count: 1
       path: public/modules/custom/infofinland_common/src/Plugin/ContentCombiner.php
-
-    -
-      message: "#^Access to an undefined property Drupal\\\\Core\\\\Entity\\\\TranslatableRevisionableInterface\\:\\:\\$field_content\\.$#"
-      count: 1
-      path: public/modules/custom/infofinland_common/src/Plugin/QueueWorker/ParagraphCopyWorker.php
-
-    -
-      message: "#^Call to an undefined method Drupal\\\\Core\\\\Entity\\\\RevisionableInterface\\:\\:getTranslation\\(\\)\\.$#"
-      count: 1
-      path: public/modules/custom/infofinland_common/src/Plugin/QueueWorker/ParagraphCopyWorker.php
-
-    -
-      message: "#^Call to an undefined method Drupal\\\\Core\\\\Entity\\\\TranslatableRevisionableInterface\\:\\:set\\(\\)\\.$#"
-      count: 1
-      path: public/modules/custom/infofinland_common/src/Plugin/QueueWorker/ParagraphCopyWorker.php
-
-    -
-      message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
-      count: 2
-      path: public/modules/custom/infofinland_common/src/Plugin/QueueWorker/ParagraphCopyWorker.php
 
     -
       message: "#^Access to an undefined property DOMNode\\:\\:\\$value\\.$#"
