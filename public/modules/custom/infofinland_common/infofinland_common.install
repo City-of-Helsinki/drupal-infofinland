@@ -151,7 +151,7 @@ function infofinland_common_update_9008(): void {
     $node = $storage->load($node_id);
     $node = $node->getTranslation($langcode);
     $revision = $storage->createRevision($node);
-    $revision->moderation_state->value = 'draft';
+    $revision->set('moderation_state', 'draft');
     $revision->save();
   }
 }
