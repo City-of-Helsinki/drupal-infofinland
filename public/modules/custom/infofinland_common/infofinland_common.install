@@ -138,3 +138,20 @@ function infofinland_common_update_9006(): void {
  */
 function infofinland_common_update_9007(&$sandbox): void {
 }
+
+/**
+ * Create the missing revisions for a node.
+ */
+function infofinland_common_update_9008(): void {
+  $node_id = 39828;
+  $langcodes = ['en', 'sv'];
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+  foreach($langcodes as $langcode) {
+    $node = $storage->load(39828);
+    $node = $node->getTranslation($langcode);
+    $revision = $storage->createRevision($node);
+    $revision->moderation_state->value = 'draft';
+    $revision->save();
+  }
+}
