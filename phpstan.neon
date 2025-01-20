@@ -10,9 +10,11 @@ parameters:
   excludePaths:
     - vendor
   level: 3
-  checkMissingIterableValueType: false
   treatPhpDocTypesAsCertain: false
   ignoreErrors:
+    -
+      identifier: missingType.iterableValue
+      
     -
       message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
       count: 1
