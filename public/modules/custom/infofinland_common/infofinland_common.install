@@ -147,8 +147,8 @@ function infofinland_common_update_9008(): void {
   $langcodes = ['en', 'sv'];
   $storage = \Drupal::entityTypeManager()->getStorage('node');
 
-  foreach($langcodes as $langcode) {
-    $node = $storage->load(39828);
+  foreach ($langcodes as $langcode) {
+    $node = $storage->load($node_id);
     $node = $node->getTranslation($langcode);
     $revision = $storage->createRevision($node);
     $revision->moderation_state->value = 'draft';
