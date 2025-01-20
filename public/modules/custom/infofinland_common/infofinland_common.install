@@ -149,6 +149,13 @@ function infofinland_common_update_9008(): void {
 
   foreach ($langcodes as $langcode) {
     $node = $storage->load($node_id);
+    if (
+      !$node ||
+      !$node->hasTranslation($langcode)
+    ) {
+      continue;
+    }
+
     $node = $node->getTranslation($langcode);
     $revision = $storage->createRevision($node);
     // @phpstan-ignore-next-line
