@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\infofinland_common\Plugin\QueueWorker;
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Entity\TranslatableInterface;
@@ -113,6 +114,7 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
         }
       }
 
+      assert($node_translation instanceof EntityInterface);
       $translated_paragraphs = $node_translation->get('field_content')->getValue();
 
       foreach ($added_paragraphs as $added_paragraph_data) {
