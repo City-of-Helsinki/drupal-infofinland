@@ -7,6 +7,10 @@
 
 declare(strict_types=1);
 
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\ContentEntityBase;
+use Drupal\Core\Entity\EntityTypeInterface;
+
 /**
  * Handle filter token.
  */
@@ -151,6 +155,7 @@ function infofinland_common_update_9008(): void {
     $node = $storage->load($node_id);
     $node = $node->getTranslation($langcode);
     $revision = $storage->createRevision($node);
+    // @phpstan-ignore-next-line
     $revision->set('moderation_state', 'draft');
     $revision->save();
   }
