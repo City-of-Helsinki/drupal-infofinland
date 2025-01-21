@@ -9,3 +9,7 @@ services:
     class: Drupal\infofinland_common\Routing\OAuthRouteSubscriber
     tags:
       - { name: event_subscriber }
+
+  logger.channel.infofinland_common:
+    parent: logger.channel_base
+    arguments: [ 'infofinland_common' ]
