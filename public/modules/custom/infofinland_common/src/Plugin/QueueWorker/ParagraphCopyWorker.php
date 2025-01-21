@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Drupal\infofinland_common\Plugin\QueueWorker;
 
+use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\RevisionLogInterface;
+use Drupal\Core\Entity\TranslatableInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\paragraphs\ParagraphInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -33,12 +36,15 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
    *   The plugin definition.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    *   The entity type manager.
+   * @param \Psr\Log\LoggerInterface $logger
+   *   The logger.
    */
   public function __construct(
     array $configuration,
     $plugin_id,
     $plugin_definition,
     protected EntityTypeManagerInterface $entityTypeManager,
+    protected LoggerInterface $logger,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -52,6 +58,7 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
       $plugin_id,
       $plugin_definition,
       $container->get('entity_type.manager'),
+      $container->get('logger.channel.infofinland_common'),
     );
   }
 
@@ -70,8 +77,7 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
 
     $added_paragraphs = json_decode($data['data'], TRUE);
 
-    $entity_type_manager = \Drupal::entityTypeManager();
-    $paragraph_storage = $entity_type_manager->getStorage('paragraph');
+    $paragraph_storage = $this->entityTypeManager->getStorage('paragraph');
     $translation_languages = $entity->getTranslationLanguages();
 
     foreach ($translation_languages as $language) {
@@ -88,9 +94,26 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
           ->getLatestTranslationAffectedRevisionId($entity->id(), $lang);
 
         $node_translation = $nodeStorage->loadRevision($latest_revision_id);
-        $node_translation = $node_translation->getTranslation($lang);
+        if (
+          $node_translation instanceof TranslatableInterface &&
+          $node_translation->hasTranslation($lang)
+        ) {
+          $node_translation = $node_translation->getTranslation($lang);
+        }
+        else {
+          $error = sprintf(
+            'Paragraph copier cannot find translation for some reason.
+            Entity id "%s" revision "%s" langcode "%s".',
+            $entity->id(),
+            $latest_revision_id,
+            $lang
+          );
+          $this->logger->error($error);
+          continue;
+        }
       }
 
+      assert($node_translation instanceof ContentEntityBase);
       $translated_paragraphs = $node_translation->get('field_content')->getValue();
 
       foreach ($added_paragraphs as $added_paragraph_data) {
@@ -114,11 +137,12 @@ final class ParagraphCopyWorker extends QueueWorkerBase implements ContainerFact
       }
 
       /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
-      $storage = \Drupal::entityTypeManager()->getStorage($node_translation->getEntityTypeId());
+      $storage = $this->entityTypeManager->getStorage($node_translation->getEntityTypeId());
       $node_translation = $storage->createRevision($node_translation, $node_translation->isDefaultRevision());
 
+      assert($node_translation instanceof ContentEntityBase);
       $node_translation->set('moderation_state', 'draft');
-      $node_translation->field_content = $translated_paragraphs;
+      $node_translation->set('field_content', $translated_paragraphs);
 
       if ($node_translation instanceof RevisionLogInterface) {
         $node_translation->setRevisionLogMessage('New content added for finnish page and copied to translations');
