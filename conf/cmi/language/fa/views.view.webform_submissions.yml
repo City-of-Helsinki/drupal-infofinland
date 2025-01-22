@@ -1,0 +1,122 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: بازنشانی
+          exposed_sorts_label: 'مرتب کن بر اساس'
+          sort_asc_label: صعودی
+          sort_desc_label: نزولی
+      pager:
+        options:
+          tags:
+            first: '« Ensimmäinen'
+          expose:
+            items_per_page_label: 'آیتم‌ها در هر صفحه'
+            items_per_page_options_all_label: '- همه -'
+            offset_label: جابجایی
+      fields:
+        sid:
+          label: '#'
+        in_draft:
+          label: 'پیش نویس'
+        created:
+          label: 'ایجاد گردید'
+        remote_addr:
+          label: 'IP address'
+        view_webform_submission:
+          label: کارکردها
+          text: view
+      arguments:
+        in_draft:
+          exception:
+            title: همه
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: عملکرد
+        sid:
+          label: '#'
+        in_draft:
+          label: 'پیش نویس'
+        sticky:
+          label: Sticky
+        locked:
+          label: Locked
+        created:
+          label: 'ایجاد گردید'
+        completed:
+          label: 'تکمیل شد'
+        remote_addr:
+          label: 'IP address'
+        operations:
+          label: کارکردها
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: عملکرد
+        sid:
+          label: '#'
+        in_draft:
+          label: 'پیش نویس'
+        sticky:
+          label: Sticky
+        locked:
+          label: Locked
+        created:
+          label: 'ایجاد گردید'
+        completed:
+          label: 'تکمیل شد'
+        remote_addr:
+          label: 'IP address'
+        view_webform_submission:
+          label: کارکردها
+          text: view
+        edit_webform_submission:
+          label: کارکردها
+          text: edit
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
+  embed_review:
+    display_options:
+      fields:
+        sid:
+          label: '#'
+        in_draft:
+          label: 'پیش نویس'
+        sticky:
+          label: Sticky
+        locked:
+          label: Locked
+        created:
+          label: 'ایجاد گردید'
+        completed:
+          label: 'تکمیل شد'
+        remote_addr:
+          label: 'IP address'
+        view_webform_submission:
+          label: کارکردها
+          text: view
+      filters:
+        sticky:
+          expose:
+            label: Sticky
+        locked:
+          expose:
+            label: Locked
