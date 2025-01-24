@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.full_html
     - filter.format.simple_html
-    - filter.format.webform_default
   module:
     - file
     - filter
@@ -29,7 +28,6 @@ permissions:
   - 'setup own tfa'
   - 'use text format full_html'
   - 'use text format simple_html'
-  - 'use text format webform_default'
   - 'view Terms and Conditions'
   - 'view media'
   - 'view paragraph content accordion'
