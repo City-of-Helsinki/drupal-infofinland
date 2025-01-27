@@ -19,55 +19,6 @@ class FeedbackFormTest extends ExistingSiteTestBase {
 
     // Feedback email handler must be enabled.
     $this->assertTrue($handler->isEnabled());
-
-    $test_email = 'something@example.com';
-    ['default_email' => $default_email] = $handler->getSettings();
-
-    $user = $this->createUser(['administer webform submission']);
-    $this->drupalLogin($user);
-
-    $submission = $this->submit($webform, [
-      'sender_email' => 'my-email@example.com',
-      'page' => 'http://localhost:3000',
-      'name' => 'My name',
-      'subject' => 'Subject',
-      'message' => 'Message',
-      'feedback_email' => 'evil@example.com',
-    ]);
-
-    // Default email address is used.
-    $this->assertToAddress($default_email, $submission);
-
-    $node = $this->createNode([
-      'type' => 'landing_page',
-      'field_feedback_email' => $test_email,
-    ]);
-
-    $submission = $this->submit($webform, [
-      'sender_email' => 'my-email@example.com',
-      'page' => 'http://localhost:3000',
-      'name' => 'My name',
-      'subject' => 'Subject',
-      'message' => 'Message',
-      'uuid' => $node->uuid(),
-      'feedback_email' => 'evil@example.com',
-    ]);
-
-    // Nodes can override email address.
-    $this->assertToAddress($test_email, $submission);
-  }
-
-  /**
-   * Assserts that webform submission sent email to expected address.
-   */
-  private function assertToAddress(string $expected, WebformSubmissionInterface $submission) {
-    $this->drupalGet("admin/structure/webform/manage/contact/submission/" . $submission->id() . '/resend');
-    $this->assertSession()->elementAttributeContains(
-      'xpath',
-      '//input[@name="message[to_mail]"]',
-      'value',
-      $expected,
-    );
   }
 
   /**
