@@ -120,12 +120,12 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
         : explode(',', $user->get('field_municipality')->getString());
 
       // Allowed for everyone: Helsinki, Espoo,  Vantaa, Kauniainen.
-      $allowed_municipality_ids = ['1','2','3','4'];
+      $allowed_municipality_ids = ['1', '2', '3', '4'];
       if ($user_municipalities) {
         $allowed_municipality_ids = array_merge($allowed_municipality_ids, $user_municipalities);
       }
 
-      $view->setArguments(array_unique($allowed_municipality_ids));
+      $view->setArguments($allowed_municipality_ids);
     }
   }
 
