@@ -228,11 +228,6 @@ parameters:
       path: public/modules/custom/infofinland_permissions/infofinland_permissions.module
 
     -
-      message: "#^Variable \\$municipality_ids might not be defined\\.$#"
-      count: 1
-      path: public/modules/custom/infofinland_permissions/infofinland_permissions.module
-
-    -
       message: "#^Variable \\$icon_path in empty\\(\\) always exists and is not falsy\\.$#"
       count: 1
       path: public/themes/custom/infofinland/infofinland.theme
