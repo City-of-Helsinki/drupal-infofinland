@@ -108,25 +108,7 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
   }
 
   if ($view->id() === 'linkit') {
-    // Show all links for certain roles.
-    if (in_array('infofinland_user', $roles) || in_array('admin', $roles)) {
-      $args[] = 'all';
-      $view->setArguments($args);
-    }
-    else {
-      $user = User::load($current_user->id());
-      $user_municipalities = $user->get('field_municipality')->isEmpty()
-        ? []
-        : explode(',', $user->get('field_municipality')->getString());
-
-      // Allowed for everyone: Helsinki, Espoo,  Vantaa, Kauniainen.
-      $allowed_municipality_ids = ['1', '2', '3', '4'];
-      if ($user_municipalities) {
-        $allowed_municipality_ids = array_merge($allowed_municipality_ids, $user_municipalities);
-      }
-
-      $view->setArguments($allowed_municipality_ids);
-    }
+    $view->setArguments(['all']);
   }
 
   if ($view->id() === 'media_entity_browser' || $view->id() === 'media') {
