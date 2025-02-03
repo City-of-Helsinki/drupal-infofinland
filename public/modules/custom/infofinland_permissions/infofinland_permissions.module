@@ -127,8 +127,13 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
       $user_municipalities = explode(', ', $user->get('field_municipality')->getString());
       // Allowed for everyone: Helsinki, Espoo,  Vantaa, Kauniainen.
       $allowed_municipality_ids = array_unique(['1', '2', '3', '4', ...$user_municipalities]);
-      // Use exlude filtering to also show links without municipality.
-      $args[] = implode(',', array_diff($municipality_ids, $allowed_municipality_ids));
+
+      // Use exclude filtering to also show links without municipality.
+      // If the diff returns empty, we must return the municipality id list.
+      $args = !array_diff($municipality_ids, $allowed_municipality_ids)
+        ? $allowed_municipality_ids
+        : implode(',', array_diff($municipality_ids, $allowed_municipality_ids));
+
       $view->setArguments($args);
     }
   }
