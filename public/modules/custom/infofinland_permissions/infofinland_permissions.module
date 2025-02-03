@@ -114,27 +114,16 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
       $view->setArguments($args);
     }
     else {
-      $args = [];
-      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
-        'vid' => 'municipalitys',
-      ]);
-
-      foreach ($terms as $term) {
-        $municipality_ids[] = $term->id();
-      }
 
       $user = User::load($current_user->id());
       $user_municipalities = explode(', ', $user->get('field_municipality')->getString());
       // Allowed for everyone: Helsinki, Espoo,  Vantaa, Kauniainen.
-      $allowed_municipality_ids = array_unique(['1', '2', '3', '4', ...$user_municipalities]);
+      $allowed_municipality_ids = ['1','2','3','4'];
+      if (!empty($user_municipalities) && $user_municipalities[0] != "") {
+        $allowed_municipality_ids = array_merge($allowed_municipality_ids, $user_municipalities);
+      }
 
-      // Use exclude filtering to also show links without municipality.
-      // If the diff returns empty, we must return the municipality id list.
-      $args = !array_diff($municipality_ids, $allowed_municipality_ids)
-        ? $allowed_municipality_ids
-        : implode(',', array_diff($municipality_ids, $allowed_municipality_ids));
-
-      $view->setArguments($args);
+      $view->setArguments(array_unique($allowed_municipality_ids));
     }
   }
 
