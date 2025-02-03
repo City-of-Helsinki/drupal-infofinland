@@ -114,7 +114,6 @@ function infofinland_permissions_views_pre_build(ViewExecutable $view) {
       $view->setArguments($args);
     }
     else {
-
       $user = User::load($current_user->id());
       $user_municipalities = $user->get('field_municipality')->isEmpty()
         ? []
