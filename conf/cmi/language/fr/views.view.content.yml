@@ -1,5 +1,5 @@
 label: Contenu
-description: 'Find and manage content.'
+description: 'Trouver et gérer le contenu.'
 display:
   default:
     display_title: 'Par défaut'
@@ -41,7 +41,7 @@ display:
           sort_desc_label: Desc
       empty:
         area_text_custom:
-          content: 'No content available.'
+          content: 'Aucun contenu disponible.'
       filters:
         title:
           expose:
@@ -69,4 +69,4 @@ display:
         title: Contenu
       tab_options:
         title: Contenu
-        description: 'Find and manage content'
+        description: 'Trouver et gérer le contenu'
