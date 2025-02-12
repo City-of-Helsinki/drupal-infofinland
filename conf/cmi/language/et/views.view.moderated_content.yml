@@ -1,10 +1,10 @@
-label: 'Moderated content'
-description: 'Find and moderate content.'
+label: 'Modereeritud sisu'
+description: 'Otsi ja modereeri sisu.'
 display:
   default:
     display_title: Vaikimisi
     display_options:
-      title: 'Moderated content'
+      title: 'Modereeritud sisu'
       fields:
         title:
           label: Pealkiri
@@ -16,7 +16,7 @@ display:
           label: Autor
           separator: ', '
         moderation_state:
-          label: 'Moderation state'
+          label: 'Modereerimise olek'
           separator: ', '
         changed:
           label: Uuendatud
@@ -43,7 +43,7 @@ display:
           sort_desc_label: Kahanev
       empty:
         area_text_custom:
-          content: 'No moderated content available. Only pending versions of content, such as drafts, are listed here.'
+          content: 'Modereeritavat sisu pole saadaval. Siin kuvatakse ainult ootel olevaid versioone sisust, nagu mustandid.'
       filters:
         title:
           expose:
@@ -53,9 +53,9 @@ display:
             label: 'Sisu tüüp'
         moderation_state:
           expose:
-            label: 'Moderation state'
+            label: 'Modereerimise olek'
         langcode:
           expose:
             label: Keel
   moderated_content:
-    display_title: 'Moderated content'
+    display_title: 'Modereeritud sisu'

@@ -1,5 +1,5 @@
 label: Glossary
-description: 'All content, by letter.'
+description: 'Tous les contenus, triés par lettre.'
 display:
   default:
     display_title: 'Par défaut'
@@ -10,7 +10,7 @@ display:
         name:
           label: Auteur
         changed:
-          label: 'Last update'
+          label: 'Dernière mise à jour'
       pager:
         options:
           tags:
@@ -28,7 +28,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
   attachment_1:
-    display_title: Attachment
+    display_title: 'Élément joint'
   page_1:
     display_title: Sivu
     display_options:

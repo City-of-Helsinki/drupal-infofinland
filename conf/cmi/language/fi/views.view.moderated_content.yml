@@ -1,9 +1,9 @@
-label: 'Moderated content'
+label: 'Moderoitu sisältö'
 display:
   default:
     display_title: Oletus
     display_options:
-      title: 'Moderated content'
+      title: 'Moderoitu sisältö'
       fields:
         title:
           label: Otsikko
@@ -50,4 +50,4 @@ display:
           expose:
             label: Kieli
   moderated_content:
-    display_title: 'Moderated content'
+    display_title: 'Moderoitu sisältö'

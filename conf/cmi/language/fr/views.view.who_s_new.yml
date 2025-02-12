@@ -1,10 +1,10 @@
-label: "Who's new"
-description: 'Shows a list of the newest user accounts on the site.'
+label: 'Nouveaux membres'
+description: 'Affiche la liste des utilisateurs les plus récents sur le site.'
 display:
   default:
     display_title: 'Par défaut'
     display_options:
-      title: "Who's new"
+      title: 'Nouveaux membres'
       exposed_form:
         options:
           submit_button: Apply
@@ -13,8 +13,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
   block_1:
-    display_title: "Who's new"
+    display_title: 'Nouveaux membres'
     display_options:
-      display_description: 'A list of new users'
-      block_description: "Who's new"
+      display_description: 'Une liste des nouveaux utilisateurs'
+      block_description: 'Nouveaux membres'
       block_category: Utilisateur

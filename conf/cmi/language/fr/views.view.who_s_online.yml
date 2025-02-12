@@ -1,10 +1,10 @@
-label: "Who's online block"
-description: 'Shows the user names of the most recently active users, and the total number of active users.'
+label: 'Bloc "Qui est connecté"'
+description: "Affiche les noms des utilisateurs les plus actifs récemment et le nombre total d'utilisateurs actifs."
 display:
   default:
     display_title: 'Par défaut'
     display_options:
-      title: "Who's online"
+      title: 'Utilisateurs en ligne'
       exposed_form:
         options:
           submit_button: Apply
@@ -14,17 +14,17 @@ display:
           sort_desc_label: Desc
       empty:
         area_text_custom:
-          content: 'There are currently 0 users online.'
+          content: 'Il y a actuellement 0 utilisateurs en ligne.'
       filters:
         access:
           expose:
-            label: 'Last access'
-            description: 'A user is considered online for this long after they have last viewed a page.'
+            label: 'Dernier accès'
+            description: "Durée pendant laquelle on considère qu'un utilisateur est en ligne après qu'il ait vu une page pour la dernière fois."
       header:
         result:
-          content: 'There are currently @total users online.'
+          content: 'Il y a actuellement @total utilisateurs en ligne.'
   who_s_online_block:
-    display_title: "Who's online"
+    display_title: 'Utilisateurs en ligne'
     display_options:
-      display_description: 'A list of users that are currently logged in.'
-      block_description: "Who's online"
+      display_description: "Une liste d'utilisateurs actuellement connectés."
+      block_description: 'Utilisateurs en ligne'

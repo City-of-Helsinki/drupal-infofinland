@@ -1,9 +1,9 @@
-label: 'Moderated content'
+label: 'محتوى خاضع للإشراف'
 display:
   default:
     display_title: الافتراضي
     display_options:
-      title: 'Moderated content'
+      title: 'محتوى خاضع للإشراف'
       fields:
         title:
           label: العنوان
@@ -49,4 +49,4 @@ display:
           expose:
             label: اللغة
   moderated_content:
-    display_title: 'Moderated content'
+    display_title: 'محتوى خاضع للإشراف'
