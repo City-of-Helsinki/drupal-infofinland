@@ -19,7 +19,7 @@ display:
             format_custom_false: Temporary
             format_custom_true: Permanent
         created:
-          label: 'Upload date'
+          label: 'تاریخ بارگذاری'
         changed:
           label: 'Changed date'
         count:
