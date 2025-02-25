@@ -19,7 +19,7 @@
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/environment_indicator": "^4.0",
         "drupal/features": "^3.12",
-        "drupal/gin": "^3.0",
+        "drupal/gin": "^4.0",
         "drupal/hdbt": "^5.6.24",
         "drupal/helfi_azure_fs": "^2.0",
         "drupal/helfi_drupal_tools": "dev-main",
