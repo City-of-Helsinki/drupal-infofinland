@@ -2,36 +2,36 @@ $font-path: '../fonts';
 
 /* Webfont: NotoSans-Regular */
 @font-face {
-  text-rendering: optimizeLegibility;
   font-family: 'NotoSans';
   font-style: normal;
   font-weight: $font-weight-regular;
-  src: url('#{$font-path}/NotoSans/NotoSans-Regular.ttf') format('truetype')
+  src: url('#{$font-path}/NotoSans/NotoSans-Regular.ttf') format('truetype');
+  text-rendering: optimizeLegibility
 }
 
 /* Webfont: NotoSans-Italic */
 @font-face {
-  text-rendering: optimizeLegibility;
   font-family: 'NotoSans';
   font-style: italic;
   font-weight: $font-weight-regular;
-  src: url('#{$font-path}/NotoSans/NotoSans-Italic.ttf') format('truetype')
+  src: url('#{$font-path}/NotoSans/NotoSans-Italic.ttf') format('truetype');
+  text-rendering: optimizeLegibility
 }
 
 /* Webfont: NotoSans-Bold */
 @font-face {
-  text-rendering: optimizeLegibility;
   font-family: 'NotoSans';
   font-style: normal;
   font-weight: $font-weight-bold;
-  src: url('#{$font-path}/NotoSans/NotoSans-Bold.ttf') format('truetype')
+  src: url('#{$font-path}/NotoSans/NotoSans-Bold.ttf') format('truetype');
+  text-rendering: optimizeLegibility
 }
 
 /* Webfont: NotoSans-Bold Italic*/
 @font-face {
-  text-rendering: optimizeLegibility;
   font-family: 'NotoSans';
   font-style: italic;
   font-weight: $font-weight-bold;
-  src: url('#{$font-path}/NotoSans/NotoSans-BoldItalic.ttf') format('truetype')
+  src: url('#{$font-path}/NotoSans/NotoSans-BoldItalic.ttf') format('truetype');
+  text-rendering: optimizeLegibility
 }
