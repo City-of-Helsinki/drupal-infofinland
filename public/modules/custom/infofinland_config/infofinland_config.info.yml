@@ -1,0 +1,6 @@
+name: 'Infofinland Config'
+type: module
+description: 'Config overrides for Infofinland'
+core_version_requirement: ^10 || ^11
+dependencies:
+  - helfi_platform_config:helfi_platform_config
