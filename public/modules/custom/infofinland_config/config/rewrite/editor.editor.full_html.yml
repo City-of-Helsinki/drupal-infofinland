@@ -1,3 +1,4 @@
+config_rewrite: replace
 uuid: 71738422-2a39-40c7-a1e0-8989b0711a35
 langcode: en
 status: true

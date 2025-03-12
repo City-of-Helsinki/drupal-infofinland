@@ -226,8 +226,3 @@ parameters:
       message: "#^Call to an undefined method Drupal\\\\Core\\\\Entity\\\\EntityInterface\\:\\:getType\\(\\)\\.$#"
       count: 1
       path: public/modules/custom/infofinland_permissions/infofinland_permissions.module
-
-    -
-      message: "#^Variable \\$icon_path in empty\\(\\) always exists and is not falsy\\.$#"
-      count: 1
-      path: public/themes/custom/infofinland/infofinland.theme

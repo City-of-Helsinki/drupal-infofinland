@@ -1,48 +1,29 @@
-uuid: 71738422-2a39-40c7-a1e0-8989b0711a35
+uuid: ff9484cd-510a-49ed-bd49-9217f42d530f
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.full_html
+    - filter.format.minimal
   module:
     - ckeditor5
 _core:
-  default_config_hash: ugdwymSgCGFPKEgJ5z8jmQmqYze8oXVFgpsZYlqJxys
-format: full_html
+  default_config_hash: 5-ooLNHf6seCXcxTq7GgRliZT6bSLCwAXekmT61kdqw
+format: minimal
 editor: ckeditor5
 settings:
   toolbar:
     items:
       - bold
       - italic
-      - strikethrough
-      - underline
-      - superscript
-      - subscript
-      - removeFormat
-      - heading
       - '|'
       - bulletedList
       - numberedList
       - '|'
       - link
-      - helfiQuote
-      - insertTable
       - helfiLanguageSelector
-      - specialCharacters
-      - '|'
-      - undo
-      - redo
       - '|'
       - sourceEditing
   plugins:
-    ckeditor5_heading:
-      enabled_headings:
-        - heading2
-        - heading3
-        - heading4
-        - heading5
-        - heading6
     ckeditor5_list:
       properties:
         reversed: false
@@ -89,57 +70,51 @@ settings:
         -
           enabled: true
           weight: 7
-          search: '<span.*?>(.*?)<\/span>'
-          replace: $1
-        -
-          enabled: true
-          weight: 8
           search: '<span(?![^>]*\b(?:dir|lang)="[^"]*")[^>]*>(.*?)<\/span>'
           replace: $1
         -
           enabled: true
-          weight: 9
+          weight: 8
           search: '<p><span lang="[^"]*"><\/span><\/p>'
           replace: ''
         -
           enabled: true
-          weight: 10
+          weight: 9
           search: '<span lang="[^"]*"><\/span>'
           replace: ''
         -
           enabled: true
-          weight: 11
+          weight: 10
           search: '<p>&nbsp;<\/p>'
           replace: ''
         -
           enabled: true
-          weight: 12
+          weight: 11
           search: '<p><\/p>'
           replace: ''
         -
           enabled: true
-          weight: 13
+          weight: 12
           search: '<b><\/b>'
           replace: ''
         -
           enabled: true
-          weight: 14
+          weight: 13
           search: '<i><\/i>'
           replace: ''
         -
           enabled: true
-          weight: 15
+          weight: 14
           search: '<a name="OLE_LINK[^"]*">(.*?)<\/a>'
           replace: $1
         -
           enabled: true
-          weight: 16
+          weight: 15
           search: '<a name="[^"]*">(.*?)<\/a>'
           replace: $1
     ckeditor5_sourceEditing:
       allowed_tags:
-        - '<figure tabindex>'
-        - '<figcaption>'
+        - '<p data-chat-trigger>'
     helfi_ckeditor_helfi_link:
       helfi_link_attributes:
         - '<a data-hds-icon-start data-is-external data-protocol data-hds-component data-hds-variant rel target="_blank">'

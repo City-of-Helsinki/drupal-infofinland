@@ -1,3 +1,4 @@
+config_rewrite: replace
 uuid: ea5c94b2-36a0-4e67-9dc2-6bc24b599792
 langcode: en
 status: true
@@ -6,8 +7,6 @@ dependencies:
     - editor
     - helfi_api_base
     - linkit
-_core:
-  default_config_hash: xxHLW002R-dZCvOXLi3XVocmJDegHzCwUAcrM7nEVI4
 name: HTML
 format: full_html
 weight: 0

@@ -4,10 +4,7 @@ const glob = require('glob');
 const FriendlyErrorsWebpackPlugin = require('@nuxt/friendly-errors-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
-const SvgToJson = require('./webpack.svgToJson');
-const SvgToCss = require('./webpack.svgToCss');
-const RtlCssPlugin = require('rtlcss-webpack-plugin')
+const RtlCssPlugin = require('rtlcss-webpack-plugin');
 const { merge } = require('webpack-merge');
 
 // Handle entry points.
@@ -118,33 +115,8 @@ module.exports = (env, argv) => {
       extensions: ['.js', '.json'],
     },
     plugins: [
-      new SvgToJson(path.resolve(__dirname, 'src/icons/**/*.svg'),'icons.json'),
-      new SvgToCss(path.resolve(__dirname, 'src/icons/**/*.svg'), 'css/hdbt-icons.css'),
       new FriendlyErrorsWebpackPlugin(),
       new RemoveEmptyScriptsPlugin(),
-      new SVGSpritemapPlugin(
-        [
-          path.resolve(__dirname, 'src/icons/**/*.svg'),
-        ],
-        {
-          output: {
-            filename: './icons/sprite.svg',
-            svg: {
-              sizes: false
-            }
-          },
-          sprite: {
-            prefix: false,
-            gutter: 0,
-            generate: {
-              title: false,
-              symbol: true,
-              use: true,
-              view: '-view'
-            }
-          }
-        }
-      ),
       new MiniCssExtractPlugin({
         filename: 'css/[name].min.css',
       }),
