@@ -2,7 +2,11 @@ uuid: c6a73a1b-05c1-4edc-95b4-ad2b33467af7
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.minimal
   module:
+    - filter
     - raven
     - tfa
 _core:
@@ -18,3 +22,5 @@ permissions:
   - 'disable own tfa'
   - 'send performance traces to sentry'
   - 'setup own tfa'
+  - 'use text format full_html'
+  - 'use text format minimal'

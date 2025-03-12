@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.full_html
+    - filter.format.minimal
     - filter.format.simple_html
   module:
     - file
@@ -16,8 +18,13 @@ label: Sisällöntuottaja
 weight: 3
 is_admin: null
 permissions:
+  - 'access user profiles'
+  - 'cancel account'
+  - 'change own username'
   - 'delete own files'
   - 'disable own tfa'
   - 'send performance traces to sentry'
   - 'setup own tfa'
+  - 'use text format full_html'
+  - 'use text format minimal'
   - 'use text format simple_html'
