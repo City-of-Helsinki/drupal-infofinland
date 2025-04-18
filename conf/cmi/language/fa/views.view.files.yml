@@ -9,6 +9,7 @@ display:
           label: FId
         filename:
           label: Name
+          separator: ', '
         filemime:
           label: 'MIME type'
         filesize:
