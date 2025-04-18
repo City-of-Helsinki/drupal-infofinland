@@ -58,6 +58,8 @@ display:
           text: Edit
         delete_media:
           text: حذف
+        name:
+          separator: ', '
   widget:
     display_title: Widget
     display_options:
