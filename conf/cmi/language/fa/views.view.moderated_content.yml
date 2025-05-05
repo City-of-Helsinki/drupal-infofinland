@@ -7,14 +7,20 @@ display:
       fields:
         title:
           label: عنوان
+          separator: ', '
         type:
           label: 'نوع محتوا'
+          separator: ', '
         name:
           label: نویسنده
+          separator: ', '
         changed:
           label: به‌روز
+          separator: ', '
         operations:
           label: کارکردها
+        moderation_state:
+          separator: ', '
       pager:
         options:
           tags:
