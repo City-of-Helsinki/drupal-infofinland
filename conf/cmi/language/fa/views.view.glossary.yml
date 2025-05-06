@@ -26,3 +26,7 @@ display:
     display_title: Attachment
   page_1:
     display_title: صفحه
+    display_options:
+      menu:
+        title: Glossary
+label: Glossary

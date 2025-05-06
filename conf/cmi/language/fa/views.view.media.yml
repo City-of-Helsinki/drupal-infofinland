@@ -9,19 +9,26 @@ display:
           action_title: عملکرد
         thumbnail__target_id:
           label: Thumbnail
+          separator: ', '
         bundle:
           label: نوع
+          separator: ', '
         uid:
           label: نویسنده
+          separator: ', '
         status:
           label: وضعیت
           settings:
             format_custom_false: 'منتشر نشده'
             format_custom_true: 'منتشر شده'
+          separator: ', '
         changed:
           label: به‌روز
+          separator: ', '
         operations:
           label: کارکردها
+        name:
+          separator: ', '
       pager:
         options:
           tags:
