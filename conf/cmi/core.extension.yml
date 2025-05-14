@@ -4,8 +4,6 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
-  big_pipe: 0
-  big_pipe_sessionless: 0
   block: 0
   breakpoint: 0
   ckeditor5: 0
@@ -93,7 +91,6 @@ module:
   node: 0
   obfuscate: 0
   options: 0
-  page_cache: 0
   paragraphs_type_permissions: 0
   password_policy_character_types: 0
   password_policy_length: 0
