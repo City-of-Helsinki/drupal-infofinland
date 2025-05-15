@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fec2306fbb5c3f568956e9f5eb1f9a8f",
+    "content-hash": "5707449c638f7a68438dc46a529a951f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5227,7 +5227,7 @@
         },
         {
             "name": "drupal/infofinland_dummy",
-            "version": "dev-dev",
+            "version": "dev-UHF-11694_next-update",
             "dist": {
                 "type": "path",
                 "url": "./patches/helfi_platform_config",
@@ -6461,21 +6461,20 @@
         },
         {
             "name": "drupal/next",
-            "version": "1.6.3",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/next.git",
-                "reference": "1.6.3"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/next-1.6.3.zip",
-                "reference": "1.6.3",
-                "shasum": "e5ce08189ae47ceb6933407f53bfd43a24a9b05c"
+                "url": "https://ftp.drupal.org/files/projects/next-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "1a7b07042d72fbfafd105c639b2bff062311a099"
             },
             "require": {
-                "cweagans/composer-patches": "~1.0",
-                "drupal/core": "^9 || ^10",
+                "drupal/core": "^10 || ^11",
                 "drupal/decoupled_router": "^2.0",
                 "drupal/pathauto": "^1.11",
                 "drupal/simple_oauth": "^5.0 || ^6.0",
@@ -6488,13 +6487,13 @@
                 "drupal/jwt": "*",
                 "drupal/jwt_auth_consumer": "*",
                 "drupal/subrequests": "*",
-                "phpunit/phpunit": "^6.0 || ^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.6.3",
-                    "datestamp": "1681969041",
+                    "version": "2.0.0",
+                    "datestamp": "1739303969",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6508,15 +6507,19 @@
             "authors": [
                 {
                     "name": "shadcn",
-                    "homepage": "https://shadcn.com"
+                    "homepage": "https://www.chapterthree.com"
+                },
+                {
+                    "name": "brianperry",
+                    "homepage": "https://www.drupal.org/user/2304500"
+                },
+                {
+                    "name": "johnalbin",
+                    "homepage": "https://www.drupal.org/user/32095"
                 },
                 {
                     "name": "minnur",
                     "homepage": "https://www.drupal.org/user/702026"
-                },
-                {
-                    "name": "roaguicr",
-                    "homepage": "https://www.drupal.org/user/2334450"
                 },
                 {
                     "name": "rrrob",
@@ -6527,7 +6530,7 @@
                     "homepage": "https://www.drupal.org/user/571032"
                 }
             ],
-            "description": "Next.js + Drupal for Incremental Static Regeneration and Preview mode.",
+            "description": "Next.js + Drupal for Incremental Static Regeneration and Draft mode.",
             "homepage": "http://drupal.org/project/next",
             "support": {
                 "source": "https://git.drupalcode.org/project/next"
@@ -10686,34 +10689,34 @@
         },
         {
             "name": "lcobucci/clock",
-            "version": "3.2.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lcobucci/clock.git",
-                "reference": "6f28b826ea01306b07980cb8320ab30b966cd715"
+                "reference": "db3713a61addfffd615b79bf0bc22f0ccc61b86b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/clock/zipball/6f28b826ea01306b07980cb8320ab30b966cd715",
-                "reference": "6f28b826ea01306b07980cb8320ab30b966cd715",
+                "url": "https://api.github.com/repos/lcobucci/clock/zipball/db3713a61addfffd615b79bf0bc22f0ccc61b86b",
+                "reference": "db3713a61addfffd615b79bf0bc22f0ccc61b86b",
                 "shasum": ""
             },
             "require": {
-                "php": "~8.2.0 || ~8.3.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
                 "psr/clock": "^1.0"
             },
             "provide": {
                 "psr/clock-implementation": "1.0"
             },
             "require-dev": {
-                "infection/infection": "^0.27",
-                "lcobucci/coding-standard": "^11.0.0",
+                "infection/infection": "^0.29",
+                "lcobucci/coding-standard": "^11.1.0",
                 "phpstan/extension-installer": "^1.3.1",
                 "phpstan/phpstan": "^1.10.25",
                 "phpstan/phpstan-deprecation-rules": "^1.1.3",
                 "phpstan/phpstan-phpunit": "^1.3.13",
                 "phpstan/phpstan-strict-rules": "^1.5.1",
-                "phpunit/phpunit": "^10.2.3"
+                "phpunit/phpunit": "^11.3.6"
             },
             "type": "library",
             "autoload": {
@@ -10734,7 +10737,7 @@
             "description": "Yet another clock abstraction",
             "support": {
                 "issues": "https://github.com/lcobucci/clock/issues",
-                "source": "https://github.com/lcobucci/clock/tree/3.2.0"
+                "source": "https://github.com/lcobucci/clock/tree/3.3.1"
             },
             "funding": [
                 {
@@ -10746,7 +10749,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-11-17T17:00:27+00:00"
+            "time": "2024-09-24T20:45:14+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -10994,20 +10997,20 @@
         },
         {
             "name": "league/event",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/event.git",
-                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119"
+                "reference": "062ebb450efbe9a09bc2478e89b7c933875b0935"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/event/zipball/d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
-                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
+                "url": "https://api.github.com/repos/thephpleague/event/zipball/062ebb450efbe9a09bc2478e89b7c933875b0935",
+                "reference": "062ebb450efbe9a09bc2478e89b7c933875b0935",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=7.1.0"
             },
             "require-dev": {
                 "henrikbjorn/phpspec-code-coverage": "~1.0.1",
@@ -11042,9 +11045,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/event/issues",
-                "source": "https://github.com/thephpleague/event/tree/master"
+                "source": "https://github.com/thephpleague/event/tree/2.3.0"
             },
-            "time": "2018-11-26T11:52:41+00:00"
+            "time": "2025-03-14T19:51:10+00:00"
         },
         {
             "name": "league/flysystem",
@@ -11248,16 +11251,16 @@
         },
         {
             "name": "league/oauth2-server",
-            "version": "8.5.4",
+            "version": "8.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-server.git",
-                "reference": "ab7714d073844497fd222d5d0a217629089936bc"
+                "reference": "cc8778350f905667e796b3c2364a9d3bd7a73518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/ab7714d073844497fd222d5d0a217629089936bc",
-                "reference": "ab7714d073844497fd222d5d0a217629089936bc",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/cc8778350f905667e796b3c2364a9d3bd7a73518",
+                "reference": "cc8778350f905667e796b3c2364a9d3bd7a73518",
                 "shasum": ""
             },
             "require": {
@@ -11324,7 +11327,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/oauth2-server/issues",
-                "source": "https://github.com/thephpleague/oauth2-server/tree/8.5.4"
+                "source": "https://github.com/thephpleague/oauth2-server/tree/8.5.5"
             },
             "funding": [
                 {
@@ -11332,7 +11335,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-25T22:35:12+00:00"
+            "time": "2024-12-20T23:06:10+00:00"
         },
         {
             "name": "league/uri",
