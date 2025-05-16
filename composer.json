@@ -34,7 +34,7 @@
         "drupal/media_entity_browser": "^2.0",
         "drupal/media_entity_soundcloud": "^3.1",
         "drupal/migrate_source_csv": "^3.4",
-        "drupal/next": "^1.4",
+        "drupal/next": "^2.0",
         "drupal/obfuscate": "^2.0",
         "drupal/password_policy": "^4.0",
         "drupal/purge": "^3.6",
@@ -119,9 +119,6 @@
             "drupal/redirect": {
                 "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2024-08-11/redirect--2024-08-11--3057250-79.patch",
                 "Redirection issue when interface language is different from content language (https://drupal.org/i/2991423)": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-infofinland/695e1f724ed28f32995bca97e15a28ab109e4ed2/patches/redirect-2991423.patch"
-            },
-            "drupal/next": {
-                "Fix 500 error when submitting contact form and DB saving has been disabled, to be removed when drupal/next:2.0 is updated": "./patches/webforms.patch"
             },
             "drupal/yoast_seo": {
                 "Fix \"Uncaught DOMException: Failed to execute 'remove' on 'DOMTokenList'\" (https://www.drupal.org/project/yoast_seo/issues/3394487)": "https://www.drupal.org/files/issues/2023-11-03/3394487-failed-to-execute-remove-on-domtokenlist.patch"
