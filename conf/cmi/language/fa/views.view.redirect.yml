@@ -27,7 +27,7 @@ display:
           label: از
           separator: ', '
         created:
-          label: 'ایجاد گردید'
+          label: 'ایجاد شده'
       filters:
         redirect_source__path:
           expose:
