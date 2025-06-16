@@ -1,2 +1,2 @@
 label: 'Förvalt mellanlångt datum'
-pattern: 'jS F Y'
+pattern: 'j. F Y'
