@@ -34,3 +34,7 @@ a {
 #field-municipality-info-values .form-textarea-wrapper {
   width: 300px;
 }
+
+.block-local-tasks-block {
+  margin-bottom: 1rem;
+}
