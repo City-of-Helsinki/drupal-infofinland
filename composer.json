@@ -47,7 +47,6 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/webform_rest": "^4.0",
         "drupal/yoast_seo": "^2.0@alpha",
-        "drush/drush": "^12",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0"
     },
