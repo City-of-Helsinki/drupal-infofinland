@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17043ae8e815ba55323ecc637c395987",
+    "content-hash": "f815fd8209aaecf9bddedae915e0c116",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4866,16 +4866,16 @@
         },
         {
             "name": "drupal/helfi_platform_config",
-            "version": "4.14.38",
+            "version": "4.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config.git",
-                "reference": "8c449ffed956dfb7f14d1c85b13f32adba4531fa"
+                "reference": "869cd58145d062d58cca3e9089b1d949b517c78b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/8c449ffed956dfb7f14d1c85b13f32adba4531fa",
-                "reference": "8c449ffed956dfb7f14d1c85b13f32adba4531fa",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/869cd58145d062d58cca3e9089b1d949b517c78b",
+                "reference": "869cd58145d062d58cca3e9089b1d949b517c78b",
                 "shasum": ""
             },
             "require": {
@@ -4899,7 +4899,7 @@
                 "drupal/external_entities": "^2.0@beta",
                 "drupal/field_group": "^3.1",
                 "drupal/focal_point": "^2.0",
-                "drupal/gin_toolbar": "^2.0",
+                "drupal/gin_toolbar": "^2.1",
                 "drupal/hal": "^2.0",
                 "drupal/helfi_api_base": "*",
                 "drupal/helfi_tpr": "*",
@@ -4908,7 +4908,7 @@
                 "drupal/imagemagick": "^3.4",
                 "drupal/jquery_ui": "^1.6",
                 "drupal/jquery_ui_draggable": "^2.0",
-                "drupal/linkit": "^6.0",
+                "drupal/linkit": "^7.0",
                 "drupal/media_entity_file_replace": "^1.0",
                 "drupal/menu_block_current_language": "^2.0",
                 "drupal/menu_link_attributes": "^1.2",
@@ -4944,8 +4944,8 @@
                 "symfony/property-access": "^7.3"
             },
             "conflict": {
-                "drupal/core": "<10.4",
-                "drupal/core-composer-scaffold": "<10.4",
+                "drupal/core": "<10.5",
+                "drupal/core-composer-scaffold": "<10.5",
                 "drupal/ctools": "<3.11 || ^4.0.1",
                 "drupal/default_content": ">2.0.0-alpha2",
                 "drupal/helfi_media_map": "*",
@@ -4997,10 +4997,10 @@
             ],
             "description": "HELfi platform config",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/4.14.38",
+                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/4.15.0",
                 "issues": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/issues"
             },
-            "time": "2025-06-25T06:46:06+00:00"
+            "time": "2025-07-02T09:03:56+00:00"
         },
         {
             "name": "drupal/helfi_tpr",
@@ -5245,7 +5245,7 @@
         },
         {
             "name": "drupal/infofinland_dummy",
-            "version": "dev-dev",
+            "version": "dev-update-configuration",
             "dist": {
                 "type": "path",
                 "url": "./patches/helfi_platform_config",
@@ -5851,20 +5851,20 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "6.1.6",
+            "version": "7.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "6.1.6"
+                "reference": "7.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-6.1.6.zip",
-                "reference": "6.1.6",
-                "shasum": "113d8e569cfb92f8d7feb0a2f7713953c0715e92"
+                "url": "https://ftp.drupal.org/files/projects/linkit-7.0.5.zip",
+                "reference": "7.0.5",
+                "shasum": "58baf9f76c46c73e02639ac79857889c52c46113"
             },
             "require": {
-                "drupal/core": "^10.1"
+                "drupal/core": "^10.1 || ^11"
             },
             "require-dev": {
                 "drupal/ckeditor": "*",
@@ -5873,8 +5873,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "6.1.6",
-                    "datestamp": "1729189029",
+                    "version": "7.0.5",
+                    "datestamp": "1750458295",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -22648,7 +22648,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
