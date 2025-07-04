@@ -4866,16 +4866,16 @@
         },
         {
             "name": "drupal/helfi_platform_config",
-            "version": "4.15.0",
+            "version": "4.15.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config.git",
-                "reference": "869cd58145d062d58cca3e9089b1d949b517c78b"
+                "reference": "16a26d805580c00a33fabba36f2caf84974f1e8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/869cd58145d062d58cca3e9089b1d949b517c78b",
-                "reference": "869cd58145d062d58cca3e9089b1d949b517c78b",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/16a26d805580c00a33fabba36f2caf84974f1e8d",
+                "reference": "16a26d805580c00a33fabba36f2caf84974f1e8d",
                 "shasum": ""
             },
             "require": {
@@ -4997,10 +4997,10 @@
             ],
             "description": "HELfi platform config",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/4.15.0",
+                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/4.15.4",
                 "issues": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/issues"
             },
-            "time": "2025-07-02T09:03:56+00:00"
+            "time": "2025-07-04T05:28:50+00:00"
         },
         {
             "name": "drupal/helfi_tpr",
@@ -5245,7 +5245,7 @@
         },
         {
             "name": "drupal/infofinland_dummy",
-            "version": "dev-update-configuration",
+            "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./patches/helfi_platform_config",
@@ -8470,17 +8470,17 @@
         },
         {
             "name": "drupal/tfa",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tfa.git",
-                "reference": "8.x-1.10"
+                "reference": "8.x-1.11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tfa-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "c8314dfff47ad44ab78a1ea962f25e073abc9960"
+                "url": "https://ftp.drupal.org/files/projects/tfa-8.x-1.11.zip",
+                "reference": "8.x-1.11",
+                "shasum": "80097340521f99a092b2c506518da9eb067cefc4"
             },
             "require": {
                 "chillerlan/php-qrcode": "^1.0.9 || ^2.0 || ^3.2 || ^4.0",
@@ -8503,8 +8503,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1741198609",
+                    "version": "8.x-1.11",
+                    "datestamp": "1751477797",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -22648,7 +22648,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
