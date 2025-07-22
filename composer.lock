@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f815fd8209aaecf9bddedae915e0c116",
+    "content-hash": "71fd988af5b200a7c3068051c283070e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5193,7 +5193,7 @@
         },
         {
             "name": "drupal/infofinland_dummy",
-            "version": "dev-dev",
+            "version": "dev-update-configuration",
             "dist": {
                 "type": "path",
                 "url": "./patches/helfi_platform_config",
@@ -9252,17 +9252,17 @@
         },
         {
             "name": "drupal/yoast_seo",
-            "version": "2.0.0-alpha11",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/yoast_seo.git",
-                "reference": "8.x-2.0-alpha11"
+                "reference": "8.x-2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/yoast_seo-8.x-2.0-alpha11.zip",
-                "reference": "8.x-2.0-alpha11",
-                "shasum": "269e4e2dbfdf72860893a2d50ab3329d5a8baffd"
+                "url": "https://ftp.drupal.org/files/projects/yoast_seo-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "02cbc1f35709fbf5a464e4686dfac10cedca0b67"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10 || ^11",
@@ -9273,29 +9273,16 @@
                 "drupal/commerce": ">2.0 <2.5"
             },
             "require-dev": {
-                "composer/installers": "^2",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
-                "dmore/behat-chrome-extension": "^1.4",
-                "drupal/devel": "^5.0.2",
-                "drupal/drupal-extension": "^5",
-                "drupal/paragraphs": "^1.15",
-                "drush/drush": "^11.0",
-                "friends-of-behat/mink-debug-extension": "^2.1",
-                "mglaman/phpstan-drupal": "^1.1.25",
-                "phpspec/prophecy-phpunit": "v2.0.1",
-                "phpstan/extension-installer": "^1.1.0",
-                "phpstan/phpstan": "^1.9.2",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.1.1"
+                "drupal/paragraphs": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-alpha11",
-                    "datestamp": "1724705389",
+                    "version": "8.x-2.2",
+                    "datestamp": "1752684280",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Alpha releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -9305,24 +9292,12 @@
             ],
             "authors": [
                 {
-                    "name": "bramtenhove",
-                    "homepage": "https://www.drupal.org/user/1549848"
-                },
-                {
                     "name": "kingdutch",
                     "homepage": "https://www.drupal.org/user/1868952"
                 },
                 {
                     "name": "Open Social",
                     "homepage": "https://www.drupal.org/user/272162"
-                },
-                {
-                    "name": "robertragas",
-                    "homepage": "https://www.drupal.org/user/2723261"
-                },
-                {
-                    "name": "ronaldtebrake",
-                    "homepage": "https://www.drupal.org/user/2314038"
                 }
             ],
             "description": "Adds Real-time SEO page analysis and configuration.",
@@ -22598,7 +22573,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
