@@ -117,9 +117,6 @@
             "drupal/redirect": {
                 "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2024-08-11/redirect--2024-08-11--3057250-79.patch",
                 "Redirection issue when interface language is different from content language (https://drupal.org/i/2991423)": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-infofinland/695e1f724ed28f32995bca97e15a28ab109e4ed2/patches/redirect-2991423.patch"
-            },
-            "drupal/yoast_seo": {
-                "Fix \"Uncaught DOMException: Failed to execute 'remove' on 'DOMTokenList'\" (https://www.drupal.org/project/yoast_seo/issues/3394487)": "https://www.drupal.org/files/issues/2023-11-03/3394487-failed-to-execute-remove-on-domtokenlist.patch"
             }
         },
         "installer-types": ["npm-asset"],
