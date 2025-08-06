@@ -206,8 +206,8 @@ content:
     weight: 23
     region: content
     settings:
-      edit_title: '1'
-      edit_description: '1'
+      edit_title: true
+      edit_description: true
       render_theme: stark
       render_view_mode: default
     third_party_settings: {  }
@@ -245,6 +245,11 @@ content:
     third_party_settings: {  }
   scheduler_settings:
     weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
