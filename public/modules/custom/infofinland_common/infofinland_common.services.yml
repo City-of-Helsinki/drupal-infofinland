@@ -1,4 +1,8 @@
 services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
   infofinland_common.repositories.client:
     class: Drupal\infofinland_common\Repositories\ClientRepository
     decorates: simple_oauth.repositories.client
@@ -13,3 +17,6 @@ services:
   logger.channel.infofinland_common:
     parent: logger.channel_base
     arguments: [ 'infofinland_common' ]
+
+  Drupal\infofinland_common\EventSubscriber\CspEventSubscriber:
+    class: Drupal\infofinland_common\EventSubscriber\CspEventSubscriber
