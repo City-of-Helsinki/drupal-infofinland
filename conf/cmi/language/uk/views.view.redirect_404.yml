@@ -39,5 +39,8 @@ display:
         resolved:
           expose:
             label: Розв’язано
+      empty:
+        area_text_custom:
+          content: 'There are no 404 errors to fix.'
   page_1:
     display_title: Сторінка

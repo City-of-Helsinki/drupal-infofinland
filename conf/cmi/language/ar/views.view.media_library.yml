@@ -26,6 +26,12 @@ display:
         created:
           expose:
             label: 'Uusin ensin'
+        name:
+          expose:
+            label: 'الاسم (أ-ي)'
+        name_1:
+          expose:
+            label: 'الاسم (ي-أ)'
       filters:
         status:
           expose:
@@ -58,10 +64,16 @@ display:
           separator: ', '
         edit_media:
           text: تحرير
+          alter:
+            text: 'تحرير {{ name }}'
+            alt: 'تحرير {{ name }}'
         delete_media:
           text: حذف
+          alter:
+            text: 'Delete {{ name }}'
+            alt: 'Delete {{ name }}'
   widget:
-    display_title: ودجة
+    display_title: 'عنصر إدخال'
     display_options:
       arguments:
         bundle:
