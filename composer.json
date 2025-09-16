@@ -115,8 +115,8 @@
                 "Fixing redirect multilanguage 404 (https://drupal.org/i/3111456)": "https://www.drupal.org/files/issues/2024-08-05/decouple_router-3111456-resolve-language-issue-63--get-translation-re-rolled-and-good-redirect.patch"
             },
             "drupal/redirect": {
-                "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2024-08-11/redirect--2024-08-11--3057250-79.patch",
-                "Redirection issue when interface language is different from content language (https://drupal.org/i/2991423)": "https://raw.githubusercontent.com/City-of-Helsinki/drupal-infofinland/695e1f724ed28f32995bca97e15a28ab109e4ed2/patches/redirect-2991423.patch"
+                "Validation issue on adding url redirect (https://drupal.org/i/3057250)": "https://www.drupal.org/files/issues/2025-09-08/redirect--2025-09-08--3057250-110.patch",
+                "Redirection issue when interface language is different from content language (https://drupal.org/i/2991423)": "https://www.drupal.org/files/issues/2025-09-03/redirect-interface_language_different_from_content_language_2991423-23.patch"
             }
         },
         "installer-types": ["npm-asset"],
