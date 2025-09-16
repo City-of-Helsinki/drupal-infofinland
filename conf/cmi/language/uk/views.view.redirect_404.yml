@@ -29,6 +29,8 @@ display:
           label: Мова
         redirect_404_operations:
           label: Операції
+        daily_count:
+          label: 'Daily count'
       filters:
         path:
           expose:
@@ -42,5 +44,9 @@ display:
       empty:
         area_text_custom:
           content: 'There are no 404 errors to fix.'
+      title: 'Fix 404 pages'
   page_1:
     display_title: Сторінка
+    display_options:
+      display_description: 'Lists 404 error paths with no redirect assigned yet.'
+label: 'Redirect 404'
