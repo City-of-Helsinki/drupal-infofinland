@@ -1,4 +1,5 @@
 label: Переспрямувати
+description: 'List of redirects'
 display:
   default:
     display_title: Головне
@@ -65,4 +66,3 @@ display:
           content: 'There is no redirect yet.'
   page_1:
     display_title: Сторінка
-description: 'List of redirects'
