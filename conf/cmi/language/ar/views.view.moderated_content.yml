@@ -16,6 +16,7 @@ display:
           separator: ', '
         moderation_state:
           separator: ', '
+          label: 'Moderation state'
         changed:
           label: التحديث
           separator: ', '
@@ -48,5 +49,11 @@ display:
         langcode:
           expose:
             label: اللغة
+        moderation_state:
+          expose:
+            label: 'Moderation state'
+      empty:
+        area_text_custom:
+          content: 'No moderated content available. Only pending versions of content, such as drafts, are listed here.'
   moderated_content:
     display_title: 'محتوى خاضع للإشراف'
