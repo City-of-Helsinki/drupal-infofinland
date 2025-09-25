@@ -4817,16 +4817,16 @@
         },
         {
             "name": "drupal/helfi_platform_config",
-            "version": "4.16.25",
+            "version": "4.16.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config.git",
-                "reference": "3227c96d77ec3fd8421260ea49de3a7812a46fe4"
+                "reference": "cea3a6ac815399a14b4d95a23252b8512b2f0d89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/3227c96d77ec3fd8421260ea49de3a7812a46fe4",
-                "reference": "3227c96d77ec3fd8421260ea49de3a7812a46fe4",
+                "url": "https://api.github.com/repos/City-of-Helsinki/drupal-helfi-platform-config/zipball/cea3a6ac815399a14b4d95a23252b8512b2f0d89",
+                "reference": "cea3a6ac815399a14b4d95a23252b8512b2f0d89",
                 "shasum": ""
             },
             "require": {
@@ -4946,10 +4946,10 @@
             ],
             "description": "HELfi platform config",
             "support": {
-                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/4.16.25",
+                "source": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/tree/4.16.22",
                 "issues": "https://github.com/City-of-Helsinki/drupal-helfi-platform-config/issues"
             },
-            "time": "2025-09-17T06:07:36+00:00"
+            "time": "2025-09-12T07:40:25+00:00"
         },
         {
             "name": "drupal/helfi_tpr",
@@ -5194,7 +5194,7 @@
         },
         {
             "name": "drupal/infofinland_dummy",
-            "version": "dev-dev",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "./patches/helfi_platform_config",
@@ -5488,20 +5488,8 @@
             ],
             "authors": [
                 {
-                    "name": "anybody",
-                    "homepage": "https://www.drupal.org/user/291091"
-                },
-                {
-                    "name": "dave reid",
+                    "name": "Dave Reid",
                     "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "grevil",
-                    "homepage": "https://www.drupal.org/user/3668491"
-                },
-                {
-                    "name": "jan kellermann",
-                    "homepage": "https://www.drupal.org/user/371731"
                 }
             ],
             "description": "Provides the js-cookie library as a dependency.",
