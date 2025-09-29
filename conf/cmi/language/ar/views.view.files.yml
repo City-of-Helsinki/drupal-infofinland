@@ -79,3 +79,6 @@ display:
         fid:
           exception:
             title: الكل
+          title: 'معلومات استخدام الملف لـ {{ arguments.fid }}'
+      title: 'استخدام الملف'
+    display_title: 'استخدام الملف'

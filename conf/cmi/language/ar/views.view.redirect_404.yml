@@ -15,6 +15,9 @@ display:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- الكل -'
             offset_label: الإزاحة
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
         path:
           label: Path
