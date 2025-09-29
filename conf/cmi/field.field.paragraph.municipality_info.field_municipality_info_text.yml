@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_municipality_info_text
+    - filter.format.simple_html
     - paragraphs.paragraphs_type.municipality_info
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - simple_html
 id: paragraph.municipality_info.field_municipality_info_text
 field_name: field_municipality_info_text
 entity_type: paragraph
@@ -24,5 +20,6 @@ skip_translation_check: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - simple_html
 field_type: text_long

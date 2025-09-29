@@ -12,6 +12,9 @@ display:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- الكل -'
             offset_label: الإزاحة
+          tags:
+            next: ››
+            previous: ‹‹
       exposed_form:
         options:
           submit_button: 'عمل تصفية'
@@ -112,3 +115,4 @@ display:
           label: شبكة
         display_link_table:
           label: جدول
+label: 'مكتبة الوسائط'

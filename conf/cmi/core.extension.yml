@@ -41,7 +41,6 @@ module:
   flysystem: 0
   focal_point: 0
   gin_toolbar: 0
-  hal: 0
   health_check: 0
   helfi_api_base: 0
   helfi_azure_fs: 0

@@ -19,6 +19,7 @@ display:
             previous: '‹ السابق'
             next: 'التالي ›'
             first: '« Ensimmäinen'
+            last: 'الأخيرة »'
       fields:
         version:
           label: النسخة

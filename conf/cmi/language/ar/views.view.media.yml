@@ -35,6 +35,7 @@ display:
             next: 'التالي ›'
             previous: '‹ السابق'
             first: '« Ensimmäinen'
+            last: 'الأخيرة »'
           expose:
             items_per_page_label: 'Merkintöjä sivua kohti'
             items_per_page_options_all_label: '- الكل -'
@@ -62,6 +63,7 @@ display:
                 title: منشور
               2:
                 title: 'غير منشور'
+            label: 'حالة النشر'
         langcode:
           expose:
             label: اللغة
